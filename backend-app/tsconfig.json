@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2021",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@common/*": ["src/common/*"],
+      "@constants/*": ["src/constants/*"],
+      "@database/*": ["src/database/*"],
+      "@decorators/*": ["src/decorators/*"],
+      "@exceptions/*": ["src/exceptions/*"],
+      "@filters/*": ["src/filters/*"],
+      "@guards/*": ["src/guards/*"],
+      "@i18n/*": ["src/i18n/*"],
+      "@interceptors/*": ["src/interceptors/*"],
+      "@interfaces/*": ["src/interfaces/*"],
+      "@auth_modules/*": ["src/modules/authentication/*"],
+      "@company_modules/*": ["src/modules/company/*"],
+      "@companyWebsite_modules/*": ["src/modules/companyWebsite/*"],
+      "@payments_modules/*": ["src/modules/payments/*"],
+      "@plans_modules/*": ["src/modules/plans/*"],
+      "@templates_modules/*": ["src/modules/templates/*"],
+      "@users_modules/*": ["src/modules/users/*"],
+      "@providers/*": ["src/providers/*"],
+      "@shared/*": ["src/shared/*"],
+      "@validators/*": ["src/validators/*"]
+    }
+  }
+}
