@@ -1,5 +1,6 @@
 import { Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
+import { Fragment } from "react/jsx-runtime";
 
 interface UnProtectedRouteProps {
   children: React.ReactNode;
@@ -14,5 +15,5 @@ export const UnProtectedRoute = ({ children }: UnProtectedRouteProps) => {
     return <Navigate to="/dashboard" replace />;
   }
 
-  return <>{children}</>;
+  return (<Fragment>{children}</Fragment>);
 };

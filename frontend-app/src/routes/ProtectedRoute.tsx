@@ -1,5 +1,6 @@
 import { Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
+import { Fragment } from "react/jsx-runtime";
 
 interface ProtectedRouteProps {
   children: React.ReactNode;
@@ -23,5 +24,5 @@ export const ProtectedRoute = ({
     return <Navigate to="/unauthorized" replace />;
   }
 
-  return <>{children}</>;
+  return (<Fragment>{children}</Fragment>);
 };

@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 const Home = () => {
   return (
     <Fragment>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <p className="text-3xl font-bold underline">Landing Page!!</p>
     </Fragment>
   );
 };

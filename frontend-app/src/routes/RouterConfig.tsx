@@ -20,7 +20,7 @@ const renderRoutes = (routes: RouteConfig[]) => {
             route.allowedRoles.length > 0 ? (
               <ProtectedRoute 
                 allowedRoles={route.allowedRoles}
-                checkRoleOnChildren={false} // Disable parent role check
+                checkRoleOnChildren={false}
               >
                 <Layout>
                   <Component />
@@ -35,9 +35,7 @@ const renderRoutes = (routes: RouteConfig[]) => {
             )
           }
         >
-          {route.children.map((child) => {
-            console.log(child);
-            
+          {route.children.map((child) => {            
             const ChildComponent = child.component;
             const ChildLayout = child.layout || AppLayout;
 

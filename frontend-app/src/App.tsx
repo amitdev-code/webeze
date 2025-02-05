@@ -4,7 +4,7 @@ import { RouterConfig } from "./routes/RouterConfig";
 const App = () => {
   return (
     <Fragment>
-      <RouterConfig />;
+      <RouterConfig />
     </Fragment>
   );
 };
