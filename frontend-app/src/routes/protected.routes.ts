@@ -30,6 +30,6 @@ export const protectedRoutes: RouteConfig[] = [
     haveChildren: false,
     checkRoleOnChildren: true,
     layout: DashboardLayout,
-    allowedRoles: ["USER"],
+    allowedRoles: ["ADMIN"],
   },
 ];

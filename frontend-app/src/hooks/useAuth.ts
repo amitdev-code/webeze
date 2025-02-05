@@ -15,7 +15,7 @@ const AuthContext = createContext<AuthContextType | null>({
     id: "1",
     role: "USER",
   },
-  isAuthenticated: true,
+  isAuthenticated: false,
 });
 
 export const useAuth = () => {
