@@ -3,27 +3,27 @@ import { type RadioConfig, defaultConfig, key } from './radio.config'
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies RadioConfig
+  const config = theme(`webeze.${key}`) satisfies RadioConfig
 
   addComponents({
-    '.nui-radio': {
+    '.webeze-radio': {
       '@apply relative inline-flex items-start gap-1': {},
 
-      '.nui-radio-outer': {
-        '@apply nui-focus relative flex items-center justify-center shrink-0 cursor-pointer overflow-hidden rounded-full':
+      '.webeze-radio-outer': {
+        '@apply webeze-focus relative flex items-center justify-center shrink-0 cursor-pointer overflow-hidden rounded-full':
           {},
         //Size
         [`@apply h-${config.outer.size} w-${config.outer.size}`]: {},
       },
       //Radio:inner
-      '.nui-radio-inner': {
+      '.webeze-radio-inner': {
         //Base
         [`@apply absolute start-0 top-0 z-0 ${config.inner.rounded}`]: {},
         //Size
@@ -36,7 +36,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Radio:dot
-      '.nui-radio-dot': {
+      '.webeze-radio-dot': {
         //Base
         [`@apply pointer-events-none z-10 block scale-0 ${config.dot.rounded}`]:
           {},
@@ -50,80 +50,80 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Radio:input
-      '.nui-radio-input': {
+      '.webeze-radio-input': {
         [`@apply absolute z-20 h-${config.input.size} w-${config.input.size} cursor-pointer opacity-0`]:
           {},
         //Input:checked:inner
-        '&:checked ~ .nui-radio-inner': {
+        '&:checked ~ .webeze-radio-inner': {
           '@apply border-current': {},
         },
         //Input:checked:dot
-        '&:checked ~ .nui-radio-dot': {
+        '&:checked ~ .webeze-radio-dot': {
           '@apply scale-100': {},
         },
       },
       //Radio:label
-      '.nui-radio-label-wrapper': {
+      '.webeze-radio-label-wrapper': {
         '@apply inline-flex flex-col': {},
       },
       //Label:text
-      '.nui-radio-label-text': {
+      '.webeze-radio-label-text': {
         '@apply ms-1 cursor-pointer select-none': {},
         //Font
         [`@apply font-${config.label.font.family} text-${config.label.font.size} text-${config.label.font.color.light} dark:text-${config.label.font.color.dark}`]:
           {},
       },
       //Radio:error
-      '.nui-radio-error': {
+      '.webeze-radio-error': {
         '@apply ms-1 inline-block': {},
       },
       //Color:default
-      '&.nui-radio-default': {
+      '&.webeze-radio-default': {
         [`@apply text-${config.color.default.light} dark:text-${config.color.default.dark}`]:
           {},
       },
       //Color:muted
-      '&.nui-radio-muted': {
+      '&.webeze-radio-muted': {
         [`@apply text-${config.color.muted.light} dark:text-${config.color.muted.dark}`]:
           {},
       },
       //Color:light
-      '&.nui-radio-light': {
+      '&.webeze-radio-light': {
         [`@apply text-${config.color.light.light} dark:text-${config.color.light.dark}`]:
           {},
       },
       //Color:dark
-      '&.nui-radio-dark': {
+      '&.webeze-radio-dark': {
         [`@apply text-${config.color.dark.light} dark:text-${config.color.dark.dark}`]:
           {},
       },
       //Color:black
-      '&.nui-radio-black': {
+      '&.webeze-radio-black': {
         [`@apply text-${config.color.black.light} dark:text-${config.color.black.dark}`]:
           {},
       },
       //Color:primary
-      '&.nui-radio-primary': {
+      '&.webeze-radio-primary': {
         [`@apply text-${config.color.primary.light} dark:text-${config.color.primary.dark}`]:
           {},
       },
       //Color:info
-      '&.nui-radio-info': {
+      '&.webeze-radio-info': {
         [`@apply text-${config.color.info.light} dark:text-${config.color.info.dark}`]:
           {},
       },
       //Color:success
-      '&.nui-radio-success': {
+      '&.webeze-radio-success': {
         [`@apply text-${config.color.success.light} dark:text-${config.color.default.dark}`]:
           {},
       },
       //Color:warning
-      '&.nui-radio-warning': {
+      '&.webeze-radio-warning': {
         [`@apply text-${config.color.warning.light} dark:text-${config.color.warning.dark}`]:
           {},
       },
       //Color:danger
-      '&.nui-radio-danger': {
+      '&.webeze-radio-danger': {
         [`@apply text-${config.color.danger.light} dark:text-${config.color.danger.dark}`]:
           {},
       },

@@ -2,22 +2,22 @@ import type { CardVariant } from './card.types'
 
 export const rounded = {
   none: '',
-  sm: 'nui-card-rounded-sm',
-  md: 'nui-card-rounded-md',
-  lg: 'nui-card-rounded-lg',
+  sm: 'webeze-card-rounded-sm',
+  md: 'webeze-card-rounded-md',
+  lg: 'webeze-card-rounded-lg',
 } as const satisfies CardVariant<'rounded'>
 
 export const color = {
-  default: 'nui-card-default',
-  'default-contrast': 'nui-card-default-contrast',
-  muted: 'nui-card-muted',
-  'muted-contrast': 'nui-card-muted-contrast',
-  dark: 'nui-card-dark',
-  black: 'nui-card-black',
-  primary: 'nui-card-primary',
-  info: 'nui-card-info',
-  success: 'nui-card-success',
-  warning: 'nui-card-warning',
-  danger: 'nui-card-danger',
+  default: 'webeze-card-default',
+  'default-contrast': 'webeze-card-default-contrast',
+  muted: 'webeze-card-muted',
+  'muted-contrast': 'webeze-card-muted-contrast',
+  dark: 'webeze-card-dark',
+  black: 'webeze-card-black',
+  primary: 'webeze-card-primary',
+  info: 'webeze-card-info',
+  success: 'webeze-card-success',
+  warning: 'webeze-card-warning',
+  danger: 'webeze-card-danger',
   none: '',
 } as const satisfies CardVariant<'color'>

@@ -3,25 +3,25 @@ import { type TextareaConfig, defaultConfig, key } from './textarea.config'
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies TextareaConfig
+  const config = theme(`webeze.${key}`) satisfies TextareaConfig
 
   addComponents({
     //Wrapper
-    '.nui-textarea-wrapper': {
+    '.webeze-textarea-wrapper': {
       '@apply relative': {},
       //Textarea:label
-      '.nui-textarea-label, .nui-label-float': {
-        '@apply nui-label': {},
+      '.webeze-textarea-label, .webeze-label-float': {
+        '@apply webeze-label': {},
       },
       //Label:float
-      '.nui-label-float': {
+      '.webeze-label-float': {
         [`@apply h-${config.label.float.height} absolute inline-flex items-center select-none pointer-events-none`]:
           {},
         //Font
@@ -32,20 +32,20 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Textarea:outer
-      '.nui-textarea-outer': {
+      '.webeze-textarea-outer': {
         '@apply relative flex flex-col': {},
       },
       //Textarea
-      '.nui-textarea': {
-        [`@apply nui-focus w-${config.textarea.width} enabled:cursor-text cursor-not-allowed`]:
+      '.webeze-textarea': {
+        [`@apply webeze-focus w-${config.textarea.width} enabled:cursor-text cursor-not-allowed`]:
           {},
         //Focus:label:float
-        '&:focus-visible ~ .nui-label-float': {
+        '&:focus-visible ~ .webeze-label-float': {
           [`@apply !text-${config.label.float.font.color} dark:!text-${config.label.float.font.color}`]:
             {},
         },
         //Textarea:focus
-        '&.nui-textarea-focus': {
+        '&.webeze-textarea-focus': {
           //Focus:color
           [`@apply focus:!border-${config.textarea.focus.border.color.light} dark:focus:!border-${config.textarea.focus.border.color.dark}`]:
             {},
@@ -55,11 +55,11 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Textrea:placeload
-      '.nui-textarea-placeload': {
+      '.webeze-textarea-placeload': {
         [`@apply absolute start-0 top-4 flex h-${config.textarea.placeload.size} w-${config.textarea.placeload.size} flex-col space-y-${config.textarea.placeload.space} px-3`]:
           {},
 
-        '.nui-placeload': {
+        '.webeze-placeload': {
           '@apply h-3 w-full rounded': {},
 
           '&:first-child': {
@@ -74,35 +74,35 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Rounded:sm
-      '&.nui-textarea-rounded-sm': {
-        '.nui-textarea': {
+      '&.webeze-textarea-rounded-sm': {
+        '.webeze-textarea': {
           [`@apply rounded-${config.rounded.sm}`]: {},
         },
-        '.nui-textarea-addon': {
+        '.webeze-textarea-addon': {
           [`@apply rounded-b-${config.rounded.sm}`]: {},
         },
       },
       //Rounded:md
-      '&.nui-textarea-rounded-md': {
-        '.nui-textarea': {
+      '&.webeze-textarea-rounded-md': {
+        '.webeze-textarea': {
           [`@apply rounded-${config.rounded.md}`]: {},
         },
-        '.nui-textarea-addon': {
+        '.webeze-textarea-addon': {
           [`@apply rounded-b-${config.rounded.md}`]: {},
         },
       },
       //Rounded:lg
-      '&.nui-textarea-rounded-lg': {
-        '.nui-textarea': {
+      '&.webeze-textarea-rounded-lg': {
+        '.webeze-textarea': {
           [`@apply rounded-${config.rounded.lg}`]: {},
         },
-        '.nui-textarea-addon': {
+        '.webeze-textarea-addon': {
           [`@apply rounded-b-${config.rounded.lg}`]: {},
         },
       },
       //Color:default
-      '&.nui-textarea-default': {
-        '.nui-textarea': {
+      '&.webeze-textarea-default': {
+        '.webeze-textarea': {
           //Font
           [`@apply text-${config.color.default.color.light} dark:text-${config.color.default.color.dark}`]:
             {},
@@ -121,8 +121,8 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Color:defaut-contrast
-      '&.nui-textarea-default-contrast': {
-        '.nui-textarea': {
+      '&.webeze-textarea-default-contrast': {
+        '.webeze-textarea': {
           //Font
           [`@apply text-${config.color.defaultContrast.color.light} dark:text-${config.color.defaultContrast.color.dark}`]:
             {},
@@ -141,8 +141,8 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Color:muted
-      '&.nui-textarea-muted': {
-        '.nui-textarea': {
+      '&.webeze-textarea-muted': {
+        '.webeze-textarea': {
           //Font
           [`@apply text-${config.color.muted.color.light} dark:text-${config.color.muted.color.dark}`]:
             {},
@@ -161,8 +161,8 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Color:muted-contrast
-      '&.nui-textarea-muted-contrast': {
-        '.nui-textarea': {
+      '&.webeze-textarea-muted-contrast': {
+        '.webeze-textarea': {
           //Font
           [`@apply text-${config.color.mutedContrast.color.light} dark:text-${config.color.mutedContrast.color.dark}`]:
             {},
@@ -181,81 +181,81 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Textarea:loaded
-      '&:not(.nui-textarea-loading)': {
-        '.nui-textarea:placeholder-shown ~ .nui-label-float': {
+      '&:not(.webeze-textarea-loading)': {
+        '.webeze-textarea:placeholder-shown ~ .webeze-label-float': {
           [`@apply text-${config.loaded.font.color.light} dark:text-${config.loaded.font.color.dark}`]:
             {},
         },
       },
       //Textarea:loading
-      '&.nui-textarea-loading': {
-        '.nui-textarea': {
+      '&.webeze-textarea-loading': {
+        '.webeze-textarea': {
           '@apply !text-transparent placeholder:!text-transparent dark:placeholder:!text-transparent':
             {},
         },
-        '.nui-textarea:placeholder-shown ~ .nui-label-float': {
+        '.webeze-textarea:placeholder-shown ~ .webeze-label-float': {
           '@apply text-transparent': {},
         },
       },
       //Label:float
-      '&.nui-textarea-label-float': {
-        '.nui-textarea': {
+      '&.webeze-textarea-label-float': {
+        '.webeze-textarea': {
           '@apply placeholder:text-transparent dark:placeholder:text-transparent':
             {},
         },
       },
       //Textarea:error
-      '&.nui-textarea-error': {
-        '.nui-textarea': {
+      '&.webeze-textarea-error': {
+        '.webeze-textarea': {
           [`@apply !border-${config.error.textarea.border.light} dark:!border-${config.error.textarea.border.dark}`]:
             {},
         },
       },
       //Resize:none
-      '&.nui-textarea-no-resize': {
-        '.nui-textarea': {
+      '&.webeze-textarea-no-resize': {
+        '.webeze-textarea': {
           '@apply resize-none': {},
         },
       },
       //Size:sm
-      '&.nui-textarea-sm': {
+      '&.webeze-textarea-sm': {
         [`@apply min-h-${config.size.sm.height} text-${config.size.sm.font.size}`]:
           {},
 
-        '.nui-textarea-label': {
+        '.webeze-textarea-label': {
           [`@apply pb-1 text-${config.size.sm.label.size}`]: {},
         },
       },
       //Size:md
-      '&.nui-textarea-md': {
+      '&.webeze-textarea-md': {
         [`@apply min-h-${config.size.md.height} text-${config.size.md.font.size}`]:
           {},
 
-        '.nui-textarea-label': {
+        '.webeze-textarea-label': {
           [`@apply pb-1 text-${config.size.md.label.size}`]: {},
         },
       },
       //Size:lg
-      '&.nui-textarea-lg': {
+      '&.webeze-textarea-lg': {
         [`@apply min-h-${config.size.lg.height} text-${config.size.lg.font.size}`]:
           {},
 
-        '.nui-textarea-label': {
+        '.webeze-textarea-label': {
           [`@apply pb-1 text-${config.size.lg.label.size}`]: {},
         },
       },
       //Addon:false
-      '&:not(.nui-has-addon)': {
-        '.nui-textarea': {
+      '&:not(.webeze-has-addon)': {
+        '.webeze-textarea': {
           '@apply p-2': {},
         },
       },
       //Addon:true
-      '&.nui-has-addon': {
-        '.nui-textarea': {
+      '&.webeze-has-addon': {
+        '.webeze-textarea': {
           '@apply px-2 pb-14 pt-2': {},
         },
-        '.nui-textarea-addon': {
+        '.webeze-textarea-addon': {
           //Base
           '@apply absolute bottom-0 start-0 flex items-center justify-between':
             {},
@@ -269,52 +269,52 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply border border-${config.textarea.addon.border.light} dark:border-${config.textarea.addon.border.dark}`]:
             {},
         },
-        '.nui-textarea-addon-start': {
+        '.webeze-textarea-addon-start': {
           '@apply flex items-center gap-2': {},
         },
-        '.nui-textarea-addon-end': {
+        '.webeze-textarea-addon-end': {
           '@apply flex items-center justify-end gap-2': {},
         },
       },
       //Label:float && Size:sm
-      '&.nui-textarea-label-float.nui-textarea-sm': {
-        '.nui-label-float': {
+      '&.webeze-textarea-label-float.webeze-textarea-sm': {
+        '.webeze-label-float': {
           [`@apply start-3 -ms-3 -mt-7 text-${config.size.sm.label.float.size}`]:
             {},
         },
-        '.nui-textarea:focus-visible ~ .nui-label-float': {
+        '.webeze-textarea:focus-visible ~ .webeze-label-float': {
           '@apply !-ms-3 !-mt-6': {},
         },
-        '.nui-textarea:placeholder-shown ~ .nui-label-float': {
+        '.webeze-textarea:placeholder-shown ~ .webeze-label-float': {
           '@apply ms-0 mt-[0.35rem]': {},
         },
       },
       //Label:float && Size:md
-      '&.nui-textarea-label-float.nui-textarea-md': {
-        '.nui-label-float': {
+      '&.webeze-textarea-label-float.webeze-textarea-md': {
+        '.webeze-label-float': {
           [`@apply start-3 -ms-3 -mt-8 text-${config.size.md.label.float.size.base}`]:
             {},
         },
-        '.nui-textarea:focus-visible ~ .nui-label-float': {
+        '.webeze-textarea:focus-visible ~ .webeze-label-float': {
           [`@apply !-ms-3 !-mt-7 !text-${config.size.md.label.float.size.focus}`]:
             {},
         },
-        '.nui-textarea:placeholder-shown ~ .nui-label-float': {
+        '.webeze-textarea:placeholder-shown ~ .webeze-label-float': {
           [`@apply ms-0 mt-2.5 text-${config.size.md.label.float.size.unfocus}`]:
             {},
         },
       },
       //Label:float && Size:lg
-      '&.nui-textarea-label-float.nui-textarea-lg': {
-        '.nui-label-float': {
+      '&.webeze-textarea-label-float.webeze-textarea-lg': {
+        '.webeze-label-float': {
           [`@apply start-3 -ms-3 -mt-8 text-${config.size.lg.label.float.size.base}`]:
             {},
         },
-        '.nui-textarea:focus-visible ~ .nui-label-float': {
+        '.webeze-textarea:focus-visible ~ .webeze-label-float': {
           [`@apply !-ms-3 !-mt-7 !text-${config.size.lg.label.float.size.focus}`]:
             {},
         },
-        '.nui-textarea:placeholder-shown ~ .nui-label-float': {
+        '.webeze-textarea:placeholder-shown ~ .webeze-label-float': {
           [`@apply ms-0 mt-3 text-${config.size.lg.label.float.size.unfocus}`]:
             {},
         },

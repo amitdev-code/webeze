@@ -3,22 +3,22 @@ import { type SnackConfig, defaultConfig, key } from './snack.config'
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies SnackConfig
+  const config = theme(`webeze.${key}`) satisfies SnackConfig
 
   addComponents({
     //Wrapper
-    '.nui-snack': {
+    '.webeze-snack': {
       [`@apply inline-flex items-center gap-1 ${config.rounded} outline-transparent`]:
         {},
 
-      '.nui-snack-icon': {
+      '.webeze-snack-icon': {
         //Base
         [`@apply -ms-0.5 flex items-center justify-center ${config.icon.rounded}`]:
           {},
@@ -30,16 +30,16 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Snack:image
-      '.nui-snack-image': {
+      '.webeze-snack-image': {
         [`@apply -ms-0.5 flex items-center justify-center ${config.image.rounded} shrink-0`]:
           {},
       },
       //Image:inner
-      '.nui-snack-image-inner': {
+      '.webeze-snack-image-inner': {
         [`@apply ${config.image.rounded}`]: {},
       },
       //Snack:text
-      '.nui-snack-text': {
+      '.webeze-snack-text': {
         //Font
         [`@apply font-${config.font.family}`]: {},
         //Color
@@ -47,94 +47,94 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Size:xs
-      '&.nui-snack-xs': {
+      '&.webeze-snack-xs': {
         //Snack:media:xs
-        '&:not(.nui-has-media)': {
+        '&:not(.webeze-has-media)': {
           '@apply !ps-2': {},
         },
         //Snack:text
-        '.nui-snack-text': {
+        '.webeze-snack-text': {
           //Font
           [`@apply text-${config.size.xs.font.size}`]: {},
         },
         //Size
         [`@apply h-${config.size.xs.size}`]: {},
         //Snack:icon
-        '.nui-snack-icon': {
+        '.webeze-snack-icon': {
           [`@apply w-${config.size.xs.icon.outer.size} h-${config.size.xs.icon.outer.size}`]:
             {},
         },
         //Icon:inner
-        '.nui-snack-icon-inner': {
+        '.webeze-snack-icon-inner': {
           [`@apply h-${config.size.xs.icon.inner.size} w-${config.size.xs.icon.inner.size}`]:
             {},
         },
         //Snack:image
-        '.nui-snack-image, .nui-snack-image-inner': {
+        '.webeze-snack-image, .webeze-snack-image-inner': {
           [`@apply w-${config.size.xs.image.outer.size} h-${config.size.xs.image.outer.size}`]:
             {},
         },
       },
       //Size:sm
-      '&.nui-snack-sm': {
+      '&.webeze-snack-sm': {
         //Snack:media:sm
-        '&:not(.nui-has-media)': {
+        '&:not(.webeze-has-media)': {
           '@apply !ps-3': {},
         },
         //Snack:text
-        '.nui-snack-text': {
+        '.webeze-snack-text': {
           //Font
           [`@apply text-${config.size.sm.font.size}`]: {},
         },
         //Size
         [`@apply h-${config.size.sm.size}`]: {},
         //Snack:icon
-        '.nui-snack-icon': {
+        '.webeze-snack-icon': {
           [`@apply w-${config.size.sm.icon.outer.size} h-${config.size.sm.icon.outer.size}`]:
             {},
         },
         //Icon:inner
-        '.nui-snack-icon-inner': {
+        '.webeze-snack-icon-inner': {
           [`@apply h-${config.size.sm.icon.inner.size} w-${config.size.sm.icon.inner.size}`]:
             {},
         },
         //Snack:image
-        '.nui-snack-image, .nui-snack-image-inner': {
+        '.webeze-snack-image, .webeze-snack-image-inner': {
           [`@apply w-${config.size.sm.image.outer.size} h-${config.size.sm.image.outer.size}`]:
             {},
         },
       },
       //Size:md
-      '&.nui-snack-md': {
+      '&.webeze-snack-md': {
         //Snack:media:md
-        '&:not(.nui-has-media)': {
+        '&:not(.webeze-has-media)': {
           '@apply !ps-4': {},
         },
         //Snack:text
-        '.nui-snack-text': {
+        '.webeze-snack-text': {
           //Font
           [`@apply text-${config.size.md.font.size}`]: {},
         },
         //Size
         [`@apply h-${config.size.md.size}`]: {},
         //Snack:icon
-        '.nui-snack-icon': {
+        '.webeze-snack-icon': {
           [`@apply w-${config.size.md.icon.outer.size} h-${config.size.md.icon.outer.size}`]:
             {},
         },
         //Icon:inner
-        '.nui-snack-icon-inner': {
+        '.webeze-snack-icon-inner': {
           [`@apply h-${config.size.md.icon.inner.size} w-${config.size.md.icon.inner.size}`]:
             {},
         },
         //Snack:image
-        '.nui-snack-image, .nui-snack-image-inner': {
+        '.webeze-snack-image, .webeze-snack-image-inner': {
           [`@apply w-${config.size.md.image.outer.size} h-${config.size.md.image.outer.size}`]:
             {},
         },
       },
       //Color:default
-      '&.nui-snack-default': {
+      '&.webeze-snack-default': {
         //Background
         [`@apply bg-${config.color.default.background.light} dark:bg-${config.color.default.background.dark}`]:
           {},
@@ -143,7 +143,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:default-contrast
-      '&.nui-snack-default-contrast': {
+      '&.webeze-snack-default-contrast': {
         //Background
         [`@apply bg-${config.color.defaultContrast.background.light} dark:bg-${config.color.defaultContrast.background.dark}`]:
           {},
@@ -152,13 +152,13 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:muted
-      '&.nui-snack-muted': {
+      '&.webeze-snack-muted': {
         //Background
         [`@apply bg-${config.color.muted.background.light} dark:bg-${config.color.muted.background.dark}`]:
           {},
       },
       //Color:muted-contrast
-      '&.nui-snack-muted-contrast': {
+      '&.webeze-snack-muted-contrast': {
         //Background
         [`@apply bg-${config.color.mutedContrast.background.light} dark:bg-${config.color.mutedContrast.background.dark}`]:
           {},

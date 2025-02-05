@@ -3,34 +3,34 @@ import { type TabsConfig, defaultConfig, key } from './tabs.config'
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies TabsConfig
+  const config = theme(`webeze.${key}`) satisfies TabsConfig
 
   addComponents({
     //Wrapper
-    '.nui-tabs': {
+    '.webeze-tabs': {
       '@apply relative': {},
       //Tabs:inner
-      '.nui-tabs-inner': {
+      '.webeze-tabs-inner': {
         [`@apply font-${config.inner.font.family} mb-${config.inner.margin.bottom} flex`]:
           {},
       },
 
       //Tabs:bordered
-      '&.nui-tabs-bordered': {
+      '&.webeze-tabs-bordered': {
         //Tabs:inner
-        '.nui-tabs-inner': {
+        '.webeze-tabs-inner': {
           '@apply border-b border-muted-200 dark:border-muted-800': {},
         },
       },
       //Tabs:item
-      '.nui-tab-item': {
+      '.webeze-tab-item': {
         //Base
         '@apply cursor-pointer border-b-2 px-4 py-3': {},
         //Color
@@ -39,12 +39,12 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply transition-${config.item.transition.property} duration-${config.item.transition.duration}`]:
           {},
         //Item:icon
-        '&.nui-has-icon': {
+        '&.webeze-has-icon': {
           '@apply flex items-center gap-1': {},
         },
       },
       //Item:pill
-      '.nui-pill-item': {
+      '.webeze-pill-item': {
         [`@apply flex flex-col ${config.pill.rounded} px-5 cursor-pointer`]: {},
         //font
         [`@apply text-${config.pill.font.align}`]: {},
@@ -52,20 +52,20 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply transition-${config.pill.transition.property} duration-${config.pill.transition.duration}`]:
           {},
         //Item:no-icon
-        '&:not(.nui-has-icon)': {
+        '&:not(.webeze-has-icon)': {
           '@apply flex items-center gap-1 py-2': {},
         },
         //Item:icon
-        '&.nui-has-icon': {
+        '&.webeze-has-icon': {
           '@apply flex items-center gap-1 py-3': {},
         },
       },
       //Color: default
-      '&.nui-tabs-default': {
+      '&.webeze-tabs-default': {
         //Tabs:item
-        '.nui-tab-item': {
+        '.webeze-tab-item': {
           //Item:inactive
-          '&:not(.nui-active)': {
+          '&:not(.webeze-active)': {
             //Base
             '@apply border-transparent': {},
             //Color
@@ -73,7 +73,7 @@ export default plugin(({ addComponents, theme }) => {
               {},
           },
           //Item:active
-          '&.nui-active': {
+          '&.webeze-active': {
             //Border
             [`@apply border-${config.tabs.color.default.border.active.light} dark:border-${config.tabs.color.default.border.active.dark}`]:
               {},
@@ -83,15 +83,15 @@ export default plugin(({ addComponents, theme }) => {
           },
         },
         //Pills:item
-        '.nui-pill-item': {
+        '.webeze-pill-item': {
           //Item:inactive
-          '&:not(.nui-active)': {
+          '&:not(.webeze-active)': {
             //Color
             [`@apply text-${config.pill.color.default.font.inactive.light} dark:text-${config.pill.color.default.font.inactive.dark}`]:
               {},
           },
           //Item:active
-          '&.nui-active': {
+          '&.webeze-active': {
             //Color
             [`@apply text-${config.pill.color.default.font.active.light} dark:text-${config.pill.color.default.font.active.dark}`]:
               {},
@@ -108,11 +108,11 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Color: primary
-      '&.nui-tabs-primary': {
+      '&.webeze-tabs-primary': {
         //Tabs:item
-        '.nui-tab-item': {
+        '.webeze-tab-item': {
           //Item:inactive
-          '&:not(.nui-active)': {
+          '&:not(.webeze-active)': {
             //Base
             '@apply border-transparent': {},
             //Color
@@ -120,7 +120,7 @@ export default plugin(({ addComponents, theme }) => {
               {},
           },
           //Item:active
-          '&.nui-active': {
+          '&.webeze-active': {
             //Border
             [`@apply border-${config.tabs.color.primary.border.active.light} dark:border-${config.tabs.color.primary.border.active.dark}`]:
               {},
@@ -130,15 +130,15 @@ export default plugin(({ addComponents, theme }) => {
           },
         },
         //Pills:item
-        '.nui-pill-item': {
+        '.webeze-pill-item': {
           //Item:inactive
-          '&:not(.nui-active)': {
+          '&:not(.webeze-active)': {
             //Color
             [`@apply text-${config.pill.color.primary.font.inactive.light} dark:text-${config.pill.color.primary.font.inactive.dark}`]:
               {},
           },
           //Item:active
-          '&.nui-active': {
+          '&.webeze-active': {
             //Color
             [`@apply text-${config.pill.color.primary.font.active.light} dark:text-${config.pill.color.primary.font.active.dark}`]:
               {},
@@ -152,11 +152,11 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Color: light
-      '&.nui-tabs-light': {
+      '&.webeze-tabs-light': {
         //Tabs:item
-        '.nui-tab-item': {
+        '.webeze-tab-item': {
           //Item:inactive
-          '&:not(.nui-active)': {
+          '&:not(.webeze-active)': {
             //Base
             '@apply border-transparent': {},
             //Color
@@ -164,7 +164,7 @@ export default plugin(({ addComponents, theme }) => {
               {},
           },
           //Item:active
-          '&.nui-active': {
+          '&.webeze-active': {
             //Border
             [`@apply border-${config.tabs.color.light.border.active.light} dark:border-${config.tabs.color.light.border.active.dark}`]:
               {},
@@ -174,15 +174,15 @@ export default plugin(({ addComponents, theme }) => {
           },
         },
         //Pills:item
-        '.nui-pill-item': {
+        '.webeze-pill-item': {
           //Item:inactive
-          '&:not(.nui-active)': {
+          '&:not(.webeze-active)': {
             //Color
             [`@apply text-${config.pill.color.light.font.inactive.light} dark:text-${config.pill.color.light.font.inactive.dark}`]:
               {},
           },
           //Item:active
-          '&.nui-active': {
+          '&.webeze-active': {
             //Color
             [`@apply text-${config.pill.color.light.font.active.light} dark:text-${config.pill.color.light.font.active.dark}`]:
               {},
@@ -196,11 +196,11 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Color: dark
-      '&.nui-tabs-dark': {
+      '&.webeze-tabs-dark': {
         //Tabs:item
-        '.nui-tab-item': {
+        '.webeze-tab-item': {
           //Item:inactive
-          '&:not(.nui-active)': {
+          '&:not(.webeze-active)': {
             //Base
             '@apply border-transparent': {},
             //Color
@@ -208,7 +208,7 @@ export default plugin(({ addComponents, theme }) => {
               {},
           },
           //Item:active
-          '&.nui-active': {
+          '&.webeze-active': {
             //Border
             [`@apply border-${config.tabs.color.dark.border.active.light} dark:border-${config.tabs.color.dark.border.active.dark}`]:
               {},
@@ -218,15 +218,15 @@ export default plugin(({ addComponents, theme }) => {
           },
         },
         //Pills:item
-        '.nui-pill-item': {
+        '.webeze-pill-item': {
           //Item:inactive
-          '&:not(.nui-active)': {
+          '&:not(.webeze-active)': {
             //Color
             [`@apply text-${config.pill.color.dark.font.inactive.light} dark:text-${config.pill.color.dark.font.inactive.dark}`]:
               {},
           },
           //Item:active
-          '&.nui-active': {
+          '&.webeze-active': {
             //Color
             [`@apply text-${config.pill.color.dark.font.active.light} dark:text-${config.pill.color.dark.font.active.dark}`]:
               {},
@@ -240,11 +240,11 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Color: black
-      '&.nui-tabs-black': {
+      '&.webeze-tabs-black': {
         //Tabs:item
-        '.nui-tab-item': {
+        '.webeze-tab-item': {
           //Item:inactive
-          '&:not(.nui-active)': {
+          '&:not(.webeze-active)': {
             //Base
             '@apply border-transparent': {},
             //Color
@@ -252,7 +252,7 @@ export default plugin(({ addComponents, theme }) => {
               {},
           },
           //Item:active
-          '&.nui-active': {
+          '&.webeze-active': {
             //Border
             [`@apply border-${config.tabs.color.black.border.active.light} dark:border-${config.tabs.color.black.border.active.dark}`]:
               {},
@@ -262,15 +262,15 @@ export default plugin(({ addComponents, theme }) => {
           },
         },
         //Pills:item
-        '.nui-pill-item': {
+        '.webeze-pill-item': {
           //Item:inactive
-          '&:not(.nui-active)': {
+          '&:not(.webeze-active)': {
             //Color
             [`@apply text-${config.pill.color.black.font.inactive.light} dark:text-${config.pill.color.black.font.inactive.dark}`]:
               {},
           },
           //Item:active
-          '&.nui-active': {
+          '&.webeze-active': {
             //Color
             [`@apply text-${config.pill.color.black.font.active.light} dark:text-${config.pill.color.black.font.active.dark}`]:
               {},
@@ -284,18 +284,18 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Tabs:content
-      '.nui-tab-content': {
+      '.webeze-tab-content': {
         '@apply relative block': {},
       },
       //Align:center
-      '&.nui-tabs-centered': {
-        '.nui-tabs-inner': {
+      '&.webeze-tabs-centered': {
+        '.webeze-tabs-inner': {
           '@apply justify-center': {},
         },
       },
       //Align:end
-      '&.nui-tabs-end': {
-        '.nui-tabs-inner': {
+      '&.webeze-tabs-end': {
+        '.webeze-tabs-inner': {
           '@apply justify-end': {},
         },
       },

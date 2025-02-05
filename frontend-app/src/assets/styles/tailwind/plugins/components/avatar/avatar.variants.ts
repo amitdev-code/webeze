@@ -1,51 +1,51 @@
 import type { AvatarVariant } from './avatar.types'
 
 export const dot = {
-  success: 'nui-dot-success',
-  primary: 'nui-dot-primary',
-  info: 'nui-dot-info',
-  warning: 'nui-dot-warning',
-  danger: 'nui-dot-danger',
-  pink: 'nui-dot-pink',
-  yellow: 'nui-dot-yellow',
+  success: 'webeze-dot-success',
+  primary: 'webeze-dot-primary',
+  info: 'webeze-dot-info',
+  warning: 'webeze-dot-warning',
+  danger: 'webeze-dot-danger',
+  pink: 'webeze-dot-pink',
+  yellow: 'webeze-dot-yellow',
 } as const satisfies AvatarVariant<'dot'>
 
 export const ring = {
-  success: 'nui-ring-success',
-  primary: 'nui-ring-primary',
-  info: 'nui-ring-info',
-  warning: 'nui-ring-warning',
-  danger: 'nui-ring-danger',
-  pink: 'nui-ring-pink',
-  yellow: 'nui-ring-yellow',
+  success: 'webeze-ring-success',
+  primary: 'webeze-ring-primary',
+  info: 'webeze-ring-info',
+  warning: 'webeze-ring-warning',
+  danger: 'webeze-ring-danger',
+  pink: 'webeze-ring-pink',
+  yellow: 'webeze-ring-yellow',
 } as const satisfies AvatarVariant<'ring'>
 
 export const size = {
-  xxs: 'nui-avatar-xxs',
-  xs: 'nui-avatar-xs',
-  sm: 'nui-avatar-sm',
-  md: 'nui-avatar-md',
-  lg: 'nui-avatar-lg',
-  xl: 'nui-avatar-xl',
-  '2xl': 'nui-avatar-2xl',
-  '3xl': 'nui-avatar-3xl',
-  '4xl': 'nui-avatar-4xl',
+  xxs: 'webeze-avatar-xxs',
+  xs: 'webeze-avatar-xs',
+  sm: 'webeze-avatar-sm',
+  md: 'webeze-avatar-md',
+  lg: 'webeze-avatar-lg',
+  xl: 'webeze-avatar-xl',
+  '2xl': 'webeze-avatar-2xl',
+  '3xl': 'webeze-avatar-3xl',
+  '4xl': 'webeze-avatar-4xl',
 } as const satisfies AvatarVariant<'size'>
 
 export const rounded = {
-  none: 'nui-avatar-rounded-none',
-  sm: 'nui-avatar-rounded-sm',
-  md: 'nui-avatar-rounded-md',
-  lg: 'nui-avatar-rounded-lg',
-  full: 'nui-avatar-rounded-full',
+  none: 'webeze-avatar-rounded-none',
+  sm: 'webeze-avatar-rounded-sm',
+  md: 'webeze-avatar-rounded-md',
+  lg: 'webeze-avatar-rounded-lg',
+  full: 'webeze-avatar-rounded-full',
 } as const satisfies AvatarVariant<'rounded'>
 
 export const mask = {
-  hex: 'nui-mask-hex',
-  hexed: 'nui-mask-hexed',
-  deca: 'nui-mask-deca',
-  blob: 'nui-mask-blob',
-  diamond: 'nui-mask-diamond',
+  hex: 'webeze-mask-hex',
+  hexed: 'webeze-mask-hexed',
+  deca: 'webeze-mask-deca',
+  blob: 'webeze-mask-blob',
+  diamond: 'webeze-mask-diamond',
 } as const satisfies AvatarVariant<'mask'>
 
 export const color = {

@@ -3,18 +3,18 @@ import { type TooltipConfig, defaultConfig, key } from './tooltip.config'
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
     extend: {
       keyframes: {
-        'nui-tooltip-x': {
+        'webeze-tooltip-x': {
           to: {
             opacity: '1',
             transform: 'translate(-50%, 0)',
           },
         },
-        'nui-tooltip-y': {
+        'webeze-tooltip-y': {
           to: {
             opacity: '1',
             transform: 'translate(0, -50%)',
@@ -22,18 +22,18 @@ const config = {
         },
       },
       animation: {
-        'nui-tooltip-x': `nui-tooltip-x 300ms ease-out forwards`,
-        'nui-tooltip-y': `nui-tooltip-y 300ms ease-out forwards`,
+        'webeze-tooltip-x': `webeze-tooltip-x 300ms ease-out forwards`,
+        'webeze-tooltip-y': `webeze-tooltip-y 300ms ease-out forwards`,
       },
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies TooltipConfig
+  const config = theme(`webeze.${key}`) satisfies TooltipConfig
 
-  const tooltip = `data-nui-tooltip`
-  const position = `data-nui-tooltip-position`
+  const tooltip = `data-webeze-tooltip`
+  const position = `data-webeze-tooltip-position`
 
   addComponents({
     [`[${tooltip}]`]: {
@@ -163,7 +163,7 @@ export default plugin(({ addComponents, theme }) => {
       `[${tooltip}][${position}^='down']:focus-visible::before`,
       `[${tooltip}][${position}^='down']:focus-visible::after`,
     ].join(',')}`]: {
-      '@apply animate-nui-tooltip-x': {},
+      '@apply animate-webeze-tooltip-x': {},
     },
     [`${[
       `[${tooltip}][${position}^='left']:hover::before`,
@@ -183,7 +183,7 @@ export default plugin(({ addComponents, theme }) => {
       `[${tooltip}][${position}^='end']:focus-visible::before`,
       `[${tooltip}][${position}^='end']:focus-visible::after`,
     ].join(',')}`]: {
-      '@apply animate-nui-tooltip-y': {},
+      '@apply animate-webeze-tooltip-y': {},
     },
   })
 }, config)

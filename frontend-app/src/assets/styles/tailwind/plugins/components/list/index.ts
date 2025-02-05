@@ -3,24 +3,24 @@ import { type ListPluginConfig, defaultConfig, key } from './list.config'
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies ListPluginConfig
+  const config = theme(`webeze.${key}`) satisfies ListPluginConfig
 
   addComponents({
-    '.nui-list': {
-      '&.nui-list-ul': {
+    '.webeze-list': {
+      '&.webeze-list-ul': {
         [`@apply list-${config.ul}`]: {},
       },
-      '&.nui-list-ol': {
+      '&.webeze-list-ol': {
         [`@apply list-${config.ol}`]: {},
       },
-      '&.nui-list-base': {
+      '&.webeze-list-base': {
         //Base
         [`@apply space-y-1 font-${config.base.font.family}`]: {},
         //Text
@@ -30,10 +30,10 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply marker:text-${config.base.font.color.marker.light} dark:marker:text-${config.base.font.color.marker.dark}`]:
           {},
       },
-      '&.nui-list-media': {
+      '&.webeze-list-media': {
         [`@apply space-y-4 marker:text-${config.media.marker.color.light} dark:marker:text-${config.media.marker.color.dark}`]:
           {},
-        '.nui-list-item': {
+        '.webeze-list-item': {
           '@apply flex gap-2': {},
         },
       },

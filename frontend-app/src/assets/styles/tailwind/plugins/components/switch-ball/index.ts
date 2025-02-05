@@ -3,25 +3,25 @@ import { type SwitchBallConfig, defaulConfig, key } from './switch-ball.config'
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaulConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies SwitchBallConfig
+  const config = theme(`webeze.${key}`) satisfies SwitchBallConfig
 
   addComponents({
     //Wrapper
-    '.nui-switch-ball': {
+    '.webeze-switch-ball': {
       '@apply flex cursor-pointer items-center': {},
       //Switch:outer
-      '.nui-switch-ball-outer': {
-        [`@apply nui-focus relative block ${config.track.rounded}`]: {},
+      '.webeze-switch-ball-outer': {
+        [`@apply webeze-focus relative block ${config.track.rounded}`]: {},
       },
       //Switch:handle
-      '.nui-switch-ball-handle': {
+      '.webeze-switch-ball-handle': {
         [`@apply absolute start-0.5 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center ${config.handle.rounded} shadow focus:w-6`]:
           {},
         //Size
@@ -37,7 +37,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Switch:track
-      '.nui-switch-ball-track': {
+      '.webeze-switch-ball-track': {
         //Base
         [`@apply block h-6 w-11 ${config.track.rounded}`]: {},
         //Background
@@ -48,7 +48,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Switch:icon
-      '.nui-switch-ball-icon': {
+      '.webeze-switch-ball-icon': {
         //Base
         '@apply pointer-events-none absolute start-2 top-1/2 z-10 translate-y-0 fill-current opacity-0':
           {},
@@ -62,7 +62,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Label:single
-      '.nui-switch-ball-single-label': {
+      '.webeze-switch-ball-single-label': {
         //Base
         '@apply relative ms-3 cursor-pointer select-none': {},
         //Font
@@ -73,10 +73,10 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Label:dual
-      '.nui-switch-ball-dual-label': {
+      '.webeze-switch-ball-dual-label': {
         '@apply ms-3': {},
 
-        '.nui-switch-ball-label': {
+        '.webeze-switch-ball-label': {
           //Base
           '@apply block': {},
           //Font
@@ -87,7 +87,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Label:sublabel
-        '.nui-switch-ball-sublabel': {
+        '.webeze-switch-ball-sublabel': {
           //Base
           '@apply block': {},
           //Font
@@ -99,64 +99,64 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Switch:input
-      '.nui-switch-ball-input': {
+      '.webeze-switch-ball-input': {
         [`@apply absolute z-0 h-${config.input.size} w-${config.input.size} cursor-pointer opacity-0`]:
           {},
         //Input:checked:handle
-        '&:checked ~ .nui-switch-ball-handle': {
+        '&:checked ~ .webeze-switch-ball-handle': {
           '@apply -translate-y-1/2 translate-x-full rtl:-translate-x-full': {},
         },
         //Input:checked:icon
-        '&:checked ~ .nui-switch-ball-icon': {
+        '&:checked ~ .webeze-switch-ball-icon': {
           '@apply -translate-y-1/2 opacity-100': {},
         },
       },
       //color:primary
-      '&.nui-switch-ball-primary .nui-switch-ball-input:checked ~ .nui-switch-ball-track':
+      '&.webeze-switch-ball-primary .webeze-switch-ball-input:checked ~ .webeze-switch-ball-track':
         {
           [`@apply bg-${config.color.primary.light} dark:bg-${config.color.primary.dark}`]:
             {},
         },
       //color:info
-      '&.nui-switch-ball-info .nui-switch-ball-input:checked ~ .nui-switch-ball-track':
+      '&.webeze-switch-ball-info .webeze-switch-ball-input:checked ~ .webeze-switch-ball-track':
         {
           [`@apply bg-${config.color.info.light} dark:bg-${config.color.info.dark}`]:
             {},
         },
       //color:success
-      '&.nui-switch-ball-success .nui-switch-ball-input:checked ~ .nui-switch-ball-track':
+      '&.webeze-switch-ball-success .webeze-switch-ball-input:checked ~ .webeze-switch-ball-track':
         {
           [`@apply bg-${config.color.success.light} dark:bg-${config.color.success.dark}`]:
             {},
         },
       //color:warning
-      '&.nui-switch-ball-warning .nui-switch-ball-input:checked ~ .nui-switch-ball-track':
+      '&.webeze-switch-ball-warning .webeze-switch-ball-input:checked ~ .webeze-switch-ball-track':
         {
           [`@apply bg-${config.color.warning.light} dark:bg-${config.color.warning.dark}`]:
             {},
         },
       //color:danger
-      '&.nui-switch-ball-danger .nui-switch-ball-input:checked ~ .nui-switch-ball-track':
+      '&.webeze-switch-ball-danger .webeze-switch-ball-input:checked ~ .webeze-switch-ball-track':
         {
           [`@apply bg-${config.color.danger.light} dark:bg-${config.color.danger.dark}`]:
             {},
         },
       //color:dark
-      '&.nui-switch-ball-dark .nui-switch-ball-input:checked ~ .nui-switch-ball-track':
+      '&.webeze-switch-ball-dark .webeze-switch-ball-input:checked ~ .webeze-switch-ball-track':
         {
           [`@apply bg-${config.color.dark.light} dark:bg-${config.color.dark.dark}`]:
             {},
         },
-      '&.nui-switch-ball-dark .nui-switch-ball-icon': {
+      '&.webeze-switch-ball-dark .webeze-switch-ball-icon': {
         [`@apply text-muted-100 dark:text-muted-900`]: {},
       },
       //color:black
-      '&.nui-switch-ball-black .nui-switch-ball-input:checked ~ .nui-switch-ball-track':
+      '&.webeze-switch-ball-black .webeze-switch-ball-input:checked ~ .webeze-switch-ball-track':
         {
           [`@apply bg-${config.color.black.light} dark:bg-${config.color.black.dark}`]:
             {},
         },
-      '&.nui-switch-ball-black .nui-switch-ball-icon': {
+      '&.webeze-switch-ball-black .webeze-switch-ball-icon': {
         [`@apply text-white dark:text-black`]: {},
       },
     },

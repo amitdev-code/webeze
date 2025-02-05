@@ -3,26 +3,26 @@ import { type CheckboxConfig, defaultConfig, key } from './checkbox.config'
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies CheckboxConfig
+  const config = theme(`webeze.${key}`) satisfies CheckboxConfig
 
   addComponents({
     //Wrapper
-    '.nui-checkbox': {
+    '.webeze-checkbox': {
       '@apply relative inline-flex items-start gap-1': {},
       //Outer
-      '.nui-checkbox-outer': {
-        [`@apply nui-focus relative flex items-center justify-center h-${config.outer.size} w-${config.outer.size} shrink-0 cursor-pointer disabled:cursor-not-allowed overflow-hidden`]:
+      '.webeze-checkbox-outer': {
+        [`@apply webeze-focus relative flex items-center justify-center h-${config.outer.size} w-${config.outer.size} shrink-0 cursor-pointer disabled:cursor-not-allowed overflow-hidden`]:
           {},
       },
       //Inner
-      '.nui-checkbox-inner': {
+      '.webeze-checkbox-inner': {
         [`@apply absolute start-0 top-0 z-0 h-${config.inner.size} w-${config.inner.size}`]:
           {},
         //Background
@@ -33,7 +33,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Icon
-      '.nui-icon-check': {
+      '.webeze-icon-check': {
         '@apply pointer-events-none absolute z-10 fill-current translate-y-6 opacity-0':
           {},
         //Size
@@ -42,7 +42,7 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply transition-${config.icon.transition.property} duration-${config.icon.transition.duration}`]:
           {},
       },
-      '.nui-icon-indeterminate': {
+      '.webeze-icon-indeterminate': {
         '@apply pointer-events-none absolute z-10 fill-current translate-y-6 opacity-0':
           {},
         //Size
@@ -53,33 +53,33 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Input
-      '.nui-checkbox-input': {
+      '.webeze-checkbox-input': {
         [`@apply absolute z-20 h-${config.input.size} w-${config.input.size} cursor-pointer disabled:cursor-not-allowed opacity-0`]:
           {},
         //Input:checked ~ inner
-        '&:checked ~ .nui-checkbox-inner, &:indeterminate ~ .nui-checkbox-inner':
+        '&:checked ~ .webeze-checkbox-inner, &:indeterminate ~ .webeze-checkbox-inner':
           {
             '@apply border-current dark:border-current': {},
           },
         //Input:checked ~ icon
-        '&:checked ~ .nui-icon-check': {
+        '&:checked ~ .webeze-icon-check': {
           '@apply translate-y-0 opacity-100': {},
         },
         //Input:indeterminate ~ check
-        '&:indeterminate ~ .nui-icon-check': {
+        '&:indeterminate ~ .webeze-icon-check': {
           '@apply !translate-y-6': {},
         },
         //Input:checked ~ icon
-        '&:indeterminate ~ .nui-icon-indeterminate': {
+        '&:indeterminate ~ .webeze-icon-indeterminate': {
           '@apply !translate-y-0 !opacity-100': {},
         },
       },
       //Label
-      '.nui-checkbox-label-wrapper': {
+      '.webeze-checkbox-label-wrapper': {
         '@apply inline-flex flex-col': {},
       },
       //Label:text
-      '.nui-checkbox-label-text': {
+      '.webeze-checkbox-label-text': {
         [`@apply font-${config.label.font.family} text-${config.label.font.size} ms-1 cursor-pointer select-none`]:
           {},
         //Color
@@ -87,76 +87,76 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Error
-      '.nui-checkbox-error': {
+      '.webeze-checkbox-error': {
         [`@apply ms-1 inline-block`]: {},
       },
       //Rounded:sm
-      '&.nui-checkbox-rounded-sm .nui-checkbox-outer, &.nui-checkbox-rounded-sm .nui-checkbox-inner':
+      '&.webeze-checkbox-rounded-sm .webeze-checkbox-outer, &.webeze-checkbox-rounded-sm .webeze-checkbox-inner':
         {
           [`@apply ${config.rounded.sm}`]: {},
         },
       //Rounded:md
-      '&.nui-checkbox-rounded-md .nui-checkbox-outer, &.nui-checkbox-rounded-md .nui-checkbox-inner':
+      '&.webeze-checkbox-rounded-md .webeze-checkbox-outer, &.webeze-checkbox-rounded-md .webeze-checkbox-inner':
         {
           [`@apply ${config.rounded.md}`]: {},
         },
       //Rounded:lg
-      '&.nui-checkbox-rounded-lg .nui-checkbox-outer, &.nui-checkbox-rounded-lg .nui-checkbox-inner':
+      '&.webeze-checkbox-rounded-lg .webeze-checkbox-outer, &.webeze-checkbox-rounded-lg .webeze-checkbox-inner':
         {
           [`@apply ${config.rounded.lg}`]: {},
         },
       //Rounded:full
-      '&.nui-checkbox-rounded-full .nui-checkbox-outer, &.nui-checkbox-rounded-full .nui-checkbox-inner':
+      '&.webeze-checkbox-rounded-full .webeze-checkbox-outer, &.webeze-checkbox-rounded-full .webeze-checkbox-inner':
         {
           [`@apply ${config.rounded.full}`]: {},
         },
       //Color:default
-      '&.nui-checkbox-default': {
+      '&.webeze-checkbox-default': {
         [`@apply text-${config.color.default.light} dark:text-${config.color.default.dark}`]:
           {},
       },
       //Color:muted
-      '&.nui-checkbox-muted': {
+      '&.webeze-checkbox-muted': {
         [`@apply text-${config.color.muted.light} dark:text-${config.color.muted.dark}`]:
           {},
       },
       //Color:light
-      '&.nui-checkbox-light': {
+      '&.webeze-checkbox-light': {
         [`@apply text-${config.color.light.light} dark:text-${config.color.light.dark}`]:
           {},
       },
       //Color:dark
-      '&.nui-checkbox-dark': {
+      '&.webeze-checkbox-dark': {
         [`@apply text-${config.color.dark.light} dark:text-${config.color.dark.dark}`]:
           {},
       },
       //Color:black
-      '&.nui-checkbox-black': {
+      '&.webeze-checkbox-black': {
         [`@apply text-${config.color.black.light} dark:text-${config.color.black.dark}`]:
           {},
       },
       //Color:primary
-      '&.nui-checkbox-primary': {
+      '&.webeze-checkbox-primary': {
         [`@apply text-${config.color.primary.light} dark:text-${config.color.primary.dark}`]:
           {},
       },
       //Color:info
-      '&.nui-checkbox-info': {
+      '&.webeze-checkbox-info': {
         [`@apply text-${config.color.info.light} dark:text-${config.color.info.dark}`]:
           {},
       },
       //Color:success
-      '&.nui-checkbox-success': {
+      '&.webeze-checkbox-success': {
         [`@apply text-${config.color.success.light} dark:text-${config.color.success.dark}`]:
           {},
       },
       //Color:warning
-      '&.nui-checkbox-warning': {
+      '&.webeze-checkbox-warning': {
         [`@apply text-${config.color.warning.light} dark:text-${config.color.warning.dark}`]:
           {},
       },
       //Color:danger
-      '&.nui-checkbox-danger': {
+      '&.webeze-checkbox-danger': {
         [`@apply text-${config.color.danger.light} dark:text-${config.color.danger.dark}`]:
           {},
       },

@@ -121,7 +121,7 @@ type WebezeUIPlugins = AccordionPluginConfig &
 type BaseTheme = Config['theme']
 type WebezeUITheme = BaseTheme &
   DeepPartial<{
-    nui: WebezeUIPlugins
+    webeze: WebezeUIPlugins
   }>
 
 export type WebezeUIConfig = Config & {

@@ -7,85 +7,85 @@ import {
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies ButtonCloseConfig
+  const config = theme(`webeze.${key}`) satisfies ButtonCloseConfig
 
   addComponents({
-    '.nui-button-close': {
-      '@apply nui-focus flex items-center justify-center disabled:opacity-30 cursor-pointer':
+    '.webeze-button-close': {
+      '@apply webeze-focus flex items-center justify-center disabled:opacity-30 cursor-pointer':
         {},
       //Transition
       [`@apply transition-${config.transition.property} duration-${config.transition.duration}`]:
         {},
       //Size:xs
-      '&.nui-button-xs': {
+      '&.webeze-button-xs': {
         [`@apply h-${config.size.xs.outer} w-${config.size.xs.outer}`]: {},
         //Icon
-        '.nui-button-icon': {
+        '.webeze-button-icon': {
           [`@apply h-${config.size.xs.inner} w-${config.size.xs.inner} fill-current`]:
             {},
         },
       },
       //Size:sm
-      '&.nui-button-sm': {
+      '&.webeze-button-sm': {
         [`@apply h-${config.size.sm.outer} w-${config.size.sm.outer}`]: {},
         //Icon
-        '.nui-button-icon': {
+        '.webeze-button-icon': {
           [`@apply h-${config.size.sm.inner} w-${config.size.sm.inner} fill-current`]:
             {},
         },
       },
       //Size:md
-      '&.nui-button-md': {
+      '&.webeze-button-md': {
         [`@apply h-${config.size.md.outer} w-${config.size.md.outer}`]: {},
         //Icon
-        '.nui-button-icon': {
+        '.webeze-button-icon': {
           [`@apply h-${config.size.md.inner} w-${config.size.md.inner} fill-current`]:
             {},
         },
       },
       //Size:lg
-      '&.nui-button-lg': {
+      '&.webeze-button-lg': {
         [`@apply h-${config.size.lg.outer} w-${config.size.lg.outer}`]: {},
         //Icon
-        '.nui-button-icon': {
+        '.webeze-button-icon': {
           [`@apply h-${config.size.lg.inner} w-${config.size.lg.inner} fill-current`]:
             {},
         },
       },
       //Size:xl
-      '&.nui-button-xl': {
+      '&.webeze-button-xl': {
         [`@apply h-${config.size.xl.outer} w-${config.size.xl.outer}`]: {},
         //Icon
-        '.nui-button-icon': {
+        '.webeze-button-icon': {
           [`@apply h-${config.size.xl.inner} w-${config.size.xl.inner} fill-current`]:
             {},
         },
       },
       //Rounded:sm
-      '&.nui-button-rounded-sm': {
+      '&.webeze-button-rounded-sm': {
         [`@apply ${config.rounded.sm}`]: {},
       },
       //Rounded:md
-      '&.nui-button-rounded-md': {
+      '&.webeze-button-rounded-md': {
         [`@apply ${config.rounded.md}`]: {},
       },
       //Rounded:lg
-      '&.nui-button-rounded-lg': {
+      '&.webeze-button-rounded-lg': {
         [`@apply ${config.rounded.lg}`]: {},
       },
       //Rounded:full
-      '&.nui-button-rounded-full': {
+      '&.webeze-button-rounded-full': {
         [`@apply ${config.rounded.full}`]: {},
       },
       //Color:default
-      '&.nui-button-default': {
+      '&.webeze-button-default': {
         [`@apply text-${config.color.default.font.color.light} dark:text-${config.color.default.font.color.dark}`]:
           {},
         //Background
@@ -102,7 +102,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:default-contrast
-      '&.nui-button-default-contrast': {
+      '&.webeze-button-default-contrast': {
         [`@apply text-${config.color.defaultContrast.font.color.light} dark:text-${config.color.defaultContrast.font.color.dark}`]:
           {},
         //Background
@@ -119,7 +119,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:muted
-      '&.nui-button-muted': {
+      '&.webeze-button-muted': {
         [`@apply text-${config.color.muted.font.color.light} dark:text-${config.color.muted.font.color.dark}`]:
           {},
         //Background
@@ -136,7 +136,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:muted-contrast
-      '&.nui-button-muted-contrast': {
+      '&.webeze-button-muted-contrast': {
         [`@apply text-${config.color.mutedContrast.font.color.light} dark:text-${config.color.mutedContrast.font.color.dark}`]:
           {},
         //Background
@@ -153,7 +153,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:primary
-      '&.nui-button-primary': {
+      '&.webeze-button-primary': {
         [`@apply text-${config.color.primary.font.color.light} dark:text-${config.color.primary.font.color.dark}`]:
           {},
         //Background
@@ -170,7 +170,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:info
-      '&.nui-button-info': {
+      '&.webeze-button-info': {
         [`@apply text-${config.color.info.font.color.light} dark:text-${config.color.info.font.color.dark}`]:
           {},
         //Background
@@ -187,7 +187,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:success
-      '&.nui-button-success': {
+      '&.webeze-button-success': {
         [`@apply text-${config.color.success.font.color.light} dark:text-${config.color.success.font.color.dark}`]:
           {},
         //Background
@@ -204,7 +204,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:warning
-      '&.nui-button-warning': {
+      '&.webeze-button-warning': {
         [`@apply text-${config.color.warning.font.color.light} dark:text-${config.color.warning.font.color.dark}`]:
           {},
         //Background
@@ -221,7 +221,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:danger
-      '&.nui-button-danger': {
+      '&.webeze-button-danger': {
         [`@apply text-${config.color.danger.font.color.light} dark:text-${config.color.danger.font.color.dark}`]:
           {},
         //Background

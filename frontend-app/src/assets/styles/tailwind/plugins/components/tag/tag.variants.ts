@@ -1,40 +1,40 @@
 import type { TagVariant } from './tag.types'
 
 export const variant = {
-  solid: 'nui-tag-solid',
-  pastel: 'nui-tag-pastel',
-  outline: 'nui-tag-outline',
+  solid: 'webeze-tag-solid',
+  pastel: 'webeze-tag-pastel',
+  outline: 'webeze-tag-outline',
 } as const satisfies TagVariant<'variant'>
 
 export const rounded = {
   none: '',
-  sm: 'nui-tag-rounded-sm',
-  md: 'nui-tag-rounded-md',
-  lg: 'nui-tag-rounded-lg',
-  full: 'nui-tag-rounded-full',
+  sm: 'webeze-tag-rounded-sm',
+  md: 'webeze-tag-rounded-md',
+  lg: 'webeze-tag-rounded-lg',
+  full: 'webeze-tag-rounded-full',
 } as const satisfies TagVariant<'rounded'>
 
 export const color = {
-  default: 'nui-tag-default',
-  'default-contrast': 'nui-tag-default-contrast',
-  muted: 'nui-tag-muted',
-  'muted-contrast': 'nui-tag-muted-contrast',
-  light: 'nui-tag-light',
-  dark: 'nui-tag-dark',
-  black: 'nui-tag-black',
-  primary: 'nui-tag-primary',
-  info: 'nui-tag-info',
-  success: 'nui-tag-success',
-  warning: 'nui-tag-warning',
-  danger: 'nui-tag-danger',
+  default: 'webeze-tag-default',
+  'default-contrast': 'webeze-tag-default-contrast',
+  muted: 'webeze-tag-muted',
+  'muted-contrast': 'webeze-tag-muted-contrast',
+  light: 'webeze-tag-light',
+  dark: 'webeze-tag-dark',
+  black: 'webeze-tag-black',
+  primary: 'webeze-tag-primary',
+  info: 'webeze-tag-info',
+  success: 'webeze-tag-success',
+  warning: 'webeze-tag-warning',
+  danger: 'webeze-tag-danger',
 } as const satisfies TagVariant<'color'>
 
 export const shadow = {
-  flat: 'nui-tag-shadow',
-  hover: 'nui-tag-shadow-hover',
+  flat: 'webeze-tag-shadow',
+  hover: 'webeze-tag-shadow-hover',
 } as const satisfies TagVariant<'shadow'>
 
 export const size = {
-  sm: 'nui-tag-sm',
-  md: 'nui-tag-md',
+  sm: 'webeze-tag-sm',
+  md: 'webeze-tag-md',
 } as const satisfies TagVariant<'size'>

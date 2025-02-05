@@ -3,20 +3,20 @@ import { type AvatarGroup, defaultConfig, key } from './avatar-group.config'
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies AvatarGroup
+  const config = theme(`webeze.${key}`) satisfies AvatarGroup
 
   addComponents({
-    '.nui-avatar-group': {
+    '.webeze-avatar-group': {
       '@apply flex': {},
       //AvatarGroup:outer
-      '.nui-avatar-outer': {
+      '.webeze-avatar-outer': {
         //Base
         [`@apply relative flex shrink-0 items-center justify-center rounded-${config.avatar.rounded}`]:
           {},
@@ -27,13 +27,13 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply transition-${config.avatar.transition.property} duration-${config.avatar.transition.duration} ease-in`]:
           {},
         //AvatarGroup:inner
-        '.nui-avatar': {
+        '.webeze-avatar': {
           [`@apply bg-${config.avatar.inner.background.light} text-${config.avatar.inner.background.dark} !scale-90`]:
             {},
         },
       },
       //AvatarGroup:count
-      '.nui-avatar-count': {
+      '.webeze-avatar-count': {
         //Base
         [`@apply relative shrink-0 rounded-${config.count.outer.rounded}`]: {},
         //Background
@@ -43,7 +43,7 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply transition-${config.count.transition.property} duration-${config.count.transition.duration} ease-in`]:
           {},
         //Count:inner
-        '.nui-avatar-count-inner': {
+        '.webeze-avatar-count-inner': {
           [`@apply relative scale-90 inline-flex items-center justify-center rounded-${config.count.inner.rounded}`]:
             {},
           //Size
@@ -57,7 +57,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Count:text
-        '.nui-avatar-count-text': {
+        '.webeze-avatar-count-text': {
           '@apply -ms-1 uppercase': {},
           //Font
           [`@apply font-${config.count.text.font.family} font-${config.count.text.font.weight}`]:
@@ -68,9 +68,9 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Size:xxs
-      '&.nui-avatar-group-xxs': {
+      '&.webeze-avatar-group-xxs': {
         //outer
-        '.nui-avatar-outer': {
+        '.webeze-avatar-outer': {
           [`@apply h-${config.size.xxs.outer.size} w-${config.size.xxs.outer.size}`]:
             {},
 
@@ -82,19 +82,19 @@ export default plugin(({ addComponents, theme }) => {
           },
         },
         //count
-        '.nui-avatar-count': {
+        '.webeze-avatar-count': {
           [`@apply -ms-2 h-${config.size.xxs.count.size} w-${config.size.xxs.count.size}`]:
             {},
 
-          '.nui-avatar-count-text': {
+          '.webeze-avatar-count-text': {
             [`@apply text-${config.size.xxs.count.font.size}`]: {},
           },
         },
       },
       //Size:xs
-      '&.nui-avatar-group-xs': {
+      '&.webeze-avatar-group-xs': {
         //outer
-        '.nui-avatar-outer': {
+        '.webeze-avatar-outer': {
           [`@apply h-${config.size.xs.outer.size} w-${config.size.xs.outer.size}`]:
             {},
 
@@ -106,19 +106,19 @@ export default plugin(({ addComponents, theme }) => {
           },
         },
         //count
-        '.nui-avatar-count': {
+        '.webeze-avatar-count': {
           [`@apply -ms-2 h-${config.size.xs.count.size} w-${config.size.xs.count.size}`]:
             {},
 
-          '.nui-avatar-count-text': {
+          '.webeze-avatar-count-text': {
             [`@apply text-${config.size.xs.count.font.size}`]: {},
           },
         },
       },
       //Size:sm
-      '&.nui-avatar-group-sm': {
+      '&.webeze-avatar-group-sm': {
         //outer
-        '.nui-avatar-outer': {
+        '.webeze-avatar-outer': {
           [`@apply h-${config.size.sm.outer.size} w-${config.size.sm.outer.size}`]:
             {},
 
@@ -130,19 +130,19 @@ export default plugin(({ addComponents, theme }) => {
           },
         },
         //count
-        '.nui-avatar-count': {
+        '.webeze-avatar-count': {
           [`@apply -ms-3 h-${config.size.sm.count.size} w-${config.size.sm.count.size}`]:
             {},
 
-          '.nui-avatar-count-text': {
+          '.webeze-avatar-count-text': {
             [`@apply text-${config.size.sm.count.font.size}`]: {},
           },
         },
       },
       //Size:md
-      '&.nui-avatar-group-md': {
+      '&.webeze-avatar-group-md': {
         //outer
-        '.nui-avatar-outer': {
+        '.webeze-avatar-outer': {
           [`@apply h-${config.size.md.outer.size} w-${config.size.md.outer.size}`]:
             {},
 
@@ -154,18 +154,18 @@ export default plugin(({ addComponents, theme }) => {
           },
         },
         //count
-        '.nui-avatar-count': {
+        '.webeze-avatar-count': {
           [`@apply -ms-4 h-${config.size.md.count.size} w-${config.size.md.count.size}`]:
             {},
 
-          '.nui-avatar-count-text': {
+          '.webeze-avatar-count-text': {
             [`@apply text-${config.size.md.count.font.size}`]: {},
           },
         },
       },
       //Size:lg
-      '&.nui-avatar-group-lg': {
-        '.nui-avatar-outer': {
+      '&.webeze-avatar-group-lg': {
+        '.webeze-avatar-outer': {
           [`@apply h-${config.size.lg.outer.size} w-${config.size.lg.outer.size}`]:
             {},
 
@@ -176,11 +176,11 @@ export default plugin(({ addComponents, theme }) => {
             '@apply -ms-5 hover:-ms-9 hover:me-4 focus:-ms-9 focus:me-4': {},
           },
         },
-        '.nui-avatar-count': {
+        '.webeze-avatar-count': {
           [`@apply -ms-5 h-${config.size.lg.count.size} w-${config.size.lg.count.size}`]:
             {},
 
-          '.nui-avatar-count-text': {
+          '.webeze-avatar-count-text': {
             [`@apply text-${config.size.lg.count.font.size}`]: {},
           },
         },

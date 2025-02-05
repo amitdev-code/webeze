@@ -7,17 +7,17 @@ import {
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies DropdownDividerConfig
+  const config = theme(`webeze.${key}`) satisfies DropdownDividerConfig
 
   addComponents({
-    '.nui-dropdown-divider': {
+    '.webeze-dropdown-divider': {
       [`@apply my-${config.margin.y} block h-px w-full border-t border-${config.border.light} dark:border-${config.border.dark}`]:
         {},
     },

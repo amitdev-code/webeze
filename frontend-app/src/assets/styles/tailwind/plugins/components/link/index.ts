@@ -3,17 +3,17 @@ import { type LinkPluginConfig, defaultConfig, key } from './link.config'
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies LinkPluginConfig
+  const config = theme(`webeze.${key}`) satisfies LinkPluginConfig
 
   addComponents({
-    '.nui-link': {
+    '.webeze-link': {
       //Base
       [`@apply font-${config.font.family} underline-offset-4 hover:underline focus:underline`]:
         {},

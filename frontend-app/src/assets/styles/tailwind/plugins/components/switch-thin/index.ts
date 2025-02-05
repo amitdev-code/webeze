@@ -3,25 +3,25 @@ import { type SwitchThinConfig, defaultConfig, key } from './switch-thin.config'
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies SwitchThinConfig
+  const config = theme(`webeze.${key}`) satisfies SwitchThinConfig
 
   addComponents({
     //Wrapper
-    '.nui-switch-thin': {
+    '.webeze-switch-thin': {
       '@apply flex cursor-pointer items-center': {},
       //Switch:outer
-      '.nui-switch-thin-outer': {
-        [`@apply nui-focus relative block h-4 ${config.track.rounded}`]: {},
+      '.webeze-switch-thin-outer': {
+        [`@apply webeze-focus relative block h-4 ${config.track.rounded}`]: {},
       },
       //Switch:handle
-      '.nui-switch-thin-handle': {
+      '.webeze-switch-thin-handle': {
         [`@apply absolute -start-1 top-1/2 -translate-y-1/2 flex items-center justify-center ${config.handle.rounded}`]:
           {},
         //Size
@@ -37,7 +37,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Switch:track
-      '.nui-switch-thin-track': {
+      '.webeze-switch-thin-track': {
         //Base
         [`@apply block h-4 w-10 ${config.track.rounded}`]: {},
         //Background
@@ -48,7 +48,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Label:single
-      '.nui-switch-thin-single-label': {
+      '.webeze-switch-thin-single-label': {
         //Base
         '@apply relative ms-3 cursor-pointer select-none': {},
         //Font
@@ -59,10 +59,10 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Label:dual
-      '.nui-switch-thin-dual-label': {
+      '.webeze-switch-thin-dual-label': {
         '@apply ms-3': {},
 
-        '.nui-switch-thin-label': {
+        '.webeze-switch-thin-label': {
           //Base
           '@apply block': {},
           //Font
@@ -73,7 +73,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Label:sublabel
-        '.nui-switch-thin-sublabel': {
+        '.webeze-switch-thin-sublabel': {
           //Base
           '@apply block': {},
           //Font
@@ -85,52 +85,52 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Switch:input
-      '.nui-switch-thin-input': {
+      '.webeze-switch-thin-input': {
         [`@apply absolute z-20 h-${config.input.size} w-${config.input.size} cursor-pointer opacity-0`]:
           {},
         //Input:checked
-        '&:checked ~ .nui-switch-thin-handle': {
+        '&:checked ~ .webeze-switch-thin-handle': {
           '@apply -translate-y-1/2 translate-x-full rtl:-translate-x-full': {},
         },
       },
       //color:primary
-      '&.nui-switch-thin-primary .nui-switch-thin-input:checked ~ .nui-switch-thin-track':
+      '&.webeze-switch-thin-primary .webeze-switch-thin-input:checked ~ .webeze-switch-thin-track':
         {
           [`@apply bg-${config.color.primary.light} dark:bg-${config.color.primary.dark}`]:
             {},
         },
       //color:info
-      '&.nui-switch-thin-info .nui-switch-thin-input:checked ~ .nui-switch-thin-track':
+      '&.webeze-switch-thin-info .webeze-switch-thin-input:checked ~ .webeze-switch-thin-track':
         {
           [`@apply bg-${config.color.info.light} dark:bg-${config.color.info.dark}`]:
             {},
         },
       //color:success
-      '&.nui-switch-thin-success .nui-switch-thin-input:checked ~ .nui-switch-thin-track':
+      '&.webeze-switch-thin-success .webeze-switch-thin-input:checked ~ .webeze-switch-thin-track':
         {
           [`@apply bg-${config.color.success.light} dark:bg-${config.color.success.dark}`]:
             {},
         },
       //color:warning
-      '&.nui-switch-thin-warning .nui-switch-thin-input:checked ~ .nui-switch-thin-track':
+      '&.webeze-switch-thin-warning .webeze-switch-thin-input:checked ~ .webeze-switch-thin-track':
         {
           [`@apply bg-${config.color.warning.light} dark:bg-${config.color.warning.dark}`]:
             {},
         },
       //color:danger
-      '&.nui-switch-thin-danger .nui-switch-thin-input:checked ~ .nui-switch-thin-track':
+      '&.webeze-switch-thin-danger .webeze-switch-thin-input:checked ~ .webeze-switch-thin-track':
         {
           [`@apply bg-${config.color.danger.light} dark:bg-${config.color.danger.dark}`]:
             {},
         },
       //color:dark
-      '&.nui-switch-thin-dark .nui-switch-thin-input:checked ~ .nui-switch-thin-track':
+      '&.webeze-switch-thin-dark .webeze-switch-thin-input:checked ~ .webeze-switch-thin-track':
         {
           [`@apply bg-${config.color.dark.light} dark:bg-${config.color.dark.dark}`]:
             {},
         },
       //color:black
-      '&.nui-switch-thin-black .nui-switch-thin-input:checked ~ .nui-switch-thin-track':
+      '&.webeze-switch-thin-black .webeze-switch-thin-input:checked ~ .webeze-switch-thin-track':
         {
           [`@apply bg-${config.color.black.light} dark:bg-${config.color.black.dark}`]:
             {},

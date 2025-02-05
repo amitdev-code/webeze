@@ -1,9 +1,9 @@
 import type { PlaceholderPageVariant } from './placeholder-page.types'
 
 export const size = {
-  xs: 'nui-placeholder-xs',
-  sm: 'nui-placeholder-sm',
-  md: 'nui-placeholder-md',
-  lg: 'nui-placeholder-lg',
-  xl: 'nui-placeholder-xl',
+  xs: 'webeze-placeholder-xs',
+  sm: 'webeze-placeholder-sm',
+  md: 'webeze-placeholder-md',
+  lg: 'webeze-placeholder-lg',
+  xl: 'webeze-placeholder-xl',
 } as const satisfies PlaceholderPageVariant<'imageSize'>

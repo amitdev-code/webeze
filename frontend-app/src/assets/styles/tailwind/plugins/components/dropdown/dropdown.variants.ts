@@ -1,33 +1,33 @@
 import type { DropdownVariant } from './dropdown.types'
 
 export const orientation = {
-  start: 'nui-dropdown-start',
-  end: 'nui-dropdown-end',
+  start: 'webeze-dropdown-start',
+  end: 'webeze-dropdown-end',
 } as const satisfies DropdownVariant<'orientation'>
 
 export const size = {
-  md: 'nui-menu-md',
-  lg: 'nui-menu-lg',
+  md: 'webeze-menu-md',
+  lg: 'webeze-menu-lg',
 } as const satisfies DropdownVariant<'size'>
 
 export const rounded = {
   none: '',
-  sm: 'nui-menu-rounded-sm',
-  md: 'nui-menu-rounded-md',
-  lg: 'nui-menu-rounded-lg',
-  full: 'nui-menu-rounded-lg',
+  sm: 'webeze-menu-rounded-sm',
+  md: 'webeze-menu-rounded-md',
+  lg: 'webeze-menu-rounded-lg',
+  full: 'webeze-menu-rounded-lg',
 } as const satisfies DropdownVariant<'rounded'>
 
 export const color = {
-  default: 'nui-menu-default',
-  'default-contrast': 'nui-menu-default-contrast',
-  muted: 'nui-menu-muted',
-  'muted-contrast': 'nui-menu-muted-contrast',
-  primary: 'nui-menu-primary',
-  info: 'nui-menu-info',
-  success: 'nui-menu-success',
-  warning: 'nui-menu-warning',
-  danger: 'nui-menu-danger',
+  default: 'webeze-menu-default',
+  'default-contrast': 'webeze-menu-default-contrast',
+  muted: 'webeze-menu-muted',
+  'muted-contrast': 'webeze-menu-muted-contrast',
+  primary: 'webeze-menu-primary',
+  info: 'webeze-menu-info',
+  success: 'webeze-menu-success',
+  warning: 'webeze-menu-warning',
+  danger: 'webeze-menu-danger',
   none: '',
 } as const satisfies DropdownVariant<'color'>
 

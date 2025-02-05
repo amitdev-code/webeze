@@ -7,48 +7,48 @@ import {
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies MessageTextConfig
+  const config = theme(`webeze.${key}`) satisfies MessageTextConfig
 
   addComponents({
     //Wrapper
-    '.nui-message-text': {
+    '.webeze-message-text': {
       [`@apply relative p-${config.padding}`]: {},
       //Message:header
-      '.nui-message-head': {
+      '.webeze-message-head': {
         [`@apply flex items-center gap-${config.header.gap} mb-3`]: {},
       },
       //Message:dot
-      '.nui-message-dot': {
+      '.webeze-message-dot': {
         //Base
         [`@apply inline-block h-${config.dot.size} w-${config.dot.size} rounded-${config.dot.rounded}`]:
           {},
       },
       //Message:close
-      '.nui-message-close': {
+      '.webeze-message-close': {
         [`@apply absolute top-${config.close.position} end-${config.close.position}`]:
           {},
       },
       //Rounded:sm
-      '&.nui-message-rounded-sm': {
+      '&.webeze-message-rounded-sm': {
         [`@apply ${config.rounded.sm}`]: {},
       },
       //Rounded:md
-      '&.nui-message-rounded-md': {
+      '&.webeze-message-rounded-md': {
         [`@apply ${config.rounded.md}`]: {},
       },
       //Rounded:lg
-      '&.nui-message-rounded-lg': {
+      '&.webeze-message-rounded-lg': {
         [`@apply ${config.rounded.lg}`]: {},
       },
       //Contrast:low
-      '&.nui-message-low-contrast': {
+      '&.webeze-message-low-contrast': {
         //Background
         [`@apply bg-${config.contrast.lowContrast.background.light} dark:bg-${config.contrast.lowContrast.background.dark}`]:
           {},
@@ -57,7 +57,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Contrast:high
-      '&.nui-message-high-contrast': {
+      '&.webeze-message-high-contrast': {
         //Background
         [`@apply bg-${config.contrast.highContrast.background.light} dark:bg-${config.contrast.highContrast.background.dark}`]:
           {},
@@ -66,65 +66,65 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:white
-      '&.nui-message-default': {
+      '&.webeze-message-default': {
         //Message:dot
-        '.nui-message-dot': {
+        '.webeze-message-dot': {
           [`@apply bg-${config.color.default.dot.background.light} dark:bg-${config.color.default.dot.background.dark}`]:
             {},
         },
       },
       //Color:primary
-      '&.nui-message-primary': {
+      '&.webeze-message-primary': {
         //Message:dot
-        '.nui-message-dot': {
+        '.webeze-message-dot': {
           [`@apply bg-${config.color.primary.dot.background.light} dark:bg-${config.color.primary.dot.background.dark}`]:
             {},
         },
       },
       //Color:info
-      '&.nui-message-info': {
+      '&.webeze-message-info': {
         //Message:dot
-        '.nui-message-dot': {
+        '.webeze-message-dot': {
           [`@apply bg-${config.color.info.dot.background.light} dark:bg-${config.color.info.dot.background.dark}`]:
             {},
         },
       },
       //Color:success
-      '&.nui-message-success': {
+      '&.webeze-message-success': {
         //Message:dot
-        '.nui-message-dot': {
+        '.webeze-message-dot': {
           [`@apply bg-${config.color.success.dot.background.light} dark:bg-${config.color.success.dot.background.dark}`]:
             {},
         },
       },
       //Color:warning
-      '&.nui-message-warning': {
+      '&.webeze-message-warning': {
         //Message:dot
-        '.nui-message-dot': {
+        '.webeze-message-dot': {
           [`@apply bg-${config.color.warning.dot.background.light} dark:bg-${config.color.warning.dot.background.dark}`]:
             {},
         },
       },
       //Color:danger
-      '&.nui-message-danger': {
+      '&.webeze-message-danger': {
         //Message:dot
-        '.nui-message-dot': {
+        '.webeze-message-dot': {
           [`@apply bg-${config.color.danger.dot.background.light} dark:bg-${config.color.danger.dot.background.dark}`]:
             {},
         },
       },
       //Color:dark
-      '&.nui-message-dark': {
+      '&.webeze-message-dark': {
         //Message:dot
-        '.nui-message-dot': {
+        '.webeze-message-dot': {
           [`@apply bg-${config.color.dark.dot.background.light} dark:bg-${config.color.dark.dot.background.dark}`]:
             {},
         },
       },
       //Color:black
-      '&.nui-message-black': {
+      '&.webeze-message-black': {
         //Message:dot
-        '.nui-message-dot': {
+        '.webeze-message-dot': {
           [`@apply bg-${config.color.black.dot.background.light} dark:bg-${config.color.black.dot.background.dark}`]:
             {},
         },

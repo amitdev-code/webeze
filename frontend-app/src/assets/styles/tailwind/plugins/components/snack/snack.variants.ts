@@ -1,14 +1,14 @@
 import type { SnackVariant } from './snack.types'
 
 export const size = {
-  xs: 'nui-snack-xs',
-  sm: 'nui-snack-sm',
-  md: 'nui-snack-md',
+  xs: 'webeze-snack-xs',
+  sm: 'webeze-snack-sm',
+  md: 'webeze-snack-md',
 } as const satisfies SnackVariant<'size'>
 
 export const color = {
-  default: 'nui-snack-default',
-  'default-contrast': 'nui-snack-default-contrast',
-  muted: 'nui-snack-muted',
-  'muted-contrast': 'nui-snack-muted-contrast',
+  default: 'webeze-snack-default',
+  'default-contrast': 'webeze-snack-default-contrast',
+  muted: 'webeze-snack-muted',
+  'muted-contrast': 'webeze-snack-muted-contrast',
 } as const satisfies SnackVariant<'color'>

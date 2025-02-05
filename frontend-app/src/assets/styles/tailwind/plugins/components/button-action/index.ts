@@ -7,19 +7,19 @@ import {
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies ButtonActionConfig
+  const config = theme(`webeze.${key}`) satisfies ButtonActionConfig
 
   addComponents({
-    '.nui-button-action': {
+    '.webeze-button-action': {
       //Wrapper
-      '@apply nui-focus relative inline-flex items-center justify-center border leading-5 no-underline h-8 px-3 py-2 space-x-1':
+      '@apply webeze-focus relative inline-flex items-center justify-center border leading-5 no-underline h-8 px-3 py-2 space-x-1':
         {},
       //Font
       [`@apply font-${config.text.font.family} font-${config.text.font.weight} text-${config.text.font.size}`]:
@@ -31,27 +31,27 @@ export default plugin(({ addComponents, theme }) => {
       [`@apply transition-${config.transition.property} duration-${config.transition.duration}`]:
         {},
       //Rounded:sm
-      '&.nui-button-rounded-sm': {
+      '&.webeze-button-rounded-sm': {
         [`@apply rounded-${config.rounded.sm}`]: {},
       },
       //Rounded:md
-      '&.nui-button-rounded-md': {
+      '&.webeze-button-rounded-md': {
         [`@apply rounded-${config.rounded.md}`]: {},
       },
       //Rounded:lg
-      '&.nui-button-rounded-lg': {
+      '&.webeze-button-rounded-lg': {
         [`@apply rounded-${config.rounded.lg}`]: {},
       },
       //Rounded:full
-      '&.nui-button-rounded-full': {
+      '&.webeze-button-rounded-full': {
         [`@apply rounded-${config.rounded.full}`]: {},
       },
       //ButtonAction:loading
-      '&.nui-button-loading': {
+      '&.webeze-button-loading': {
         '@apply !text-transparent': {},
       },
       //Color:default
-      '&.nui-button-default': {
+      '&.webeze-button-default': {
         //Font
         [`@apply text-${config.color.default.font.color.light} dark:text-${config.color.default.font.color.dark}`]:
           {},
@@ -69,7 +69,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:default-contrast
-      '&.nui-button-default-contrast': {
+      '&.webeze-button-default-contrast': {
         //Font
         [`@apply text-${config.color.defaultContrast.font.color.light} dark:text-${config.color.defaultContrast.font.color.dark}`]:
           {},
@@ -87,7 +87,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:muted
-      '&.nui-button-muted': {
+      '&.webeze-button-muted': {
         //Font
         [`@apply text-${config.color.muted.font.color.light} dark:text-${config.color.muted.font.color.dark}`]:
           {},
@@ -105,7 +105,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:muted-contrast
-      '&.nui-button-muted-contrast': {
+      '&.webeze-button-muted-contrast': {
         //Font
         [`@apply text-${config.color.mutedContrast.font.color.light} dark:text-${config.color.mutedContrast.font.color.dark}`]:
           {},
@@ -123,7 +123,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:light
-      '&.nui-button-light': {
+      '&.webeze-button-light': {
         //Font
         [`@apply text-${config.color.light.font.color.light} dark:text-${config.color.light.font.color.dark}`]:
           {},
@@ -141,7 +141,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:dark
-      '&.nui-button-dark': {
+      '&.webeze-button-dark': {
         //Font
         [`@apply text-${config.color.dark.font.color.light} dark:text-${config.color.dark.font.color.dark}`]:
           {},
@@ -159,7 +159,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:black
-      '&.nui-button-black': {
+      '&.webeze-button-black': {
         //Font
         [`@apply text-${config.color.black.font.color.light} dark:text-${config.color.black.font.color.dark}`]:
           {},
@@ -177,7 +177,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:primary
-      '&.nui-button-primary': {
+      '&.webeze-button-primary': {
         //Font
         [`@apply text-${config.color.primary.font.color.light} dark:text-${config.color.primary.font.color.dark}`]:
           {},
@@ -195,7 +195,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:info
-      '&.nui-button-info': {
+      '&.webeze-button-info': {
         //Font
         [`@apply text-${config.color.info.font.color.light} dark:text-${config.color.info.font.color.dark}`]:
           {},
@@ -213,7 +213,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:success
-      '&.nui-button-success': {
+      '&.webeze-button-success': {
         //Font
         [`@apply text-${config.color.success.font.color.light} dark:text-${config.color.success.font.color.dark}`]:
           {},
@@ -231,7 +231,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:warning
-      '&.nui-button-warning': {
+      '&.webeze-button-warning': {
         //Font
         [`@apply text-${config.color.warning.font.color.light} dark:text-${config.color.warning.font.color.dark}`]:
           {},
@@ -249,7 +249,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:danger
-      '&.nui-button-danger': {
+      '&.webeze-button-danger': {
         //Font
         [`@apply text-${config.color.danger.font.color.light} dark:text-${config.color.danger.font.color.dark}`]:
           {},

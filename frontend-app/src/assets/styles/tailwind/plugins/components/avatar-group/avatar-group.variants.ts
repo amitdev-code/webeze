@@ -1,9 +1,9 @@
 import type { AvatarGroupVariant } from './avatar-group.types'
 
 export const size = {
-  xxs: 'nui-avatar-group-xxs',
-  xs: 'nui-avatar-group-xs',
-  sm: 'nui-avatar-group-sm',
-  md: 'nui-avatar-group-md',
-  lg: 'nui-avatar-group-lg',
+  xxs: 'webeze-avatar-group-xxs',
+  xs: 'webeze-avatar-group-xs',
+  sm: 'webeze-avatar-group-sm',
+  md: 'webeze-avatar-group-md',
+  lg: 'webeze-avatar-group-lg',
 } as const satisfies AvatarGroupVariant<'size'>

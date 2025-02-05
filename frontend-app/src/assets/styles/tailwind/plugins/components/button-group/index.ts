@@ -3,7 +3,7 @@ import { defaultConfig, key } from './button-group.config'
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
@@ -12,11 +12,11 @@ const config = {
 export default plugin(
   ({ addComponents }) =>
     addComponents({
-      '.nui-button-group, [role="group"]': {
+      '.webeze-button-group, [role="group"]': {
         '@apply flex': {},
 
         // Button
-        '> .nui-button:not(:only-child), > .nui-button-action:not(:only-child), > .nui-button-icon:not(:only-child)':
+        '> .webeze-button:not(:only-child), > .webeze-button-action:not(:only-child), > .webeze-button-icon:not(:only-child)':
           {
             '@apply !border-e-0': {},
             '&:focus': {
@@ -34,8 +34,8 @@ export default plugin(
           },
 
         // Input
-        '.nui-input-wrapper:not(:first-child):not(:last-child)': {
-          '.nui-input': {
+        '.webeze-input-wrapper:not(:first-child):not(:last-child)': {
+          '.webeze-input': {
             '@apply !border-e-0 !rounded-none': {},
 
             '&:focus': {
@@ -44,8 +44,8 @@ export default plugin(
           },
         },
 
-        '.nui-input-wrapper:first-child:not(:last-child)': {
-          '.nui-input': {
+        '.webeze-input-wrapper:first-child:not(:last-child)': {
+          '.webeze-input': {
             '@apply !border-e-0 !rounded-e-none': {},
 
             '&:focus': {
@@ -54,8 +54,8 @@ export default plugin(
           },
         },
 
-        '.nui-input-wrapper:last-child:not(:first-child)': {
-          '.nui-input': {
+        '.webeze-input-wrapper:last-child:not(:first-child)': {
+          '.webeze-input': {
             '@apply !border-e !rounded-s-none': {},
 
             '&:focus': {
@@ -65,8 +65,8 @@ export default plugin(
         },
 
         // InputNumber
-        '.nui-input-number-wrapper:not(:first-child):not(:last-child)': {
-          '.nui-input-number': {
+        '.webeze-input-number-wrapper:not(:first-child):not(:last-child)': {
+          '.webeze-input-number': {
             '@apply !border-e-0 !rounded-none': {},
 
             '&:focus': {
@@ -75,8 +75,8 @@ export default plugin(
           },
         },
 
-        '.nui-input-number-wrapper:first-child:not(:last-child)': {
-          '.nui-input-number': {
+        '.webeze-input-number-wrapper:first-child:not(:last-child)': {
+          '.webeze-input-number': {
             '@apply !border-e-0 !rounded-e-none': {},
 
             '&:focus': {
@@ -85,8 +85,8 @@ export default plugin(
           },
         },
 
-        '.nui-input-number-wrapper:last-child:not(:first-child)': {
-          '.nui-input-number': {
+        '.webeze-input-number-wrapper:last-child:not(:first-child)': {
+          '.webeze-input-number': {
             '@apply !border-e !rounded-s-none': {},
 
             '&:focus': {
@@ -96,8 +96,8 @@ export default plugin(
         },
 
         // InputFileRegular
-        '.nui-input-file-regular:not(:first-child):not(:last-child)': {
-          '.nui-input-file-inner': {
+        '.webeze-input-file-regular:not(:first-child):not(:last-child)': {
+          '.webeze-input-file-inner': {
             '@apply !border-e-0 !rounded-none': {},
 
             '&:focus': {
@@ -106,8 +106,8 @@ export default plugin(
           },
         },
 
-        '.nui-input-file-regular:first-child:not(:last-child)': {
-          '.nui-input-file-inner': {
+        '.webeze-input-file-regular:first-child:not(:last-child)': {
+          '.webeze-input-file-inner': {
             '@apply !border-e-0 !rounded-e-none': {},
 
             '&:focus': {
@@ -116,8 +116,8 @@ export default plugin(
           },
         },
 
-        '.nui-input-file-regular:last-child:not(:first-child)': {
-          '.nui-input-file-inner': {
+        '.webeze-input-file-regular:last-child:not(:first-child)': {
+          '.webeze-input-file-inner': {
             '@apply !border-e !rounded-s-none': {},
 
             '&:focus': {
@@ -127,8 +127,8 @@ export default plugin(
         },
 
         // Select
-        '.nui-select-wrapper:not(:first-child):not(:last-child)': {
-          '.nui-select': {
+        '.webeze-select-wrapper:not(:first-child):not(:last-child)': {
+          '.webeze-select': {
             '@apply !border-e-0 !rounded-none': {},
 
             '&:focus': {
@@ -137,8 +137,8 @@ export default plugin(
           },
         },
 
-        '.nui-select-wrapper:first-child:not(:last-child)': {
-          '.nui-select': {
+        '.webeze-select-wrapper:first-child:not(:last-child)': {
+          '.webeze-select': {
             '@apply !border-e-0 !rounded-e-none': {},
 
             '&:focus': {
@@ -147,8 +147,8 @@ export default plugin(
           },
         },
 
-        '.nui-select-wrapper:last-child:not(:first-child)': {
-          '.nui-select': {
+        '.webeze-select-wrapper:last-child:not(:first-child)': {
+          '.webeze-select': {
             '@apply !border-e !rounded-s-none': {},
 
             '&:focus': {
@@ -158,8 +158,8 @@ export default plugin(
         },
 
         // Autocomplete
-        '.nui-autocomplete:not(:first-child):not(:last-child)': {
-          '.nui-autocomplete-input': {
+        '.webeze-autocomplete:not(:first-child):not(:last-child)': {
+          '.webeze-autocomplete-input': {
             '@apply !border-e-0 !rounded-none': {},
 
             '&:focus': {
@@ -168,8 +168,8 @@ export default plugin(
           },
         },
 
-        '.nui-autocomplete:first-child:not(:last-child)': {
-          '.nui-autocomplete-input': {
+        '.webeze-autocomplete:first-child:not(:last-child)': {
+          '.webeze-autocomplete-input': {
             '@apply !border-e-0 !rounded-e-none': {},
 
             '&:focus': {
@@ -178,8 +178,8 @@ export default plugin(
           },
         },
 
-        '.nui-autocomplete:last-child:not(:first-child)': {
-          '.nui-autocomplete-input': {
+        '.webeze-autocomplete:last-child:not(:first-child)': {
+          '.webeze-autocomplete-input': {
             '@apply !border-e !rounded-s-none': {},
 
             '&:focus': {
@@ -189,8 +189,8 @@ export default plugin(
         },
 
         // Dropdown
-        '.nui-dropdown:not(:first-child):not(:last-child)': {
-          '.nui-button': {
+        '.webeze-dropdown:not(:first-child):not(:last-child)': {
+          '.webeze-button': {
             '@apply !border-e-0 !rounded-none': {},
 
             '&:focus': {
@@ -199,8 +199,8 @@ export default plugin(
           },
         },
 
-        '.nui-dropdown:first-child:not(:last-child)': {
-          '.nui-button': {
+        '.webeze-dropdown:first-child:not(:last-child)': {
+          '.webeze-button': {
             '@apply !border-e-0 !rounded-e-none': {},
 
             '&:focus': {
@@ -209,8 +209,8 @@ export default plugin(
           },
         },
 
-        '.nui-dropdown:last-child:not(:first-child)': {
-          '.nui-button': {
+        '.webeze-dropdown:last-child:not(:first-child)': {
+          '.webeze-button': {
             '@apply !border-e !rounded-s-none': {},
 
             '&:focus': {
@@ -220,8 +220,8 @@ export default plugin(
         },
 
         // Listbox
-        '.nui-listbox:not(:first-child):not(:last-child)': {
-          '.nui-listbox-button': {
+        '.webeze-listbox:not(:first-child):not(:last-child)': {
+          '.webeze-listbox-button': {
             '@apply !border-e-0 !rounded-none': {},
 
             '&:focus': {
@@ -230,8 +230,8 @@ export default plugin(
           },
         },
 
-        '.nui-listbox:first-child:not(:last-child)': {
-          '.nui-listbox-button': {
+        '.webeze-listbox:first-child:not(:last-child)': {
+          '.webeze-listbox-button': {
             '@apply !border-e-0 !rounded-e-none': {},
 
             '&:focus': {
@@ -240,8 +240,8 @@ export default plugin(
           },
         },
 
-        '.nui-listbox:last-child:not(:first-child)': {
-          '.nui-listbox-button': {
+        '.webeze-listbox:last-child:not(:first-child)': {
+          '.webeze-listbox-button': {
             '@apply !border-e !rounded-s-none': {},
 
             '&:focus': {

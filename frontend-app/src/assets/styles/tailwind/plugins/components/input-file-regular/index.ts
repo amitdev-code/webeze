@@ -7,30 +7,30 @@ import {
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies InputFileRegularConfig
+  const config = theme(`webeze.${key}`) satisfies InputFileRegularConfig
 
   addComponents({
     //Wrapper
-    '.nui-input-file-regular': {
+    '.webeze-input-file-regular': {
       '@apply relative w-full': {},
       //Input:label
-      '.nui-input-file-label': {
-        '@apply nui-label w-full': {},
+      '.webeze-input-file-label': {
+        '@apply webeze-label w-full': {},
       },
       //Input:outer
-      '.nui-input-file-outer': {
+      '.webeze-input-file-outer': {
         '@apply relative': {},
       },
       //Input:inner
-      '.nui-input-file-inner': {
-        [`@apply relative nui-focus w-${config.inner.width} flex cursor-pointer items-center overflow-hidden disabled:cursor-not-allowed disabled:opacity-75`]:
+      '.webeze-input-file-inner': {
+        [`@apply relative webeze-focus w-${config.inner.width} flex cursor-pointer items-center overflow-hidden disabled:cursor-not-allowed disabled:opacity-75`]:
           {},
         //Font
         [`@apply font-${config.inner.font.family}`]: {},
@@ -39,12 +39,12 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Input:addon
-      '.nui-input-file-addon': {
+      '.webeze-input-file-addon': {
         '@apply pointer-events-none flex shrink-0 items-center justify-center gap-1 transition-colors duration-100':
           {},
       },
       //Input:placeholder
-      '.nui-input-file-placeholder': {
+      '.webeze-input-file-placeholder': {
         //Base
         [`@apply font-${config.placeholder.font.family} text-${config.placeholder.font.size}`]:
           {},
@@ -53,22 +53,22 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Input:text
-      '.nui-input-file-text': {
+      '.webeze-input-file-text': {
         [`@apply ms-2 inline-flex truncate text-${config.font.color.light} dark:text-${config.font.color.dark}`]:
           {},
       },
       //Input:placeload
-      '.nui-input-file-placeload': {
+      '.webeze-input-file-placeload': {
         '@apply absolute -end-8 flex w-[70%] items-center': {},
 
-        '.nui-placeload': {
+        '.webeze-placeload': {
           '@apply h-3 w-full max-w-[75%] rounded': {},
         },
       },
       //Color:default
-      '&.nui-input-default': {
+      '&.webeze-input-default': {
         //Input:inner
-        '.nui-input-file-inner': {
+        '.webeze-input-file-inner': {
           //Base
           [`@apply text-${config.color.default.inner.font.color.light} dark:text-${config.color.default.inner.font.color.dark}`]:
             {},
@@ -83,7 +83,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Input:addon
-        '.nui-input-file-addon': {
+        '.webeze-input-file-addon': {
           //Background
           [`@apply bg-${config.color.default.addon.background.light} dark:bg-${config.color.default.addon.background.dark}`]:
             {},
@@ -95,9 +95,9 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
       },
-      '&.nui-input-default-contrast': {
+      '&.webeze-input-default-contrast': {
         //Input:inner
-        '.nui-input-file-inner': {
+        '.webeze-input-file-inner': {
           //Base
           [`@apply text-${config.color.defaultContrast.inner.font.color.light} dark:text-${config.color.defaultContrast.inner.font.color.dark}`]:
             {},
@@ -112,7 +112,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Input:addon
-        '.nui-input-file-addon': {
+        '.webeze-input-file-addon': {
           //Background
           [`@apply bg-${config.color.defaultContrast.addon.background.light} dark:bg-${config.color.defaultContrast.addon.background.dark}`]:
             {},
@@ -125,185 +125,185 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Input:focus
-      '&.nui-input-file-color-focus': {
-        '.nui-input-file-inner:focus': {
+      '&.webeze-input-file-color-focus': {
+        '.webeze-input-file-inner:focus': {
           [`@apply !border-${config.focus.border.light} dark:!border-${config.focus.border.dark}`]:
             {},
         },
       },
       //Input:loading
-      '&.nui-input-file-loading': {
-        '.nui-input-file-inner': {
+      '&.webeze-input-file-loading': {
+        '.webeze-input-file-inner': {
           '@apply text-transparent placeholder:text-transparent': {},
         },
       },
       //Error:input
-      '&.nui-input-file-error': {
-        '.nui-input-file-inner': {
+      '&.webeze-input-file-error': {
+        '.webeze-input-file-inner': {
           [`@apply border-${config.error.border.light} dark:border-${config.error.border.dark}`]:
             {},
         },
       },
       //Rounded:sm
-      '&.nui-input-rounded-sm': {
-        '.nui-input-file-inner': {
+      '&.webeze-input-rounded-sm': {
+        '.webeze-input-file-inner': {
           [`@apply ${config.rounded.sm}`]: {},
         },
       },
       //Rounded:md
-      '&.nui-input-rounded-md': {
-        '.nui-input-file-inner': {
+      '&.webeze-input-rounded-md': {
+        '.webeze-input-file-inner': {
           [`@apply ${config.rounded.md}`]: {},
         },
       },
       //Rounded:lg
-      '&.nui-input-rounded-lg': {
-        '.nui-input-file-inner': {
+      '&.webeze-input-rounded-lg': {
+        '.webeze-input-file-inner': {
           [`@apply ${config.rounded.lg}`]: {},
         },
       },
       //Rounded:full
-      '&.nui-input-rounded-full': {
-        '.nui-input-file-inner': {
+      '&.webeze-input-rounded-full': {
+        '.webeze-input-file-inner': {
           [`@apply ${config.rounded.full}`]: {},
         },
       },
       //Without icon && Size:sm
-      '&.nui-input-sm:not(.nui-has-icon)': {
+      '&.webeze-input-sm:not(.webeze-has-icon)': {
         [`@apply text-${config.icon.disabled.sm.font.size} leading-4`]: {},
-        '.nui-input-file-inner': {
+        '.webeze-input-file-inner': {
           '@apply h-8 py-2 gap-1': {},
         },
-        '.nui-input-file-addon': {
+        '.webeze-input-file-addon': {
           '@apply h-8 px-2': {},
         },
-        '.nui-input-file-placeload': {
+        '.webeze-input-file-placeload': {
           '@apply top-2.5': {},
         },
       },
       //With icon && Size:sm
-      '&.nui-input-sm.nui-has-icon': {
+      '&.webeze-input-sm.webeze-has-icon': {
         [`@apply text-${config.icon.enabled.sm.font.size} leading-4`]: {},
-        '.nui-input-file-inner': {
+        '.webeze-input-file-inner': {
           '@apply h-8 py-2 pe-3': {},
         },
-        '.nui-input-file-addon': {
+        '.webeze-input-file-addon': {
           '@apply h-8 px-2': {},
         },
-        '.nui-input-file-icon': {
+        '.webeze-input-file-icon': {
           [`@apply w-${config.icon.enabled.sm.icon.size} h-${config.icon.enabled.sm.icon.size}`]:
             {},
         },
-        '.nui-input-file-placeload': {
+        '.webeze-input-file-placeload': {
           '@apply top-2.5': {},
         },
       },
       //Without icon && Size:md
-      '&.nui-input-md:not(.nui-has-icon)': {
+      '&.webeze-input-md:not(.webeze-has-icon)': {
         [`@apply text-${config.icon.disabled.md.font.size} leading-5`]: {},
-        '.nui-input-file-inner': {
+        '.webeze-input-file-inner': {
           '@apply h-10 gap-2': {},
         },
-        '.nui-input-file-addon': {
+        '.webeze-input-file-addon': {
           '@apply h-10 px-3': {},
         },
-        '.nui-input-file-placeload': {
+        '.webeze-input-file-placeload': {
           '@apply top-3.5': {},
         },
       },
       //With icon && Size:md
-      '&.nui-input-md.nui-has-icon': {
+      '&.webeze-input-md.webeze-has-icon': {
         [`@apply text-${config.icon.enabled.md.font.size} leading-5`]: {},
-        '.nui-input-file-inner': {
+        '.webeze-input-file-inner': {
           '@apply h-10 pe-4': {},
         },
-        '.nui-input-file-addon': {
+        '.webeze-input-file-addon': {
           '@apply h-10 px-3': {},
         },
-        '.nui-input-file-icon': {
+        '.webeze-input-file-icon': {
           [`@apply w-${config.icon.enabled.md.icon.size} h-${config.icon.enabled.md.icon.size}`]:
             {},
         },
-        '.nui-input-file-placeload': {
+        '.webeze-input-file-placeload': {
           '@apply top-3.5': {},
         },
       },
       //Without icon && Size:lg
-      '&.nui-input-lg:not(.nui-has-icon)': {
+      '&.webeze-input-lg:not(.webeze-has-icon)': {
         [`@apply text-${config.icon.disabled.lg.font.size} leading-5`]: {},
-        '.nui-input-file-inner': {
+        '.webeze-input-file-inner': {
           '@apply h-12 gap-2': {},
         },
-        '.nui-input-file-addon': {
+        '.webeze-input-file-addon': {
           '@apply h-12 px-4': {},
         },
-        '.nui-input-file-placeload': {
+        '.webeze-input-file-placeload': {
           '@apply top-[1.2rem]': {},
         },
       },
       //With icon && Size:lg
-      '&.nui-input-lg.nui-has-icon': {
+      '&.webeze-input-lg.webeze-has-icon': {
         [`@apply text-${config.icon.enabled.lg.font.size} leading-5`]: {},
-        '.nui-input-file-inner': {
+        '.webeze-input-file-inner': {
           '@apply h-12 pe-4': {},
         },
-        '.nui-input-file-addon': {
+        '.webeze-input-file-addon': {
           '@apply h-12 px-4': {},
         },
-        '.nui-input-file-icon': {
+        '.webeze-input-file-icon': {
           [`@apply w-${config.icon.enabled.lg.icon.size} h-${config.icon.enabled.lg.icon.size}`]:
             {},
         },
-        '.nui-input-file-placeload': {
+        '.webeze-input-file-placeload': {
           '@apply top-[1.2rem]': {},
         },
       },
       //Without icon && Size:xl
-      '&.nui-input-xl:not(.nui-has-icon)': {
+      '&.webeze-input-xl:not(.webeze-has-icon)': {
         [`@apply text-${config.icon.disabled.xl.font.size} leading-5`]: {},
-        '.nui-input-file-inner': {
+        '.webeze-input-file-inner': {
           '@apply h-14 gap-2': {},
         },
-        '.nui-input-file-addon': {
+        '.webeze-input-file-addon': {
           '@apply h-14 px-5': {},
         },
-        '.nui-input-file-placeload': {
+        '.webeze-input-file-placeload': {
           '@apply top-[1.4rem]': {},
         },
       },
       //With icon && Size:xl
-      '&.nui-input-xl.nui-has-icon': {
+      '&.webeze-input-xl.webeze-has-icon': {
         [`@apply text-${config.icon.enabled.xl.font.size} leading-5`]: {},
-        '.nui-input-file-inner': {
+        '.webeze-input-file-inner': {
           '@apply h-14 pe-4': {},
         },
-        '.nui-input-file-addon': {
+        '.webeze-input-file-addon': {
           '@apply h-14 px-5': {},
         },
-        '.nui-input-file-icon': {
+        '.webeze-input-file-icon': {
           [`@apply w-${config.icon.enabled.xl.icon.size} h-${config.icon.enabled.xl.icon.size}`]:
             {},
         },
-        '.nui-input-file-placeload': {
+        '.webeze-input-file-placeload': {
           '@apply top-[1.4rem]': {},
         },
       },
       //Input:hover
       '&:hover': {
-        '.nui-input-file-addon': {
+        '.webeze-input-file-addon': {
           [`@apply text-${config.hover.font.color.light} dark:text-${config.hover.font.color.dark}`]:
             {},
         },
       },
       //Input:disabled
       '&:disabled': {
-        '.nui-input-file-addon': {
+        '.webeze-input-file-addon': {
           '@apply cursor-not-allowed opacity-75': {},
         },
       },
       //Input:focus
       '&:focus-within': {
-        '.nui-input-file-addon': {
+        '.webeze-input-file-addon': {
           [`@apply text-${config.focus.font.color.light} dark:text-${config.focus.font.color.dark}`]:
             {},
         },

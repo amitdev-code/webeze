@@ -3,14 +3,14 @@ import { type FocusConfig, defaultConfig, key } from './focus.config'
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies FocusConfig
+  const config = theme(`webeze.${key}`) satisfies FocusConfig
 
   const mode =
     config.mode === 'focus-visible'
@@ -18,7 +18,7 @@ export default plugin(({ addComponents, theme }) => {
       : '&:focus-within'
 
   addComponents({
-    '.nui-focus': {
+    '.webeze-focus': {
       [`@apply outline-${config.width} outline-${config.style} outline-offset-${config.offset}`]:
         {},
       '@apply outline-transparent': {},

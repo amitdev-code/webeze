@@ -3,121 +3,121 @@ import { type IconBoxConfig, defaultConfig, key } from './icon-box.config'
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies IconBoxConfig
+  const config = theme(`webeze.${key}`) satisfies IconBoxConfig
 
   addComponents({
     //Wrapper
-    '.nui-icon-box': {
+    '.webeze-icon-box': {
       '@apply relative inline-flex shrink-0 items-center justify-center': {},
       //Size:xs
-      '&.nui-box-xs': {
+      '&.webeze-box-xs': {
         [`@apply h-${config.size.xs.size} w-${config.size.xs.size}`]: {},
         //Rounded:sm
-        '&.nui-box-rounded-sm': {
+        '&.webeze-box-rounded-sm': {
           [`@apply ${config.size.xs.rounded.sm}`]: {},
         },
         //Rounded:md
-        '&.nui-box-rounded-md': {
+        '&.webeze-box-rounded-md': {
           [`@apply ${config.size.xs.rounded.md}`]: {},
         },
         //Rounded:lg
-        '&.nui-box-rounded-lg': {
+        '&.webeze-box-rounded-lg': {
           [`@apply ${config.size.xs.rounded.lg}`]: {},
         },
       },
       //Size:sm
-      '&.nui-box-sm': {
+      '&.webeze-box-sm': {
         [`@apply h-${config.size.sm.size} w-${config.size.sm.size}`]: {},
         //Rounded:sm
-        '&.nui-box-rounded-sm': {
+        '&.webeze-box-rounded-sm': {
           [`@apply ${config.size.sm.rounded.sm}`]: {},
         },
         //Rounded:md
-        '&.nui-box-rounded-md': {
+        '&.webeze-box-rounded-md': {
           [`@apply ${config.size.sm.rounded.md}`]: {},
         },
         //Rounded:lg
-        '&.nui-box-rounded-lg': {
+        '&.webeze-box-rounded-lg': {
           [`@apply ${config.size.sm.rounded.lg}`]: {},
         },
       },
       //Size:md
-      '&.nui-box-md': {
+      '&.webeze-box-md': {
         [`@apply h-${config.size.md.size} w-${config.size.md.size}`]: {},
         //Rounded:sm
-        '&.nui-box-rounded-sm': {
+        '&.webeze-box-rounded-sm': {
           [`@apply ${config.size.md.rounded.sm}`]: {},
         },
         //Rounded:md
-        '&.nui-box-rounded-md': {
+        '&.webeze-box-rounded-md': {
           [`@apply ${config.size.md.rounded.md}`]: {},
         },
         //Rounded:lg
-        '&.nui-box-rounded-lg': {
+        '&.webeze-box-rounded-lg': {
           [`@apply ${config.size.md.rounded.lg}`]: {},
         },
       },
       //Size:lg
-      '&.nui-box-lg': {
+      '&.webeze-box-lg': {
         [`@apply h-${config.size.lg.size} w-${config.size.lg.size}`]: {},
         //Rounded:sm
-        '&.nui-box-rounded-sm': {
+        '&.webeze-box-rounded-sm': {
           [`@apply ${config.size.lg.rounded.sm}`]: {},
         },
         //Rounded:md
-        '&.nui-box-rounded-md': {
+        '&.webeze-box-rounded-md': {
           [`@apply ${config.size.lg.rounded.md}`]: {},
         },
         //Rounded:lg
-        '&.nui-box-rounded-lg': {
+        '&.webeze-box-rounded-lg': {
           [`@apply ${config.size.lg.rounded.lg}`]: {},
         },
       },
       //Size:xl
-      '&.nui-box-xl': {
+      '&.webeze-box-xl': {
         [`@apply h-${config.size.xl.size} w-${config.size.xl.size}`]: {},
         //Rounded:sm
-        '&.nui-box-rounded-sm': {
+        '&.webeze-box-rounded-sm': {
           [`@apply ${config.size.xl.rounded.sm}`]: {},
         },
         //Rounded:md
-        '&.nui-box-rounded-md': {
+        '&.webeze-box-rounded-md': {
           [`@apply ${config.size.xl.rounded.md}`]: {},
         },
         //Rounded:lg
-        '&.nui-box-rounded-lg': {
+        '&.webeze-box-rounded-lg': {
           [`@apply ${config.size.xl.rounded.lg}`]: {},
         },
       },
       //Size:xxl
-      '&.nui-box-2xl': {
+      '&.webeze-box-2xl': {
         [`@apply h-${config.size.xxl.size} w-${config.size.xxl.size}`]: {},
         //Rounded:sm
-        '&.nui-box-rounded-sm': {
+        '&.webeze-box-rounded-sm': {
           [`@apply ${config.size.xxl.rounded.sm}`]: {},
         },
         //Rounded:md
-        '&.nui-box-rounded-md': {
+        '&.webeze-box-rounded-md': {
           [`@apply ${config.size.xxl.rounded.md}`]: {},
         },
         //Rounded:lg
-        '&.nui-box-rounded-lg': {
+        '&.webeze-box-rounded-lg': {
           [`@apply ${config.size.xxl.rounded.lg}`]: {},
         },
       },
       //Rounded:full
-      '&.nui-box-rounded-full': {
+      '&.webeze-box-rounded-full': {
         '@apply rounded-full': {},
       },
       //Color:default
-      '&.nui-box-default': {
+      '&.webeze-box-default': {
         //Font
         [`@apply text-${config.color.variant.solid.default.font.color.light} dark:text-${config.color.variant.solid.default.font.color.dark}`]:
           {},
@@ -126,9 +126,9 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Variant:solid
-      '&.nui-box-solid': {
+      '&.webeze-box-solid': {
         //Color:default
-        '&.nui-box-default': {
+        '&.webeze-box-default': {
           //Font
           [`@apply text-${config.color.variant.solid.default.font.color.light} dark:text-${config.color.variant.solid.default.font.color.dark}`]:
             {},
@@ -137,7 +137,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:default-contrast
-        '&.nui-box-default-contrast': {
+        '&.webeze-box-default-contrast': {
           //Font
           [`@apply text-${config.color.variant.solid.defaultContrast.font.color.light} dark:text-${config.color.variant.solid.defaultContrast.font.color.dark}`]:
             {},
@@ -146,7 +146,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:muted
-        '&.nui-box-muted': {
+        '&.webeze-box-muted': {
           //Font
           [`@apply text-${config.color.variant.solid.muted.font.color.light} dark:text-${config.color.variant.solid.muted.font.color.dark}`]:
             {},
@@ -155,7 +155,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:muted-contrast
-        '&.nui-box-muted-contrast': {
+        '&.webeze-box-muted-contrast': {
           //Font
           [`@apply text-${config.color.variant.solid.mutedContrast.font.color.light} dark:text-${config.color.variant.solid.mutedContrast.font.color.dark}`]:
             {},
@@ -164,7 +164,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:light
-        '&.nui-box-light': {
+        '&.webeze-box-light': {
           //Font
           [`@apply text-${config.color.variant.solid.light.font.color.light} dark:text-${config.color.variant.solid.light.font.color.dark}`]:
             {},
@@ -173,7 +173,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:dark
-        '&.nui-box-dark': {
+        '&.webeze-box-dark': {
           //Font
           [`@apply text-${config.color.variant.solid.dark.font.color.light} dark:text-${config.color.variant.solid.dark.font.color.dark}`]:
             {},
@@ -182,7 +182,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:black
-        '&.nui-box-black': {
+        '&.webeze-box-black': {
           //Font
           [`@apply text-${config.color.variant.solid.black.font.color.light} dark:text-${config.color.variant.solid.black.font.color.dark}`]:
             {},
@@ -191,7 +191,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:primary
-        '&.nui-box-primary': {
+        '&.webeze-box-primary': {
           //Font
           [`@apply text-${config.color.variant.solid.primary.font.color.light} dark:text-${config.color.variant.solid.primary.font.color.dark}`]:
             {},
@@ -200,7 +200,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:info
-        '&.nui-box-info': {
+        '&.webeze-box-info': {
           //Font
           [`@apply text-${config.color.variant.solid.info.font.color.light} dark:text-${config.color.variant.solid.info.font.color.dark}`]:
             {},
@@ -209,7 +209,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:success
-        '&.nui-box-success': {
+        '&.webeze-box-success': {
           //Font
           [`@apply text-${config.color.variant.solid.success.font.color.light} dark:text-${config.color.variant.solid.success.font.color.dark}`]:
             {},
@@ -218,7 +218,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:warning
-        '&.nui-box-warning': {
+        '&.webeze-box-warning': {
           //Font
           [`@apply text-${config.color.variant.solid.warning.font.color.light} dark:text-${config.color.variant.solid.warning.font.color.dark}`]:
             {},
@@ -227,7 +227,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:danger
-        '&.nui-box-danger': {
+        '&.webeze-box-danger': {
           //Font
           [`@apply text-${config.color.variant.solid.danger.font.color.light} dark:text-${config.color.variant.solid.danger.font.color.dark}`]:
             {},
@@ -237,9 +237,9 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Variant:pastel
-      '&.nui-box-pastel': {
+      '&.webeze-box-pastel': {
         //Color:default
-        '&.nui-box-default': {
+        '&.webeze-box-default': {
           //Font
           [`@apply text-${config.color.variant.pastel.default.font.color.light} dark:text-${config.color.variant.pastel.default.font.color.dark}`]:
             {},
@@ -248,7 +248,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:default-contrast
-        '&.nui-box-default-contrast': {
+        '&.webeze-box-default-contrast': {
           //Font
           [`@apply text-${config.color.variant.pastel.defaultContrast.font.color.light} dark:text-${config.color.variant.pastel.defaultContrast.font.color.dark}`]:
             {},
@@ -257,7 +257,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:muted
-        '&.nui-box-muted': {
+        '&.webeze-box-muted': {
           //Font
           [`@apply text-${config.color.variant.pastel.muted.font.color.light} dark:text-${config.color.variant.pastel.muted.font.color.dark}`]:
             {},
@@ -266,7 +266,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:muted-contrast
-        '&.nui-box-muted-contrast': {
+        '&.webeze-box-muted-contrast': {
           //Font
           [`@apply text-${config.color.variant.pastel.mutedContrast.font.color.light} dark:text-${config.color.variant.pastel.mutedContrast.font.color.dark}`]:
             {},
@@ -275,7 +275,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:light
-        '&.nui-box-light': {
+        '&.webeze-box-light': {
           //Font
           [`@apply text-${config.color.variant.pastel.light.font.color.light} dark:text-${config.color.variant.pastel.light.font.color.dark}`]:
             {},
@@ -284,7 +284,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:dark
-        '&.nui-box-dark': {
+        '&.webeze-box-dark': {
           //Font
           [`@apply text-${config.color.variant.pastel.dark.font.color.light} dark:text-${config.color.variant.pastel.dark.font.color.dark}`]:
             {},
@@ -293,7 +293,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:black
-        '&.nui-box-black': {
+        '&.webeze-box-black': {
           //Font
           [`@apply text-${config.color.variant.pastel.black.font.color.light} dark:text-${config.color.variant.pastel.black.font.color.dark}`]:
             {},
@@ -302,7 +302,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:primary
-        '&.nui-box-primary': {
+        '&.webeze-box-primary': {
           //Font
           [`@apply text-${config.color.variant.pastel.primary.font.color.light} dark:text-${config.color.variant.pastel.primary.font.color.dark}`]:
             {},
@@ -311,7 +311,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:info
-        '&.nui-box-info': {
+        '&.webeze-box-info': {
           //Font
           [`@apply text-${config.color.variant.pastel.info.font.color.light} dark:text-${config.color.variant.pastel.info.font.color.dark}`]:
             {},
@@ -320,7 +320,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:success
-        '&.nui-box-success': {
+        '&.webeze-box-success': {
           //Font
           [`@apply text-${config.color.variant.pastel.success.font.color.light} dark:text-${config.color.variant.pastel.success.font.color.dark}`]:
             {},
@@ -329,7 +329,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:warning
-        '&.nui-box-warning': {
+        '&.webeze-box-warning': {
           //Font
           [`@apply text-${config.color.variant.pastel.warning.font.color.light} dark:text-${config.color.variant.pastel.warning.font.color.dark}`]:
             {},
@@ -338,7 +338,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:danger
-        '&.nui-box-danger': {
+        '&.webeze-box-danger': {
           //Font
           [`@apply text-${config.color.variant.pastel.danger.font.color.light} dark:text-${config.color.variant.pastel.danger.font.color.dark}`]:
             {},
@@ -348,9 +348,9 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Variant:outline
-      '&.nui-box-outline': {
+      '&.webeze-box-outline': {
         //Color:default
-        '&.nui-box-default': {
+        '&.webeze-box-default': {
           //Font
           [`@apply text-${config.color.variant.outline.default.font.color.light} dark:text-${config.color.variant.outline.default.font.color.dark}`]:
             {},
@@ -362,7 +362,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:default-contrast
-        '&.nui-box-default-contrast': {
+        '&.webeze-box-default-contrast': {
           //Font
           [`@apply text-${config.color.variant.outline.defaultContrast.font.color.light} dark:text-${config.color.variant.outline.defaultContrast.font.color.dark}`]:
             {},
@@ -374,7 +374,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:muted
-        '&.nui-box-muted': {
+        '&.webeze-box-muted': {
           //Font
           [`@apply text-${config.color.variant.outline.muted.font.color.light} dark:text-${config.color.variant.outline.muted.font.color.dark}`]:
             {},
@@ -386,7 +386,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:muted-contrast
-        '&.nui-box-muted-contrast': {
+        '&.webeze-box-muted-contrast': {
           //Font
           [`@apply text-${config.color.variant.outline.mutedContrast.font.color.light} dark:text-${config.color.variant.outline.mutedContrast.font.color.dark}`]:
             {},
@@ -398,7 +398,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:light
-        '&.nui-box-light': {
+        '&.webeze-box-light': {
           //Font
           [`@apply text-${config.color.variant.outline.light.font.color.light} dark:text-${config.color.variant.outline.light.font.color.dark}`]:
             {},
@@ -410,7 +410,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:dark
-        '&.nui-box-dark': {
+        '&.webeze-box-dark': {
           //Font
           [`@apply text-${config.color.variant.outline.dark.font.color.light} dark:text-${config.color.variant.outline.dark.font.color.dark}`]:
             {},
@@ -422,7 +422,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:black
-        '&.nui-box-black': {
+        '&.webeze-box-black': {
           //Font
           [`@apply text-${config.color.variant.outline.black.font.color.light} dark:text-${config.color.variant.outline.black.font.color.dark}`]:
             {},
@@ -434,7 +434,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:primary
-        '&.nui-box-primary': {
+        '&.webeze-box-primary': {
           //Font
           [`@apply text-${config.color.variant.outline.primary.font.color.light} dark:text-${config.color.variant.outline.primary.font.color.dark}`]:
             {},
@@ -446,7 +446,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:info
-        '&.nui-box-info': {
+        '&.webeze-box-info': {
           //Font
           [`@apply text-${config.color.variant.outline.info.font.color.light} dark:text-${config.color.variant.outline.info.font.color.dark}`]:
             {},
@@ -458,7 +458,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:success
-        '&.nui-box-success': {
+        '&.webeze-box-success': {
           //Font
           [`@apply text-${config.color.variant.outline.success.font.color.light} dark:text-${config.color.variant.outline.success.font.color.dark}`]:
             {},
@@ -470,7 +470,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:warning
-        '&.nui-box-warning': {
+        '&.webeze-box-warning': {
           //Font
           [`@apply text-${config.color.variant.outline.warning.font.color.light} dark:text-${config.color.variant.outline.warning.font.color.dark}`]:
             {},
@@ -482,7 +482,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Color:danger
-        '&.nui-box-danger': {
+        '&.webeze-box-danger': {
           //Font
           [`@apply text-${config.color.variant.outline.danger.font.color.light} dark:text-${config.color.variant.outline.danger.font.color.dark}`]:
             {},
@@ -495,14 +495,14 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Bordered option
-      '&.nui-box-bordered': {
+      '&.webeze-box-bordered': {
         [`@apply border-${config.bordered.border.size} border-${config.bordered.border.color}`]:
           {},
       },
       //Masks
-      '&.nui-box-mask:not(.nui-box-rounded-sm):not(.nui-box-rounded-lg):not(.nui-box-rounded-full):not(.nui-box-outline):not(.nui-box-bordered)':
+      '&.webeze-box-mask:not(.webeze-box-rounded-sm):not(.webeze-box-rounded-lg):not(.webeze-box-rounded-full):not(.webeze-box-outline):not(.webeze-box-bordered)':
         {
-          '@apply nui-mask': {},
+          '@apply webeze-mask': {},
         },
     },
   })

@@ -3,91 +3,91 @@ import { type TextConfig, defaultConfig, key } from './text.config'
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies TextConfig
+  const config = theme(`webeze.${key}`) satisfies TextConfig
 
   addComponents({
-    '.nui-text': {
+    '.webeze-text': {
       '@apply font-sans': {},
       //Size
-      '&.nui-content-xs': {
+      '&.webeze-content-xs': {
         [`@apply text-${config.size.xs}`]: {},
       },
-      '&.nui-content-sm': {
+      '&.webeze-content-sm': {
         [`@apply text-${config.size.sm}`]: {},
       },
-      '&.nui-content-md': {
+      '&.webeze-content-md': {
         [`@apply text-${config.size.md}`]: {},
       },
-      '&.nui-content-lg': {
+      '&.webeze-content-lg': {
         [`@apply text-${config.size.lg}`]: {},
       },
-      '&.nui-content-xl': {
+      '&.webeze-content-xl': {
         [`@apply text-${config.size.xl}`]: {},
       },
-      '&.nui-content-2xl': {
+      '&.webeze-content-2xl': {
         [`@apply text-${config.size.xxl}`]: {},
       },
-      '&.nui-content-3xl': {
+      '&.webeze-content-3xl': {
         [`@apply text-${config.size.xxxl}`]: {},
       },
-      '&.nui-content-4xl': {
+      '&.webeze-content-4xl': {
         [`@apply text-${config.size.xxxxl}`]: {},
       },
-      '&.nui-content-5xl': {
+      '&.webeze-content-5xl': {
         [`@apply text-${config.size.xxxxxl}`]: {},
       },
-      '&.nui-content-6xl': {
+      '&.webeze-content-6xl': {
         [`@apply text-${config.size.xxxxxxl}`]: {},
       },
-      '&.nui-content-7xl': {
+      '&.webeze-content-7xl': {
         [`@apply text-${config.size.xxxxxxxl}`]: {},
       },
-      '&.nui-content-8xl': {
+      '&.webeze-content-8xl': {
         [`@apply text-${config.size.xxxxxxxxl}`]: {},
       },
-      '&.nui-content-9xl': {
+      '&.webeze-content-9xl': {
         [`@apply text-${config.size.xxxxxxxxxl}`]: {},
       },
       //Weight
-      '&.nui-weight-light': {
+      '&.webeze-weight-light': {
         [`@apply font-${config.weight.light}`]: {},
       },
-      '&.nui-weight-normal': {
+      '&.webeze-weight-normal': {
         [`@apply font-${config.weight.normal}`]: {},
       },
-      '&.nui-weight-medium': {
+      '&.webeze-weight-medium': {
         [`@apply font-${config.weight.medium}`]: {},
       },
-      '&.nui-weight-semibold': {
+      '&.webeze-weight-semibold': {
         [`@apply font-${config.weight.semibold}`]: {},
       },
-      '&.nui-weight-bold': {
+      '&.webeze-weight-bold': {
         [`@apply font-${config.weight.bold}`]: {},
       },
-      '&.nui-weight-extrabold': {
+      '&.webeze-weight-extrabold': {
         [`@apply font-${config.weight.extrabold}`]: {},
       },
       //Lead
-      '&.nui-lead-none': {
+      '&.webeze-lead-none': {
         [`@apply leading-${config.lead.none}`]: {},
       },
-      '&.nui-lead-normal': {
+      '&.webeze-lead-normal': {
         [`@apply leading-${config.lead.normal}`]: {},
       },
-      '&.nui-lead-tight': {
+      '&.webeze-lead-tight': {
         [`@apply leading-${config.lead.tight}`]: {},
       },
-      '&.nui-lead-snug': {
+      '&.webeze-lead-snug': {
         [`@apply leading-${config.lead.snug}`]: {},
       },
-      '&.nui-lead-loose': {
+      '&.webeze-lead-loose': {
         [`@apply leading-${config.lead.loose}`]: {},
       },
     },

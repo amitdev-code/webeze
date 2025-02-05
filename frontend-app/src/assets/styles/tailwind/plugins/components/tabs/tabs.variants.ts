@@ -2,19 +2,19 @@ import type { TabsVariant } from './tabs.types'
 
 export const justify = {
   start: '',
-  center: 'nui-tabs-centered',
-  end: 'nui-tabs-end',
+  center: 'webeze-tabs-centered',
+  end: 'webeze-tabs-end',
 } as const satisfies TabsVariant<'justify'>
 
 export const type = {
-  tabs: 'nui-tab-item',
-  box: 'nui-pill-item',
+  tabs: 'webeze-tab-item',
+  box: 'webeze-pill-item',
 } as const satisfies TabsVariant<'type'>
 
 export const color = {
-  default: 'nui-tabs-default',
-  primary: 'nui-tabs-primary',
-  light: 'nui-tabs-light',
-  dark: 'nui-tabs-dark',
-  black: 'nui-tabs-black',
+  default: 'webeze-tabs-default',
+  primary: 'webeze-tabs-primary',
+  light: 'webeze-tabs-light',
+  dark: 'webeze-tabs-dark',
+  black: 'webeze-tabs-black',
 } as const satisfies TabsVariant<'color'>

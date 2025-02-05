@@ -3,47 +3,47 @@ import { type KbdConfig, defaultConfig, key } from './kbd.config'
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies KbdConfig
+  const config = theme(`webeze.${key}`) satisfies KbdConfig
 
   addComponents({
-    '.nui-kbd': {
+    '.webeze-kbd': {
       '@apply inline-flex items-center justify-center': {},
       //Font
       [`@apply font-${config.font.family} leading-none text-${config.font.color.light} dark:text-${config.font.color.dark}`]:
         {},
       //Icon:outer
-      '.nui-kbd-icon-outer': {
+      '.webeze-kbd-icon-outer': {
         '@apply inline-flex items-center justify-center': {},
       },
       //Icon:inner
-      '.nui-kbd-icon': {
+      '.webeze-kbd-icon': {
         '@apply shrink-0': {},
       },
       //Rounded:sm
-      '&.nui-kbd-rounded-sm': {
+      '&.webeze-kbd-rounded-sm': {
         [`@apply ${config.rounded.sm}`]: {},
       },
       //Rounded:md
-      '&.nui-kbd-rounded-md': {
+      '&.webeze-kbd-rounded-md': {
         [`@apply ${config.rounded.md}`]: {},
       },
       //Rounded:lg
-      '&.nui-kbd-rounded-lg': {
+      '&.webeze-kbd-rounded-lg': {
         [`@apply ${config.rounded.lg}`]: {},
       },
       //Rounded:full
-      '&.nui-kbd-rounded-full': {
+      '&.webeze-kbd-rounded-full': {
         [`@apply ${config.rounded.full}`]: {},
       },
       //Size:xs
-      '&.nui-kbd-xs': {
+      '&.webeze-kbd-xs': {
         '@apply font-medium': {},
         //Size
         [`@apply min-h-[${config.size.xs.size}] min-w-[${config.size.xs.size}]`]:
@@ -55,18 +55,18 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply leading-${config.size.xs.font.lead} text-${config.size.xs.font.size}`]:
           {},
         //Icon:outer
-        '.nui-kbd-icon-outer': {
+        '.webeze-kbd-icon-outer': {
           [`@apply w-${config.size.xs.icon.outer.size} h-${config.size.xs.icon.outer.size}`]:
             {},
         },
         //Icon:inner
-        '.nui-kbd-icon-inner': {
+        '.webeze-kbd-icon-inner': {
           [`@apply w-${config.size.xs.icon.inner.size} h-${config.size.xs.icon.inner.size}`]:
             {},
         },
       },
       //Size:sm
-      '&.nui-kbd-sm': {
+      '&.webeze-kbd-sm': {
         //Size
         [`@apply min-h-[${config.size.sm.size}] min-w-[${config.size.sm.size}]`]:
           {},
@@ -77,18 +77,18 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply leading-${config.size.sm.font.lead} text-${config.size.sm.font.size}`]:
           {},
         //Icon:outer
-        '.nui-kbd-icon-outer': {
+        '.webeze-kbd-icon-outer': {
           [`@apply w-${config.size.sm.icon.outer.size} h-${config.size.sm.icon.outer.size}`]:
             {},
         },
         //Icon:inner
-        '.nui-kbd-icon-inner': {
+        '.webeze-kbd-icon-inner': {
           [`@apply w-${config.size.sm.icon.inner.size} h-${config.size.sm.icon.inner.size}`]:
             {},
         },
       },
       //Size:md
-      '&.nui-kbd-md': {
+      '&.webeze-kbd-md': {
         //Size
         [`@apply min-h-[${config.size.md.size}] min-w-[${config.size.md.size}]`]:
           {},
@@ -99,18 +99,18 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply leading-${config.size.md.font.lead} text-${config.size.md.font.size}`]:
           {},
         //Icon:outer
-        '.nui-kbd-icon-outer': {
+        '.webeze-kbd-icon-outer': {
           [`@apply w-${config.size.md.icon.outer.size} h-${config.size.md.icon.outer.size}`]:
             {},
         },
         //Icon:inner
-        '.nui-kbd-icon-inner': {
+        '.webeze-kbd-icon-inner': {
           [`@apply w-${config.size.md.icon.inner.size} h-${config.size.md.icon.inner.size}`]:
             {},
         },
       },
       //Size:lg
-      '&.nui-kbd-lg': {
+      '&.webeze-kbd-lg': {
         //Size
         [`@apply min-h-[${config.size.lg.size}] min-w-[${config.size.lg.size}]`]:
           {},
@@ -121,18 +121,18 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply leading-${config.size.lg.font.lead} text-${config.size.lg.font.size}`]:
           {},
         //Icon:outer
-        '.nui-kbd-icon-outer': {
+        '.webeze-kbd-icon-outer': {
           [`@apply w-${config.size.lg.icon.outer.size} h-${config.size.lg.icon.outer.size}`]:
             {},
         },
         //Icon:inner
-        '.nui-kbd-icon-inner': {
+        '.webeze-kbd-icon-inner': {
           [`@apply w-${config.size.lg.icon.inner.size} h-${config.size.lg.icon.inner.size}`]:
             {},
         },
       },
       //Color:default
-      '&.nui-kbd-default': {
+      '&.webeze-kbd-default': {
         //Background
         [`@apply bg-${config.color.default.background.light} dark:bg-${config.color.default.background.dark} border border-b-2`]:
           {},
@@ -141,7 +141,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:default-contrast
-      '&.nui-kbd-default-contrast': {
+      '&.webeze-kbd-default-contrast': {
         //Background
         [`@apply bg-${config.color.defaultContrast.background.light} dark:bg-${config.color.defaultContrast.background.dark} border border-b-2`]:
           {},
@@ -150,7 +150,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:muted
-      '&.nui-kbd-muted': {
+      '&.webeze-kbd-muted': {
         //Background
         [`@apply bg-${config.color.muted.background.light} dark:bg-${config.color.muted.background.dark} border border-b-2`]:
           {},
@@ -159,7 +159,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:muted-contrast
-      '&.nui-kbd-muted-contrast': {
+      '&.webeze-kbd-muted-contrast': {
         //Background
         [`@apply bg-${config.color.mutedContrast.background.light} dark:bg-${config.color.mutedContrast.background.dark} border border-b-2`]:
           {},

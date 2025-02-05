@@ -3,25 +3,25 @@ import { type MessageConfig, defaultConfig, key } from './message.config'
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies MessageConfig
+  const config = theme(`webeze.${key}`) satisfies MessageConfig
 
   addComponents({
     //Wrapper
-    '.nui-message': {
+    '.webeze-message': {
       '@apply relative flex gap-2 border': {},
       //Icon:outer
-      '.nui-message-icon-outer': {
+      '.webeze-message-icon-outer': {
         [`@apply flex h-${config.icon.outer.size} w-${config.icon.outer.size} shrink-0 items-center justify-center`]:
           {},
         //Icon:inner
-        '.nui-message-icon': {
+        '.webeze-message-icon': {
           //Base
           [`@apply h-${config.icon.inner.size} w-${config.icon.inner.size}`]:
             {},
@@ -31,7 +31,7 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Inner:text
-      '.nui-message-inner-text': {
+      '.webeze-message-inner-text': {
         //Base
         '@apply inline-flex items-center leading-normal': {},
         //Font
@@ -42,13 +42,13 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Message:close
-      '.nui-message-close-wrapper': {
+      '.webeze-message-close-wrapper': {
         [`@apply absolute top-${config.close.position.top} end-${config.close.position.end} flex items-center justify-center bg-white dark:bg-muted-950 border border-muted-200 dark:border-muted-800 ${config.close.rounded} h-${config.close.size.outer.height} w-${config.close.size.outer.width}`]:
           {},
       },
       //Message:close
-      '.nui-message-close': {
-        [`@apply nui-focus flex cursor-pointer items-center justify-center shrink-0 h-${config.close.size.inner.height} w-${config.close.size.inner.width} ${config.close.rounded}`]:
+      '.webeze-message-close': {
+        [`@apply webeze-focus flex cursor-pointer items-center justify-center shrink-0 h-${config.close.size.inner.height} w-${config.close.size.inner.width} ${config.close.rounded}`]:
           {},
         //Color
         [`@apply text-${config.close.color.light} dark:text-${config.close.color.dark}`]:
@@ -57,53 +57,53 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply transition-${config.close.transition.property} duration-${config.close.transition.duration}`]:
           {},
         //Close:icon
-        '.nui-close-icon': {
+        '.webeze-close-icon': {
           [`@apply h-${config.close.icon.size} w-${config.close.icon.size}`]:
             {},
         },
       },
       //Message:text
-      '&.nui-has-text': {
+      '&.webeze-has-text': {
         [`@apply py-2 ps-2 pe-${config.safeArea.end}`]: {},
       },
       //Message:icon
-      '&.nui-has-icon': {
+      '&.webeze-has-icon': {
         [`@apply py-1 ps-1 pe-${config.safeArea.end}`]: {},
       },
       //Rounded:sm
-      '&.nui-message-rounded-sm': {
+      '&.webeze-message-rounded-sm': {
         [`@apply ${config.rounded.sm}`]: {},
 
-        '.nui-message-icon-outer': {
+        '.webeze-message-icon-outer': {
           [`@apply ${config.rounded.sm}`]: {},
         },
       },
       //Rounded:md
-      '&.nui-message-rounded-md': {
+      '&.webeze-message-rounded-md': {
         [`@apply ${config.rounded.md}`]: {},
 
-        '.nui-message-icon-outer': {
+        '.webeze-message-icon-outer': {
           [`@apply ${config.rounded.md}`]: {},
         },
       },
       //Rounded:lg
-      '&.nui-message-rounded-lg': {
+      '&.webeze-message-rounded-lg': {
         [`@apply ${config.rounded.lg}`]: {},
 
-        '.nui-message-icon-outer': {
+        '.webeze-message-icon-outer': {
           [`@apply ${config.rounded.lg}`]: {},
         },
       },
       //Rounded:full
-      '&.nui-message-rounded-full': {
+      '&.webeze-message-rounded-full': {
         [`@apply ${config.rounded.full}`]: {},
 
-        '.nui-message-icon-outer': {
+        '.webeze-message-icon-outer': {
           [`@apply ${config.rounded.full}`]: {},
         },
       },
       //Color:default
-      '&.nui-message-default': {
+      '&.webeze-message-default': {
         //Border
         [`@apply border-${config.color.default.border.light} dark:border-${config.color.default.border.dark}`]:
           {},
@@ -111,7 +111,7 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply bg-${config.color.default.background.light} dark:bg-${config.color.default.background.dark}`]:
           {},
         //Icon:outer
-        '.nui-message-icon-outer': {
+        '.webeze-message-icon-outer': {
           //Color
           [`@apply text-${config.color.default.outer.color.light} dark:text-${config.color.default.outer.color.dark}`]:
             {},
@@ -120,12 +120,12 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Inner:text
-        '.nui-message-inner-text': {
+        '.webeze-message-inner-text': {
           [`@apply text-${config.color.default.inner.color.light} dark:text-${config.color.default.inner.color.dark}`]:
             {},
         },
         //Message:close
-        '.nui-message-close': {
+        '.webeze-message-close': {
           //Color
           [`@apply text-${config.color.default.close.color.light} dark:text-${config.color.default.close.color.dark}`]:
             {},
@@ -141,7 +141,7 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Color:default-contrast
-      '&.nui-message-default-contrast': {
+      '&.webeze-message-default-contrast': {
         //Border
         [`@apply border-${config.color.defaultContrast.border.light} dark:border-${config.color.defaultContrast.border.dark}`]:
           {},
@@ -149,7 +149,7 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply bg-${config.color.defaultContrast.background.light} dark:bg-${config.color.defaultContrast.background.dark}`]:
           {},
         //Icon:outer
-        '.nui-message-icon-outer': {
+        '.webeze-message-icon-outer': {
           //Color
           [`@apply text-${config.color.defaultContrast.outer.color.light} dark:text-${config.color.defaultContrast.outer.color.dark}`]:
             {},
@@ -158,12 +158,12 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Inner:text
-        '.nui-message-inner-text': {
+        '.webeze-message-inner-text': {
           [`@apply text-${config.color.defaultContrast.inner.color.light} dark:text-${config.color.defaultContrast.inner.color.dark}`]:
             {},
         },
         //Message:close
-        '.nui-message-close': {
+        '.webeze-message-close': {
           //Color
           [`@apply text-${config.color.defaultContrast.close.color.light} dark:text-${config.color.defaultContrast.close.color.dark}`]:
             {},
@@ -179,7 +179,7 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Color:muted
-      '&.nui-message-muted': {
+      '&.webeze-message-muted': {
         //Border
         [`@apply border-${config.color.muted.border.light} dark:border-${config.color.muted.border.dark}`]:
           {},
@@ -187,7 +187,7 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply bg-${config.color.muted.background.light} dark:bg-${config.color.muted.background.dark}`]:
           {},
         //Icon:outer
-        '.nui-message-icon-outer': {
+        '.webeze-message-icon-outer': {
           //Color
           [`@apply text-${config.color.muted.outer.color.light} dark:text-${config.color.muted.outer.color.dark}`]:
             {},
@@ -196,12 +196,12 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Inner:text
-        '.nui-message-inner-text': {
+        '.webeze-message-inner-text': {
           [`@apply text-${config.color.muted.inner.color.light} dark:text-${config.color.muted.inner.color.dark}`]:
             {},
         },
         //Message:close
-        '.nui-message-close': {
+        '.webeze-message-close': {
           //Color
           [`@apply text-${config.color.muted.close.color.light} dark:text-${config.color.muted.close.color.dark}`]:
             {},
@@ -217,7 +217,7 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Color:muted-contrast
-      '&.nui-message-muted-contrast': {
+      '&.webeze-message-muted-contrast': {
         //Border
         [`@apply border-${config.color.mutedContrast.border.light} dark:border-${config.color.mutedContrast.border.dark}`]:
           {},
@@ -225,7 +225,7 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply bg-${config.color.mutedContrast.background.light} dark:bg-${config.color.mutedContrast.background.dark}`]:
           {},
         //Icon:outer
-        '.nui-message-icon-outer': {
+        '.webeze-message-icon-outer': {
           //Color
           [`@apply text-${config.color.mutedContrast.outer.color.light} dark:text-${config.color.mutedContrast.outer.color.dark}`]:
             {},
@@ -234,12 +234,12 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Inner:text
-        '.nui-message-inner-text': {
+        '.webeze-message-inner-text': {
           [`@apply text-${config.color.mutedContrast.inner.color.light} dark:text-${config.color.mutedContrast.inner.color.dark}`]:
             {},
         },
         //Message:close
-        '.nui-message-close': {
+        '.webeze-message-close': {
           //Color
           [`@apply text-${config.color.mutedContrast.close.color.light} dark:text-${config.color.mutedContrast.close.color.dark}`]:
             {},
@@ -255,7 +255,7 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Color:primary
-      '&.nui-message-primary': {
+      '&.webeze-message-primary': {
         //Border
         [`@apply border-${config.color.primary.border.light} dark:border-${config.color.primary.border.dark}`]:
           {},
@@ -263,7 +263,7 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply bg-${config.color.primary.background.light} dark:bg-${config.color.primary.background.dark}`]:
           {},
         //Icon:outer
-        '.nui-message-icon-outer': {
+        '.webeze-message-icon-outer': {
           //Color
           [`@apply text-${config.color.primary.outer.color.light} dark:text-${config.color.primary.outer.color.dark}`]:
             {},
@@ -272,12 +272,12 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Inner:text
-        '.nui-message-inner-text': {
+        '.webeze-message-inner-text': {
           [`@apply text-${config.color.primary.inner.color.light} dark:text-${config.color.primary.inner.color.dark}`]:
             {},
         },
         //Message:close
-        '.nui-message-close': {
+        '.webeze-message-close': {
           //Color
           [`@apply text-${config.color.primary.close.color.light} dark:text-${config.color.primary.close.color.dark}`]:
             {},
@@ -293,7 +293,7 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Color:info
-      '&.nui-message-info': {
+      '&.webeze-message-info': {
         //Border
         [`@apply border-${config.color.info.border.light} dark:border-${config.color.info.border.dark}`]:
           {},
@@ -301,7 +301,7 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply bg-${config.color.info.background.light} dark:bg-${config.color.info.background.dark}`]:
           {},
         //Icon:outer
-        '.nui-message-icon-outer': {
+        '.webeze-message-icon-outer': {
           //Color
           [`@apply text-${config.color.info.outer.color.light} dark:text-${config.color.info.outer.color.dark}`]:
             {},
@@ -310,12 +310,12 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Inner:text
-        '.nui-message-inner-text': {
+        '.webeze-message-inner-text': {
           [`@apply text-${config.color.info.inner.color.light} dark:text-${config.color.info.inner.color.dark}`]:
             {},
         },
         //Message:close
-        '.nui-message-close': {
+        '.webeze-message-close': {
           //Color
           [`@apply text-${config.color.info.close.color.light} dark:text-${config.color.info.close.color.dark}`]:
             {},
@@ -331,7 +331,7 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Color:success
-      '&.nui-message-success': {
+      '&.webeze-message-success': {
         //Border
         [`@apply border-${config.color.success.border.light} dark:border-${config.color.success.border.dark}`]:
           {},
@@ -339,7 +339,7 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply bg-${config.color.success.background.light} dark:bg-${config.color.success.background.dark}`]:
           {},
         //Icon:outer
-        '.nui-message-icon-outer': {
+        '.webeze-message-icon-outer': {
           //Color
           [`@apply text-${config.color.success.outer.color.light} dark:text-${config.color.success.outer.color.dark}`]:
             {},
@@ -348,12 +348,12 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Inner:text
-        '.nui-message-inner-text': {
+        '.webeze-message-inner-text': {
           [`@apply text-${config.color.success.inner.color.light} dark:text-${config.color.success.inner.color.dark}`]:
             {},
         },
         //Message:close
-        '.nui-message-close': {
+        '.webeze-message-close': {
           //Color
           [`@apply text-${config.color.success.close.color.light} dark:text-${config.color.success.close.color.dark}`]:
             {},
@@ -369,7 +369,7 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Color:warning
-      '&.nui-message-warning': {
+      '&.webeze-message-warning': {
         //Border
         [`@apply border-${config.color.warning.border.light} dark:border-${config.color.warning.border.dark}`]:
           {},
@@ -377,7 +377,7 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply bg-${config.color.warning.background.light} dark:bg-${config.color.warning.background.dark}`]:
           {},
         //Icon:outer
-        '.nui-message-icon-outer': {
+        '.webeze-message-icon-outer': {
           //Color
           [`@apply text-${config.color.warning.outer.color.light} dark:text-${config.color.warning.outer.color.dark}`]:
             {},
@@ -386,12 +386,12 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Inner:text
-        '.nui-message-inner-text': {
+        '.webeze-message-inner-text': {
           [`@apply text-${config.color.warning.inner.color.light} dark:text-${config.color.warning.inner.color.dark}`]:
             {},
         },
         //Message:close
-        '.nui-message-close': {
+        '.webeze-message-close': {
           //Color
           [`@apply text-${config.color.warning.close.color.light} dark:text-${config.color.warning.close.color.dark}`]:
             {},
@@ -407,7 +407,7 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Color:danger
-      '&.nui-message-danger': {
+      '&.webeze-message-danger': {
         //Border
         [`@apply border-${config.color.danger.border.light} dark:border-${config.color.danger.border.dark}`]:
           {},
@@ -415,7 +415,7 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply bg-${config.color.danger.background.light} dark:bg-${config.color.danger.background.dark}`]:
           {},
         //Icon:outer
-        '.nui-message-icon-outer': {
+        '.webeze-message-icon-outer': {
           //Color
           [`@apply text-${config.color.danger.outer.color.light} dark:text-${config.color.danger.outer.color.dark}`]:
             {},
@@ -424,12 +424,12 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Inner:text
-        '.nui-message-inner-text': {
+        '.webeze-message-inner-text': {
           [`@apply text-${config.color.danger.inner.color.light} dark:text-${config.color.danger.inner.color.dark}`]:
             {},
         },
         //Message:close
-        '.nui-message-close': {
+        '.webeze-message-close': {
           //Color
           [`@apply text-${config.color.danger.close.color.light} dark:text-${config.color.danger.close.color.dark}`]:
             {},

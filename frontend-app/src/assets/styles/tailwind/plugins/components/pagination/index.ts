@@ -3,22 +3,22 @@ import { type PaginationConfig, defaultConfig, key } from './pagination.config'
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies PaginationConfig
+  const config = theme(`webeze.${key}`) satisfies PaginationConfig
 
   addComponents({
     //Wrapper
-    '.nui-pagination': {
+    '.webeze-pagination': {
       [`@apply inline-flex w-${config.width} flex-col md:flex-row md:justify-between`]:
         {},
       //Pagination:list
-      '.nui-pagination-list': {
+      '.webeze-pagination-list': {
         //Base
         [`@apply inline-flex flex-wrap gap-2 md:gap-1 p-${config.padding} mb-4 md:mb-0`]:
           {},
@@ -30,7 +30,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Pagination:buttons
-      '.nui-pagination-buttons': {
+      '.webeze-pagination-buttons': {
         //Base
         [`@apply flex items-center justify-end gap-1 border p-${config.buttons.padding}`]:
           {},
@@ -41,9 +41,9 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply border-${config.buttons.border.light} dark:border-${config.buttons.border.dark}`]:
           {},
         //Buttons:button
-        '.nui-pagination-button': {
+        '.webeze-pagination-button': {
           //Base
-          '@apply nui-focus flex h-10 w-full items-center justify-center md:w-10':
+          '@apply webeze-focus flex h-10 w-full items-center justify-center md:w-10':
             {},
           //Font
           [`@apply font-${config.buttons.button.font.family} text-${config.buttons.button.font.size}`]:
@@ -67,16 +67,16 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply transition-${config.buttons.button.transition.property} duration-${config.buttons.button.transition.duration}`]:
             {},
           //Button:icon
-          '.nui-pagination-button-icon': {
+          '.webeze-pagination-button-icon': {
             [`@apply block h-${config.buttons.button.icon.size} w-${config.buttons.button.icon.size}`]:
               {},
           },
         },
       },
       //Pagination:link
-      '.nui-pagination-link': {
+      '.webeze-pagination-link': {
         //Base
-        '@apply nui-focus flex items-center justify-center mb-0 inline-flex flex-wrap gap-2 md:gap-1':
+        '@apply webeze-focus flex items-center justify-center mb-0 inline-flex flex-wrap gap-2 md:gap-1':
           {},
         //Size
         [`@apply h-${config.link.size} px-${config.link.padding}`]: {},
@@ -90,7 +90,7 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply border border-${config.link.border.base.light} dark:border-${config.link.border.base.dark}`]:
           {},
         //Link:not-active
-        '&:not(.nui-active)': {
+        '&:not(.webeze-active)': {
           //Color:inactive:base
           [`@apply text-${config.link.font.color.inactive.base.light} dark:text-${config.link.font.color.inactive.base.dark}`]:
             {},
@@ -108,9 +108,9 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
       },
-      '&.nui-pagination-primary': {
+      '&.webeze-pagination-primary': {
         //Link:primary
-        '.nui-pagination-link.nui-active': {
+        '.webeze-pagination-link.webeze-active': {
           //Color
           [`@apply text-${config.link.font.color.active.primary.light} dark:text-${config.link.font.color.active.primary.dark}`]:
             {},
@@ -125,9 +125,9 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
       },
-      '&.nui-pagination-dark': {
+      '&.webeze-pagination-dark': {
         //Link:dark
-        '.nui-pagination-link.nui-active': {
+        '.webeze-pagination-link.webeze-active': {
           //Color
           [`@apply text-${config.link.font.color.active.dark.light} dark:text-${config.link.font.color.active.dark.dark}`]:
             {},
@@ -142,9 +142,9 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
       },
-      '&.nui-pagination-black': {
+      '&.webeze-pagination-black': {
         //Link:black
-        '.nui-pagination-link.nui-active': {
+        '.webeze-pagination-link.webeze-active': {
           //Color
           [`@apply text-${config.link.font.color.active.black.light} dark:text-${config.link.font.color.active.black.dark}`]:
             {},
@@ -160,7 +160,7 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Pagination:ellipsis
-      '.nui-pagination-ellipsis': {
+      '.webeze-pagination-ellipsis': {
         //Base
         [`@apply select-none flex h-${config.ellipsis.size} w-${config.ellipsis.size} items-center justify-center`]:
           {},
@@ -178,22 +178,22 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Rounded:sm
-      '&.nui-pagination-rounded-sm .nui-pagination-list, &.nui-pagination-rounded-sm .nui-pagination-buttons, &.nui-pagination-rounded-sm .nui-pagination-buttons .nui-pagination-button,  &.nui-pagination-rounded-sm .nui-pagination-link, &.nui-pagination-rounded-sm .nui-pagination-ellipsis':
+      '&.webeze-pagination-rounded-sm .webeze-pagination-list, &.webeze-pagination-rounded-sm .webeze-pagination-buttons, &.webeze-pagination-rounded-sm .webeze-pagination-buttons .webeze-pagination-button,  &.webeze-pagination-rounded-sm .webeze-pagination-link, &.webeze-pagination-rounded-sm .webeze-pagination-ellipsis':
         {
           [`@apply ${config.rounded.sm}`]: {},
         },
       //Rounded:md
-      '&.nui-pagination-rounded-md .nui-pagination-list, &.nui-pagination-rounded-md .nui-pagination-buttons, &.nui-pagination-rounded-md .nui-pagination-buttons .nui-pagination-button,  &.nui-pagination-rounded-md .nui-pagination-link, &.nui-pagination-rounded-md .nui-pagination-ellipsis':
+      '&.webeze-pagination-rounded-md .webeze-pagination-list, &.webeze-pagination-rounded-md .webeze-pagination-buttons, &.webeze-pagination-rounded-md .webeze-pagination-buttons .webeze-pagination-button,  &.webeze-pagination-rounded-md .webeze-pagination-link, &.webeze-pagination-rounded-md .webeze-pagination-ellipsis':
         {
           [`@apply ${config.rounded.md}`]: {},
         },
       //Rounded:lg
-      '&.nui-pagination-rounded-lg .nui-pagination-list, &.nui-pagination-rounded-lg .nui-pagination-buttons, &.nui-pagination-rounded-lg .nui-pagination-buttons .nui-pagination-button,  &.nui-pagination-rounded-lg .nui-pagination-link, &.nui-pagination-rounded-lg .nui-pagination-ellipsis':
+      '&.webeze-pagination-rounded-lg .webeze-pagination-list, &.webeze-pagination-rounded-lg .webeze-pagination-buttons, &.webeze-pagination-rounded-lg .webeze-pagination-buttons .webeze-pagination-button,  &.webeze-pagination-rounded-lg .webeze-pagination-link, &.webeze-pagination-rounded-lg .webeze-pagination-ellipsis':
         {
           [`@apply ${config.rounded.lg}`]: {},
         },
       //Rounded:full
-      '&.nui-pagination-rounded-full .nui-pagination-list, &.nui-pagination-rounded-full .nui-pagination-buttons, &.nui-pagination-rounded-full .nui-pagination-buttons .nui-pagination-button,  &.nui-pagination-rounded-full .nui-pagination-link, &.nui-pagination-rounded-full .nui-pagination-ellipsis':
+      '&.webeze-pagination-rounded-full .webeze-pagination-list, &.webeze-pagination-rounded-full .webeze-pagination-buttons, &.webeze-pagination-rounded-full .webeze-pagination-buttons .webeze-pagination-button,  &.webeze-pagination-rounded-full .webeze-pagination-link, &.webeze-pagination-rounded-full .webeze-pagination-ellipsis':
         {
           [`@apply ${config.rounded.full}`]: {},
         },

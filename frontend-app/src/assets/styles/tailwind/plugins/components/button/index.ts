@@ -3,84 +3,84 @@ import { type ButtonConfig, defaultConfig, key } from './button.config'
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       button: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies ButtonConfig
+  const config = theme(`webeze.${key}`) satisfies ButtonConfig
 
   addComponents({
-    '.nui-button': {
+    '.webeze-button': {
       // #region Base
       '@apply relative inline-flex justify-center items-center space-x-1': {},
       //Text styles
       [`@apply font-${config.font.family} font-${config.font.weight} leading-5 no-underline`]:
         {},
       //State styles
-      [`@apply nui-focus transition-${config.transition.property} duration-${config.transition.duration} disabled:opacity-60 disabled:cursor-not-allowed hover:shadow-none`]:
+      [`@apply webeze-focus transition-${config.transition.property} duration-${config.transition.duration} disabled:opacity-60 disabled:cursor-not-allowed hover:shadow-none`]:
         {},
       // #endregion
 
       // #region Badge
-      '.nui-button-badge': {
+      '.webeze-button-badge': {
         [`@apply flex absolute h-${config.badge.size} w-${config.badge.size} top-0 -end-0.5 -mt-0.5`]:
           {},
 
-        '.nui-button-badge-pulse': {
+        '.webeze-button-badge-pulse': {
           '@apply absolute inline-flex h-full w-full rounded-full opacity-75 bg-primary-500 animate-ping':
             {},
         },
 
-        '.nui-button-badge-inner': {
+        '.webeze-button-badge-inner': {
           [`@apply relative inline-flex rounded-full h-${config.badge.size} w-${config.badge.size} bg-primary-500`]:
             {},
         },
 
-        '&.nui-badge-primary': {
-          '.nui-button-badge-pulse': {
+        '&.webeze-badge-primary': {
+          '.webeze-button-badge-pulse': {
             [`@apply bg-${config.badge.colors.primary}`]: {},
           },
 
-          '.nui-button-badge-inner': {
+          '.webeze-button-badge-inner': {
             [`@apply bg-${config.badge.colors.primary}`]: {},
           },
         },
-        '&.nui-badge-info': {
-          '.nui-button-badge-pulse': {
+        '&.webeze-badge-info': {
+          '.webeze-button-badge-pulse': {
             [`@apply bg-${config.badge.colors.info}`]: {},
           },
 
-          '.nui-button-badge-inner': {
+          '.webeze-button-badge-inner': {
             [`@apply bg-${config.badge.colors.info}`]: {},
           },
         },
-        '&.nui-badge-success': {
-          '.nui-button-badge-pulse': {
+        '&.webeze-badge-success': {
+          '.webeze-button-badge-pulse': {
             [`@apply bg-${config.badge.colors.success}`]: {},
           },
 
-          '.nui-button-badge-inner': {
+          '.webeze-button-badge-inner': {
             [`@apply bg-${config.badge.colors.success}`]: {},
           },
         },
-        '&.nui-badge-warning': {
-          '.nui-button-badge-pulse': {
+        '&.webeze-badge-warning': {
+          '.webeze-button-badge-pulse': {
             [`@apply bg-${config.badge.colors.warning}`]: {},
           },
 
-          '.nui-button-badge-inner': {
+          '.webeze-button-badge-inner': {
             [`@apply bg-${config.badge.colors.warning}`]: {},
           },
         },
-        '&.nui-badge-danger': {
-          '.nui-button-badge-pulse': {
+        '&.webeze-badge-danger': {
+          '.webeze-button-badge-pulse': {
             [`@apply bg-${config.badge.colors.danger}`]: {},
           },
 
-          '.nui-button-badge-inner': {
+          '.webeze-button-badge-inner': {
             [`@apply bg-${config.badge.colors.danger}`]: {},
           },
         },
@@ -88,44 +88,44 @@ export default plugin(({ addComponents, theme }) => {
       // #endregion
 
       // #region Loading
-      '&.nui-button-loading': {
+      '&.webeze-button-loading': {
         '@apply !text-transparent': {},
       },
       // #endregion
 
       // #region Sizes
-      '&.nui-button-sm': {
+      '&.webeze-button-sm': {
         [`@apply h-${config.size.sm.button.height} px-${config.size.sm.button.padding.x} py-${config.size.sm.button.padding.y} text-${config.size.sm.button.text}`]:
           {},
 
-        '.nui-button-icon': {
+        '.webeze-button-icon': {
           [`@apply w-${config.size.sm.icon.size} h-${config.size.sm.icon.size}`]:
             {},
         },
       },
-      '&.nui-button-md': {
+      '&.webeze-button-md': {
         [`@apply h-${config.size.md.button.height} px-${config.size.md.button.padding.x} py-${config.size.md.button.padding.y} text-${config.size.md.button.text}`]:
           {},
 
-        '.nui-button-icon': {
+        '.webeze-button-icon': {
           [`@apply w-${config.size.md.icon.size} h-${config.size.md.icon.size}`]:
             {},
         },
       },
-      '&.nui-button-lg': {
+      '&.webeze-button-lg': {
         [`@apply h-${config.size.lg.button.height} px-${config.size.lg.button.padding.x} py-${config.size.lg.button.padding.y} text-${config.size.lg.button.text}`]:
           {},
 
-        '.nui-button-icon': {
+        '.webeze-button-icon': {
           [`@apply w-${config.size.lg.icon.size} h-${config.size.lg.icon.size}`]:
             {},
         },
       },
-      '&.nui-button-xl': {
+      '&.webeze-button-xl': {
         [`@apply h-${config.size.xl.button.height} px-${config.size.xl.button.padding.x} py-${config.size.xl.button.padding.y} text-${config.size.xl.button.text}`]:
           {},
 
-        '.nui-button-icon': {
+        '.webeze-button-icon': {
           [`@apply w-${config.size.xl.icon.size} h-${config.size.xl.icon.size}`]:
             {},
         },
@@ -133,19 +133,19 @@ export default plugin(({ addComponents, theme }) => {
       // #endregion
 
       // #region Rounded
-      '&.nui-button-rounded-sm': {
+      '&.webeze-button-rounded-sm': {
         [`@apply rounded-${config.rounded.sm}`]: {},
       },
-      '&.nui-button-rounded-md': {
+      '&.webeze-button-rounded-md': {
         [`@apply rounded-${config.rounded.md}`]: {},
       },
-      '&.nui-button-rounded-lg': {
+      '&.webeze-button-rounded-lg': {
         [`@apply rounded-${config.rounded.lg}`]: {},
       },
-      '&.nui-button-rounded-full': {
+      '&.webeze-button-rounded-full': {
         [`@apply rounded-${config.rounded.full}`]: {},
 
-        '.nui-button-badge': {
+        '.webeze-button-badge': {
           [`@apply flex absolute h-${config.badge.size} w-${config.badge.size} top-0 -end-1 -mt-0.5 me-2`]:
             {},
         },
@@ -153,9 +153,9 @@ export default plugin(({ addComponents, theme }) => {
       // #endregion
 
       // #region Variants
-      '&.nui-button-solid': {
+      '&.webeze-button-solid': {
         //Solid:default
-        '&.nui-button-default': {
+        '&.webeze-button-default': {
           //Text color
           [`@apply text-${config.variant.solid.default.text.light} dark:text-${config.variant.solid.default.text.dark}`]:
             {},
@@ -178,17 +178,17 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply hover:enabled:border-${config.variant.solid.default.border.light.hover} dark:hover:enabled:border-${config.variant.solid.default.border.dark.hover}`]:
             {},
           //shadows
-          '&.nui-button-shadow': {
+          '&.webeze-button-shadow': {
             [`@apply enabled:shadow-${config.variant.solid.default.shadow.size} enabled:shadow-${config.variant.solid.default.shadow.light} dark:enabled:shadow-${config.variant.solid.default.shadow.dark}`]:
               {},
           },
-          '&.nui-button-shadow-hover': {
+          '&.webeze-button-shadow-hover': {
             [`@apply hover:enabled:shadow-${config.variant.solid.default.shadow.size} hover:enabled:shadow-${config.variant.solid.default.shadow.light} dark:hover:enabled:shadow-${config.variant.solid.default.shadow.dark}`]:
               {},
           },
         },
         //Solid:default-contrast
-        '&.nui-button-default-contrast': {
+        '&.webeze-button-default-contrast': {
           //Text color
           [`@apply text-${config.variant.solid.defaultContrast.text.light} dark:text-${config.variant.solid.defaultContrast.text.dark}`]:
             {},
@@ -211,17 +211,17 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply hover:enabled:border-${config.variant.solid.defaultContrast.border.light.hover} dark:hover:enabled:border-${config.variant.solid.defaultContrast.border.dark.hover}`]:
             {},
           //shadows
-          '&.nui-button-shadow': {
+          '&.webeze-button-shadow': {
             [`@apply enabled:shadow-${config.variant.solid.defaultContrast.shadow.size} enabled:shadow-${config.variant.solid.defaultContrast.shadow.light} dark:enabled:shadow-${config.variant.solid.defaultContrast.shadow.dark}`]:
               {},
           },
-          '&.nui-button-shadow-hover': {
+          '&.webeze-button-shadow-hover': {
             [`@apply hover:enabled:shadow-${config.variant.solid.defaultContrast.shadow.size} hover:enabled:shadow-${config.variant.solid.defaultContrast.shadow.light} dark:hover:enabled:shadow-${config.variant.solid.defaultContrast.shadow.dark}`]:
               {},
           },
         },
         //Solid:muted
-        '&.nui-button-muted': {
+        '&.webeze-button-muted': {
           //Text color
           [`@apply text-${config.variant.solid.muted.text.light} dark:text-${config.variant.solid.muted.text.dark}`]:
             {},
@@ -244,17 +244,17 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply border-${config.variant.solid.muted.border.light.hover} dark:border-${config.variant.solid.muted.border.dark.hover}`]:
             {},
           //Shadows
-          '&.nui-button-shadow': {
+          '&.webeze-button-shadow': {
             [`@apply enabled:shadow-${config.variant.solid.muted.shadow.size} enabled:shadow-${config.variant.solid.muted.shadow.light} dark:enabled:shadow-${config.variant.solid.muted.shadow.dark}`]:
               {},
           },
-          '&.nui-button-shadow-hover': {
+          '&.webeze-button-shadow-hover': {
             [`@apply hover:enabled:shadow-${config.variant.solid.muted.shadow.size} hover:enabled:shadow-${config.variant.solid.muted.shadow.light} dark:hover:enabled:shadow-${config.variant.solid.muted.shadow.dark}`]:
               {},
           },
         },
         //Solid:muted-contrast
-        '&.nui-button-muted-contrast': {
+        '&.webeze-button-muted-contrast': {
           //Text color
           [`@apply text-${config.variant.solid.mutedContrast.text.light} dark:text-${config.variant.solid.mutedContrast.text.dark}`]:
             {},
@@ -277,17 +277,17 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply hover:enabled:border-${config.variant.solid.mutedContrast.border.light.hover} dark:hover:enabled:border-${config.variant.solid.mutedContrast.border.dark.hover}`]:
             {},
           //shadows
-          '&.nui-button-shadow': {
+          '&.webeze-button-shadow': {
             [`@apply enabled:shadow-${config.variant.solid.mutedContrast.shadow.size} enabled:shadow-${config.variant.solid.mutedContrast.shadow.light} dark:enabled:shadow-${config.variant.solid.mutedContrast.shadow.dark}`]:
               {},
           },
-          '&.nui-button-shadow-hover': {
+          '&.webeze-button-shadow-hover': {
             [`@apply hover:enabled:shadow-${config.variant.solid.mutedContrast.shadow.size} hover:enabled:shadow-${config.variant.solid.mutedContrast.shadow.light} dark:hover:enabled:shadow-${config.variant.solid.mutedContrast.shadow.dark}`]:
               {},
           },
         },
         //Solid:light
-        '&.nui-button-light': {
+        '&.webeze-button-light': {
           //Text color
           [`@apply text-${config.variant.solid.light.text.light} dark:text-${config.variant.solid.light.text.dark}`]:
             {},
@@ -310,17 +310,17 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply border-${config.variant.solid.light.border.light.hover} dark:border-${config.variant.solid.light.border.dark.hover}`]:
             {},
           //Shadows
-          '&.nui-button-shadow': {
+          '&.webeze-button-shadow': {
             [`@apply enabled:shadow-${config.variant.solid.light.shadow.size} enabled:shadow-${config.variant.solid.light.shadow.light} dark:enabled:shadow-${config.variant.solid.light.shadow.dark}`]:
               {},
           },
-          '&.nui-button-shadow-hover': {
+          '&.webeze-button-shadow-hover': {
             [`@apply hover:enabled:shadow-${config.variant.solid.light.shadow.size} hover:enabled:shadow-${config.variant.solid.light.shadow.light} dark:hover:enabled:shadow-${config.variant.solid.light.shadow.dark}`]:
               {},
           },
         },
         //Solid:dark
-        '&.nui-button-dark': {
+        '&.webeze-button-dark': {
           //Text color
           [`@apply text-${config.variant.solid.dark.text.light} dark:text-${config.variant.solid.dark.text.dark}`]:
             {},
@@ -343,17 +343,17 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply border-${config.variant.solid.dark.border.light.hover} dark:border-${config.variant.solid.dark.border.dark.hover}`]:
             {},
           //Shadows
-          '&.nui-button-shadow': {
+          '&.webeze-button-shadow': {
             [`@apply enabled:shadow-${config.variant.solid.dark.shadow.size} enabled:shadow-${config.variant.solid.dark.shadow.dark} dark:enabled:shadow-${config.variant.solid.dark.shadow.dark}`]:
               {},
           },
-          '&.nui-button-shadow-hover': {
+          '&.webeze-button-shadow-hover': {
             [`@apply hover:enabled:shadow-${config.variant.solid.dark.shadow.size} hover:enabled:shadow-${config.variant.solid.dark.shadow.dark} dark:hover:enabled:shadow-${config.variant.solid.dark.shadow.dark}`]:
               {},
           },
         },
         //Solid:black
-        '&.nui-button-black': {
+        '&.webeze-button-black': {
           //Text color
           [`@apply text-${config.variant.solid.black.text.light} dark:text-${config.variant.solid.black.text.dark}`]:
             {},
@@ -376,17 +376,17 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply border-${config.variant.solid.black.border.light.hover} dark:border-${config.variant.solid.black.border.dark.hover}`]:
             {},
           //Shadows
-          '&.nui-button-shadow': {
+          '&.webeze-button-shadow': {
             [`@apply enabled:shadow-${config.variant.solid.black.shadow.size} enabled:shadow-${config.variant.solid.black.shadow.dark} dark:enabled:shadow-${config.variant.solid.black.shadow.dark}`]:
               {},
           },
-          '&.nui-button-shadow-hover': {
+          '&.webeze-button-shadow-hover': {
             [`@apply hover:enabled:shadow-${config.variant.solid.black.shadow.size} hover:enabled:shadow-${config.variant.solid.black.shadow.dark} dark:hover:enabled:shadow-${config.variant.solid.black.shadow.dark}`]:
               {},
           },
         },
         //Solid:primary
-        '&.nui-button-primary': {
+        '&.webeze-button-primary': {
           //Text color
           [`@apply text-${config.variant.solid.primary.text.light} dark:text-${config.variant.solid.primary.text.dark}`]:
             {},
@@ -403,17 +403,17 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply focus-visible:bg-${config.variant.solid.primary.background.light.focus} dark:focus-visible:bg-${config.variant.solid.primary.background.dark.focus}`]:
             {},
           //Shadows
-          '&.nui-button-shadow': {
+          '&.webeze-button-shadow': {
             [`@apply enabled:shadow-${config.variant.solid.primary.shadow.size} enabled:shadow-${config.variant.solid.primary.shadow.light} dark:enabled:shadow-${config.variant.solid.primary.shadow.dark}`]:
               {},
           },
-          '&.nui-button-shadow-hover': {
+          '&.webeze-button-shadow-hover': {
             [`@apply hover:enabled:shadow-${config.variant.solid.primary.shadow.size} hover:enabled:shadow-${config.variant.solid.primary.shadow.light} dark:hover:enabled:shadow-${config.variant.solid.primary.shadow.dark}`]:
               {},
           },
         },
         //Solid:info
-        '&.nui-button-info': {
+        '&.webeze-button-info': {
           //Text color
           [`@apply text-${config.variant.solid.info.text.light} text-${config.variant.solid.info.text.dark}`]:
             {},
@@ -430,17 +430,17 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply focus-visible:bg-${config.variant.solid.info.background.light.focus} dark:focus-visible:bg-${config.variant.solid.info.background.dark.focus}`]:
             {},
           //Shadows
-          '&.nui-button-shadow': {
+          '&.webeze-button-shadow': {
             [`@apply enabled:shadow-${config.variant.solid.info.shadow.size} enabled:shadow-${config.variant.solid.info.shadow.light} dark:enabled:shadow-${config.variant.solid.info.shadow.dark}`]:
               {},
           },
-          '&.nui-button-shadow-hover': {
+          '&.webeze-button-shadow-hover': {
             [`@apply hover:enabled:shadow-${config.variant.solid.info.shadow.size} hover:enabled:shadow-${config.variant.solid.info.shadow.light} dark:hover:enabled:shadow-${config.variant.solid.info.shadow.dark}`]:
               {},
           },
         },
         //Solid:success
-        '&.nui-button-success': {
+        '&.webeze-button-success': {
           //Text color
           [`@apply text-${config.variant.solid.success.text.light} text-${config.variant.solid.success.text.dark}`]:
             {},
@@ -457,17 +457,17 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply focus-visible:bg-${config.variant.solid.success.background.light.focus} dark:focus-visible:bg-${config.variant.solid.success.background.dark.focus}`]:
             {},
           //Shadows
-          '&.nui-button-shadow': {
+          '&.webeze-button-shadow': {
             [`@apply enabled:shadow-${config.variant.solid.success.shadow.size} enabled:shadow-${config.variant.solid.success.shadow.light} dark:enabled:shadow-${config.variant.solid.success.shadow.dark}`]:
               {},
           },
-          '&.nui-button-shadow-hover': {
+          '&.webeze-button-shadow-hover': {
             [`@apply hover:enabled:shadow-${config.variant.solid.success.shadow.size} hover:enabled:shadow-${config.variant.solid.success.shadow.light} dark:hover:enabled:shadow-${config.variant.solid.success.shadow.dark}`]:
               {},
           },
         },
         //Solid:warning
-        '&.nui-button-warning': {
+        '&.webeze-button-warning': {
           //Text color
           [`@apply text-${config.variant.solid.warning.text.light} text-${config.variant.solid.warning.text.dark}`]:
             {},
@@ -484,17 +484,17 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply focus-visible:bg-${config.variant.solid.warning.background.light.focus} dark:focus-visible:bg-${config.variant.solid.warning.background.dark.focus}`]:
             {},
           //Shadows
-          '&.nui-button-shadow': {
+          '&.webeze-button-shadow': {
             [`@apply enabled:shadow-${config.variant.solid.warning.shadow.size} enabled:shadow-${config.variant.solid.warning.shadow.light} dark:enabled:shadow-${config.variant.solid.warning.shadow.dark}`]:
               {},
           },
-          '&.nui-button-shadow-hover': {
+          '&.webeze-button-shadow-hover': {
             [`@apply hover:enabled:shadow-${config.variant.solid.warning.shadow.size} hover:enabled:shadow-${config.variant.solid.warning.shadow.light} dark:hover:enabled:shadow-${config.variant.solid.warning.shadow.dark}`]:
               {},
           },
         },
         //Solid:danger
-        '&.nui-button-danger': {
+        '&.webeze-button-danger': {
           //Text color
           [`@apply text-${config.variant.solid.danger.text.light} text-${config.variant.solid.danger.text.dark}`]:
             {},
@@ -511,19 +511,19 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply focus-visible:bg-${config.variant.solid.danger.background.light.focus} dark:focus-visible:bg-${config.variant.solid.danger.background.dark.focus}`]:
             {},
           //Shadows
-          '&.nui-button-shadow': {
+          '&.webeze-button-shadow': {
             [`@apply enabled:shadow-${config.variant.solid.danger.shadow.size} enabled:shadow-${config.variant.solid.danger.shadow.light} dark:enabled:shadow-${config.variant.solid.danger.shadow.dark}`]:
               {},
           },
-          '&.nui-button-shadow-hover': {
+          '&.webeze-button-shadow-hover': {
             [`@apply hover:enabled:shadow-${config.variant.solid.danger.shadow.size} hover:enabled:shadow-${config.variant.solid.danger.shadow.light} dark:hover:enabled:shadow-${config.variant.solid.danger.shadow.dark}`]:
               {},
           },
         },
       },
-      '&.nui-button-pastel': {
+      '&.webeze-button-pastel': {
         //Pastel:default
-        '&.nui-button-default, &.nui-button-default-contrast': {
+        '&.webeze-button-default, &.webeze-button-default-contrast': {
           //Text color
           [`@apply text-${config.variant.pastel.default.text.light} dark:text-${config.variant.pastel.default.text.dark}`]:
             {},
@@ -541,7 +541,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Pastel:muted
-        '&.nui-button-muted, &.nui-button-muted-contrast': {
+        '&.webeze-button-muted, &.webeze-button-muted-contrast': {
           //Text color
           [`@apply text-${config.variant.pastel.muted.text.light} dark:text-${config.variant.pastel.muted.text.dark}`]:
             {},
@@ -559,7 +559,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Pastel:light
-        '&.nui-button-light': {
+        '&.webeze-button-light': {
           //Text color
           [`@apply text-${config.variant.pastel.light.text.light} dark:text-${config.variant.pastel.light.text.dark}`]:
             {},
@@ -577,7 +577,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Pastel:dark
-        '&.nui-button-dark': {
+        '&.webeze-button-dark': {
           //Text color
           [`@apply text-${config.variant.pastel.dark.text.light} dark:text-${config.variant.pastel.dark.text.dark}`]:
             {},
@@ -595,7 +595,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Pastel:black
-        '&.nui-button-black': {
+        '&.webeze-button-black': {
           //Text color
           [`@apply text-${config.variant.pastel.black.text.light} dark:text-${config.variant.pastel.black.text.dark}`]:
             {},
@@ -613,7 +613,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Pastel:primary
-        '&.nui-button-primary': {
+        '&.webeze-button-primary': {
           //Text color
           [`@apply text-${config.variant.pastel.primary.text.light} dark:text-${config.variant.pastel.primary.text.dark}`]:
             {},
@@ -631,7 +631,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Pastel:info
-        '&.nui-button-info': {
+        '&.webeze-button-info': {
           //Text color
           [`@apply text-${config.variant.pastel.info.text.light} dark:text-${config.variant.pastel.info.text.dark}`]:
             {},
@@ -649,7 +649,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Pastel:success
-        '&.nui-button-success': {
+        '&.webeze-button-success': {
           //Text color
           [`@apply text-${config.variant.pastel.success.text.light} dark:text-${config.variant.pastel.success.text.dark}`]:
             {},
@@ -667,7 +667,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Pastel:warning
-        '&.nui-button-warning': {
+        '&.webeze-button-warning': {
           //Text color
           [`@apply text-${config.variant.pastel.warning.text.light} dark:text-${config.variant.pastel.warning.text.dark}`]:
             {},
@@ -685,7 +685,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Pastel:danger
-        '&.nui-button-danger': {
+        '&.webeze-button-danger': {
           //Text color
           [`@apply text-${config.variant.pastel.danger.text.light} dark:text-${config.variant.pastel.danger.text.dark}`]:
             {},
@@ -704,9 +704,9 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Variant:outline
-      '&.nui-button-outline': {
+      '&.webeze-button-outline': {
         //Outline:default
-        '&.nui-button-default, &.nui-button-default-contrast': {
+        '&.webeze-button-default, &.webeze-button-default-contrast': {
           //Text color
           [`@apply text-${config.variant.outline.default.text.light.base} dark:text-${config.variant.outline.default.text.dark.base}`]:
             {},
@@ -735,13 +735,13 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply border-2 border-${config.variant.outline.default.border.light} dark:border-${config.variant.outline.default.border.dark}`]:
             {},
           //Shadows
-          '&.nui-button-shadow-hover': {
+          '&.webeze-button-shadow-hover': {
             [`@apply hover:enabled:shadow-${config.variant.outline.default.shadow.size} hover:enabled:shadow-${config.variant.outline.default.shadow.light} dark:hover:enabled:shadow-${config.variant.outline.default.shadow.dark}`]:
               {},
           },
         },
         //Outline:light
-        '&.nui-button-light': {
+        '&.webeze-button-light': {
           //Text color
           [`@apply text-${config.variant.outline.light.text.light.base} dark:text-${config.variant.outline.light.text.dark.base}`]:
             {},
@@ -770,13 +770,13 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply border-2 border-${config.variant.outline.light.border.light} dark:border-${config.variant.outline.light.border.dark}`]:
             {},
           //Shadows
-          '&.nui-button-shadow-hover': {
+          '&.webeze-button-shadow-hover': {
             [`@apply hover:enabled:shadow-${config.variant.outline.light.shadow.size} hover:enabled:shadow-${config.variant.outline.light.shadow.light} dark:hover:enabled:shadow-${config.variant.outline.light.shadow.dark}`]:
               {},
           },
         },
         //Outline:muted
-        '&.nui-button-muted, &.nui-button-muted-contrast': {
+        '&.webeze-button-muted, &.webeze-button-muted-contrast': {
           //Text color
           [`@apply text-${config.variant.outline.muted.text.light.base} dark:text-${config.variant.outline.muted.text.dark.base}`]:
             {},
@@ -805,13 +805,13 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply border-2 border-${config.variant.outline.muted.border.light} dark:border-${config.variant.outline.muted.border.dark}`]:
             {},
           //Shadows
-          '&.nui-button-shadow-hover': {
+          '&.webeze-button-shadow-hover': {
             [`@apply hover:enabled:shadow-${config.variant.outline.muted.shadow.size} hover:enabled:shadow-${config.variant.outline.muted.shadow.light} dark:hover:enabled:shadow-${config.variant.outline.muted.shadow.dark}`]:
               {},
           },
         },
         //Outline:dark
-        '&.nui-button-dark': {
+        '&.webeze-button-dark': {
           //Text color
           [`@apply text-${config.variant.outline.dark.text.light.base} dark:text-${config.variant.outline.dark.text.dark.base}`]:
             {},
@@ -840,13 +840,13 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply border-2 border-${config.variant.outline.dark.border.light} dark:border-${config.variant.outline.dark.border.dark}`]:
             {},
           //Shadows
-          '&.nui-button-shadow-hover': {
+          '&.webeze-button-shadow-hover': {
             [`@apply hover:enabled:shadow-${config.variant.outline.dark.shadow.size} hover:enabled:shadow-${config.variant.outline.dark.shadow.light} dark:hover:enabled:shadow-${config.variant.outline.dark.shadow.dark}`]:
               {},
           },
         },
         //Outline:black
-        '&.nui-button-black': {
+        '&.webeze-button-black': {
           //Text color
           [`@apply text-${config.variant.outline.black.text.light.base} dark:text-${config.variant.outline.black.text.dark.base}`]:
             {},
@@ -875,13 +875,13 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply border-2 border-${config.variant.outline.black.border.light} dark:border-${config.variant.outline.black.border.dark}`]:
             {},
           //Shadows
-          '&.nui-button-shadow-hover': {
+          '&.webeze-button-shadow-hover': {
             [`@apply hover:enabled:shadow-${config.variant.outline.black.shadow.size} hover:enabled:shadow-${config.variant.outline.black.shadow.light} dark:hover:enabled:shadow-${config.variant.outline.black.shadow.dark}`]:
               {},
           },
         },
         //Outline:primary
-        '&.nui-button-primary': {
+        '&.webeze-button-primary': {
           //Text color
           [`@apply text-${config.variant.outline.primary.text.light.base} dark:text-${config.variant.outline.primary.text.dark.base}`]:
             {},
@@ -910,13 +910,13 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply border-2 border-${config.variant.outline.primary.border.light} dark:border-${config.variant.outline.primary.border.dark}`]:
             {},
           //Shadows
-          '&.nui-button-shadow-hover': {
+          '&.webeze-button-shadow-hover': {
             [`@apply hover:enabled:shadow-${config.variant.outline.primary.shadow.size} hover:enabled:shadow-${config.variant.outline.primary.shadow.light} dark:hover:enabled:shadow-${config.variant.outline.primary.shadow.dark}`]:
               {},
           },
         },
         //Outline:info
-        '&.nui-button-info': {
+        '&.webeze-button-info': {
           //Text color
           [`@apply text-${config.variant.outline.info.text.light.base} dark:text-${config.variant.outline.info.text.dark.base}`]:
             {},
@@ -945,13 +945,13 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply border-2 border-${config.variant.outline.info.border.light} dark:border-${config.variant.outline.info.border.dark}`]:
             {},
           //Shadows
-          '&.nui-button-shadow-hover': {
+          '&.webeze-button-shadow-hover': {
             [`@apply hover:enabled:shadow-${config.variant.outline.info.shadow.size} hover:enabled:shadow-${config.variant.outline.info.shadow.light} dark:hover:enabled:shadow-${config.variant.outline.info.shadow.dark}`]:
               {},
           },
         },
         //Outline:success
-        '&.nui-button-success': {
+        '&.webeze-button-success': {
           //Text color
           [`@apply text-${config.variant.outline.success.text.light.base} dark:text-${config.variant.outline.success.text.dark.base}`]:
             {},
@@ -980,13 +980,13 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply border-2 border-${config.variant.outline.success.border.light} dark:border-${config.variant.outline.success.border.dark}`]:
             {},
           //Shadows
-          '&.nui-button-shadow-hover': {
+          '&.webeze-button-shadow-hover': {
             [`@apply hover:enabled:shadow-${config.variant.outline.success.shadow.size} hover:enabled:shadow-${config.variant.outline.success.shadow.light} dark:hover:enabled:shadow-${config.variant.outline.success.shadow.dark}`]:
               {},
           },
         },
         //Outline:warning
-        '&.nui-button-warning': {
+        '&.webeze-button-warning': {
           //Text color
           [`@apply text-${config.variant.outline.warning.text.light.base} dark:text-${config.variant.outline.warning.text.dark.base}`]:
             {},
@@ -1015,13 +1015,13 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply border-2 border-${config.variant.outline.warning.border.light} dark:border-${config.variant.outline.warning.border.dark}`]:
             {},
           //Shadows
-          '&.nui-button-shadow-hover': {
+          '&.webeze-button-shadow-hover': {
             [`@apply hover:enabled:shadow-${config.variant.outline.warning.shadow.size} hover:enabled:shadow-${config.variant.outline.warning.shadow.light} dark:hover:enabled:shadow-${config.variant.outline.warning.shadow.dark}`]:
               {},
           },
         },
         //Outline:danger
-        '&.nui-button-danger': {
+        '&.webeze-button-danger': {
           //Text color
           [`@apply text-${config.variant.outline.danger.text.light.base} dark:text-${config.variant.outline.danger.text.dark.base}`]:
             {},
@@ -1050,7 +1050,7 @@ export default plugin(({ addComponents, theme }) => {
           [`@apply border-2 border-${config.variant.outline.danger.border.light} dark:border-${config.variant.outline.danger.border.dark}`]:
             {},
           //Shadows
-          '&.nui-button-shadow-hover': {
+          '&.webeze-button-shadow-hover': {
             [`@apply hover:enabled:shadow-${config.variant.outline.danger.shadow.size} hover:enabled:shadow-${config.variant.outline.danger.shadow.light} dark:hover:enabled:shadow-${config.variant.outline.danger.shadow.dark}`]:
               {},
           },

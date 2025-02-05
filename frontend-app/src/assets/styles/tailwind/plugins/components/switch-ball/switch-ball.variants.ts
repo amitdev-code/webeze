@@ -1,11 +1,11 @@
 import type { SwitchBallVariant } from './switch-ball.types'
 
 export const color = {
-  primary: 'nui-switch-ball-primary',
-  info: 'nui-switch-ball-info',
-  success: 'nui-switch-ball-success',
-  warning: 'nui-switch-ball-warning',
-  danger: 'nui-switch-ball-danger',
-  dark: 'nui-switch-ball-dark',
-  black: 'nui-switch-ball-black',
+  primary: 'webeze-switch-ball-primary',
+  info: 'webeze-switch-ball-info',
+  success: 'webeze-switch-ball-success',
+  warning: 'webeze-switch-ball-warning',
+  danger: 'webeze-switch-ball-danger',
+  dark: 'webeze-switch-ball-dark',
+  black: 'webeze-switch-ball-black',
 } as const satisfies SwitchBallVariant<'color'>

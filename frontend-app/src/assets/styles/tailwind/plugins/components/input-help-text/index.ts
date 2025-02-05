@@ -7,17 +7,17 @@ import {
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies InputHelpTextConfig
+  const config = theme(`webeze.${key}`) satisfies InputHelpTextConfig
 
   addComponents({
-    '.nui-input-help-text': {
+    '.webeze-input-help-text': {
       //Base
       '@apply mt-1 block': {},
       //Font

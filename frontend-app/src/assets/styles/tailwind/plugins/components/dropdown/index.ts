@@ -3,29 +3,29 @@ import { type DropdownConfig, defaultConfig, key } from './dropdown.config'
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies DropdownConfig
+  const config = theme(`webeze.${key}`) satisfies DropdownConfig
 
   addComponents({
     //Wrapper
-    '.nui-dropdown': {
+    '.webeze-dropdown': {
       [`@apply text-${config.align}`]: {},
       //Menu
-      '.nui-menu': {
+      '.webeze-menu': {
         '@apply relative inline-block': {},
       },
       //Menu Content
-      '.nui-menu-content': {
+      '.webeze-menu-content': {
         '@apply p-2': {},
       },
       //Button:context
-      '.nui-context-button': {
+      '.webeze-context-button': {
         //Base
         [`@apply inline-flex items-center justify-center rounded-${config.button.context.rounded}`]:
           {},
@@ -39,7 +39,7 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply transition-${config.button.context.transition.property} duration-${config.button.context.transition.duration}`]:
           {},
         //Context:inner
-        '.nui-context-button-inner': {
+        '.webeze-context-button-inner': {
           //Base
           [`@apply flex items-center justify-center rounded-${config.button.context.inner.rounded}`]:
             {},
@@ -54,7 +54,7 @@ export default plugin(({ addComponents, theme }) => {
             {},
         },
         //Context:icon
-        '.nui-context-icon': {
+        '.webeze-context-icon': {
           //Size
           [`@apply h-${config.button.context.icon.size} w-${config.button.context.icon.size}`]:
             {},
@@ -67,12 +67,12 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Button:text
-      '.nui-text-button': {
+      '.webeze-text-button': {
         //Base
         '@apply flex items-center space-x-1': {},
       },
       //Button:chevron
-      '.nui-chevron': {
+      '.webeze-chevron': {
         [`@apply h-${config.button.chevron.size} w-${config.button.chevron.size}`]:
           {},
         //Transition
@@ -80,42 +80,42 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Orientation:start
-      '&.nui-dropdown-start': {
-        '.nui-dropdown-menu': {
+      '&.webeze-dropdown-start': {
+        '.webeze-dropdown-menu': {
           '@apply start-0 origin-top-left': {},
         },
       },
       //Orientation:end
-      '&.nui-dropdown-end': {
-        '.nui-dropdown-menu': {
+      '&.webeze-dropdown-end': {
+        '.webeze-dropdown-menu': {
           '@apply end-0 origin-top-right': {},
         },
       },
       //Context:hover
       '&:hover': {
-        '.nui-context-button': {
+        '.webeze-context-button': {
           [`@apply ring-offset-${config.button.context.ring.offset.size} ring-${config.button.context.ring.color.hover.light} dark:ring-${config.button.context.ring.color.hover.dark}`]:
             {},
         },
       },
     },
     //Dropdown:menu
-    '.nui-dropdown-menu': {
+    '.webeze-dropdown-menu': {
       //Base
       '@apply absolute z-50 mt-2 focus:outline-none': {},
       //Shadow
       [`@apply shadow-${config.menu.shadow.size} shadow-${config.menu.shadow.light} dark:shadow-${config.menu.shadow.dark}`]:
         {},
       //Menu:header
-      '.nui-menu-header': {
+      '.webeze-menu-header': {
         '@apply px-4 pt-5': {},
       },
       //Header:inner
-      '.nui-menu-header-inner': {
+      '.webeze-menu-header-inner': {
         '@apply relative flex items-center justify-between': {},
       },
       //Header:title
-      '.nui-menu-header-title': {
+      '.webeze-menu-header-title': {
         //Base
         [`@apply font-${config.menu.header.title.font.family} font-${config.menu.header.title.font.weight} text-${config.menu.header.title.font.size} uppercase`]:
           {},
@@ -124,31 +124,31 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Menu:content
-      '.nui-menu-content': {
+      '.webeze-menu-content': {
         '@apply p-2 space-y-1': {},
       },
       //Size:md
-      '&.nui-menu-md': {
+      '&.webeze-menu-md': {
         '@apply w-56': {},
       },
       //Size:lg
-      '&.nui-menu-lg': {
+      '&.webeze-menu-lg': {
         '@apply w-72': {},
       },
       //Rounded:sm
-      '&.nui-menu-rounded-sm': {
+      '&.webeze-menu-rounded-sm': {
         [`@apply ${config.menu.rounded.sm}`]: {},
       },
       //Rounded:md
-      '&.nui-menu-rounded-md': {
+      '&.webeze-menu-rounded-md': {
         [`@apply ${config.menu.rounded.md}`]: {},
       },
       //Rounded:lg
-      '&.nui-menu-rounded-lg': {
+      '&.webeze-menu-rounded-lg': {
         [`@apply ${config.menu.rounded.lg}`]: {},
       },
       //Color:default
-      '&.nui-menu-default': {
+      '&.webeze-menu-default': {
         //Border
         [`@apply border border-${config.menu.color.default.border.light} dark:border-${config.menu.color.default.border.dark}`]:
           {},
@@ -157,7 +157,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:default-contrast
-      '&.nui-menu-default-contrast': {
+      '&.webeze-menu-default-contrast': {
         //Border
         [`@apply border border-${config.menu.color.defaultContrast.border.light} dark:border-${config.menu.color.defaultContrast.border.dark}`]:
           {},
@@ -166,7 +166,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:muted
-      '&.nui-menu-muted': {
+      '&.webeze-menu-muted': {
         //Border
         [`@apply border border-${config.menu.color.muted.border.light} dark:border-${config.menu.color.muted.border.dark}`]:
           {},
@@ -175,7 +175,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:muted-contrast
-      '&.nui-menu-muted-contrast': {
+      '&.webeze-menu-muted-contrast': {
         //Border
         [`@apply border border-${config.menu.color.mutedContrast.border.light} dark:border-${config.menu.color.mutedContrast.border.dark}`]:
           {},

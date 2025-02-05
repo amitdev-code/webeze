@@ -3,118 +3,118 @@ import { type ProgressConfig, defaultConfig, key } from './progress.config'
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
     extend: {
       keyframes: {
-        'nui-progress-indeterminate': {
+        'webeze-progress-indeterminate': {
           '0%': { 'margin-left': '-100%' },
           '60%': { 'margin-left': '100%' },
           '100%': { 'margin-left': '-100%' },
         },
       },
       animation: {
-        'nui-progress-indeterminate': `nui-progress-indeterminate 3s linear infinite forwards`,
+        'webeze-progress-indeterminate': `webeze-progress-indeterminate 3s linear infinite forwards`,
       },
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies ProgressConfig
+  const config = theme(`webeze.${key}`) satisfies ProgressConfig
 
   addComponents({
-    '.nui-progress': {
+    '.webeze-progress': {
       [`@apply relative w-${config.width} overflow-hidden`]: {},
       //Bar
-      '.nui-progress-bar': {
+      '.webeze-progress-bar': {
         [`@apply absolute start-0 top-0 h-full transition-${config.bar.transition.property} duration-${config.bar.transition.duration}`]:
           {},
       },
       //Color
-      '&.nui-progress-default': {
+      '&.webeze-progress-default': {
         [`@apply bg-${config.color.default.background.light} dark:bg-${config.color.default.background.dark}`]:
           {},
       },
-      '&.nui-progress-contrast': {
+      '&.webeze-progress-contrast': {
         [`@apply bg-${config.color.defaultContrast.background.light} dark:bg-${config.color.defaultContrast.background.dark}`]:
           {},
       },
       //Size
-      '&.nui-progress-xs': {
+      '&.webeze-progress-xs': {
         [`@apply h-${config.size.xs}`]: {},
       },
-      '&.nui-progress-sm': {
+      '&.webeze-progress-sm': {
         [`@apply h-${config.size.sm}`]: {},
       },
-      '&.nui-progress-md': {
+      '&.webeze-progress-md': {
         [`@apply h-${config.size.md}`]: {},
       },
-      '&.nui-progress-lg': {
+      '&.webeze-progress-lg': {
         [`@apply h-${config.size.lg}`]: {},
       },
-      '&.nui-progress-xl': {
+      '&.webeze-progress-xl': {
         [`@apply h-${config.size.xl}`]: {},
       },
       //Rounded
-      '&.nui-progress-rounded-sm, &.nui-progress-rounded-sm .nui-progress-bar':
+      '&.webeze-progress-rounded-sm, &.webeze-progress-rounded-sm .webeze-progress-bar':
         {
           [`@apply ${config.rounded.sm}`]: {},
         },
-      '&.nui-progress-rounded-md, &.nui-progress-rounded-md .nui-progress-bar':
+      '&.webeze-progress-rounded-md, &.webeze-progress-rounded-md .webeze-progress-bar':
         {
           [`@apply ${config.rounded.md}`]: {},
         },
-      '&.nui-progress-rounded-lg, &.nui-progress-rounded-lg .nui-progress-bar':
+      '&.webeze-progress-rounded-lg, &.webeze-progress-rounded-lg .webeze-progress-bar':
         {
           [`@apply ${config.rounded.lg}`]: {},
         },
-      '&.nui-progress-rounded-full, &.nui-progress-rounded-full .nui-progress-bar':
+      '&.webeze-progress-rounded-full, &.webeze-progress-rounded-full .webeze-progress-bar':
         {
           [`@apply ${config.rounded.full}`]: {},
         },
-      '&.nui-progress-indeterminate .nui-progress-bar': {
+      '&.webeze-progress-indeterminate .webeze-progress-bar': {
         '@apply w-full': {},
       },
       //Bar color
-      '&.nui-progress-primary': {
-        '.nui-progress-bar': {
+      '&.webeze-progress-primary': {
+        '.webeze-progress-bar': {
           [`@apply bg-${config.bar.color.primary}`]: {},
         },
       },
-      '&.nui-progress-info': {
-        '.nui-progress-bar': {
+      '&.webeze-progress-info': {
+        '.webeze-progress-bar': {
           [`@apply bg-${config.bar.color.info}`]: {},
         },
       },
-      '&.nui-progress-success': {
-        '.nui-progress-bar': {
+      '&.webeze-progress-success': {
+        '.webeze-progress-bar': {
           [`@apply bg-${config.bar.color.success}`]: {},
         },
       },
-      '&.nui-progress-warning': {
-        '.nui-progress-bar': {
+      '&.webeze-progress-warning': {
+        '.webeze-progress-bar': {
           [`@apply bg-${config.bar.color.warning}`]: {},
         },
       },
-      '&.nui-progress-danger': {
-        '.nui-progress-bar': {
+      '&.webeze-progress-danger': {
+        '.webeze-progress-bar': {
           [`@apply bg-${config.bar.color.danger}`]: {},
         },
       },
-      '&.nui-progress-light': {
-        '.nui-progress-bar': {
+      '&.webeze-progress-light': {
+        '.webeze-progress-bar': {
           [`@apply ${config.bar.color.light}`]: {},
         },
       },
-      '&.nui-progress-dark': {
-        '.nui-progress-bar': {
+      '&.webeze-progress-dark': {
+        '.webeze-progress-bar': {
           [`@apply ${config.bar.color.dark}`]: {},
         },
       },
-      '&.nui-progress-black': {
-        '.nui-progress-bar': {
+      '&.webeze-progress-black': {
+        '.webeze-progress-bar': {
           [`@apply ${config.bar.color.black}`]: {},
         },
       },

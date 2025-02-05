@@ -1,8 +1,8 @@
 import type { ProseVariant } from './prose.types'
 
 export const rounded = {
-  none: 'nui-prose-rounded-none',
-  sm: 'nui-prose-rounded-sm',
-  md: 'nui-prose-rounded-md',
-  lg: 'nui-prose-rounded-lg',
+  none: 'webeze-prose-rounded-none',
+  sm: 'webeze-prose-rounded-sm',
+  md: 'webeze-prose-rounded-md',
+  lg: 'webeze-prose-rounded-lg',
 } as const satisfies ProseVariant<'rounded'>

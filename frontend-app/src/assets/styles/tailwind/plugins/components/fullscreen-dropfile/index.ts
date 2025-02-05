@@ -7,31 +7,31 @@ import {
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies FullscreenDropfileConfig
+  const config = theme(`webeze.${key}`) satisfies FullscreenDropfileConfig
 
   addComponents({
     //Wrapper
-    '.nui-fullscreen-dropfile': {
+    '.webeze-fullscreen-dropfile': {
       //Dropfile:outer
-      '.nui-fullscreen-dropfile-outer': {
+      '.webeze-fullscreen-dropfile-outer': {
         '@apply bg-muted-100/50 dark:bg-muted-800/20 fixed inset-0 z-40 backdrop-blur-sm transition-all hover:backdrop-blur-none':
           {},
       },
       //Dropfile:inner
-      '.nui-fullscreen-dropfile-inner': {
+      '.webeze-fullscreen-dropfile-inner': {
         '@apply fixed inset-0 z-50': {},
         //Dropfile:container
-        '.nui-fullscreen-dropfile-container': {
+        '.webeze-fullscreen-dropfile-container': {
           '@apply flex h-full flex-1 items-center justify-center': {},
           //Dropfile:content
-          '.nui-fullscreen-dropfile-content': {
+          '.webeze-fullscreen-dropfile-content': {
             [`@apply h-${config.height} w-${config.width} mx-auto flex flex-col items-center justify-center gap-6 drop-shadow-sm`]:
               {},
             //Background
@@ -40,11 +40,11 @@ export default plugin(({ addComponents, theme }) => {
             [`@apply ${config.rounded} border-2 border-dashed border-${config.border.light} dark:border-${config.border.dark}`]:
               {},
             //Icon
-            '.nui-fullscreen-dropfile-icon': {
+            '.webeze-fullscreen-dropfile-icon': {
               [`@apply h-${config.icon.size} w-${config.icon.size}`]: {},
             },
             //Label
-            '.nui-fullscreen-dropfile-label': {
+            '.webeze-fullscreen-dropfile-label': {
               [`@apply text-${config.label.font.size} text-muted-500 dark:text-muted-400`]:
                 {},
             },
@@ -52,12 +52,12 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Color: primary
-      '&.nui-dropfile-primary': {
-        '.nui-fullscreen-dropfile-inner': {
-          '.nui-fullscreen-dropfile-container': {
-            '.nui-fullscreen-dropfile-content': {
+      '&.webeze-dropfile-primary': {
+        '.webeze-fullscreen-dropfile-inner': {
+          '.webeze-fullscreen-dropfile-container': {
+            '.webeze-fullscreen-dropfile-content': {
               //Icon
-              '.nui-fullscreen-dropfile-icon': {
+              '.webeze-fullscreen-dropfile-icon': {
                 [`@apply text-${config.color.primary.light} dark:text-${config.color.primary.dark}`]:
                   {},
               },
@@ -66,12 +66,12 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Color: dark
-      '&.nui-dropfile-dark': {
-        '.nui-fullscreen-dropfile-inner': {
-          '.nui-fullscreen-dropfile-container': {
-            '.nui-fullscreen-dropfile-content': {
+      '&.webeze-dropfile-dark': {
+        '.webeze-fullscreen-dropfile-inner': {
+          '.webeze-fullscreen-dropfile-container': {
+            '.webeze-fullscreen-dropfile-content': {
               //Icon
-              '.nui-fullscreen-dropfile-icon': {
+              '.webeze-fullscreen-dropfile-icon': {
                 [`@apply text-${config.color.dark.light} dark:text-${config.color.dark.dark}`]:
                   {},
               },
@@ -80,12 +80,12 @@ export default plugin(({ addComponents, theme }) => {
         },
       },
       //Color: black
-      '&.nui-dropfile-black': {
-        '.nui-fullscreen-dropfile-inner': {
-          '.nui-fullscreen-dropfile-container': {
-            '.nui-fullscreen-dropfile-content': {
+      '&.webeze-dropfile-black': {
+        '.webeze-fullscreen-dropfile-inner': {
+          '.webeze-fullscreen-dropfile-container': {
+            '.webeze-fullscreen-dropfile-content': {
               //Icon
-              '.nui-fullscreen-dropfile-icon': {
+              '.webeze-fullscreen-dropfile-icon': {
                 [`@apply text-${config.color.black.light} dark:text-${config.color.black.dark}`]:
                   {},
               },

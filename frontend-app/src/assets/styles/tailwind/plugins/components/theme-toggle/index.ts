@@ -7,20 +7,20 @@ import {
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies ThemeToggleConfig
+  const config = theme(`webeze.${key}`) satisfies ThemeToggleConfig
 
   addComponents({
     //Wrapper
-    '.nui-theme-toggle': {
+    '.webeze-theme-toggle': {
       //Base
-      [`@apply nui-focus relative block shrink-0 overflow-hidden rounded-${config.outer.rounded}`]:
+      [`@apply webeze-focus relative block shrink-0 overflow-hidden rounded-${config.outer.rounded}`]:
         {},
       //Size
       [`@apply h-${config.outer.size} w-${config.outer.size}`]: {},
@@ -31,7 +31,7 @@ export default plugin(({ addComponents, theme }) => {
       [`@apply transition-${config.transition.property} duration-${config.transition.duration}`]:
         {},
       //Toggle:inner
-      '.nui-theme-toggle-inner': {
+      '.webeze-theme-toggle-inner': {
         [`@apply relative block rounded-${config.inner.rounded}`]: {},
         //Size
         [`@apply h-${config.inner.size} w-${config.inner.size}`]: {},
@@ -43,12 +43,12 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Toggle:input
-      '.nui-theme-toggle-input': {
+      '.webeze-theme-toggle-input': {
         [`@apply absolute start-0 top-0 z-[2] h-${config.input.size} w-${config.input.size} cursor-pointer opacity-0`]:
           {},
       },
       //Icon:sun
-      '.nui-sun': {
+      '.webeze-sun': {
         //Base
         '@apply pointer-events-none absolute start-1/2 top-1/2 block -translate-y-1/2 translate-x-[-50%] rtl:translate-x-[50%]':
           {},
@@ -62,7 +62,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Icon:moon
-      '.nui-moon': {
+      '.webeze-moon': {
         '@apply pointer-events-none absolute start-1/2 top-1/2 block translate-x-[-50%] rtl:translate-x-[45%]':
           {},
         //Size
@@ -75,40 +75,40 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Toggle:not-checked:sun
-      '.nui-theme-toggle-input:not(:checked) ~ .nui-theme-toggle-inner .nui-sun':
+      '.webeze-theme-toggle-input:not(:checked) ~ .webeze-theme-toggle-inner .webeze-sun':
         {
           '@apply -translate-y-1/2 opacity-100': {},
         },
       //Toggle:checked:sun
-      '.nui-theme-toggle-input:checked ~ .nui-theme-toggle-inner .nui-sun': {
+      '.webeze-theme-toggle-input:checked ~ .webeze-theme-toggle-inner .webeze-sun': {
         '@apply translate-y-[-150%] opacity-0': {},
       },
       //Toggle:checked:moon
-      '.nui-theme-toggle-input:not(:checked) ~ .nui-theme-toggle-inner .nui-moon':
+      '.webeze-theme-toggle-input:not(:checked) ~ .webeze-theme-toggle-inner .webeze-moon':
         {
           '@apply translate-y-[-150%] opacity-0': {},
         },
       //Toggle:not-checked:moon
-      '.nui-theme-toggle-input:checked ~ .nui-theme-toggle-inner .nui-moon': {
+      '.webeze-theme-toggle-input:checked ~ .webeze-theme-toggle-inner .webeze-moon': {
         '@apply -translate-y-1/2 opacity-100': {},
       },
       //Toggle:inverted
-      '&.nui-theme-toggle-inverted': {
+      '&.webeze-theme-toggle-inverted': {
         [`@apply ring-offset-${config.inverted.enabled.ring.light} dark:ring-offset-${config.inverted.enabled.ring.dark}`]:
           {},
 
-        '.nui-toggle-inner': {
+        '.webeze-toggle-inner': {
           [`@apply !bg-${config.inverted.enabled.inner.background.light} dark:!bg-${config.inverted.enabled.inner.background.dark}`]:
             {},
         },
       },
       //Toggle:not-inverted
-      '&:not(nui-theme-toggle-inverted)': {
+      '&:not(webeze-theme-toggle-inverted)': {
         //Ring
         [`@apply ring-offset-${config.inverted.disabled.ring.light} dark:ring-offset-${config.inverted.disabled.ring.dark}`]:
           {},
 
-        '.nui-toggle-inner': {
+        '.webeze-toggle-inner': {
           //Border
           [`@apply border border-${config.inverted.disabled.inner.background.light} dark:border-${config.inverted.disabled.inner.background.dark}`]:
             {},

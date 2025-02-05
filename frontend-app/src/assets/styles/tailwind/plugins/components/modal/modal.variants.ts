@@ -1,8 +1,8 @@
 import type { ModalVariant } from './modal.types'
 
 export const size = {
-  sm: 'nui-modal-sm',
-  md: 'nui-modal-md',
-  lg: 'nui-modal-lg',
-  xl: 'nui-modal-xl',
+  sm: 'webeze-modal-sm',
+  md: 'webeze-modal-md',
+  lg: 'webeze-modal-lg',
+  xl: 'webeze-modal-xl',
 } as const satisfies ModalVariant<'size'>

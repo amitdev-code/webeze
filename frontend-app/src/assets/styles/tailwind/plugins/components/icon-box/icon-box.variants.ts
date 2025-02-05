@@ -2,46 +2,46 @@ import type { IconBoxVariant } from './icon-box.types'
 
 export const rounded = {
   none: '',
-  sm: 'nui-box-rounded-sm',
-  md: 'nui-box-rounded-md',
-  lg: 'nui-box-rounded-lg',
-  full: 'nui-box-rounded-full',
+  sm: 'webeze-box-rounded-sm',
+  md: 'webeze-box-rounded-md',
+  lg: 'webeze-box-rounded-lg',
+  full: 'webeze-box-rounded-full',
 } as const satisfies IconBoxVariant<'rounded'>
 
 export const size = {
-  xs: 'nui-box-xs',
-  sm: 'nui-box-sm',
-  md: 'nui-box-md',
-  lg: 'nui-box-lg',
-  xl: 'nui-box-xl',
-  '2xl': 'nui-box-2xl',
+  xs: 'webeze-box-xs',
+  sm: 'webeze-box-sm',
+  md: 'webeze-box-md',
+  lg: 'webeze-box-lg',
+  xl: 'webeze-box-xl',
+  '2xl': 'webeze-box-2xl',
 } as const satisfies IconBoxVariant<'size'>
 
 export const variant = {
-  solid: 'nui-box-solid',
-  pastel: 'nui-box-pastel',
-  outline: 'nui-box-outline',
+  solid: 'webeze-box-solid',
+  pastel: 'webeze-box-pastel',
+  outline: 'webeze-box-outline',
 } as const satisfies IconBoxVariant<'variant'>
 
 export const color = {
-  default: 'nui-box-default',
-  'default-contrast': 'nui-box-default-contrast',
-  muted: 'nui-box-muted',
-  'muted-contrast': 'nui-box-muted-contrast',
-  light: 'nui-box-light',
-  dark: 'nui-box-dark',
-  black: 'nui-box-black',
-  primary: 'nui-box-primary',
-  info: 'nui-box-info',
-  success: 'nui-box-success',
-  warning: 'nui-box-warning',
-  danger: 'nui-box-danger',
+  default: 'webeze-box-default',
+  'default-contrast': 'webeze-box-default-contrast',
+  muted: 'webeze-box-muted',
+  'muted-contrast': 'webeze-box-muted-contrast',
+  light: 'webeze-box-light',
+  dark: 'webeze-box-dark',
+  black: 'webeze-box-black',
+  primary: 'webeze-box-primary',
+  info: 'webeze-box-info',
+  success: 'webeze-box-success',
+  warning: 'webeze-box-warning',
+  danger: 'webeze-box-danger',
 } as const satisfies IconBoxVariant<'color'>
 
 export const mask = {
-  hex: 'nui-mask nui-mask-hex',
-  hexed: 'nui-mask nui-mask-hexed',
-  deca: 'nui-mask nui-mask-deca',
-  blob: 'nui-mask nui-mask-blob',
-  diamond: 'nui-mask nui-mask-diamond',
+  hex: 'webeze-mask webeze-mask-hex',
+  hexed: 'webeze-mask webeze-mask-hexed',
+  deca: 'webeze-mask webeze-mask-deca',
+  blob: 'webeze-mask webeze-mask-blob',
+  diamond: 'webeze-mask webeze-mask-diamond',
 } as const satisfies IconBoxVariant<'mask'>

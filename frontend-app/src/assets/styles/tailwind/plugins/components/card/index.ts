@@ -3,22 +3,22 @@ import { type CardConfig, defaultConfig, key } from './card.config'
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies CardConfig
+  const config = theme(`webeze.${key}`) satisfies CardConfig
 
   addComponents({
-    '.nui-card': {
+    '.webeze-card': {
       //Base
       [`@apply relative w-${config.width} transition-${config.transition.property} duration-${config.transition.duration}`]:
         {},
       //Color:default
-      '&.nui-card-default': {
+      '&.webeze-card-default': {
         //Border
         [`@apply border border-${config.color.default.border.light} dark:border-${config.color.default.border.dark}`]:
           {},
@@ -27,7 +27,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:defaultContrast
-      '&.nui-card-default-contrast': {
+      '&.webeze-card-default-contrast': {
         //Border
         [`@apply border border-${config.color.defaultContrast.border.light} dark:border-${config.color.defaultContrast.border.dark}`]:
           {},
@@ -36,7 +36,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:muted
-      '&.nui-card-muted': {
+      '&.webeze-card-muted': {
         //Border
         [`@apply border border-${config.color.muted.border.light} dark:border-${config.color.muted.border.dark}`]:
           {},
@@ -45,7 +45,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:mutedContrast
-      '&.nui-card-muted-contrast': {
+      '&.webeze-card-muted-contrast': {
         //Border
         [`@apply border border-${config.color.mutedContrast.border.light} dark:border-${config.color.mutedContrast.border.dark}`]:
           {},
@@ -54,7 +54,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:dark
-      '&.nui-card-dark': {
+      '&.webeze-card-dark': {
         //Border
         [`@apply border border-${config.color.dark.border.light} dark:border-${config.color.dark.border.dark}`]:
           {},
@@ -63,7 +63,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:black
-      '&.nui-card-black': {
+      '&.webeze-card-black': {
         //Border
         [`@apply border border-${config.color.black.border.light} dark:border-${config.color.black.border.dark}`]:
           {},
@@ -72,7 +72,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:primary
-      '&.nui-card-primary': {
+      '&.webeze-card-primary': {
         //Border
         [`@apply border border-${config.color.primary.border.light} dark:border-${config.color.primary.border.dark}`]:
           {},
@@ -81,7 +81,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:info
-      '&.nui-card-info': {
+      '&.webeze-card-info': {
         //Border
         [`@apply border border-${config.color.info.border.light} dark:border-${config.color.info.border.dark}`]:
           {},
@@ -90,7 +90,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:success
-      '&.nui-card-success': {
+      '&.webeze-card-success': {
         //Border
         [`@apply border border-${config.color.success.border.light} dark:border-${config.color.success.border.dark}`]:
           {},
@@ -99,7 +99,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:warning
-      '&.nui-card-warning': {
+      '&.webeze-card-warning': {
         //Border
         [`@apply border border-${config.color.warning.border.light} dark:border-${config.color.warning.border.dark}`]:
           {},
@@ -108,7 +108,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:danger
-      '&.nui-card-danger': {
+      '&.webeze-card-danger': {
         //Border
         [`@apply border border-${config.color.danger.border.light} dark:border-${config.color.danger.border.dark}`]:
           {},
@@ -117,25 +117,25 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Rounded:sm
-      '&.nui-card-rounded-sm': {
+      '&.webeze-card-rounded-sm': {
         [`@apply rounded-${config.rounded.sm}`]: {},
       },
       //Rounded:md
-      '&.nui-card-rounded-md': {
+      '&.webeze-card-rounded-md': {
         [`@apply rounded-${config.rounded.md}`]: {},
       },
       //Rounded:lg
-      '&.nui-card-rounded-lg': {
+      '&.webeze-card-rounded-lg': {
         [`@apply rounded-${config.rounded.lg}`]: {},
       },
       //Shadow
-      '&:not(.nui-card-primary):not(.nui-card-info):not(.nui-card-success):not(.nui-card-warning):not(.nui-card-danger)':
+      '&:not(.webeze-card-primary):not(.webeze-card-info):not(.webeze-card-success):not(.webeze-card-warning):not(.webeze-card-danger)':
         {
-          '&.nui-card-shadow': {
+          '&.webeze-card-shadow': {
             [`@apply shadow-${config.shadow.light} dark:shadow-${config.shadow.dark} shadow-${config.shadow.size}`]:
               {},
           },
-          '&.nui-card-shadow-hover': {
+          '&.webeze-card-shadow-hover': {
             [`@apply hover:shadow-${config.shadow.light} dark:hover:shadow-${config.shadow.dark} hover:shadow-${config.shadow.size}`]:
               {},
           },

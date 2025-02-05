@@ -2,22 +2,22 @@ import type { DropdownItemVariant } from './dropdown-item.types'
 
 export const rounded = {
   none: '',
-  sm: 'nui-item-rounded-sm',
-  md: 'nui-item-rounded-md',
-  lg: 'nui-item-rounded-lg',
+  sm: 'webeze-item-rounded-sm',
+  md: 'webeze-item-rounded-md',
+  lg: 'webeze-item-rounded-lg',
 } as const satisfies DropdownItemVariant<'rounded'>
 
 export const contrast = {
-  default: 'nui-item-default',
-  contrast: 'nui-item-contrast',
+  default: 'webeze-item-default',
+  contrast: 'webeze-item-contrast',
 } as const satisfies DropdownItemVariant<'contrast'>
 
 export const color = {
-  primary: 'nui-item-primary',
-  info: 'nui-item-info',
-  success: 'nui-item-success',
-  warning: 'nui-item-warning',
-  danger: 'nui-item-danger',
-  dark: 'nui-item-dark',
-  black: 'nui-item-black',
+  primary: 'webeze-item-primary',
+  info: 'webeze-item-info',
+  success: 'webeze-item-success',
+  warning: 'webeze-item-warning',
+  danger: 'webeze-item-danger',
+  dark: 'webeze-item-dark',
+  black: 'webeze-item-black',
 } as const satisfies DropdownItemVariant<'color'>

@@ -2,22 +2,22 @@ import type { ListboxVariant } from './listbox.types'
 
 export const rounded = {
   none: '',
-  sm: 'nui-listbox-rounded-sm',
-  md: 'nui-listbox-rounded-md',
-  lg: 'nui-listbox-rounded-lg',
-  full: 'nui-listbox-rounded-full',
+  sm: 'webeze-listbox-rounded-sm',
+  md: 'webeze-listbox-rounded-md',
+  lg: 'webeze-listbox-rounded-lg',
+  full: 'webeze-listbox-rounded-full',
 } as const satisfies ListboxVariant<'rounded'>
 
 export const size = {
-  sm: 'nui-listbox-sm',
-  md: 'nui-listbox-md',
-  lg: 'nui-listbox-lg',
-  xl: 'nui-listbox-xl',
+  sm: 'webeze-listbox-sm',
+  md: 'webeze-listbox-md',
+  lg: 'webeze-listbox-lg',
+  xl: 'webeze-listbox-xl',
 } as const satisfies ListboxVariant<'size'>
 
 export const contrast = {
-  default: 'nui-listbox-default',
-  'default-contrast': 'nui-listbox-default-contrast',
-  muted: 'nui-listbox-muted',
-  'muted-contrast': 'nui-listbox-muted-contrast',
+  default: 'webeze-listbox-default',
+  'default-contrast': 'webeze-listbox-default-contrast',
+  muted: 'webeze-listbox-muted',
+  'muted-contrast': 'webeze-listbox-muted-contrast',
 } as const satisfies ListboxVariant<'contrast'>

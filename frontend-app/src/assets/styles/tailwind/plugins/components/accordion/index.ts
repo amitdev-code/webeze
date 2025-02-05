@@ -3,18 +3,18 @@ import { type AccordionConfig, defaultConfig, key } from './accordion.config'
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies AccordionConfig
+  const config = theme(`webeze.${key}`) satisfies AccordionConfig
 
   addComponents({
     //Accordion:wrapper
-    '.nui-accordion': {
+    '.webeze-accordion': {
       //Remove bottom borders
       '&:not(:last-child)': {
         '@apply border-b-0': {},
@@ -34,29 +34,29 @@ export default plugin(({ addComponents, theme }) => {
       [`@apply transition-${config.wrapper.transition.property} duration-${config.wrapper.transition.duration}`]:
         {},
       //Accordion:inner
-      '.nui-accordion-detail[open]:not(:first-child)': {
+      '.webeze-accordion-detail[open]:not(:first-child)': {
         [`@apply border-t border-${config.inner.border.light} dark:border-${config.inner.border.dark}`]:
           {},
       },
       //Inner:dot
-      '.nui-accordion-detail .nui-accordion-dot': {
+      '.webeze-accordion-detail .webeze-accordion-dot': {
         [`@apply bg-${config.icon.dot.background.light} dark:bg-${config.icon.dot.background.dark}`]:
           {},
       },
       //Inner:summary
-      '.nui-accordion-summary': {
+      '.webeze-accordion-summary': {
         '@apply cursor-pointer list-none outline-none': {},
       },
       //Inner:header
-      '.nui-accordion-header': {
+      '.webeze-accordion-header': {
         '@apply flex items-center justify-between': {},
 
-        '.nui-accordion-header-inner': {
+        '.webeze-accordion-header-inner': {
           '@apply text-muted-800 dark:text-white': {},
         },
       },
       //Inner:dot
-      '.nui-accordion-dot': {
+      '.webeze-accordion-dot': {
         [`@apply ms-2 h-${config.icon.dot.size} w-${config.icon.dot.size} rounded-${config.icon.dot.rounded}`]:
           {},
         //Dot transition
@@ -64,7 +64,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Icon:outer
-      '.nui-icon-outer': {
+      '.webeze-icon-outer': {
         //Base
         '@apply ms-2 flex items-center justify-center': {},
         //Width & Radius
@@ -80,7 +80,7 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply transition-${config.icon.wrapper.transition.property} duration-${config.icon.wrapper.transition.duration}`]:
           {},
       },
-      '.nui-chevron-icon': {
+      '.webeze-chevron-icon': {
         //Base
         [`@apply text-muted-400 h-${config.icon.chevron.size} w-${config.icon.chevron.size}`]:
           {},
@@ -88,7 +88,7 @@ export default plugin(({ addComponents, theme }) => {
         [`@apply transition-${config.icon.chevron.transition.property} duration-${config.icon.chevron.transition.duration}`]:
           {},
       },
-      '.nui-plus-icon': {
+      '.webeze-plus-icon': {
         //Base
         [`@apply text-muted-400 h-${config.icon.plus.size} w-${config.icon.plus.size}`]:
           {},
@@ -97,7 +97,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Accordion:content
-      '.nui-accordion-content': {
+      '.webeze-accordion-content': {
         //Base
         [`@apply px-${config.content.padding.x} pb-${config.content.padding.y}`]:
           {},
@@ -106,7 +106,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:default
-      '&.nui-accordion-default': {
+      '&.webeze-accordion-default': {
         //Background
         [`@apply bg-${config.color.default.background.base.light} dark:bg-${config.color.default.background.base.dark}`]:
           {},
@@ -118,7 +118,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:default-contrast
-      '&.nui-accordion-default-contrast': {
+      '&.webeze-accordion-default-contrast': {
         //Background
         [`@apply bg-${config.color.defaultContrast.background.base.light} dark:bg-${config.color.defaultContrast.background.base.dark}`]:
           {},
@@ -130,7 +130,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:muted
-      '&.nui-accordion-muted': {
+      '&.webeze-accordion-muted': {
         //Background
         [`@apply bg-${config.color.muted.background.base.light} dark:bg-${config.color.muted.background.base.dark}`]:
           {},
@@ -142,7 +142,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Color:muted-contrast
-      '&.nui-accordion-muted-contrast': {
+      '&.webeze-accordion-muted-contrast': {
         //Background
         [`@apply bg-${config.color.mutedContrast.background.base.light} dark:bg-${config.color.mutedContrast.background.base.dark}`]:
           {},
@@ -154,115 +154,115 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Dot:default
-      '&.nui-dot-default': {
-        '.nui-accordion-detail[open] .nui-accordion-dot': {
+      '&.webeze-dot-default': {
+        '.webeze-accordion-detail[open] .webeze-accordion-dot': {
           [`@apply bg-${config.dotColor.default.background.light} dark:bg-${config.dotColor.default.background.dark}`]:
             {},
         },
       },
       //Dot:primary
-      '&.nui-dot-primary': {
-        '.nui-accordion-detail[open] .nui-accordion-dot': {
+      '&.webeze-dot-primary': {
+        '.webeze-accordion-detail[open] .webeze-accordion-dot': {
           [`@apply bg-${config.dotColor.primary.background.light} dark:bg-${config.dotColor.primary.background.dark}`]:
             {},
         },
       },
       //Dot:info
-      '&.nui-dot-info': {
-        '.nui-accordion-detail[open] .nui-accordion-dot': {
+      '&.webeze-dot-info': {
+        '.webeze-accordion-detail[open] .webeze-accordion-dot': {
           [`@apply bg-${config.dotColor.info.background.light} dark:bg-${config.dotColor.info.background.dark}`]:
             {},
         },
       },
       //Dot:success
-      '&.nui-dot-success': {
-        '.nui-accordion-detail[open] .nui-accordion-dot': {
+      '&.webeze-dot-success': {
+        '.webeze-accordion-detail[open] .webeze-accordion-dot': {
           [`@apply bg-${config.dotColor.success.background.light} dark:bg-${config.dotColor.success.background.dark}`]:
             {},
         },
       },
       //Dot:warning
-      '&.nui-dot-warning': {
-        '.nui-accordion-detail[open] .nui-accordion-dot': {
+      '&.webeze-dot-warning': {
+        '.webeze-accordion-detail[open] .webeze-accordion-dot': {
           [`@apply bg-${config.dotColor.warning.background.light} dark:bg-${config.dotColor.warning.background.dark}`]:
             {},
         },
       },
       //Dot:danger
-      '&.nui-dot-danger': {
-        '.nui-accordion-detail[open] .nui-accordion-dot': {
+      '&.webeze-dot-danger': {
+        '.webeze-accordion-detail[open] .webeze-accordion-dot': {
           [`@apply bg-${config.dotColor.danger.background.light} dark:bg-${config.dotColor.danger.background.dark}`]:
             {},
         },
       },
       //Dot:dark
-      '&.nui-dot-dark': {
-        '.nui-accordion-detail[open] .nui-accordion-dot': {
+      '&.webeze-dot-dark': {
+        '.webeze-accordion-detail[open] .webeze-accordion-dot': {
           [`@apply bg-${config.dotColor.dark.background.light} dark:bg-${config.dotColor.dark.background.dark}`]:
             {},
         },
       },
       //Dot:black
-      '&.nui-dot-black': {
-        '.nui-accordion-detail[open] .nui-accordion-dot': {
+      '&.webeze-dot-black': {
+        '.webeze-accordion-detail[open] .webeze-accordion-dot': {
           [`@apply bg-${config.dotColor.black.background.light} dark:bg-${config.dotColor.black.background.dark}`]:
             {},
         },
       },
-      '&.nui-accordion-dot': {
-        '.nui-accordion-header': {
+      '&.webeze-accordion-dot': {
+        '.webeze-accordion-header': {
           [`@apply p-${config.content.padding.x}`]: {},
         },
       },
-      '&.nui-accordion-chevron, &.nui-accordion-plus': {
-        '.nui-accordion-header': {
+      '&.webeze-accordion-chevron, &.webeze-accordion-plus': {
+        '.webeze-accordion-header': {
           [`@apply px-${config.content.padding.x} py-3`]: {},
         },
       },
-      '&.nui-accordion-chevron': {
-        '.nui-accordion-detail[open] .nui-icon-outer': {
+      '&.webeze-accordion-chevron': {
+        '.webeze-accordion-detail[open] .webeze-icon-outer': {
           '@apply rotate-180': {},
         },
       },
-      '&.nui-accordion-plus': {
-        '.nui-accordion-detail[open] .nui-icon-outer': {
+      '&.webeze-accordion-plus': {
+        '.webeze-accordion-detail[open] .webeze-icon-outer': {
           '@apply rotate-45': {},
         },
       },
       //Accordion:rounded
-      '&.nui-accordion-straight': {
-        '&.nui-accordion:first-child': {
+      '&.webeze-accordion-straight': {
+        '&.webeze-accordion:first-child': {
           [`@apply rounded-t-${config.wrapper.rounded.none}`]: {},
         },
-        '&.nui-accordion:last-child': {
+        '&.webeze-accordion:last-child': {
           [`@apply rounded-b-${config.wrapper.rounded.none}`]: {},
         },
       },
-      '&.nui-accordion-rounded-sm': {
-        '&.nui-accordion:first-child': {
+      '&.webeze-accordion-rounded-sm': {
+        '&.webeze-accordion:first-child': {
           [`@apply rounded-t-${config.wrapper.rounded.sm}`]: {},
         },
-        '&.nui-accordion:last-child': {
+        '&.webeze-accordion:last-child': {
           [`@apply rounded-b-${config.wrapper.rounded.sm}`]: {},
         },
       },
-      '&.nui-accordion-rounded-md': {
-        '&.nui-accordion:first-child': {
+      '&.webeze-accordion-rounded-md': {
+        '&.webeze-accordion:first-child': {
           [`@apply rounded-t-${config.wrapper.rounded.md}`]: {},
         },
-        '&.nui-accordion:last-child': {
+        '&.webeze-accordion:last-child': {
           [`@apply rounded-b-${config.wrapper.rounded.md}`]: {},
         },
       },
-      '&.nui-accordion-rounded-lg': {
-        '&.nui-accordion:first-child': {
+      '&.webeze-accordion-rounded-lg': {
+        '&.webeze-accordion:first-child': {
           [`@apply rounded-t-${config.wrapper.rounded.lg}`]: {},
         },
-        '&.nui-accordion:last-child': {
+        '&.webeze-accordion:last-child': {
           [`@apply rounded-b-${config.wrapper.rounded.lg}`]: {},
         },
       },
-      '+ .nui-accordion': {
+      '+ .webeze-accordion': {
         [`@apply !border-t-0`]: {},
       },
     },

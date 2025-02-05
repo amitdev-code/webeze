@@ -7,30 +7,30 @@ import {
 
 const config = {
   theme: {
-    nui: {
+    webeze: {
       [key]: defaultConfig,
     },
   },
 }
 
 export default plugin(({ addComponents, theme }) => {
-  const config = theme(`nui.${key}`) satisfies ThemeSwitchConfig
+  const config = theme(`webeze.${key}`) satisfies ThemeSwitchConfig
 
   addComponents({
     //Wrapper
-    '.nui-theme-switch': {
+    '.webeze-theme-switch': {
       [`@apply relative block h-6 w-14 scale-[0.8] rounded-${config.outer.rounded}`]:
         {},
       //Background
       [`@apply bg-${config.outer.backgound.light} dark:bg-${config.outer.backgound.dark}`]:
         {},
       //Toggle:input
-      '.nui-theme-switch-input': {
+      '.webeze-theme-switch-input': {
         [`@apply absolute start-0 top-0 z-10 h-${config.input.size} w-${config.input.size} cursor-pointer opacity-0`]:
           {},
       },
       //Toggle:inner
-      '.nui-theme-switch-inner': {
+      '.webeze-theme-switch-inner': {
         //Base
         '@apply absolute -start-1 -top-2 -ms-1 flex items-center justify-center peer-checked:ms-[45%] peer-checked:rotate-[360deg]':
           {},
@@ -48,7 +48,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Icon:sun
-      '.nui-sun': {
+      '.webeze-sun': {
         //Base
         '@apply pointer-events-none': {},
         //Color
@@ -61,7 +61,7 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Icon:moon
-      '.nui-moon': {
+      '.webeze-moon': {
         //Base
         '@apply pointer-events-none': {},
         //Color
@@ -74,44 +74,44 @@ export default plugin(({ addComponents, theme }) => {
           {},
       },
       //Toggle:checked:inner
-      '.nui-theme-switch-input:checked ~ .nui-theme-switch-inner': {
+      '.webeze-theme-switch-input:checked ~ .webeze-theme-switch-inner': {
         '@apply ms-[45%] rotate-[360deg]': {},
       },
       //Toggle:not-checked:sun
-      '.nui-theme-switch-input:not(:checked) ~ .nui-theme-switch-inner .nui-sun':
+      '.webeze-theme-switch-input:not(:checked) ~ .webeze-theme-switch-inner .webeze-sun':
         {
           '@apply block': {},
         },
       //Toggle:checked:sun
-      '.nui-theme-switch-input:checked ~ .nui-theme-switch-inner .nui-sun': {
+      '.webeze-theme-switch-input:checked ~ .webeze-theme-switch-inner .webeze-sun': {
         '@apply hidden': {},
       },
       //Toggle:not-checked:moon
-      '.nui-theme-switch-input:not(:checked) ~ .nui-theme-switch-inner .nui-moon':
+      '.webeze-theme-switch-input:not(:checked) ~ .webeze-theme-switch-inner .webeze-moon':
         {
           '@apply hidden': {},
         },
       //Toggle:checked:moon
-      '.nui-theme-switch-input:checked ~ .nui-theme-switch-inner .nui-moon': {
+      '.webeze-theme-switch-input:checked ~ .webeze-theme-switch-inner .webeze-moon': {
         '@apply block': {},
       },
       //Toogle:inverted
-      '&.nui-theme-switch-inverted': {
+      '&.webeze-theme-switch-inverted': {
         [`@apply ring-offset-${config.inverted.enabled.ring.light} dark:ring-offset-${config.inverted.enabled.ring.dark}`]:
           {},
 
-        '.nui-theme-switch-inner': {
+        '.webeze-theme-switch-inner': {
           [`@apply bg-${config.inverted.enabled.inner.background.light} dark:bg-${config.inverted.enabled.inner.background.dark}`]:
             {},
         },
       },
       //Toggle:not-inverted
-      '&:not(nui-theme-switch-inverted)': {
+      '&:not(webeze-theme-switch-inverted)': {
         //Ring
         [`@apply ring-offset-${config.inverted.disabled.ring.light} dark:ring-offset-${config.inverted.disabled.ring.dark}`]:
           {},
 
-        '.nui-theme-switch-inner': {
+        '.webeze-theme-switch-inner': {
           //Border
           [`@apply border border-${config.inverted.disabled.inner.border.light} dark:border-${config.inverted.disabled.inner.border.dark}`]:
             {},

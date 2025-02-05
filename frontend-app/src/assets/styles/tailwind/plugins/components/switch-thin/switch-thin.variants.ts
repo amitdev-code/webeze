@@ -1,11 +1,11 @@
 import type { SwitchThinVariant } from './switch-thin.types'
 
 export const color = {
-  primary: 'nui-switch-thin-primary',
-  info: 'nui-switch-thin-info',
-  success: 'nui-switch-thin-success',
-  warning: 'nui-switch-thin-warning',
-  danger: 'nui-switch-thin-danger',
-  dark: 'nui-switch-thin-dark',
-  black: 'nui-switch-thin-black',
+  primary: 'webeze-switch-thin-primary',
+  info: 'webeze-switch-thin-info',
+  success: 'webeze-switch-thin-success',
+  warning: 'webeze-switch-thin-warning',
+  danger: 'webeze-switch-thin-danger',
+  dark: 'webeze-switch-thin-dark',
+  black: 'webeze-switch-thin-black',
 } as const satisfies SwitchThinVariant<'color'>
