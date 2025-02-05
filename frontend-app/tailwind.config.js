@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+
+import { withWebezeUI } from "./src/assets/styles/tailwind";
+
+export default withWebezeUI({
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
@@ -9,4 +12,4 @@ export default {
     },
   },
   plugins: [],
-};
+});
