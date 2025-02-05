@@ -1,8 +1,8 @@
 import { forwardRef, useImperativeHandle, useRef } from "react";
-import { useNinjaId } from "~/hooks/useNinjaId";
-import { cn } from "~/utils";
+import { useWebezeId } from "../../hooks/useWebezeId";
+import { cn } from "../../utils/classNameHelper";
 import { IconCheck } from "../icons/IconCheck";
-import { useWebezeDefaultProperty } from "~/Provider";
+import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
 
 type BaseSwitchBallProps = {
   /**
@@ -111,7 +111,7 @@ export const BaseSwitchBall = forwardRef<
 ) {
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const id = useNinjaId(() => props.id);
+  const id = useWebezeId(() => props.id);
 
   const color = useWebezeDefaultProperty(props, "BaseSwitchBall", "color");
 

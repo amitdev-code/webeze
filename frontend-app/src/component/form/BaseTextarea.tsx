@@ -8,11 +8,11 @@ import {
   useState,
   type InputHTMLAttributes,
 } from "react";
-import { useWebezeDefaultProperty } from "~/Provider";
-import { useNinjaId } from "~/hooks/useNinjaId";
-import { cn } from "~/utils";
-import { BasePlaceload } from "~/components/base/BasePlaceload";
-import { BaseInputHelpText } from "~/components/form/BaseInputHelpText";
+import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { useWebezeId } from "../../hooks/useWebezeId";
+import { cn } from "../../utils/classNameHelper";
+import { BasePlaceload } from "../base/BasePlaceload";
+import { BaseInputHelpText } from "../form/BaseInputHelpText";
 
 type BaseTextareaProps = {
   /**
@@ -215,7 +215,7 @@ export const BaseTextarea = forwardRef<
 ) {
   const [textareaValue, setTextareaValue] = useState("");
 
-  const id = useNinjaId(() => props.id);
+  const id = useWebezeId(() => props.id);
 
   const contrast = useWebezeDefaultProperty(props, "BaseTextarea", "contrast");
   const rounded = useWebezeDefaultProperty(props, "BaseTextarea", "rounded");

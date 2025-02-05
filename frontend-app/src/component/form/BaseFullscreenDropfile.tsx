@@ -8,8 +8,8 @@ import {
   useRef,
   useState,
 } from "react";
-import { cn } from "~/utils";
-import { useWebezeDefaultProperty } from "~/Provider";
+import { cn } from "../../utils/classNameHelper";
+import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
 
 type BaseFullscreenDropfileProps = {
   /**

@@ -1,5 +1,4 @@
 /* eslint-disable no-nested-ternary */
-/* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   type ReactNode,
@@ -14,11 +13,11 @@ import { useDebounce } from "use-debounce";
 import { Combobox } from "@headlessui/react";
 import { Float } from "@headlessui-float/react";
 import { Icon } from "@iconify/react";
-import { useWebezeDefaultProperty } from "~/Provider";
-import { cn } from "~/utils";
+import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { cn } from "../../utils/classNameHelper";
 import { BasePlaceload } from "../base/BasePlaceload";
 import { BaseAutocompleteItem } from "./BaseAutocompleteItem";
-import { BaseInputHelpText } from "~/components/form/BaseInputHelpText";
+import { BaseInputHelpText } from "./BaseInputHelpText";
 
 type BaseAutocompleteProps<T = string> = {
   /**
@@ -332,7 +331,7 @@ const contrasts = {
 };
 
 export const BaseAutocomplete = forwardRef(function BaseAutocomplete<
-  T = string,
+  T = string
 >(
   {
     items: itemsProp = [],
@@ -359,13 +358,21 @@ export const BaseAutocomplete = forwardRef(function BaseAutocomplete<
     placement = "bottom-start",
     ...props
   }: BaseAutocompleteProps<T>,
-  ref: Ref<HTMLElement>,
+  ref: Ref<HTMLElement>
 ) {
-  const rounded = useWebezeDefaultProperty(props, "BaseAutocomplete", "rounded");
+  const rounded = useWebezeDefaultProperty(
+    props,
+    "BaseAutocomplete",
+    "rounded"
+  );
 
   const size = useWebezeDefaultProperty(props, "BaseAutocomplete", "size");
 
-  const contrast = useWebezeDefaultProperty(props, "BaseAutocomplete", "contrast");
+  const contrast = useWebezeDefaultProperty(
+    props,
+    "BaseAutocomplete",
+    "contrast"
+  );
 
   const autocompleteValue = props.value;
 
@@ -389,7 +396,7 @@ export const BaseAutocomplete = forwardRef(function BaseAutocomplete<
             i &&
             typeof i === "object" &&
             (attr as keyof T) in i &&
-            (i as any)[attr] === item,
+            (i as any)[attr] === item
         );
 
         if (result && props.properties.label) {
@@ -414,7 +421,7 @@ export const BaseAutocomplete = forwardRef(function BaseAutocomplete<
       props.properties?.label,
       props.properties?.value,
       props.stateModifiers?.prop,
-    ],
+    ]
   );
 
   function handleChange(value: T) {
@@ -426,7 +433,7 @@ export const BaseAutocomplete = forwardRef(function BaseAutocomplete<
           item &&
           typeof item === "object" &&
           attr in item &&
-          (item as Record<string, unknown>)[attr] === value,
+          (item as Record<string, unknown>)[attr] === value
       );
 
       props.onChange?.(val!);
@@ -468,12 +475,12 @@ export const BaseAutocomplete = forwardRef(function BaseAutocomplete<
             .includes(lower);
       });
     },
-    [props.properties?.label, props.properties?.sublabel],
+    [props.properties?.label, props.properties?.sublabel]
   );
 
   const filterResolved = useMemo(
     () => (props.filterItems === undefined ? defaultFilter : props.filterItems),
-    [defaultFilter, props.filterItems],
+    [defaultFilter, props.filterItems]
   );
 
   const displayValueResolved = useMemo(
@@ -481,7 +488,7 @@ export const BaseAutocomplete = forwardRef(function BaseAutocomplete<
       props.displayValue === undefined
         ? defaultDisplayValue
         : props.displayValue,
-    [defaultDisplayValue, props.displayValue],
+    [defaultDisplayValue, props.displayValue]
   );
 
   const [debounced] = useDebounce(query, filterDebounce);
@@ -578,7 +585,6 @@ export const BaseAutocomplete = forwardRef(function BaseAutocomplete<
   return (
     <Combobox
       value={autocompleteValue}
-      // eslint-disable-next-line react/jsx-no-bind
       onChange={handleChange}
       // by={
       //   props.stateModifiers?.prop && props.properties?.value
@@ -598,7 +604,7 @@ export const BaseAutocomplete = forwardRef(function BaseAutocomplete<
         colorFocus && "webeze-autocomplete-focus",
         error && "webeze-autocomplete-error",
         loading && "webeze-autocomplete-loading",
-        "[&_.webeze-autocomplete-results]:mt-[unset] [&_.webeze-autocomplete-results]:[position:unset]",
+        "[&_.webeze-autocomplete-results]:mt-[unset] [&_.webeze-autocomplete-results]:[position:unset]"
       )}
       as="div"
       ref={ref}
@@ -667,7 +673,7 @@ export const BaseAutocomplete = forwardRef(function BaseAutocomplete<
                 "webeze-autocomplete-input",
                 classes?.input,
                 dropdown && !clearable && "!pe-12",
-                dropdown && clearable && "!pe-[4.5rem]",
+                dropdown && clearable && "!pe-[4.5rem]"
               )}
               displayValue={
                 multiple ? undefined : (displayValueResolved as any)
@@ -678,7 +684,9 @@ export const BaseAutocomplete = forwardRef(function BaseAutocomplete<
             />
 
             {label && props.labelFloat && (
-              <Combobox.Label className={cn("webeze-label-float", classes?.label)}>
+              <Combobox.Label
+                className={cn("webeze-label-float", classes?.label)}
+              >
                 {props.renderLabel?.({
                   query,
                   filteredItems,
@@ -710,7 +718,7 @@ export const BaseAutocomplete = forwardRef(function BaseAutocomplete<
                   className={cn(
                     "webeze-autocomplete-clear",
                     classes?.icon,
-                    dropdown && "me-10",
+                    dropdown && "me-10"
                   )}
                   onClick={clear}
                 >
@@ -733,7 +741,7 @@ export const BaseAutocomplete = forwardRef(function BaseAutocomplete<
                       className={cn(
                         "webeze-autocomplete-clear-inner transition-transform duration-300",
                         classes?.icon,
-                        open && "rotate-180",
+                        open && "rotate-180"
                       )}
                     />
                     )
@@ -750,7 +758,7 @@ export const BaseAutocomplete = forwardRef(function BaseAutocomplete<
                     props.icon && size === "sm" && "ms-4",
                     props.icon && size === "md" && "ms-6",
                     props.icon && size === "lg" && "ms-8",
-                    props.icon && size === "xl" && "ms-10",
+                    props.icon && size === "xl" && "ms-10"
                   )}
                 />
               </div>
@@ -771,7 +779,7 @@ export const BaseAutocomplete = forwardRef(function BaseAutocomplete<
             as="div"
             className={cn(
               (filteredItems.length > 0 || !allowCreate) &&
-                "webeze-autocomplete-results",
+                "webeze-autocomplete-results"
             )}
           >
             {filteredItems.length === 0 && pending ? (

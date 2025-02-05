@@ -1,5 +1,5 @@
 import { type PropsWithChildren, forwardRef } from "react";
-import { useNinjaId } from "~/hooks/useNinjaId";
+import { useWebezeId } from "../../hooks/useWebezeId";
 
 type BaseCheckboxHeadlessProps = PropsWithChildren<{
   /**
@@ -47,7 +47,7 @@ export const BaseCheckboxHeadless = forwardRef<
   { trueValue, falseValue, children, ...props },
   ref,
 ) {
-  const id = useNinjaId(() => props.id);
+  const id = useWebezeId(() => props.id);
 
   return (
     <div className="group/webeze-checkbox-headless relative">

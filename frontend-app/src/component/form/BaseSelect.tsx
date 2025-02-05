@@ -7,12 +7,12 @@ import {
   useRef,
 } from "react";
 import { Icon } from "@iconify/react";
-import { useNinjaId } from "~/hooks/useNinjaId";
-import { cn } from "~/utils";
-import { useWebezeDefaultProperty } from "~/Provider";
-import { BasePlaceload } from "~/components/base/BasePlaceload";
+import { useWebezeId } from "../../hooks/useWebezeId";
+import { cn } from "../../utils/classNameHelper";
+import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { BasePlaceload } from "../base/BasePlaceload";
 import { IconChevronDown } from "../icons/IconChevronDown";
-import { BaseInputHelpText } from "~/components/form/BaseInputHelpText";
+import { BaseInputHelpText } from "./BaseInputHelpText";
 
 type BaseSelectProps = PropsWithChildren<{
   /**
@@ -170,7 +170,7 @@ export const BaseSelect = forwardRef<
     Omit<SelectHTMLAttributes<HTMLSelectElement>, keyof BaseSelectProps>
 >(function BaseSelect(
   { label = "", onChange = () => {}, error = false, children, ...props },
-  ref,
+  ref
 ) {
   const selectRef = useRef<HTMLSelectElement>(null);
 
@@ -178,7 +178,7 @@ export const BaseSelect = forwardRef<
   const rounded = useWebezeDefaultProperty(props, "BaseSelect", "rounded");
   const size = useWebezeDefaultProperty(props, "BaseSelect", "size");
 
-  const id = useNinjaId(() => props.id);
+  const id = useWebezeId(() => props.id);
 
   const placeholder = useMemo(() => {
     if (props.loading) {
@@ -200,7 +200,7 @@ export const BaseSelect = forwardRef<
       },
       id,
     }),
-    [id],
+    [id]
   );
 
   return (
@@ -215,7 +215,7 @@ export const BaseSelect = forwardRef<
         props.labelFloat && "webeze-select-label-float",
         props.icon && "webeze-has-icon",
         props.colorFocus && "webeze-select-focus",
-        props.classes?.wrapper,
+        props.classes?.wrapper
       )}
     >
       {label && !props.labelFloat && (
@@ -270,7 +270,7 @@ export const BaseSelect = forwardRef<
         <div
           className={cn(
             "webeze-select-chevron  webeze-chevron",
-            props.classes?.chevron,
+            props.classes?.chevron
           )}
         >
           <IconChevronDown className="webeze-select-chevron-inner" />

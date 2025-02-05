@@ -8,11 +8,11 @@ import {
   useState,
 } from "react";
 import { Icon } from "@iconify/react";
-import { useWebezeDefaultProperty } from "~/Provider";
-import { cn } from "~/utils";
-import { useNinjaId } from "~/hooks/useNinjaId";
-import { BasePlaceload } from "~/components/base/BasePlaceload";
-import { BaseInputHelpText } from "~/components/form/BaseInputHelpText";
+import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { cn } from "../../utils/classNameHelper";
+import { useWebezeId } from "../../hooks/useWebezeId";
+import { BasePlaceload } from "../base/BasePlaceload";
+import { BaseInputHelpText } from "./BaseInputHelpText";
 
 type BaseInputNumberProps = HTMLAttributes<HTMLInputElement> & {
   /**
@@ -241,7 +241,7 @@ export const BaseInputNumber = forwardRef<
   const rounded = useWebezeDefaultProperty(props, "BaseInputNumber", "rounded");
   const size = useWebezeDefaultProperty(props, "BaseInputNumber", "size");
 
-  const id = useNinjaId(() => props.id);
+  const id = useWebezeId(() => props.id);
 
   const placeholder = useMemo(() => {
     if (props.loading) {

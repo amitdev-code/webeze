@@ -7,11 +7,11 @@ import {
   useRef,
 } from "react";
 import { Icon } from "@iconify/react";
-import { cn } from "~/utils";
-import { useWebezeDefaultProperty } from "~/Provider";
-// import { useNinjaId } from "~/hooks/useNinjaId";
-import { BasePlaceload } from "~/components/base/BasePlaceload";
-import { BaseInputHelpText } from "~/components/form/BaseInputHelpText";
+import { cn } from "../../utils/classNameHelper";
+import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+// import { useWebezeId } from "../../hooks/useWebezeId";
+import { BasePlaceload } from "../base/BasePlaceload";
+import { BaseInputHelpText } from "./BaseInputHelpText";
 
 type BaseInputProps = HTMLAttributes<HTMLInputElement> & {
   /**

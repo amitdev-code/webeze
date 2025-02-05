@@ -1,7 +1,7 @@
 import { forwardRef, useImperativeHandle, useRef } from "react";
-import { cn } from "~/utils";
-import { useNinjaId } from "~/hooks/useNinjaId";
-import { useWebezeDefaultProperty } from "~/Provider";
+import { cn } from "../../utils/classNameHelper";
+import { useWebezeId } from "../../hooks/useWebezeId";
+import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
 
 type BaseSwitchThinProps = {
   /**
@@ -102,7 +102,7 @@ export const BaseSwitchThin = forwardRef<
 >(function BaseSwitchThin({ checked, onChange = () => {}, ...props }, ref) {
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const id = useNinjaId(() => props.id);
+  const id = useWebezeId(() => props.id);
 
   const color = useWebezeDefaultProperty(props, "BaseSwitchThin", "color");
 

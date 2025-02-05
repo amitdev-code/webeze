@@ -6,11 +6,11 @@ import {
   useState,
 } from "react";
 import { Icon } from "@iconify/react";
-import { useWebezeDefaultProperty } from "~/Provider";
-import { useNinjaId } from "~/hooks/useNinjaId";
-import { cn } from "~/utils";
-import { BasePlaceload } from "~/components/base/BasePlaceload";
-import { BaseInputHelpText } from "~/components/form/BaseInputHelpText";
+import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { useWebezeId } from "../../hooks/useWebezeId";
+import { cn } from "../../utils/classNameHelper";
+import { BasePlaceload } from "../base/BasePlaceload";
+import { BaseInputHelpText } from "./BaseInputHelpText";
 
 type BaseInputFileProps = HTMLAttributes<HTMLInputElement> & {
   /**
@@ -199,7 +199,7 @@ export const BaseInputFile = forwardRef<BaseInputFileRef, BaseInputFileProps>(
       i18n: undefined,
     };
 
-    const _id = useNinjaId(() => id);
+    const _id = useWebezeId(() => id);
 
     const text =
       textValue !== undefined ? textValue(files) : defaultTextValue(files);
@@ -222,8 +222,8 @@ export const BaseInputFile = forwardRef<BaseInputFileRef, BaseInputFileProps>(
 
       return fileList?.item.length === 1
         ? fileList.item(0)?.name ?? i18n.invalid
-        : i18n.multiple.replaceAll(
-            "{count}",
+        : i18n.multiple.replace(
+            /{count}/g,
             String(fileList?.item?.length ?? 0),
           );
     }

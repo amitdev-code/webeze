@@ -9,7 +9,7 @@ import {
   useMemo,
   useState,
 } from "react";
-import { cn } from "~/utils";
+import { cn } from "../../utils/classNameHelper";
 import { BaseCheckbox } from "./BaseCheckbox";
 
 type TreeViewItemTreeLeaf = {

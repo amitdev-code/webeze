@@ -4,14 +4,14 @@ import { type Ref, forwardRef, useCallback, useEffect, useState } from "react";
 import { Listbox } from "@headlessui/react";
 import { Float } from "@headlessui-float/react";
 import { Icon } from "@iconify/react";
-import { useWebezeDefaultProperty } from "~/Provider";
-import { cn } from "~/utils";
+import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { cn } from "../../utils/classNameHelper";
 import { BaseListboxItem } from "./BaseListboxItem";
-import { BaseIconBox } from "~/components/base/BaseIconBox";
+import { BaseIconBox } from "../base/BaseIconBox";
 
-import { BasePlaceload } from "~/components/base/BasePlaceload";
-import { BaseAvatar } from "~/components/base/BaseAvatar";
-import { BaseInputHelpText } from "~/components/form/BaseInputHelpText";
+import { BasePlaceload } from "../base/BasePlaceload";
+import { BaseAvatar } from "../base/BaseAvatar";
+import { BaseInputHelpText } from "./BaseInputHelpText";
 
 type BaseListboxProps<T = string> = {
   value?: T;
@@ -334,7 +334,6 @@ export const BaseListbox = forwardRef(function BaseListbox<T = string>(
                 {label}
               </Listbox.Label>
             ) : (
-              // eslint-disable-next-line react/jsx-no-useless-fragment
               <></>
             )}
 

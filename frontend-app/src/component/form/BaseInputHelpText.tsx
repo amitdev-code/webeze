@@ -1,6 +1,6 @@
 import { type HTMLAttributes, forwardRef } from "react";
-import { useWebezeDefaultProperty } from "~/Provider";
-import { cn } from "~/utils";
+import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { cn } from "../../utils/classNameHelper";
 
 type BaseINputHelpTextProps = HTMLAttributes<HTMLSpanElement> & {
   /**

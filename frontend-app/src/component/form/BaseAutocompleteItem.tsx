@@ -2,14 +2,14 @@
 /* eslint-disable consistent-return */
 import React, { type ReactNode, type Ref, forwardRef, useMemo } from "react";
 import { Icon } from "@iconify/react";
-import { useConfig } from "~/Provider";
-import { cn } from "~/utils";
+import { useConfig } from "../../ui_provider/Provider";
+import { cn } from "../../utils/classNameHelper";
 import { BaseAvatar } from "../base/BaseAvatar";
 import { BaseIconBox } from "../base/BaseIconBox";
 import { BaseHeading } from "../base/BaseHeading";
 import { BaseText } from "../base/BaseText";
 
-import { useNinjaMark } from "~/hooks/useNinjaMark";
+import { useWebezeMark } from "../../hooks/useWebezeMark";
 
 type BaseAutocompleteItemProps<T> = {
   /**
@@ -160,9 +160,9 @@ export const BaseAutocompleteItem = forwardRef(function BaseAutocompleteItem<
 
   const { query } = props.context;
 
-  const markedLabel = useNinjaMark(label, query, mark);
+  const markedLabel = useWebezeMark(label, query, mark);
 
-  const markedSublabel = useNinjaMark(sublabel, query, mark);
+  const markedSublabel = useWebezeMark(sublabel, query, mark);
 
   return (
     <div

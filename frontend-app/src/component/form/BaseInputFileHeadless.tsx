@@ -9,7 +9,7 @@ import {
   useRef,
   useState,
 } from "react";
-import { useNinjaId } from "~/hooks/useNinjaId";
+import { useWebezeId } from "../../hooks/useWebezeId";
 
 type BaseInputFileHeadlessProps = HTMLAttributes<HTMLInputElement> & {
   /**
@@ -67,7 +67,7 @@ export const BaseInputFileHeadless = forwardRef<
 
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const id = useNinjaId(() => props.id);
+  const id = useWebezeId(() => props.id);
 
   const previewMap = useRef<WeakMap<File, string | undefined>>();
 

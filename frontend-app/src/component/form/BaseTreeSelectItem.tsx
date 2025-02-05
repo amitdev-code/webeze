@@ -1,10 +1,10 @@
 import { type PropsWithChildren, forwardRef } from "react";
 import { Icon } from "@iconify/react";
-import { cn } from "~/utils";
-import { useWebezeDefaultProperty } from "~/Provider";
-import { BaseAvatar } from "~/components/base/BaseAvatar";
-import { BaseIconBox } from "~/components/base/BaseIconBox";
-import { BaseText } from "~/components/base/BaseText";
+import { cn } from "../../utils/classNameHelper";
+import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { BaseAvatar } from "../base/BaseAvatar";
+import { BaseIconBox } from "../base/BaseIconBox";
+import { BaseText } from "../base/BaseText";
 
 type BaseTreeSelectItemProps = PropsWithChildren<{
   /**

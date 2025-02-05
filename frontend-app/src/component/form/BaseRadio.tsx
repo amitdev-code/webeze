@@ -4,10 +4,10 @@ import {
   useImperativeHandle,
   useRef,
 } from "react";
-import { cn } from "~/utils";
-import { useNinjaId } from "~/hooks/useNinjaId";
-import { useWebezeDefaultProperty } from "~/Provider";
-import { BaseInputHelpText } from "~/components/form/BaseInputHelpText";
+import { cn } from "../../utils/classNameHelper";
+import { useWebezeId } from "../../hooks/useWebezeId";
+import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { BaseInputHelpText } from "./BaseInputHelpText";
 
 type BaseRadioProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
@@ -103,7 +103,7 @@ export const BaseRadio = forwardRef<BaseRadioRef, BaseRadioProps>(
   ) {
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const id = useNinjaId(() => radioId);
+    const id = useWebezeId(() => radioId);
 
     const color = useWebezeDefaultProperty(props, "BaseRadio", "color");
 

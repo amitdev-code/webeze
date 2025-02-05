@@ -4,7 +4,7 @@ import {
   useImperativeHandle,
   useRef,
 } from "react";
-import { useNinjaId } from "~/hooks/useNinjaId";
+import { useWebezeId } from "../../hooks/useWebezeId";
 
 type BaseRadioHeadlessProps = {
   /**
@@ -55,7 +55,7 @@ export const BaseRadioHeadless = forwardRef<
 ) {
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const id = useNinjaId(() => Id);
+  const id = useWebezeId(() => Id);
 
   useImperativeHandle(
     ref,

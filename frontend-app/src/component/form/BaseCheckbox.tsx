@@ -7,12 +7,12 @@ import {
   type ForwardedRef,
   type InputHTMLAttributes,
 } from "react";
-import { cn } from "~/utils";
-import { useWebezeDefaultProperty } from "~/Provider";
-import { useNinjaId } from "~/hooks/useNinjaId";
+import { cn } from "../../utils/classNameHelper";
+import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { useWebezeId } from "../../hooks/useWebezeId";
 import { IconCheck } from "../icons/IconCheck";
 import { IconIndeterminate } from "../icons/IconIndeterminate";
-import { BaseInputHelpText } from "~/components/form/BaseInputHelpText";
+import { BaseInputHelpText } from "./BaseInputHelpText";
 
 interface BaseCheckboxAttributes<T> {
   /**
@@ -118,7 +118,7 @@ interface BaseCheckboxEmits<T> {
   onClick?: MouseEventHandler<HTMLInputElement>;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-object-type
 interface BaseCheckboxSlots<T> {
   //
 }
@@ -163,14 +163,14 @@ function BaseCheckboxInner<T>(
     onChange = () => {},
     ...props
   }: BaseCheckboxProps<T>,
-  ref?: ForwardedRef<BaseCheckboxExpose | undefined>,
+  ref?: ForwardedRef<BaseCheckboxExpose | undefined>
 ): JSX.Element {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const color = useWebezeDefaultProperty(props, "BaseCheckbox", "color");
   const rounded = useWebezeDefaultProperty(props, "BaseCheckbox", "rounded");
 
-  const id = useNinjaId(() => props.id);
+  const id = useWebezeId(() => props.id);
 
   useEffect(() => {
     if (inputRef.current) {
@@ -187,7 +187,7 @@ function BaseCheckboxInner<T>(
         },
       };
     },
-    [],
+    []
   );
 
   return (
@@ -197,7 +197,7 @@ function BaseCheckboxInner<T>(
         props.disabled && "opacity-50",
         rounded && radiuses[rounded],
         color && colors[color],
-        props.classes?.wrapper,
+        props.classes?.wrapper
       )}
     >
       <div className="webeze-checkbox-outer">
@@ -213,7 +213,7 @@ function BaseCheckboxInner<T>(
             onChange(
               e.target.checked,
               ((e.target.checked ? trueValue : falseValue) ??
-                e.target.checked) as NonNullable<T>,
+                e.target.checked) as NonNullable<T>
             );
           }}
         />
@@ -244,5 +244,5 @@ export const BaseCheckbox = forwardRef(BaseCheckboxInner) as <T>(
   props: BaseCheckboxProps<T> & {
     ref?: ForwardedRef<BaseCheckboxExpose | undefined>;
   },
-  ref?: ForwardedRef<BaseCheckboxExpose | undefined>,
+  ref?: ForwardedRef<BaseCheckboxExpose | undefined>
 ) => ReturnType<typeof BaseCheckboxInner>;

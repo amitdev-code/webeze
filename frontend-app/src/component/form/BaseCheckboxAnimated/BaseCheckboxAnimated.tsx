@@ -9,9 +9,9 @@ import {
   type ForwardedRef,
   type InputHTMLAttributes,
 } from "react";
-import { useNinjaId } from "~/hooks/useNinjaId";
-import { IconCheckCircle } from "~/components/icons";
-import { cn } from "~/utils";
+import { useWebezeId } from "../../../hooks/useWebezeId";
+import { IconCheckCircle } from "../../icons";
+import { cn } from "../../../utils/classNameHelper";
 import "./BaseCheckboxAnimated.css";
 
 interface BaseCheckboxAnimatedAttributes<T> {
@@ -84,7 +84,7 @@ interface BaseCheckboxAnimatedEmits<T> {
   onChange?: (value: T) => void;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-object-type
 interface BaseCheckboxAnimatedSlots<T> {
   //
 }
@@ -139,13 +139,13 @@ function BaseCheckboxAnimatedInner<T>(
     color = undefined,
     ...props
   }: BaseCheckboxAnimatedProps<T>,
-  ref?: ForwardedRef<BaseCheckboxAnimatedExpose | undefined>,
+  ref?: ForwardedRef<BaseCheckboxAnimatedExpose | undefined>
 ) {
   const [isChecked, setIsChecked] = useState(false);
   const [isUnchecked, setIsUnchecked] = useState(true);
   const [isOpaque, setIsOpaque] = useState(false);
 
-  const id = useNinjaId(() => idProps);
+  const id = useWebezeId(() => idProps);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -162,8 +162,8 @@ function BaseCheckboxAnimatedInner<T>(
     return value === undefined
       ? false
       : Array.isArray(modelValue)
-        ? modelValue.includes(value)
-        : modelValue === value;
+      ? modelValue.includes(value)
+      : modelValue === value;
   }, [modelValue, trueValue, falseValue, value]);
 
   // const isChecked =
@@ -184,7 +184,7 @@ function BaseCheckboxAnimatedInner<T>(
         return innerElementRef.current;
       },
     }),
-    [],
+    []
   );
 
   function handleChange() {
@@ -246,7 +246,7 @@ function BaseCheckboxAnimatedInner<T>(
         "webeze-focus webeze-animated-checkbox block focus-within:outline-current",
         isChecked ? "is-checked" : "",
         isUnchecked ? "is-unchecked" : "",
-        classes?.wrapper,
+        classes?.wrapper
       )}
     >
       <input
@@ -255,7 +255,7 @@ function BaseCheckboxAnimatedInner<T>(
         type="checkbox"
         className={cn(
           "peer cursor-pointer disabled:cursor-not-allowed absolute top-0 left-0 h-full w-full opacity-0 z-[1]",
-          classes?.input,
+          classes?.input
         )}
         checked={checked}
         {...props}
@@ -267,7 +267,7 @@ function BaseCheckboxAnimatedInner<T>(
         className={cn(
           "peer-disabled:opacity-75",
           color && colors[color],
-          classes?.label,
+          classes?.label
         )}
       >
         <div
@@ -281,10 +281,10 @@ function BaseCheckboxAnimatedInner<T>(
 }
 
 export const BaseCheckboxAnimated = forwardRef(BaseCheckboxAnimatedInner) as <
-  T,
+  T
 >(
   props: BaseCheckboxAnimatedProps<T> & {
     ref?: ForwardedRef<BaseCheckboxAnimatedExpose | undefined>;
   },
-  ref?: ForwardedRef<BaseCheckboxAnimatedExpose | undefined>,
+  ref?: ForwardedRef<BaseCheckboxAnimatedExpose | undefined>
 ) => ReturnType<typeof BaseCheckboxAnimatedInner>;
