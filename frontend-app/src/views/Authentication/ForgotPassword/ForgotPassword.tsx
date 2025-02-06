@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -94,7 +94,6 @@ const ForgotPassword = () => {
                   </BaseButton>
                 </div>
                 <p className="text-muted-400 mt-4 flex justify-between font-sans text-sm leading-5">
-                  <span>False alert?</span>
                   <Link to="/auth/login-1" className="text-primary-600 hover:text-primary-500 font-medium underline-offset-4 transition duration-150 ease-in-out hover:underline">
                     Sign in
                   </Link>
