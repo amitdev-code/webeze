@@ -1,7 +1,7 @@
 import { type HTMLAttributes, forwardRef } from "react";
 import { Icon } from "@iconify/react";
 import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
-import { cn } from "../../utils/classNameHelper";
+import { cn } from "../../assets/styles/classNameHelper";
 
 
 type BaseKbdProps = HTMLAttributes<HTMLElement> & {

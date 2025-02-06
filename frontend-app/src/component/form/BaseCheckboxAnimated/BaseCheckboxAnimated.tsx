@@ -11,7 +11,7 @@ import {
 } from "react";
 import { useWebezeId } from "../../../hooks/useWebezeId";
 import { IconCheckCircle } from "../../icons";
-import { cn } from "../../../utils/classNameHelper";
+import { cn } from "../../../assets/styles/classNameHelper";
 import "./BaseCheckboxAnimated.css";
 
 interface BaseCheckboxAnimatedAttributes<T> {

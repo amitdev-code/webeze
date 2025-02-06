@@ -7,7 +7,7 @@ import {
   type ForwardedRef,
   type InputHTMLAttributes,
 } from "react";
-import { cn } from "../../utils/classNameHelper";
+import { cn } from "../../assets/styles/classNameHelper";
 import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
 import { useWebezeId } from "../../hooks/useWebezeId";
 import { IconCheck } from "../icons/IconCheck";

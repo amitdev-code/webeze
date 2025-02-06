@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react";
 import { Float } from "@headlessui-float/react";
 import { BaseButton } from "../BaseButton";
 import { useWebezeDefaultProperty } from "../../../assets/styles/ui_provider/Provider";
-import { cn } from "../../../utils/classNameHelper";
+import { cn } from "../../../assets/styles/classNameHelper";
 import "./BaseDropdown.css";
 
 type BaseDropdownProps = PropsWithChildren<{

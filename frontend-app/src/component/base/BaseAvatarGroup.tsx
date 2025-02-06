@@ -1,6 +1,6 @@
 import { forwardRef, useMemo } from "react";
 import { BaseAvatar } from "./BaseAvatar";
-import { cn } from "../../utils/classNameHelper";
+import { cn } from "../../assets/styles/classNameHelper";
 import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
 
 type BaseAvatarGroupProps = {

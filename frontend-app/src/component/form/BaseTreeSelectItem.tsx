@@ -1,6 +1,6 @@
 import { type PropsWithChildren, forwardRef } from "react";
 import { Icon } from "@iconify/react";
-import { cn } from "../../utils/classNameHelper";
+import { cn } from "../../assets/styles/classNameHelper";
 import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
 import { BaseAvatar } from "../base/BaseAvatar";
 import { BaseIconBox } from "../base/BaseIconBox";

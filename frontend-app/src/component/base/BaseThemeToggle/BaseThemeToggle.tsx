@@ -1,7 +1,7 @@
 import { forwardRef, useEffect, useRef } from "react";
 import { IconMoon, IconSun } from "../../icons";
 import { useWebezeDefaultProperty } from "../../../assets/styles/ui_provider/Provider";
-import { cn } from "../../../utils/classNameHelper";
+import { cn } from "../../../assets/styles/classNameHelper";
 import { useColorMode } from "../../../hooks/useColorMode";
 
 import "./BaseThemeToggle.css";

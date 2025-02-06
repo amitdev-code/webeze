@@ -1,5 +1,5 @@
 import { type FC, type PropsWithChildren, Children } from "react";
-import { cn } from "../../utils/classNameHelper";
+import { cn } from "../../assets/styles/classNameHelper";
 
 type BaseListProps = PropsWithChildren<{
   className?: string;

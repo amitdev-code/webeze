@@ -7,7 +7,7 @@ import {
   useRef,
 } from "react";
 import { Icon } from "@iconify/react";
-import { cn } from "../../utils/classNameHelper";
+import { cn } from "../../assets/styles/classNameHelper";
 import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
 import { BasePlaceload } from "../base/BasePlaceload";
 import { BaseInputHelpText } from "./BaseInputHelpText";

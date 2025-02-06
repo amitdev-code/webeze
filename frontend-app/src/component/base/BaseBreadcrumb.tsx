@@ -2,7 +2,7 @@ import { type PropsWithChildren, forwardRef } from "react";
 import { Icon } from "@iconify/react";
 import { BaseDropdown } from "./BaseDropdown";
 import { BaseDropdownItem } from "./BaseDropdownItem";
-import { cn } from "../../utils/classNameHelper";
+import { cn } from "../../assets/styles/classNameHelper";
 import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
 
 type Item = {

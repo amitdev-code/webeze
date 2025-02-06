@@ -1,5 +1,5 @@
 import { type CSSProperties, type SVGProps, forwardRef, useMemo } from "react";
-import { cn } from "../../../utils/classNameHelper";
+import { cn } from "../../../assets/styles/classNameHelper";
 import "./BaseProgressCircle.css";
 
 type BaseProgressCircleProps = {

@@ -1,7 +1,7 @@
 import { type PropsWithChildren, type ReactNode, forwardRef } from "react";
 import { BaseHeading } from "./BaseHeading";
 import { useConfig } from "../../assets/styles/ui_provider/Provider";
-import { cn } from "../../utils/classNameHelper";
+import { cn } from "../../assets/styles/classNameHelper";
 
 type BasePlaceholderPageProps = PropsWithChildren<{
   image?: ReactNode;

@@ -2,7 +2,7 @@ import { Menu } from "@headlessui/react";
 import { type PropsWithChildren, type ReactNode, forwardRef } from "react";
 import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
 import { type WebezeButtonProps, useWebezeButton } from "../../hooks/useWebezeButton";
-import { cn } from "../../utils/classNameHelper";
+import { cn } from "../../assets/styles/classNameHelper";
 
 type BaseDropdownItemProps = Omit<WebezeButtonProps, "children"> &
   PropsWithChildren<{

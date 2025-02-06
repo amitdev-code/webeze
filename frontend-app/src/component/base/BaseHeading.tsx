@@ -1,7 +1,7 @@
 import { type Ref, forwardRef } from "react";
 import { type PolymorphicComponentProps } from "../../types/ui_types";
 import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
-import { cn } from "../../utils/classNameHelper";
+import { cn } from "../../assets/styles/classNameHelper";
 
 
 type Headings = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "span" | "p";

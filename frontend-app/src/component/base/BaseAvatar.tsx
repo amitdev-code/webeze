@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { cn } from "../../utils/classNameHelper";
+import { cn } from "../../assets/styles/classNameHelper";
 import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
 
 type BaseAvatarProps = Omit<React.ImgHTMLAttributes<HTMLImageElement>, "src" | "width" | "height" | "alt"> & {

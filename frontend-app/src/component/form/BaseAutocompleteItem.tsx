@@ -3,7 +3,7 @@
 import React, { type ReactNode, type Ref, forwardRef, useMemo } from "react";
 import { Icon } from "@iconify/react";
 import { useConfig } from "../../assets/styles/ui_provider/Provider";
-import { cn } from "../../utils/classNameHelper";
+import { cn } from "../../assets/styles/classNameHelper";
 import { BaseAvatar } from "../base/BaseAvatar";
 import { BaseIconBox } from "../base/BaseIconBox";
 import { BaseHeading } from "../base/BaseHeading";

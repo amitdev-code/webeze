@@ -1,7 +1,7 @@
 import { type ElementType, forwardRef } from "react";
 import { type PolymorphicComponentProps, type PolymorphicRef } from "../../types/ui_types";
 import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
-import { cn } from "../../utils/classNameHelper";
+import { cn } from "../../assets/styles/classNameHelper";
 
 type BaseParagraphProps<E extends ElementType = "p"> = {
   /**

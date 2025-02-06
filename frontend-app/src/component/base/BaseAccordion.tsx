@@ -1,7 +1,7 @@
 import { forwardRef, useState } from "react";
 import { IconChevronDown, IconPlus } from "../icons";
 import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
-import { cn } from "../../utils/classNameHelper";
+import { cn } from "../../assets/styles/classNameHelper";
 import { BaseFocusLoop } from "./BaseFocusLoop";
 import { BaseHeading } from "./BaseHeading";
 import { BaseParagraph } from "./BaseParagraph";

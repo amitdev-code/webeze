@@ -2,7 +2,7 @@ import { type PropsWithChildren, forwardRef } from "react";
 import { BasePlaceload } from "./BasePlaceload";
 import { type WebezeButtonProps, useWebezeButton } from "../../hooks/useWebezeButton";
 import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
-import { cn } from "../../utils/classNameHelper";
+import { cn } from "../../assets/styles/classNameHelper";
 
 type BaseButtonProps = Omit<WebezeButtonProps, "children"> &
   PropsWithChildren<{
