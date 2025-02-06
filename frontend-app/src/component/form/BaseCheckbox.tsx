@@ -8,7 +8,7 @@ import {
   type InputHTMLAttributes,
 } from "react";
 import { cn } from "../../utils/classNameHelper";
-import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
 import { useWebezeId } from "../../hooks/useWebezeId";
 import { IconCheck } from "../icons/IconCheck";
 import { IconIndeterminate } from "../icons/IconIndeterminate";

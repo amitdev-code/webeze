@@ -9,7 +9,7 @@ import {
   useState,
 } from "react";
 import { cn } from "../../utils/classNameHelper";
-import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
 
 type BaseFullscreenDropfileProps = {
   /**

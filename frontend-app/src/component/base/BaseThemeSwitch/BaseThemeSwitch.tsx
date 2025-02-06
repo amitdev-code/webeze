@@ -1,5 +1,5 @@
 import { forwardRef, useEffect, useRef } from "react";
-import { useWebezeDefaultProperty } from "../../../ui_provider/Provider";
+import { useWebezeDefaultProperty } from "../../../assets/styles/ui_provider/Provider";
 
 import "./BaseThemeSwitch.css";
 import { useColorMode } from "../../../hooks/useColorMode";

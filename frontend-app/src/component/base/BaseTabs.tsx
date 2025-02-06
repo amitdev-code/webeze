@@ -1,6 +1,6 @@
 import { type ReactNode, forwardRef, useState } from "react";
 import { Icon } from "@iconify/react";
-import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
 import { cn } from "../../utils/classNameHelper";
 
 interface BaseTabsProps {

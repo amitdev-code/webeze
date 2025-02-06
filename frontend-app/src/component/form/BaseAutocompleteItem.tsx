@@ -2,7 +2,7 @@
 /* eslint-disable consistent-return */
 import React, { type ReactNode, type Ref, forwardRef, useMemo } from "react";
 import { Icon } from "@iconify/react";
-import { useConfig } from "../../ui_provider/Provider";
+import { useConfig } from "../../assets/styles/ui_provider/Provider";
 import { cn } from "../../utils/classNameHelper";
 import { BaseAvatar } from "../base/BaseAvatar";
 import { BaseIconBox } from "../base/BaseIconBox";

@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from "react";
 import { useMediaQuery } from "./useMediaQuery";
 import type { ColorMode } from "../types/ui_types";
-import { useThemeContext } from "../ui_provider/Provider";
+import { useThemeContext } from "../assets/styles/ui_provider/Provider";
 
 const COLOR_SCHEME_QUERY = "(prefers-color-scheme: dark)";
 

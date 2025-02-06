@@ -1,5 +1,5 @@
 import { type ReactNode, forwardRef, useEffect, useState } from "react";
-import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
 import { cn } from "../../utils/classNameHelper";
 
 interface BaseTabSliderProps {

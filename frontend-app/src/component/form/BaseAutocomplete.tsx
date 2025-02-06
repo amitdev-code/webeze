@@ -13,7 +13,7 @@ import { useDebounce } from "use-debounce";
 import { Combobox } from "@headlessui/react";
 import { Float } from "@headlessui-float/react";
 import { Icon } from "@iconify/react";
-import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
 import { cn } from "../../utils/classNameHelper";
 import { BasePlaceload } from "../base/BasePlaceload";
 import { BaseAutocompleteItem } from "./BaseAutocompleteItem";

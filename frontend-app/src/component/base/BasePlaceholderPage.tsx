@@ -1,6 +1,6 @@
 import { type PropsWithChildren, type ReactNode, forwardRef } from "react";
 import { BaseHeading } from "./BaseHeading";
-import { useConfig } from "../../ui_provider/Provider";
+import { useConfig } from "../../assets/styles/ui_provider/Provider";
 import { cn } from "../../utils/classNameHelper";
 
 type BasePlaceholderPageProps = PropsWithChildren<{

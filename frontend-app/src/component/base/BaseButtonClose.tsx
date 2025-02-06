@@ -1,6 +1,6 @@
 import { type ButtonHTMLAttributes, forwardRef } from "react";
 import { IconClose } from "../icons";
-import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
 import { cn } from "../../utils/classNameHelper";
 
 type BaseButtonCloseProps = ButtonHTMLAttributes<HTMLButtonElement> & {

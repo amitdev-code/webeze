@@ -1,7 +1,7 @@
 import { forwardRef, useMemo } from "react";
 import { BaseAvatar } from "./BaseAvatar";
 import { cn } from "../../utils/classNameHelper";
-import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
 
 type BaseAvatarGroupProps = {
   /** An array of avatar objects. */

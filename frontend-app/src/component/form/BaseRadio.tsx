@@ -6,7 +6,7 @@ import {
 } from "react";
 import { cn } from "../../utils/classNameHelper";
 import { useWebezeId } from "../../hooks/useWebezeId";
-import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
 import { BaseInputHelpText } from "./BaseInputHelpText";
 
 type BaseRadioProps = Omit<

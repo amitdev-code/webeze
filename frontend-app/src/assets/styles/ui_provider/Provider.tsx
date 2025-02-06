@@ -7,7 +7,7 @@ import {
   useState,
 } from "react";
 import { defu } from "defu";
-import type { ColorMode, Config, DeepPartial } from "../types/ui_types";
+import type { ColorMode, Config, DeepPartial } from "../../../types/ui_types";
 
 export const defaultConfig: Config = {
   // #region base

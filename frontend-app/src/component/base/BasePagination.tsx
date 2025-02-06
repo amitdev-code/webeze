@@ -1,6 +1,6 @@
 import { type ReactNode, type MouseEvent, forwardRef, useMemo } from "react";
 import { Icon } from "@iconify/react";
-import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
 import { cn } from "../../utils/classNameHelper";
 
 import { BaseFocusLoop } from "./BaseFocusLoop";

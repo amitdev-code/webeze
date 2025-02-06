@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 import { BaseDropdown } from "./BaseDropdown";
 import { BaseDropdownItem } from "./BaseDropdownItem";
 import { cn } from "../../utils/classNameHelper";
-import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
 
 type Item = {
   /**

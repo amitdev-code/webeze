@@ -8,7 +8,7 @@ import {
 } from "react";
 import { Icon } from "@iconify/react";
 import { cn } from "../../utils/classNameHelper";
-import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
 import { BasePlaceload } from "../base/BasePlaceload";
 import { BaseInputHelpText } from "./BaseInputHelpText";
 

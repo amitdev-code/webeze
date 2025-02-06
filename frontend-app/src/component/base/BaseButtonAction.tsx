@@ -4,7 +4,7 @@ import {
   useWebezeButton,
 } from "../../hooks/useWebezeButton";
 import { BasePlaceload } from "./BasePlaceload";
-import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
 import { cn } from "../../utils/classNameHelper";
 
 type BaseButtonActionProps = Omit<WebezeButtonProps, "children"> &

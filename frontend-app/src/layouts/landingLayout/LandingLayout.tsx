@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { WebezeUIProvider } from "../../ui_provider/Provider";
+import { WebezeUIProvider } from "../../assets/styles/ui_provider/Provider";
 
 const LandingLayout = ({ children }: { children: React.ReactElement }) => {
  return (

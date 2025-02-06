@@ -4,7 +4,7 @@ import { type Ref, forwardRef, useCallback, useEffect, useState } from "react";
 import { Listbox } from "@headlessui/react";
 import { Float } from "@headlessui-float/react";
 import { Icon } from "@iconify/react";
-import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
 import { cn } from "../../utils/classNameHelper";
 import { BaseListboxItem } from "./BaseListboxItem";
 import { BaseIconBox } from "../base/BaseIconBox";

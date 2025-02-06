@@ -2,7 +2,7 @@ import { forwardRef, useImperativeHandle, useRef } from "react";
 import { useWebezeId } from "../../hooks/useWebezeId";
 import { cn } from "../../utils/classNameHelper";
 import { IconCheck } from "../icons/IconCheck";
-import { useWebezeDefaultProperty } from "../../ui_provider/Provider";
+import { useWebezeDefaultProperty } from "../../assets/styles/ui_provider/Provider";
 
 type BaseSwitchBallProps = {
   /**

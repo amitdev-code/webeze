@@ -3,7 +3,7 @@ import { Menu } from "@headlessui/react";
 import { Icon } from "@iconify/react";
 import { Float } from "@headlessui-float/react";
 import { BaseButton } from "../BaseButton";
-import { useWebezeDefaultProperty } from "../../../ui_provider/Provider";
+import { useWebezeDefaultProperty } from "../../../assets/styles/ui_provider/Provider";
 import { cn } from "../../../utils/classNameHelper";
 import "./BaseDropdown.css";
 
