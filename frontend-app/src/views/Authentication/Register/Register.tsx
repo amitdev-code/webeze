@@ -11,6 +11,7 @@ import {
   BaseParagraph,
   BaseHeading,
 } from "../../../component";
+import { AddonInputPassword } from "../../../component/addOn/AddonInputPassword";
 
 const VALIDATION_TEXT = {
   EMAIL_REQUIRED: "A valid email is required",
@@ -136,10 +137,12 @@ const Register = () => {
                 <BaseInput
                   {...field}
                   error={errors.username?.message}
-                  // disabled={isSubmitting}
                   type="text"
                   placeholder="Username"
                   icon="ph:fingerprint-duotone"
+                  onBlur={field.onBlur}
+                  value={field.value}
+                  onInput={field.onChange}
                 />
               )}
             />
@@ -148,12 +151,13 @@ const Register = () => {
               control={control}
               render={({ field }) => (
                 <BaseInput
-                  {...field}
                   error={errors.email?.message}
-                  // disabled={isSubmitting}
                   type="email"
                   placeholder="Email Address"
                   icon="ph:at-duotone"
+                  onBlur={field.onBlur}
+                  value={field.value}
+                  onInput={field.onChange}
                 />
               )}
             />
@@ -161,10 +165,9 @@ const Register = () => {
               name="password"
               control={control}
               render={({ field }) => (
-                <BaseInput
+                <AddonInputPassword
                   icon="ph:lock-duotone"
                   error={errors.password?.message}
-                  type="password"
                   placeholder="••••••••••"
                   classes={{ input: "h-12" }}
                   onBlur={field.onBlur}
@@ -182,7 +185,6 @@ const Register = () => {
                   icon="ph:check"
                   error={errors.confirmPassword?.message}
                   type="password"
-                  label="Confirm Password"
                   placeholder="Confirm password"
                   classes={{ input: "h-12" }}
                   onBlur={field.onBlur}
