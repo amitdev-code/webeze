@@ -121,7 +121,7 @@ const ForgotPassword = () => {
                 </div>
                 <p className="text-muted-400 mt-4 flex justify-between font-sans text-sm leading-5">
                   <Link
-                    to="/auth/login-1"
+                    to="/login"
                     className="text-primary-600 hover:text-primary-500 font-medium underline-offset-4 transition duration-150 ease-in-out hover:underline"
                   >
                     Sign in

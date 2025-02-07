@@ -206,7 +206,7 @@ const Register = () => {
           <p className="text-muted-400 mt-4 flex justify-between text-sm">
             <span>Have an account?</span>
             <Link
-              to="/auth/login-1"
+              to="/login"
               className="text-primary-600 hover:text-primary-500 font-medium underline"
             >
               Login here

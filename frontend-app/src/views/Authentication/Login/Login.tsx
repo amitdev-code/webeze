@@ -147,7 +147,7 @@ const Login = () => {
                   )}
                 />
                 <div className="text-xs leading-5">
-                  <BaseLink href="/auth/recover" className="text-primary-600 hover:text-primary-500 font-sans font-medium underline-offset-4 transition duration-150 ease-in-out hover:underline">
+                  <BaseLink href="/forgot-password" className="text-primary-600 hover:text-primary-500 font-sans font-medium underline-offset-4 transition duration-150 ease-in-out hover:underline">
                     Forgot your password?
                   </BaseLink>
                 </div>
@@ -166,7 +166,7 @@ const Login = () => {
             </div>
             <p className="text-muted-400 mt-4 flex justify-between font-sans text-xs leading-5">
               <span>Don't have an account?</span>
-              <BaseLink href="/auth/signup-1" className="text-primary-600 hover:text-primary-500 font-medium underline-offset-4 transition duration-150 ease-in-out hover:underline">
+              <BaseLink href="/register" className="text-primary-600 hover:text-primary-500 font-medium underline-offset-4 transition duration-150 ease-in-out hover:underline">
                 start your 14-day free trial
               </BaseLink>
             </p>
