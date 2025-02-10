@@ -43,9 +43,11 @@ export const login =
     dispatch(setLoading(true));
       try {
         const response = await ApiMaster.authentication.login(email, password); // Replace with your API call
-        dispatch(setUser(response.data));
+        console.log(response.data);
+        
+        // dispatch(setUser(response.data));
       } catch (error) {
-        dispatch(setError(error.message));
+        // dispatch(setError(error.message));
       } finally {
         dispatch(setLoading(false));
       }
