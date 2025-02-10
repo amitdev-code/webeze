@@ -15,7 +15,8 @@ import { AddonInputPassword } from "../../../component/addOn/AddonInputPassword"
 
 const VALIDATION_TEXT = {
   EMAIL_REQUIRED: "A valid email is required",
-  USERNAME_LENGTH: "Username must be at least 3 characters",
+  COMPANY_LENGTH: "Company name must be at least 3 characters",
+  COMPANY_REGEX: "Company name can only contain letters and numbers",
   PASSWORD_LENGTH: "Password must be at least 8 characters",
   PASSWORD_CONTAINS_EMAIL: "Password cannot contain your email",
   PASSWORD_MATCH: "Passwords do not match",
@@ -23,7 +24,10 @@ const VALIDATION_TEXT = {
 
 const zodSchema = z
   .object({
-    username: z.string().min(3, VALIDATION_TEXT.USERNAME_LENGTH),
+    company: z
+      .string()
+      .min(3, VALIDATION_TEXT.COMPANY_LENGTH)
+      .regex(/^[a-zA-Z0-9]+$/, VALIDATION_TEXT.COMPANY_REGEX),
     email: z.string().email(VALIDATION_TEXT.EMAIL_REQUIRED),
     password: z.string().min(8, VALIDATION_TEXT.PASSWORD_LENGTH),
     confirmPassword: z.string(),
@@ -39,7 +43,7 @@ const zodSchema = z
   });
 
 const initialValues = {
-  username: "maya",
+  company: "",
   email: "",
   password: "",
   confirmPassword: "",
@@ -57,11 +61,11 @@ const Register = () => {
     defaultValues: initialValues,
   });
 
-  const onSubmit = async (values: { username: string }) => {
+  const onSubmit = async (values: { company: string }) => {
     console.log("auth-success", values);
     try {
       await new Promise((resolve, reject) => {
-        if (values.username === "maya") {
+        if (values.company === "maya") {
           setTimeout(
             () => reject(new Error("Fake backend validation error")),
             2000
@@ -76,7 +80,7 @@ const Register = () => {
         error.message === "Fake backend validation error"
       ) {
         // Set error on the form
-        // setError('username', { type: 'manual', message: 'This username is already taken' });
+        // setError('company', { type: 'manual', message: 'This company is already taken' });
       }
     }
   };
@@ -131,15 +135,15 @@ const Register = () => {
 
           <div className="mb-4 space-y-3">
             <Controller
-              name="username"
+              name="company"
               control={control}
               render={({ field }) => (
                 <BaseInput
                   {...field}
-                  error={errors.username?.message}
+                  error={errors.company?.message}
                   type="text"
-                  placeholder="Username"
-                  icon="ph:fingerprint-duotone"
+                  placeholder="Company Name"
+                  icon="mingcute:building-4-line"
                   onBlur={field.onBlur}
                   value={field.value}
                   onInput={field.onChange}
@@ -215,7 +219,7 @@ const Register = () => {
         </form>
         <div className="text-center">
           <BaseText size="sm" className="text-muted-400">
-            © {new Date().getFullYear()} Tairo. All rights reserved.
+            © {new Date().getFullYear()} Webeze. All rights reserved.
           </BaseText>
         </div>
       </div>
