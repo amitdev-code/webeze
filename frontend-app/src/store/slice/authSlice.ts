@@ -1,6 +1,7 @@
 // features/auth/authSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { AppThunk } from "../store";
+import { ApiMaster } from "../../api";
 
 interface AuthState {
   user: null | { name: string; email: string };
@@ -40,14 +41,14 @@ export const login =
   (email: string, password: string): AppThunk =>
   async (dispatch) => {
     dispatch(setLoading(true));
-    //   try {
-    //     const response = await api.login(email, password); // Replace with your API call
-    //     dispatch(setUser(response.data));
-    //   } catch (error) {
-    //     dispatch(setError(error.message));
-    //   } finally {
-    //     dispatch(setLoading(false));
-    //   }
+      try {
+        const response = await ApiMaster.authentication.login(email, password); // Replace with your API call
+        dispatch(setUser(response.data));
+      } catch (error) {
+        dispatch(setError(error.message));
+      } finally {
+        dispatch(setLoading(false));
+      }
   };
 
 export default authSlice.reducer;
