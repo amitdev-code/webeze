@@ -13,9 +13,9 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | null>({
   user: {
     id: "1",
-    role: "USER",
+    role: "ADMIN",
   },
-  isAuthenticated: false,
+  isAuthenticated: true,
 });
 
 export const useAuth = () => {
