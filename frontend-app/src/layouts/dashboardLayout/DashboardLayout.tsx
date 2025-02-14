@@ -1871,7 +1871,6 @@ const DashboardLayout = ({ children }: { children: React.ReactElement }) => {
                           </span>
                         </button>
                       </div>
-                      {/**/}
                     </div>
                   </div>
 
@@ -1922,7 +1921,6 @@ const DashboardLayout = ({ children }: { children: React.ReactElement }) => {
                           />
                         </div>
                       </button>
-                      {/**/}
                     </div>
                   </div>
                 </div>
