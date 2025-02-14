@@ -14,7 +14,7 @@ const WebezeLayoutHeader = () => {
           type="button"
           className="flex size-10 items-center justify-center -ms-3"
         >
-          {isOpen ? (
+          {!isOpen ? (
             <div
               className="relative size-5"
               onClick={() => {
