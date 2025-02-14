@@ -1,8 +1,12 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { BaseThemeToggle } from "../../../component";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleSidebar } from "../../../redux/features/app/sidebar";
+import { RootState } from "../../../redux";
 
 const WebezeLayoutHeader = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const dispacth = useDispatch();
+  const isOpen = useSelector((state: RootState) => state.sidebar.isOpen);
   return (
     <Fragment>
       <div className="relative z-[1] mb-5 flex h-16 items-center gap-2">
@@ -14,7 +18,7 @@ const WebezeLayoutHeader = () => {
             <div
               className="relative size-5"
               onClick={() => {
-                setIsOpen(!isOpen);
+                dispacth(toggleSidebar());
               }}
             >
               <span className="bg-primary-500 absolute block h-0.5 w-full transition-all duration-300 top-0.5" />
@@ -25,7 +29,7 @@ const WebezeLayoutHeader = () => {
             <div
               className="scale-90 relative size-5"
               onClick={() => {
-                setIsOpen(!isOpen);
+                dispacth(toggleSidebar());
               }}
             >
               <span className="-rotate-45 rtl:rotate-45 max-w-[75%] top-1 bg-primary-500 absolute block h-0.5 w-full transition-all duration-300" />

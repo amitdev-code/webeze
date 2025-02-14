@@ -1,10 +1,14 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import { WebezeUIProvider } from "../../assets/styles/ui_provider/Provider";
 import WebezeLogo from "../../component/icons/WebezeLogo";
 import WebezeLayoutHeader from "./layoutComponents/webezeLayoutHeader";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../redux";
+import { toggleSidebar } from "../../redux/features/app/sidebar";
 
 const DashboardLayout = ({ children }: { children: React.ReactElement }) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const isOpen = useSelector((state: RootState) => state.sidebar.isOpen);
+  const dispacth = useDispatch();
 
   return (
     <Fragment>
@@ -277,6 +281,9 @@ const DashboardLayout = ({ children }: { children: React.ReactElement }) => {
                   <button
                     type="button"
                     className="text-muted-400 hover:bg-muted-100 hover:text-muted-600 ms-auto flex size-10 items-center justify-center rounded-full transition-colors duration-300 xl:hidden"
+                    onClick={() => {
+                      dispacth(toggleSidebar());
+                    }}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
