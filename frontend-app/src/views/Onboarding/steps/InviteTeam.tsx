@@ -61,7 +61,7 @@ const InviteTeam = ({ }: props) => {
                                         </div>
                                     ))}
                                     <div className="absolute top-1/2 w-full -translate-y-1/2">
-                                        <BaseProgress size="xs" value={1} max={3} />
+                                        <BaseProgress size="xs" value={0} max={2} />
                                     </div>
                                 </div>
                             </div>
