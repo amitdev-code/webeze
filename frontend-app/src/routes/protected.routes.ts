@@ -3,15 +3,29 @@ import { RouteConfig } from "./types";
 
 // LAYOUT IMPORT
 import DashboardLayout from "../layouts/dashboardLayout/DashboardLayout";
+import OpenLayout from "../layouts/openLayout/OpenLayout";
 // VIEW IMPORT
 const Dashboard = lazy(
   () => import("../views/Dashboard/MasterDashboard/Dashboard")
+);
+const Onboarding = lazy(
+  () => import("../views/Onboarding/OnBoarding")
 );
 const AnalyticsDashboard = lazy(
   () => import("../views/Dashboard/Analytics/DashboardAnlytics")
 );
 
 export const protectedRoutes: RouteConfig[] = [
+  {
+    path: "/onboarding",
+    namedPath: "onboarding",
+    component: Onboarding,
+    lazyLoaded: true,
+    haveChildren: false,
+    layout: OpenLayout,
+    allowedRoles: [],
+    children: [],
+  },
   {
     path: "/dashboard",
     namedPath: "dashboard",

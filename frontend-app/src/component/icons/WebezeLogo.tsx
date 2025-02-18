@@ -1,5 +1,5 @@
-const WebezeLogo = () => (
-<svg width="50" height="50" viewBox="0 0 561 464" fill="none" xmlns="http://www.w3.org/2000/svg">
+const WebezeLogo = ({className} : {className? : string}) => (
+<svg width="50" height="50" viewBox="0 0 561 464" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
 <path d="M485 305C485 369.493 432.518 422 367.5 422C302.482 422 250 369.493 250 305C250 240.507 302.482 188 367.5 188C432.518 188 485 240.507 485 305Z" stroke="#8B5CF6" stroke-width="84"/>
 <path d="M6 49L31.5 5H83.5L110 49L83.5 94H31.5L6 49Z" fill="#8B5CF6"/>
 <path d="M101.5 108.5L130.5 61H187.5L214.5 105.5L238 122H299L324 108.5L353.5 61H411.5L439 108.5L411.5 155.5M31.5 5L6 49L31.5 94H83.5L110 49L83.5 5H31.5Z" stroke="#8B5CF6" stroke-width="10"/>

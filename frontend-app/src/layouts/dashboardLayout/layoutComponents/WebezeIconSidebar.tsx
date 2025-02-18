@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import { Fragment } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import WebezeLogo from '../../../component/icons/WebezeLogo';
 import { RootState } from '../../../redux';
