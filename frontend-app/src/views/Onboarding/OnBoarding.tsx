@@ -1,10 +1,11 @@
-import React, { Fragment, useState } from "react";
+import { Fragment, useState } from "react";
 import OnboardingNavigation from "./components/OnboardingNavigation";
 import CompanyTypeSelection from "./steps/CompanyTypeSelection";
 import CompanyInfo from "./steps/CompanyInfo";
-import CompanyThemeSelection from "./steps/CompanyThemeSelection";
 import CompanyPaymentPlan from "./steps/CompanyPaymentPlan";
 import OnboardingNavigationButton from "./components/OnboardingNavigationButton";
+import InviteTeam from "./steps/InviteTeam";
+import { useNavigate } from "react-router-dom";
 
 export interface stepDataInterface {
   companyType: string;
@@ -17,6 +18,8 @@ export interface stepDataInterface {
 
 const OnBoarding = () => {
   const [currentStep, setCurrentStep] = useState<number>(0);
+  const navigate = useNavigate();
+
   const [stepData, setStepData] = useState<stepDataInterface>({
     companyType: "",
     companyLogo: "",
@@ -36,6 +39,8 @@ const OnBoarding = () => {
   const moveForward = () => {
     if (currentStep < steps.length - 1) {
       setCurrentStep((prevStep) => prevStep + 1);
+    }else{
+      navigate("/dashboard", { replace: true });
     }
   };
 
@@ -51,12 +56,12 @@ const OnBoarding = () => {
       description: "choose company type",
     },
     {
-      title: "Company Info",
+      title: "About your company",
       description: "provide company details",
     },
     {
-      title: "Company Theme",
-      description: "choose company theme",
+      title: "Invite team",
+      description: "add your team members",
     },
     {
       title: "Company Plan",
@@ -83,7 +88,7 @@ const OnBoarding = () => {
             <CompanyInfo stepData={stepData} setStepData={updateStepData} />
           )}
           {currentStep === 2 && (
-            <CompanyThemeSelection
+            <InviteTeam
               stepData={stepData}
               setStepData={updateStepData}
             />
