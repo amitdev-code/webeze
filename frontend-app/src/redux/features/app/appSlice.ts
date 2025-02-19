@@ -4,11 +4,13 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 interface AppState {
   isOpen: boolean;
   selectedMenu: number;
+  isAuthenticated: boolean;
 }
 
 const initialState: AppState = {
   isOpen: false,
   selectedMenu: 0,
+  isAuthenticated: false,
 };
 
 const appSlice = createSlice({
@@ -26,6 +28,9 @@ const appSlice = createSlice({
     },
     selectMenu: (state, action: PayloadAction<number>) => {
       state.selectedMenu = action.payload;
+    },
+    authenticateApp: (state, action: PayloadAction<boolean>) => {
+      state.isAuthenticated = action.payload;
     },
   },
 });
