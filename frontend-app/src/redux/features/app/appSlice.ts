@@ -29,12 +29,12 @@ const appSlice = createSlice({
     selectMenu: (state, action: PayloadAction<number>) => {
       state.selectedMenu = action.payload;
     },
-    authenticateApp: (state, action: PayloadAction<boolean>) => {
-      state.isAuthenticated = action.payload;
+    authenticateApp: (state) => {
+      state.isAuthenticated = true;
     },
   },
 });
 
-export const { toggleSidebar, setSidebar, openSidebar, selectMenu } =
+export const { toggleSidebar, setSidebar, openSidebar, selectMenu, authenticateApp } =
   appSlice.actions;
 export default appSlice.reducer;

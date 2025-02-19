@@ -49,13 +49,9 @@ export class CompanySettingsEntity extends BaseEntity {
   @Column({
     type: 'jsonb',
     default: {
-      chargebee_customer_id: null,
       stripe_customer_id: null,
-      chargebee_subscription_id: null,
-      chargebee_plan_id: null,
       user: null,
       configured: false,
-      chargebee_subscription_status: null,
       customer_card_status: null,
       revenue_till_date: null,
       subscription: {
@@ -70,13 +66,9 @@ export class CompanySettingsEntity extends BaseEntity {
     },
   })
   billing: {
-    chargebee_customer_id: string;
     stripe_customer_id: string;
-    chargebee_subscription_id: string;
-    chargebee_plan_id: string;
     user: number;
     configured: boolean;
-    chargebee_subscription_status: string;
     customer_card_status: string;
     revenue_till_date: string;
     subscription: {

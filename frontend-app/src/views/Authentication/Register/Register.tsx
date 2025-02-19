@@ -15,6 +15,8 @@ import { AddonInputPassword } from "../../../component/addOn/AddonInputPassword"
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../redux";
 import { registerUser } from "../../../redux/features/user/userSlice";
+import { authenticateApp } from "../../../redux/features/app/appSlice";
+import { useEffect } from "react";
 
 const VALIDATION_TEXT = {
   EMAIL_REQUIRED: "A valid email is required",
@@ -74,15 +76,17 @@ const Register = () => {
     console.log("auth-success", values);
     try {
       dispatch(registerUser({ email: values.email, password: values.password, company: values.company }))
-      // Show success message and redirect
-      if (userDetail) {
-        navigate("/onboarding", { replace: true });
-      }
     } catch (error) {
       console.log(error);
-
     }
   };
+
+  useEffect(() => {
+    if (userDetail) {
+      dispatch(authenticateApp());
+      navigate("/onboarding", { replace: true });
+    }
+  }, [userDetail])
 
   return (
     <div className="h-screen md:flex">

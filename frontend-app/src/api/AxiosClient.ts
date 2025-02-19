@@ -14,9 +14,10 @@ const apiClient = axios.create({
 apiClient.interceptors.request.use(
     async (config) => {
         let userIP = '';
-        if (localStorage.getItem('ip')) {
+        if (!localStorage.getItem('ip')) {
             const response = await fetch('https://api.ipify.org?format=json');
             const data = await response.json();
+            userIP = data.ip;
             localStorage.setItem('ip', data.ip);
         } else {
             userIP = localStorage.getItem('ip') || ''

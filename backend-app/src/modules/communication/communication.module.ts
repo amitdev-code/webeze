@@ -10,18 +10,18 @@ import * as fs from 'fs';
   imports: [
     MailerModule.forRoot({
       transport: {
-        host: 'smtp.example.com',
-        port: 587,
+        host: process.env.SMTP_HOST,
+        port: process.env.SMTP_PORT as unknown as number,
         auth: {
-          user: 'your-email@example.com',
-          pass: 'your-password',
+          user: process.env.SMTP_USERNAME,
+          pass: process.env.SMTP_PASSWORD,
         },
       },
       defaults: {
-        from: '"No Reply" <no-reply@example.com>',
+        from: process.env.EMAIL_FROM,
       },
       template: {
-        dir: join(__dirname, 'templates/email-templates'),
+        dir: join(__dirname, '../../../templates/email-templates'),
         adapter: {
           compile: (template: string, options: any) => {
             const compiled = handlebars.compile(template, options);
@@ -40,7 +40,7 @@ import * as fs from 'fs';
 export class CommunicationModule {
   constructor() {
     // Register partials manually
-    const partialsDir = join(__dirname, 'templates/email-templates/partials');
+    const partialsDir = join(__dirname, '../../../templates/email-templates/partials');
     fs.readdirSync(partialsDir).forEach((file) => {
       const partialName = file.split('.')[0]; // Remove .hbs extension
       const partialTemplate = fs.readFileSync(join(partialsDir, file), 'utf8');

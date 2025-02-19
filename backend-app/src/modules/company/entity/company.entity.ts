@@ -18,9 +18,6 @@ export class CompanyEntity extends BaseEntity {
   agency: boolean;
 
   @Column({ type: 'bool', default: false })
-  marketing_popups: boolean;
-
-  @Column({ type: 'bool', default: false })
   hipaa: boolean;
 
   @OneToOne(() => CompanySettingsEntity, (settings) => settings.company, {

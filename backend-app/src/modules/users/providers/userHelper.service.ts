@@ -12,6 +12,7 @@ import { DateFormatterHelperFunction } from '@common/helper/DateFormatterHelperF
 import { CreateUserSessionDto } from '@users_modules/dto/createUserSession.dto';
 import { VerificationType } from '@constants/verification-type';
 import { UserVerificationEntity } from '@users_modules/entity/userVerification.entity';
+import { RoleType } from '@constants/role-type';
 
 @Injectable()
 export class UserHelperService {
@@ -19,7 +20,7 @@ export class UserHelperService {
     private readonly userservice: UsersService,
     @InjectDataSource()
     private readonly dataSource: DataSource,
-  ) {}
+  ) { }
 
   /**
    * Validates a user by email or phone.
@@ -68,11 +69,11 @@ export class UserHelperService {
         const caseBothPhoneData = await validatePhone();
         return caseBothEmailData && caseBothPhoneData
           ? [
-              caseBothEmailData,
-              ...(Array.isArray(caseBothPhoneData)
-                ? caseBothPhoneData
-                : [caseBothPhoneData]),
-            ]
+            caseBothEmailData,
+            ...(Array.isArray(caseBothPhoneData)
+              ? caseBothPhoneData
+              : [caseBothPhoneData]),
+          ]
           : null;
       default:
         break;
@@ -110,6 +111,7 @@ export class UserHelperService {
       },
     ];
     user.timezone = timezone;
+    user.role = RoleType.ADMIN;
     return await queryRunner.manager.save(user);
   }
 
