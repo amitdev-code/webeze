@@ -1,5 +1,5 @@
-import apiClient from "../axiosClient";
 import { AxiosResponse } from "axios";
+import apiClient from "../AxiosClient";
 
 export const AuthenticationApi = {
   login: async (email: string, password: string): Promise<AxiosResponse> => {

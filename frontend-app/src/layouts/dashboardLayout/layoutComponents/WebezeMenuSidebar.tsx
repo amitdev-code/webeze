@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../redux';
-import { toggleSidebar } from '../../../redux/features/app/sidebar';
+import { toggleSidebar } from '../../../redux/features/app/appSlice';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { Link } from 'react-router-dom';
 import MenuDivider from './MenuDivider';
@@ -20,7 +20,7 @@ export interface SubMenuItem {
 
 const WebezeMenuSidebar = () => {
 
-    const isOpen = useSelector((state: RootState) => state.sidebar.isOpen);
+    const isOpen = useSelector((state: RootState) => state.app.isOpen);
     const selectedMenuItems = sidebarMenuItems.top[0].menuItems;
     const menuTitle = 'Dashboard';
     const dispacth = useDispatch();

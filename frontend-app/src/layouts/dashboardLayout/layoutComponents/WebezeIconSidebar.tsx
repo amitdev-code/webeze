@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import WebezeLogo from "../../../component/icons/WebezeLogo";
 import { RootState } from "../../../redux";
 import { Icon } from "@iconify/react";
-import { openSidebar, selectMenu } from "../../../redux/features/app/sidebar";
+import { openSidebar, selectMenu } from "../../../redux/features/app/appSlice";
 import { sidebarMenuItems } from "../sidebarMenu";
 
 const WebezeIconSidebar = () => {
-  const isOpen = useSelector((state: RootState) => state.sidebar.isOpen);
+  const isOpen = useSelector((state: RootState) => state.app.isOpen);
   const sidebar = sidebarMenuItems;
   const dispatch = useDispatch();
 

@@ -1,44 +1,45 @@
-import { configureStore } from '@reduxjs/toolkit';
-import sidebarReducer, { SidebarState } from './features/app/sidebar';
+import { configureStore } from "@reduxjs/toolkit";
+import appReducer from "./features/app/appSlice";
 
-// Load state from localStorage
+
+
+// Load persisted state from localStorage
 const loadState = () => {
-    try {
-        const serializedState = localStorage.getItem('sidebarState');
-        return serializedState ? JSON.parse(serializedState) : undefined;
-    } catch (err) {
-        console.error('Error loading state from localStorage', err);
-        return undefined;
-    }
+  try {
+    const serializedState = localStorage.getItem("reduxState");
+    return serializedState ? JSON.parse(serializedState) : undefined;
+  } catch (err) {
+    console.error("Could not load state", err);
+    return undefined;
+  }
 };
 
 // Save state to localStorage
 const saveState = (state: RootState) => {
-    try {
-        const serializedState = JSON.stringify(state);
-        localStorage.setItem('sidebarState', serializedState);
-    } catch (err) {
-        console.error('Error saving state to localStorage', err);
-    }
+  try {
+    const serializedState = JSON.stringify(state);
+    localStorage.setItem("reduxState", serializedState);
+  } catch (err) {
+    console.error("Could not save state", err);
+  }
 };
 
-// Define the store
+// Configure Redux store
 const store = configureStore({
-    reducer: {
-        sidebar: sidebarReducer,
-    },
-    preloadedState: loadState(),
+  reducer: {
+    app: appReducer,
+  },
+  preloadedState: loadState(),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });
 
-// Subscribe to store changes and save to localStorage
+// Subscribe to store changes and persist them
 store.subscribe(() => {
-    saveState(store.getState());
+  saveState(store.getState());
 });
 
-// Correct type definitions
-export interface RootState {
-    sidebar: SidebarState;
-}
+// RootState type
+export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
 export default store;

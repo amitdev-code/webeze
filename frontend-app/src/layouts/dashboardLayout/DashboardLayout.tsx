@@ -7,7 +7,7 @@ import WebezeIconSidebar from "./layoutComponents/WebezeIconSidebar";
 import WebezeMenuSidebar from "./layoutComponents/WebezeMenuSidebar";
 
 const DashboardLayout = ({ children }: { children: React.ReactElement }) => {
-  const isOpen = useSelector((state: RootState) => state.sidebar.isOpen);
+  const isOpen = useSelector((state: RootState) => state.app.isOpen);
 
   return (
     <Fragment>
