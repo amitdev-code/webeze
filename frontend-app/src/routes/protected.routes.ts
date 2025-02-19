@@ -17,16 +17,6 @@ const AnalyticsDashboard = lazy(
 
 export const protectedRoutes: RouteConfig[] = [
   {
-    path: "/onboarding",
-    namedPath: "onboarding",
-    component: Onboarding,
-    lazyLoaded: true,
-    haveChildren: false,
-    layout: OpenLayout,
-    allowedRoles: [],
-    children: [],
-  },
-  {
     path: "/dashboard",
     namedPath: "dashboard",
     component: Dashboard,
@@ -45,5 +35,15 @@ export const protectedRoutes: RouteConfig[] = [
     checkRoleOnChildren: true,
     layout: DashboardLayout,
     allowedRoles: ["ADMIN"],
+  },
+  {
+    path: "/onboarding",
+    namedPath: "onboarding",
+    component: Onboarding,
+    lazyLoaded: true,
+    haveChildren: false,
+    layout: OpenLayout,
+    allowedRoles: ["ADMIN"],
+    children: [],
   },
 ];

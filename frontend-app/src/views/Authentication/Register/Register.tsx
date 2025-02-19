@@ -2,7 +2,7 @@
 import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   BaseThemeToggle,
   BaseInput,
@@ -12,6 +12,9 @@ import {
   BaseHeading,
 } from "../../../component";
 import { AddonInputPassword } from "../../../component/addOn/AddonInputPassword";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../../redux";
+import { registerUser } from "../../../redux/features/user/userSlice";
 
 const VALIDATION_TEXT = {
   EMAIL_REQUIRED: "A valid email is required",
@@ -61,27 +64,23 @@ const Register = () => {
     defaultValues: initialValues,
   });
 
-  const onSubmit = async (values: { company: string }) => {
+  const dispatch = useDispatch<AppDispatch>()
+  const navigate = useNavigate();
+
+  const { isLoading, error, userDetail } = useSelector((state: RootState) => state.user)
+
+
+  const onSubmit = async (values: { email: string, password: string, company: string }) => {
     console.log("auth-success", values);
     try {
-      await new Promise((resolve, reject) => {
-        if (values.company === "maya") {
-          setTimeout(
-            () => reject(new Error("Fake backend validation error")),
-            2000
-          );
-        }
-        setTimeout(resolve, 4000);
-      });
+      dispatch(registerUser({ email: values.email, password: values.password, company: values.company }))
       // Show success message and redirect
-    } catch (error) {
-      if (
-        error instanceof Error &&
-        error.message === "Fake backend validation error"
-      ) {
-        // Set error on the form
-        // setError('company', { type: 'manual', message: 'This company is already taken' });
+      if (userDetail) {
+        navigate("/onboarding", { replace: true });
       }
+    } catch (error) {
+      console.log(error);
+
     }
   };
 
@@ -200,7 +199,7 @@ const Register = () => {
           </div>
           <BaseButton
             disabled={isSubmitting}
-            loading={isSubmitting}
+            loading={isLoading}
             type="submit"
             color="primary"
             className="!h-12 w-full"

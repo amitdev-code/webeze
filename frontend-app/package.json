@@ -23,6 +23,7 @@
     "autoprefixer": "^10.4.20",
     "axios": "^1.7.9",
     "defu": "^6.1.4",
+    "moment-timezone": "^0.5.47",
     "postcss": "^8.5.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -30,6 +31,7 @@
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.1.5",
     "redux-thunk": "^3.1.0",
+    "ua-parser-js": "^2.0.2",
     "use-debounce": "^10.0.0",
     "zod": "^3.24.1"
   },
