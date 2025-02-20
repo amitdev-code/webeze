@@ -8,7 +8,7 @@ export class CompanyEntity extends BaseEntity {
   @Column({ type: 'varchar', length: 100 })
   name: string;
 
-  @Column({ type: 'varchar', length: 100 })
+  @Column({ type: 'varchar', length: 100, default: null })
   logo: string;
 
   @Column({ type: 'varchar', length: 100 })
@@ -36,6 +36,6 @@ export class CompanyEntity extends BaseEntity {
   @JoinColumn({ name: 'user_id' })
   user: UsersEntity;
 
-  @Column({ type: 'int' })
+  @Column({ type: 'varchar' })
   user_id: string;
 }

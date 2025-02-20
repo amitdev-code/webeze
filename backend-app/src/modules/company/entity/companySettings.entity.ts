@@ -123,7 +123,7 @@ export class CompanySettingsEntity extends BaseEntity {
   @Column({ type: 'bool', default: false })
   two_fact_auth: boolean;
 
-  @Column({ type: 'int' })
+  @Column({ type: 'varchar' })
   company_id: string;
 
   @OneToOne(() => CompanyEntity, (company) => company.settings)

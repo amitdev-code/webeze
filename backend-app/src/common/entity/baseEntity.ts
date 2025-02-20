@@ -9,12 +9,9 @@ import {
 import { IBaseInterface } from './baseInterface';
 
 export class BaseEntity implements IBaseInterface {
-  @PrimaryGeneratedColumn('increment')
-  id: number;
 
-  @Column({ type: 'varchar', unique: true, nullable: false })
-  @Generated('uuid')
-  uuid: string;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @CreateDateColumn({
     type: 'timestamp',

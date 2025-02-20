@@ -1,6 +1,5 @@
 export interface IBaseInterface {
-  id: number;
-  uuid: string
+  id: string
   created_at: Date;
   updated_at: Date;
 }
