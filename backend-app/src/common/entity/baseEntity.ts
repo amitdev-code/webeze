@@ -1,14 +1,20 @@
 import { instanceToPlain } from 'class-transformer';
 import {
+  Column,
   CreateDateColumn,
+  Generated,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import { IBaseInterface } from './baseInterface';
 
 export class BaseEntity implements IBaseInterface {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
+  @PrimaryGeneratedColumn('increment')
+  id: number;
+
+  @Column({ type: 'varchar', unique: true, nullable: false })
+  @Generated('uuid')
+  uuid: string;
 
   @CreateDateColumn({
     type: 'timestamp',

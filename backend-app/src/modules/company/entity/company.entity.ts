@@ -9,10 +9,16 @@ export class CompanyEntity extends BaseEntity {
   name: string;
 
   @Column({ type: 'varchar', length: 100 })
+  logo: string;
+
+  @Column({ type: 'varchar', length: 100 })
   sub_domain: string;
 
   @Column({ type: 'bool', default: false })
   is_domain_mapped: string;
+
+  @Column({ type: 'varchar', default: '' })
+  domain: string;
 
   @Column({ type: 'bool', default: false })
   agency: boolean;
