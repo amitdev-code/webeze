@@ -80,7 +80,7 @@ const WebezeMenuSidebar = () => {
                                                             className="webeze-focus relative top-0.5 flex items-center"
                                                         >
                                                             <span className="text-muted-400 group-hover:text-primary-500 relative inline-flex items-center gap-2 font-sans text-sm transition-colors duration-300">
-                                                                <span>{item.subMenuTitle}</span>
+                                                                <span className='uppercase'>{item.subMenuTitle}</span>
                                                             </span>
                                                             <Icon icon={item.isSelected ? "mdi:minus-box-outline" : "mdi:plus-box-outline"} className="icon text-muted-400 ms-auto block size-4 transition-transform duration-300" />
                                                         </a>
@@ -96,7 +96,7 @@ const WebezeMenuSidebar = () => {
                                                                                 <Icon icon={subItem.icon || ''} className="icon me-2 size-5" />
 
 
-                                                                                <span className="font-sans text-xs">
+                                                                                <span className="font-sans text-xs uppercase">
                                                                                     {subItem.subMenuTitle}
                                                                                 </span>
                                                                             </a>

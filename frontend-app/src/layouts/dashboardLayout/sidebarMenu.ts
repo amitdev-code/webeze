@@ -56,11 +56,11 @@ export const sidebarMenuItems = {
           showDividerOnTop: false,
           showDividerOnBottom: false,
           isOpen: true,
-          isSelected: true,
+          isSelected: false,
           hasSubMenu: true,
           subMenuItems: [
             {
-              subMenuTitle: "Website Customers",
+              subMenuTitle: "Customers",
               redirectUrl: "/website-customers",
               showDividerOnTop: false,
               showDividerOnBottom: false,
@@ -87,7 +87,7 @@ export const sidebarMenuItems = {
           showDividerOnTop: false,
           showDividerOnBottom: false,
           isOpen: false,
-          isSelected: true,
+          isSelected: false,
           hasSubMenu: true,
           subMenuItems: [
             {
@@ -118,7 +118,7 @@ export const sidebarMenuItems = {
           showDividerOnTop: false,
           showDividerOnBottom: false,
           isOpen: false,
-          isSelected: true,
+          isSelected: false,
           hasSubMenu: true,
           subMenuItems: [
             {
@@ -144,12 +144,53 @@ export const sidebarMenuItems = {
           ]
         },
         {
+          subMenuTitle: "Integrations",
+          redirectUrl: "#",
+          showDividerOnTop: false,
+          showDividerOnBottom: false,
+          isOpen: false,
+          isSelected: false,
+          hasSubMenu: true,
+          subMenuItems: [
+            {
+              subMenuTitle: "Social",
+              redirectUrl: "/integration/social",
+              showDividerOnTop: false,
+              showDividerOnBottom: false,
+              icon: "tabler:social",
+              isOpen: false,
+              isSelected: false,
+              hasSubMenu: false,
+            },
+            {
+              subMenuTitle: "Lead",
+              redirectUrl: "/integration/leads",
+              showDividerOnTop: false,
+              showDividerOnBottom: false,
+              icon: "mdi:leads",
+              isOpen: false,
+              isSelected: false,
+              hasSubMenu: false,
+            },
+            {
+              subMenuTitle: "Communication",
+              redirectUrl: "/integration/leads",
+              showDividerOnTop: false,
+              showDividerOnBottom: false,
+              icon: "maki:communications-tower",
+              isOpen: false,
+              isSelected: false,
+              hasSubMenu: false,
+            }
+          ]
+        },
+        {
           subMenuTitle: "Media Box",
           redirectUrl: "/media",
           showDividerOnTop: false,
           showDividerOnBottom: false,
           isOpen: false,
-          isSelected: true,
+          isSelected: false,
           hasSubMenu: true,
           subMenuItems: [
             {
@@ -204,6 +245,98 @@ export const sidebarMenuItems = {
           isSelected: false,
           hasSubMenu: false,
           subMenuItems: [],
+        },
+        {
+          subMenuTitle: "Builder",
+          redirectUrl: "#",
+          showDividerOnTop: false,
+          showDividerOnBottom: false,
+          isOpen: false,
+          isSelected: true,
+          hasSubMenu: true,
+          subMenuItems: [
+            {
+              subMenuTitle: "Website",
+              redirectUrl: "/builder",
+              showDividerOnTop: false,
+              showDividerOnBottom: false,
+              isOpen: false,
+              icon: "gg:website",
+              isSelected: false,
+              hasSubMenu: false,
+            },
+            {
+              subMenuTitle: "Pages",
+              redirectUrl: "/builder/pages",
+              showDividerOnTop: false,
+              showDividerOnBottom: false,
+              isOpen: false,
+              icon: "streamline:browser-website-1-solid",
+              isSelected: false,
+              hasSubMenu: false,
+            },
+            {
+              subMenuTitle: "Navigation",
+              redirectUrl: "/builder/menu",
+              showDividerOnTop: false,
+              showDividerOnBottom: false,
+              icon: "solar:menu-dots-circle-broken",
+              isOpen: false,
+              isSelected: false,
+              hasSubMenu: false,
+            }
+          ]
+        },
+        {
+          subMenuTitle: "Configration",
+          redirectUrl: "#",
+          showDividerOnTop: false,
+          showDividerOnBottom: false,
+          isOpen: false,
+          isSelected: true,
+          hasSubMenu: true,
+          subMenuItems: [
+            {
+              subMenuTitle: "Theme",
+              redirectUrl: "/builder",
+              showDividerOnTop: false,
+              showDividerOnBottom: false,
+              isOpen: false,
+              icon: "ri:paint-brush-line",
+              isSelected: false,
+              hasSubMenu: false,
+            },
+            {
+              subMenuTitle: "Template",
+              redirectUrl: "/builder/pages",
+              showDividerOnTop: false,
+              showDividerOnBottom: false,
+              isOpen: false,
+              icon: "icon-park-twotone:page-template",
+              isSelected: false,
+              hasSubMenu: false,
+            },
+            {
+              subMenuTitle: "SEO",
+              redirectUrl: "/builder/menu",
+              showDividerOnTop: false,
+              showDividerOnBottom: false,
+              icon: "hugeicons:seo",
+              isOpen: false,
+              isSelected: false,
+              hasSubMenu: false,
+            },
+            {
+              subMenuTitle: "Settings",
+              redirectUrl: "/builder/menu",
+              showDividerOnTop: false,
+              showDividerOnBottom: false,
+              icon: "hugeicons:settings-04",
+              isOpen: false,
+              isSelected: false,
+              hasSubMenu: false,
+            }
+          ]
         },
       ],
     },
