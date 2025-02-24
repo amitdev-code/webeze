@@ -1,7 +1,7 @@
 import { Controller, Post, Put, Delete, Body, Param } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse, ApiBody } from '@nestjs/swagger';
 import { PlansService } from '../providers/plans.service';
-import { PlansEntity } from '../entity/plans.entity';
+import { PlansEntity } from '../../../entitys/shared/plans.entity';
 import { CreatePlanDto } from '@plans_modules/dto/createPlanDto';
 import { UpdatePlanDto } from '@plans_modules/dto/updatePlanDto';
 

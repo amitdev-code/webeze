@@ -1,17 +1,17 @@
 import { EmailAlreadyExistException } from '@exceptions/commonExceptions/EmailAlreadyExistException';
 import { PhoneAlredyExistException } from '@exceptions/commonExceptions/PhoneAlredyExistException';
 import { Injectable } from '@nestjs/common';
-import { UsersEntity } from '@users_modules/entity/user.entity';
+import { UsersEntity } from '@entity/main/user.entity';
 import { UsersService } from '@users_modules/providers/users.service';
 import { InjectDataSource } from '@nestjs/typeorm';
 import { DataSource, QueryRunner } from 'typeorm';
 import { GeneralHelperFunctions } from '@common/helper/generalHelperFunctions';
 import { RegisterDto } from '@auth_modules/dto/register.dto';
-import { UserSession } from '@users_modules/entity/userSession.entity';
+import { UserSession } from '@entity/main/userSession.entity';
 import { DateFormatterHelperFunction } from '@common/helper/DateFormatterHelperFunction';
 import { CreateUserSessionDto } from '@users_modules/dto/createUserSession.dto';
 import { VerificationType } from '@constants/verification-type';
-import { UserVerificationEntity } from '@users_modules/entity/userVerification.entity';
+import { UserVerificationEntity } from '@entity/main/userVerification.entity';
 import { RoleType } from '@constants/role-type';
 
 @Injectable()
@@ -20,7 +20,7 @@ export class UserHelperService {
     private readonly userservice: UsersService,
     @InjectDataSource()
     private readonly dataSource: DataSource,
-  ) { }
+  ) {}
 
   /**
    * Validates a user by email or phone.
@@ -69,11 +69,11 @@ export class UserHelperService {
         const caseBothPhoneData = await validatePhone();
         return caseBothEmailData && caseBothPhoneData
           ? [
-            caseBothEmailData,
-            ...(Array.isArray(caseBothPhoneData)
-              ? caseBothPhoneData
-              : [caseBothPhoneData]),
-          ]
+              caseBothEmailData,
+              ...(Array.isArray(caseBothPhoneData)
+                ? caseBothPhoneData
+                : [caseBothPhoneData]),
+            ]
           : null;
       default:
         break;

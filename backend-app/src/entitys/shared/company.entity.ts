@@ -1,7 +1,7 @@
 import { BaseEntity } from 'src/common/entity/baseEntity';
 import { Column, Entity, JoinColumn, OneToOne, ManyToOne } from 'typeorm';
 import { CompanySettingsEntity } from './companySettings.entity';
-import { UsersEntity } from 'src/modules/users/entity/user.entity';
+import { UsersEntity } from '@entity/main/user.entity';
 
 @Entity('company')
 export class CompanyEntity extends BaseEntity {

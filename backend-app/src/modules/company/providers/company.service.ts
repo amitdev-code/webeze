@@ -1,5 +1,5 @@
-import { CompanyEntity } from '@company_modules/entity/company.entity';
-import { CompanySettingsEntity } from '@company_modules/entity/companySettings.entity';
+import { CompanyEntity } from '@entity/shared/company.entity';
+import { CompanySettingsEntity } from '@entity/shared/companySettings.entity';
 import { Injectable } from '@nestjs/common';
 import { InjectDataSource } from '@nestjs/typeorm';
 import { DataSource, QueryRunner } from 'typeorm';

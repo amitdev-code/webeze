@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { PlansEntity } from '../entity/plans.entity';
+import { PlansEntity } from '../../../entitys/shared/plans.entity';
 import { UpdatePlanDto } from '@plans_modules/dto/updatePlanDto';
 
 @Injectable()

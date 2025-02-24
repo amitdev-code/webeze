@@ -1,9 +1,9 @@
 import { RoleType } from '@constants/role-type';
 import { Column, Entity, OneToMany } from 'typeorm';
-import { IUser } from './interfaces/user.interface';
+import { IUser } from '../interfaces/user.interface';
 import { UserSession } from './userSession.entity';
 import { BaseEntity } from '@common/entity/baseEntity';
-import { CompanyEntity } from 'src/modules/company/entity/company.entity';
+import { CompanyEntity } from '@entity/shared/company.entity';
 
 @Entity('user')
 export class UsersEntity extends BaseEntity implements IUser {

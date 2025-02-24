@@ -37,7 +37,8 @@
       "@users_modules/*": ["src/modules/users/*"],
       "@providers/*": ["src/providers/*"],
       "@shared/*": ["src/shared/*"],
-      "@validators/*": ["src/validators/*"]
+      "@validators/*": ["src/validators/*"],
+      "@entity/*": ["src/entitys/*"]
     }
   }
 }

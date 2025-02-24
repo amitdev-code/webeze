@@ -1,8 +1,8 @@
 import { UserNotFoundException } from '@exceptions/userExceptions/userNotFoundException';
 import { Injectable } from '@nestjs/common';
 import { InjectDataSource } from '@nestjs/typeorm';
-import { UsersEntity } from '@users_modules/entity/user.entity';
-import { UserVerificationEntity } from '@users_modules/entity/userVerification.entity';
+import { UsersEntity } from '@entity/main/user.entity';
+import { UserVerificationEntity } from '@entity/main/userVerification.entity';
 import { DataSource } from 'typeorm';
 
 @Injectable()

@@ -2,7 +2,7 @@ import { SessionStatus } from '@constants/session-type';
 import { userNoActiveSessionFoundException } from '@exceptions/userExceptions/userNoActiveSessionFoundException';
 import { UserNotFoundException } from '@exceptions/userExceptions/userNotFoundException';
 import { Injectable } from '@nestjs/common';
-import { UserSession } from '@users_modules/entity/userSession.entity';
+import { UserSession } from '@entity/main/userSession.entity';
 import { DataSource } from 'typeorm';
 
 @Injectable()
