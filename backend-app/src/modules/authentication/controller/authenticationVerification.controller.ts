@@ -3,7 +3,7 @@ import { AuthenticationService } from '../providers/authentication.service';
 import { AuthenticationTokenService } from '../providers/authenticationToken.service';
 import { SocialAuthenticationService } from '@auth_modules/providers/socialAuthentication.service';
 import { GetCurrentUser } from '@decorators/getCurrentUser.decorator';
-import { UsersEntity } from '@users_modules/entity/user.entity';
+import { UsersEntity } from '@entity/main/user.entity';
 import { AuthenticationHelperService } from '@auth_modules/providers/authenticationHelper';
 // import { JwtRefreshGuard } from '../guards/jwt-refresh.guard';
 

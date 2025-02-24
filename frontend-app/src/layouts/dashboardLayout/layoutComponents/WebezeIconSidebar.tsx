@@ -8,6 +8,7 @@ import { sidebarMenuItems } from "../sidebarMenu";
 
 const WebezeIconSidebar = () => {
   const isOpen = useSelector((state: RootState) => state.app.isOpen);
+  const selectedItem = useSelector((state: RootState) => state.app.selectedMenu);
   const sidebar = sidebarMenuItems;
   const dispatch = useDispatch();
 
@@ -34,7 +35,7 @@ const WebezeIconSidebar = () => {
               <button
                 type="button"
                 className={`${
-                  item.isSelected
+                  selectedItem === index
                     ? "bg-primary-100 text-primary-500 dark:bg-primary-500/10"
                     : "text-muted-400"
                 } flex size-12 items-center justify-center rounded-2xl transition-colors duration-300`}

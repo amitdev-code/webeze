@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { CompanyService } from './company.service';
 import { CompanyAlreadyExistException } from '@exceptions/companyExceptions/CompanyAlreadyExistException';
-import { UsersEntity } from '@users_modules/entity/user.entity';
+import { UsersEntity } from '@entity/main/user.entity';
 import { CompanyEntity } from '@entity/shared/company.entity';
 import { QueryRunner } from 'typeorm';
 

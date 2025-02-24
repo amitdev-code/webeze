@@ -1,7 +1,8 @@
 import { BaseEntity } from 'src/common/entity/baseEntity';
-import { Column, Entity, JoinColumn, OneToOne, ManyToOne } from 'typeorm';
+import { Column, Entity, JoinColumn, OneToOne, ManyToOne, OneToMany } from 'typeorm';
 import { CompanySettingsEntity } from './companySettings.entity';
 import { UsersEntity } from '@entity/main/user.entity';
+import { CompanyTypeEntity } from './company_type.entity';
 
 @Entity('company')
 export class CompanyEntity extends BaseEntity {
@@ -31,6 +32,12 @@ export class CompanyEntity extends BaseEntity {
   })
   @JoinColumn()
   settings: CompanySettingsEntity;
+
+  @OneToMany(() => CompanyTypeEntity, (type) => type.id, {
+    cascade: true,
+  })
+  @JoinColumn()
+  type: CompanyTypeEntity;
 
   @ManyToOne(() => UsersEntity, (user) => user.companies)
   @JoinColumn({ name: 'user_id' })

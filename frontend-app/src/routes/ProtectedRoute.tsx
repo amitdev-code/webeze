@@ -26,6 +26,10 @@ export const ProtectedRoute = ({
     return <Navigate to="/onboarding" state={{ from: location }} replace />;
   }
 
+  if(isAuthenticated && user?.onboard && location.pathname == "/onboarding"){
+    return <Navigate to={"/dashboard"} state={{from: location}} replace />
+  }
+
   if (checkRoleOnChildren && allowedRoles.length > 0 && user?.role && !allowedRoles.includes(user.role)) {
     return <Navigate to="/unauthorized" replace />;
   }
