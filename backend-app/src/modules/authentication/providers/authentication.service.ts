@@ -22,7 +22,7 @@ export class AuthenticationService {
     private readonly authenticationhelperservice: AuthenticationHelperService,
     private readonly authenticationtokenservice: AuthenticationTokenService,
     private readonly dataSource: DataSource,
-  ) { }
+  ) {}
 
   async register(
     registerUser: RegisterDto,
