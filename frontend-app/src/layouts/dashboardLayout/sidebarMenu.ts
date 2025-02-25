@@ -30,7 +30,7 @@ export const sidebarMenuItems = {
           subMenuItems: [
             {
               subMenuTitle: "Blogs",
-              redirectUrl: "/blogs",
+              redirectUrl: "/dashboard/blogs-list",
               showDividerOnTop: false,
               showDividerOnBottom: false,
               isOpen: false,
@@ -40,7 +40,7 @@ export const sidebarMenuItems = {
             },
             {
               subMenuTitle: "Manage Blogs",
-              redirectUrl: "/manage-blogs",
+              redirectUrl: "/dashboard/manage-blogs",
               showDividerOnTop: false,
               showDividerOnBottom: false,
               icon: "ix:product-management",
@@ -52,7 +52,7 @@ export const sidebarMenuItems = {
         },
         {
           subMenuTitle: "Users",
-          redirectUrl: "/users",
+          redirectUrl: "#",
           showDividerOnTop: false,
           showDividerOnBottom: false,
           isOpen: true,
@@ -61,7 +61,7 @@ export const sidebarMenuItems = {
           subMenuItems: [
             {
               subMenuTitle: "Customers",
-              redirectUrl: "/website-customers",
+              redirectUrl: "/dashboard/website-customers",
               showDividerOnTop: false,
               showDividerOnBottom: false,
               isOpen: true,
@@ -71,7 +71,7 @@ export const sidebarMenuItems = {
             },
             {
               subMenuTitle: "Website Leads",
-              redirectUrl: "/website-leads",
+              redirectUrl: "/dashboard/website-leads",
               showDividerOnTop: false,
               showDividerOnBottom: false,
               icon: "mdi:leads-outline",
@@ -92,7 +92,7 @@ export const sidebarMenuItems = {
           subMenuItems: [
             {
               subMenuTitle: "Store Analytics",
-              redirectUrl: "/store-analytics",
+              redirectUrl: "/dashboard/website-analytics",
               showDividerOnTop: false,
               showDividerOnBottom: false,
               icon: "clarity:store-solid",
@@ -102,7 +102,7 @@ export const sidebarMenuItems = {
             },
             {
               subMenuTitle: "Live Analytics",
-              redirectUrl: "/live-analytics",
+              redirectUrl: "/dashboard/live-analytics",
               showDividerOnTop: false,
               showDividerOnBottom: false,
               icon: "fluent:live-24-regular",
@@ -123,7 +123,7 @@ export const sidebarMenuItems = {
           subMenuItems: [
             {
               subMenuTitle: "Automation",
-              redirectUrl: "/automation",
+              redirectUrl: "/dashboard/website-automation",
               showDividerOnTop: false,
               showDividerOnBottom: false,
               icon: "fad:automation-3p",
@@ -133,7 +133,7 @@ export const sidebarMenuItems = {
             },
             {
               subMenuTitle: "Campaigns",
-              redirectUrl: "/campaign",
+              redirectUrl: "/dashboard/website-campaign",
               showDividerOnTop: false,
               showDividerOnBottom: false,
               icon: "material-symbols:campaign-sharp",
@@ -145,85 +145,21 @@ export const sidebarMenuItems = {
         },
         {
           subMenuTitle: "Integrations",
-          redirectUrl: "#",
+          redirectUrl: "/dashboard/integrations",
           showDividerOnTop: false,
           showDividerOnBottom: false,
           isOpen: false,
           isSelected: false,
-          hasSubMenu: true,
-          subMenuItems: [
-            {
-              subMenuTitle: "Social",
-              redirectUrl: "/integration/social",
-              showDividerOnTop: false,
-              showDividerOnBottom: false,
-              icon: "tabler:social",
-              isOpen: false,
-              isSelected: false,
-              hasSubMenu: false,
-            },
-            {
-              subMenuTitle: "Lead",
-              redirectUrl: "/integration/leads",
-              showDividerOnTop: false,
-              showDividerOnBottom: false,
-              icon: "mdi:leads",
-              isOpen: false,
-              isSelected: false,
-              hasSubMenu: false,
-            },
-            {
-              subMenuTitle: "Communication",
-              redirectUrl: "/integration/leads",
-              showDividerOnTop: false,
-              showDividerOnBottom: false,
-              icon: "maki:communications-tower",
-              isOpen: false,
-              isSelected: false,
-              hasSubMenu: false,
-            }
-          ]
+          hasSubMenu: false,
         },
         {
           subMenuTitle: "Media Box",
-          redirectUrl: "/media",
+          redirectUrl: "/dashboard/media-box",
           showDividerOnTop: false,
           showDividerOnBottom: false,
           isOpen: false,
           isSelected: false,
-          hasSubMenu: true,
-          subMenuItems: [
-            {
-              subMenuTitle: "Images",
-              redirectUrl: "/media/images",
-              showDividerOnTop: false,
-              showDividerOnBottom: false,
-              isOpen: false,
-              icon: "humbleicons:images",
-              isSelected: false,
-              hasSubMenu: false,
-            },
-            {
-              subMenuTitle: "Videos",
-              redirectUrl: "/media/videos",
-              showDividerOnTop: false,
-              showDividerOnBottom: false,
-              icon: "lets-icons:video",
-              isOpen: false,
-              isSelected: false,
-              hasSubMenu: false,
-            },
-            {
-              subMenuTitle: "Documents",
-              redirectUrl: "/media/documents",
-              showDividerOnTop: false,
-              showDividerOnBottom: false,
-              icon: "solar:document-outline",
-              isOpen: false,
-              isSelected: false,
-              hasSubMenu: false,
-            }
-          ]
+          hasSubMenu: false,
         },
       ],
     },
@@ -267,7 +203,7 @@ export const sidebarMenuItems = {
             },
             {
               subMenuTitle: "Pages",
-              redirectUrl: "/builder/pages",
+              redirectUrl: "/builder/manage-webpage",
               showDividerOnTop: false,
               showDividerOnBottom: false,
               isOpen: false,
@@ -277,7 +213,7 @@ export const sidebarMenuItems = {
             },
             {
               subMenuTitle: "Navigation",
-              redirectUrl: "/builder/menu",
+              redirectUrl: "/builder/menu/builder/manage-webpage-menu",
               showDividerOnTop: false,
               showDividerOnBottom: false,
               icon: "solar:menu-dots-circle-broken",
@@ -298,7 +234,7 @@ export const sidebarMenuItems = {
           subMenuItems: [
             {
               subMenuTitle: "Theme",
-              redirectUrl: "/builder",
+              redirectUrl: "/builder/theme-configration",
               showDividerOnTop: false,
               showDividerOnBottom: false,
               isOpen: false,
@@ -308,7 +244,7 @@ export const sidebarMenuItems = {
             },
             {
               subMenuTitle: "Template",
-              redirectUrl: "/builder/pages",
+              redirectUrl: "/builder/template-configration",
               showDividerOnTop: false,
               showDividerOnBottom: false,
               isOpen: false,
@@ -318,7 +254,7 @@ export const sidebarMenuItems = {
             },
             {
               subMenuTitle: "SEO",
-              redirectUrl: "/builder/menu",
+              redirectUrl: "/builder/seo-configration",
               showDividerOnTop: false,
               showDividerOnBottom: false,
               icon: "hugeicons:seo",
@@ -328,7 +264,7 @@ export const sidebarMenuItems = {
             },
             {
               subMenuTitle: "Settings",
-              redirectUrl: "/builder/menu",
+              redirectUrl: "/builder/website-settings",
               showDividerOnTop: false,
               showDividerOnBottom: false,
               icon: "hugeicons:settings-04",
