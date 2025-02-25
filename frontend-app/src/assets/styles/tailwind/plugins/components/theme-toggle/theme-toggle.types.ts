@@ -1,4 +1,4 @@
-import type { PropertyVariant } from '~/types/utils'
+import type { PropertyVariant } from '../../../types'
 
 export interface ThemeToggleProps extends Record<string, unknown> {
   inverted?: boolean

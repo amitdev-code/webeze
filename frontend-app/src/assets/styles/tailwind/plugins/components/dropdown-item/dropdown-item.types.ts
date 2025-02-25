@@ -1,4 +1,4 @@
-import type { PropertyVariant } from '~/types/utils'
+import type { PropertyVariant } from '../../../types'
 
 export interface DropdownItemProps extends Record<string, unknown> {
   type?: 'button' | 'submit' | 'reset'

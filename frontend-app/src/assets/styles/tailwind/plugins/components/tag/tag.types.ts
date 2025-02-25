@@ -1,4 +1,4 @@
-import type { PropertyVariant } from '~/types/utils'
+import type { PropertyVariant } from '../../../types'
 
 export interface TagProps extends Record<string, unknown> {
   variant?: 'solid' | 'outline' | 'pastel'

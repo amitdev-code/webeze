@@ -1,4 +1,4 @@
-import type { PropertyVariant } from '~/types/utils'
+import type { PropertyVariant } from '../../../types'
 
 export interface KbdProps extends Record<string, unknown> {
   rounded?: 'none' | 'sm' | 'md' | 'lg' | 'full'

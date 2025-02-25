@@ -1,4 +1,4 @@
-import type { PropertyVariant } from '~/types/utils'
+import type { PropertyVariant } from '../../../types'
 
 export interface BreadcrumbProps extends Record<string, unknown> {
   separator?: 'slash' | 'chevron' | 'dot' | 'arrow'

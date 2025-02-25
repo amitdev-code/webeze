@@ -1,4 +1,4 @@
-import type { PropertyVariant } from '~/types/utils'
+import type { PropertyVariant } from '../../../types'
 
 export interface ButtonGroupProps extends Record<string, unknown> {
   classes?: {

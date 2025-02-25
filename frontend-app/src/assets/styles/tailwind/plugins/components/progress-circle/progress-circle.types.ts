@@ -1,4 +1,4 @@
-import type { PropertyVariant } from '~/types/utils'
+import type { PropertyVariant } from '../../../types'
 
 export interface ProgressCircleProps extends Record<string, unknown> {
   value?: number

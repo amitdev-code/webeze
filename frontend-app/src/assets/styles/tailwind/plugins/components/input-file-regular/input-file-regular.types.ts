@@ -1,4 +1,4 @@
-import type { PropertyVariant } from '~/types/utils'
+import type { PropertyVariant } from '../../../types'
 
 export interface InputFileRegularProps extends Record<string, unknown> {
   id?: string
