@@ -4,6 +4,7 @@ import { RouteConfig } from "./types";
 // LAYOUT IMPORT
 import DashboardLayout from "../layouts/dashboardLayout/DashboardLayout";
 import OpenLayout from "../layouts/openLayout/OpenLayout";
+import BuilderLayout from "../layouts/builderLayout/BuilderLayout";
 // VIEW IMPORT
 // DASHBOARD PAGES
 const Dashboard = lazy(
@@ -180,7 +181,7 @@ export const protectedRoutes: RouteConfig[] = [
     component: Builder,
     lazyLoaded: true,
     haveChildren: false,
-    layout: DashboardLayout,
+    layout: BuilderLayout,
     allowedRoles: ["USER", "ADMIN", "MANAGER"],
     children: [],
   },

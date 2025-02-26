@@ -4,8 +4,8 @@
 @tailwind utilities;
 
 
-@theme {
-  --urbanist: "Urbanist", sans-serif; 
+*{
+  font-family: "Urbanist", serif !important;
 }
 /* WebKit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {

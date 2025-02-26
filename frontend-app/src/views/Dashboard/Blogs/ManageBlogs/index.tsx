@@ -6,16 +6,11 @@ import { data, Link } from 'react-router-dom'
 const ManageBlogs = () => {
 
   const settings = [
-    { icon: "ph:buildings-duotone", title: "Company", desc: "Manage company" },
-    { icon: "ph:users-four-duotone", title: "Team", desc: "Manage team" },
-    { icon: "ph:briefcase-duotone", title: "Projects", desc: "Project settings" },
+    { icon: "dashicons:welcome-write-blog", title: "Blog", desc: "Create Blog" },
+    { icon: "material-symbols:category-outline-rounded", title: "Category", desc: "Manage category" },
+    { icon: "lucide:tags", title: "Tags", desc: "Manage tags" },
+    { icon: "ri:settings-line", title: "Settings", desc: "Blog settings" },
     { icon: "ph:lock-open-duotone", title: "Permissions", desc: "Manage permissions" },
-    { icon: "ph:note-duotone", title: "Documents", desc: "Data privacy" },
-    { icon: "ph:upload-duotone", title: "Upload", desc: "Upload settings" },
-    { icon: "ph:credit-card-duotone", title: "Billing", desc: "Billing and plans" },
-    { icon: "ph:chat-circle-duotone", title: "Messaging", desc: "Chat settings" },
-    { icon: "ph:shield-check-duotone", title: "Security", desc: "Security settings" },
-    { icon: "ph:gear-six-duotone", title: "Preferences", desc: "General settings" },
   ];
 
 

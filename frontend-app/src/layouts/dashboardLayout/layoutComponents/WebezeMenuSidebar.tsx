@@ -74,7 +74,7 @@ const WebezeMenuSidebar = () => {
                                                             <MenuDivider />
                                                         )
                                                     }
-                                                    <li className="group mb-1 min-h-8" onClick={() => { toggleMenuActiveState(index) }}>
+                                                    <li className="group mb-1 min-h-8">
                                                         <a
                                                             href="#"
                                                             className="webeze-focus relative top-0.5 flex items-center"
@@ -82,15 +82,15 @@ const WebezeMenuSidebar = () => {
                                                             <span className="text-muted-400 group-hover:text-primary-500 relative inline-flex items-center gap-2 font-sans text-sm transition-colors duration-300">
                                                                 <span className='uppercase'>{item.subMenuTitle}</span>
                                                             </span>
-                                                            <Icon icon={item.isSelected ? "mdi:minus-box-outline" : "mdi:plus-box-outline"} className="icon text-muted-400 ms-auto block size-4 transition-transform duration-300" />
+                                                            <Icon icon={item.isSelected ? "mdi:minus-box-outline" : "mdi:plus-box-outline"} className="icon text-muted-400 ms-auto block size-4 transition-transform duration-300" onClick={() => { toggleMenuActiveState(index) }} />
                                                         </a>
                                                         <div className={`transition-all duration-150 max-h-0 overflow-hidden opacity-0 ${item.isSelected ? 'max-h-max opacity-100' : ''}`}>
                                                             <ul className="py-2">
                                                                 {
                                                                     item.subMenuItems?.map((subItem, subIndex) => (
                                                                         <li key={subIndex} className="flex h-8 w-full items-center">
-                                                                            <a
-                                                                                href={subItem.redirectUrl}
+                                                                            <Link
+                                                                                to={subItem.redirectUrl}
                                                                                 className="webeze-focus text-muted-400 hover:text-primary-500 focus:text-primary-500 flex w-full items-center ps-3 transition-colors duration-300"
                                                                             >
                                                                                 <Icon icon={subItem.icon || ''} className="icon me-2 size-5" />
@@ -99,7 +99,7 @@ const WebezeMenuSidebar = () => {
                                                                                 <span className="font-sans text-xs uppercase">
                                                                                     {subItem.subMenuTitle}
                                                                                 </span>
-                                                                            </a>
+                                                                            </Link>
                                                                         </li>
                                                                     ))
                                                                 }

@@ -56,7 +56,7 @@ export const sidebarMenuItems = {
           showDividerOnTop: false,
           showDividerOnBottom: false,
           isOpen: true,
-          isSelected: false,
+          isSelected: true,
           hasSubMenu: true,
           subMenuItems: [
             {
@@ -87,7 +87,7 @@ export const sidebarMenuItems = {
           showDividerOnTop: false,
           showDividerOnBottom: false,
           isOpen: false,
-          isSelected: false,
+          isSelected: true,
           hasSubMenu: true,
           subMenuItems: [
             {
@@ -97,7 +97,7 @@ export const sidebarMenuItems = {
               showDividerOnBottom: false,
               icon: "clarity:store-solid",
               isOpen: false,
-              isSelected: false,
+              isSelected: true,
               hasSubMenu: false,
             },
             {
@@ -107,7 +107,7 @@ export const sidebarMenuItems = {
               showDividerOnBottom: false,
               icon: "fluent:live-24-regular",
               isOpen: false,
-              isSelected: false,
+              isSelected: true,
               hasSubMenu: false,
             }
           ]
@@ -118,7 +118,7 @@ export const sidebarMenuItems = {
           showDividerOnTop: false,
           showDividerOnBottom: false,
           isOpen: false,
-          isSelected: false,
+          isSelected: true,
           hasSubMenu: true,
           subMenuItems: [
             {

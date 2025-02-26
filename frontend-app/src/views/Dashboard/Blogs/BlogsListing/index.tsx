@@ -4,302 +4,365 @@ import { data } from 'react-router-dom';
 import { TransitionGroup } from 'react-transition-group';
 import { BaseInput, BaseButton, BasePlaceholderPage, BaseCard, BaseAvatar, BaseHeading, BaseParagraph, BaseTag, BaseAvatarGroup, BaseButtonAction, BasePagination } from '../../../../component';
 import WebezeContentWrapper, { LeftSlot, RightSlot } from '../../../../component/wrappers/WebezeContentWrapper';
+import WebezeTabContentWrapper from '../../../../component/wrappers/WebezeTabContentWrapper';
 
 const BlogListing = () => {
-
-  const data = [
-    {
-      id: '5',
-      name: 'Mary Lebowski',
-      location: 'San Diego, CA',
-      role: 'Project Manager',
-      roleColor: 'primary',
-      medias: {
-        avatar: '/img/avatars/5.svg',
-        flag: '/img/icons/flags/united-states-of-america.svg',
-      },
-      stats: {
-        projects: 14,
-        replies: 97,
-        posts: 16,
-      },
-      teams: [{ src: '/img/avatars/9.svg' }, { src: '/img/avatars/11.svg' }],
+  const data = [{
+    id: '1',
+    picture: '/img/illustrations/layouts/rental-1.svg',
+    name: '1396 Redmond Street',
+    location:
+      '1396 Redmond Street, Apartment 12, Suite H 102, Los Angeles, CA',
+    rating: 4,
+    details: {
+      rooms: 5,
+      beds: 3,
+      bathrooms: 1,
     },
-    {
-      id: '34',
-      name: 'Daniel Redbird',
-      location: 'Toronto, Canada',
-      role: 'Web Developer',
-      roleColor: 'orange',
-      medias: {
-        avatar: '/img/avatars/20.svg',
-        flag: '/img/icons/flags/canada.svg',
-      },
-      stats: {
-        projects: 45,
-        replies: 12,
-        posts: 5,
-      },
-      teams: [
-        { src: '/img/avatars/12.svg' },
-        { src: '/img/avatars/22.svg' },
-        { src: '/img/avatars/10.svg' },
-      ],
+    amenities: {
+      parking: true,
+      wifi: true,
+      heater: true,
+      cleaning: true,
+      other: true,
+      otherThing: true,
+      otherCoolThing: true,
     },
-    {
-      id: '8',
-      name: 'Hermann Mayer',
-      location: 'New York, NY',
-      role: 'Product Manager',
-      roleColor: 'secondary',
-      medias: {
-        avatar: '/img/avatars/16.svg',
-        flag: '/img/icons/flags/united-states-of-america.svg',
-      },
-      stats: {
-        projects: 14,
-        replies: 97,
-        posts: 16,
-      },
-      teams: [{ src: '/img/avatars/7.svg' }, { src: '/img/avatars/23.svg' }],
+  },
+  {
+    id: '2',
+    picture: '/img/illustrations/layouts/rental-2.svg',
+    name: '24 Mulberry Street',
+    location: '24 Mulberry Street, Suite 43, New York, NY',
+    rating: 5,
+    details: {
+      rooms: 3,
+      beds: 2,
+      bathrooms: 1,
     },
-    {
-      id: '40',
-      name: 'Jeanne Marchand',
-      location: 'Paris, France',
-      role: 'Mobile Developer',
-      roleColor: 'orange',
-      medias: {
-        avatar: '/img/avatars/19.svg',
-        flag: '/img/icons/flags/france.svg',
-      },
-      stats: {
-        projects: 6,
-        replies: 12,
-        posts: 8,
-      },
-      teams: [
-        { src: '/img/avatars/18.svg' },
-        { src: '/img/avatars/13.svg' },
-        { src: '/img/avatars/8.svg' },
-        { src: '/img/avatars/4.svg' },
-        { src: '/img/avatars/5.svg' },
-        { src: '/img/avatars/6.svg' },
-        { src: '/img/avatars/7.svg' },
-        { src: '/img/avatars/9.svg' },
-      ],
+    amenities: {
+      wifi: true,
+      cleaning: true,
     },
-    {
-      id: '27',
-      name: 'Carmen Escudero',
-      location: 'Madrid, Spain',
-      role: 'HR Manager',
-      roleColor: 'primary',
-      medias: {
-        avatar: '/img/avatars/21.svg',
-        flag: '/img/icons/flags/spain.svg',
-      },
-      stats: {
-        projects: 8,
-        replies: 158,
-        posts: 54,
-      },
-      teams: [{ src: '/img/avatars/18.svg' }],
+  },
+  {
+    id: '3',
+    picture: '/img/illustrations/layouts/rental-3.svg',
+    name: '62 John Walberg Ave',
+    location:
+      '62 John Walberg Avenue, Apartment 10, Suite 24, Los Angeles, CA',
+    rating: 5,
+    details: {
+      rooms: 4,
+      beds: 2,
+      bathrooms: 2,
     },
-    {
-      id: '9',
-      name: 'Anna Baker',
-      location: 'San Francisco, CA',
-      role: 'UI/UX Designer',
-      roleColor: 'green',
-      medias: {
-        avatar: '/img/avatars/9.svg',
-        flag: '/img/icons/flags/united-states-of-america.svg',
-      },
-      stats: {
-        projects: 19,
-        replies: 28,
-        posts: 12,
-      },
-      teams: [{ src: '/img/avatars/12.svg' }, { src: '/img/avatars/5.svg' }],
+    amenities: {
+      parking: true,
+      wifi: true,
+      heater: true,
+      cleaning: true,
+      other: true,
+      otherThing: true,
+      otherCoolThing: true,
     },
-    {
-      id: '18',
-      name: 'Esteban Castellanos',
-      location: 'Miami, FL',
-      role: 'UI/UX Designer',
-      roleColor: 'green',
-      medias: {
-        avatar: '/img/avatars/18.svg',
-        flag: '/img/icons/flags/united-states-of-america.svg',
-      },
-      stats: {
-        projects: 59,
-        replies: 158,
-        posts: 16,
-      },
-      teams: [
-        { src: '/img/avatars/19.svg' },
-        { src: '/img/avatars/16.svg' },
-        { src: '/img/avatars/22.svg' },
-        { src: '/img/avatars/4.svg' },
-        { src: '/img/avatars/5.svg' },
-        { src: '/img/avatars/2.svg' },
-        { src: '/img/avatars/6.svg' },
-        { src: '/img/avatars/9.svg' },
-        { src: '/img/avatars/7.svg' },
-        { src: '/img/avatars/3.svg' },
-      ],
+  },
+  {
+    id: '4',
+    picture: '/img/illustrations/layouts/rental-4.svg',
+    name: '48 Manhattan Ave',
+    location: '48 Manhattan Avenue, Suite G12, New York, NY',
+    rating: 5,
+    details: {
+      rooms: 5,
+      beds: 4,
+      bathrooms: 3,
     },
-    {
-      id: '10',
-      name: 'Kendra Wilson',
-      location: 'Miami, FL',
-      role: 'Business Analyst',
-      roleColor: 'primary',
-      medias: {
-        avatar: '/img/avatars/10.svg',
-        flag: '/img/icons/flags/united-states-of-america.svg',
-      },
-      stats: {
-        projects: 42,
-        replies: 15,
-        posts: 2,
-      },
-      teams: [{ src: '/img/avatars/15.svg' }, { src: '/img/avatars/22.svg' }],
+    amenities: {
+      parking: true,
+      wifi: true,
+      heater: true,
+      cleaning: true,
+      other: true,
+      otherThing: true,
+      otherCoolThing: true,
     },
-  ]
+  },
+  {
+    id: '5',
+    picture: '/img/illustrations/layouts/rental-5.svg',
+    name: '12 Charity Street',
+    location: '12 Charity Street, Apartment 49, Brooklynn, NY',
+    rating: 4,
+    details: {
+      rooms: 3,
+      beds: 2,
+      bathrooms: 1,
+    },
+    amenities: {
+      parking: true,
+      wifi: true,
+      cleaning: true,
+    },
+  },
+  {
+    id: '6',
+    picture: '/img/illustrations/layouts/rental-6.svg',
+    name: '23 Bakery Street',
+    location: '23 Bakery Street, Suite 121, New York, NY',
+    rating: 5,
+    details: {
+      rooms: 3,
+      beds: 2,
+      bathrooms: 1,
+    },
+    amenities: {
+      parking: true,
+      wifi: true,
+      heater: true,
+      cleaning: true,
+      other: true,
+      otherThing: true,
+      otherCoolThing: true,
+      otherGreatCoolThing: true,
+    },
+  },
+  {
+    id: '7',
+    picture: '/img/illustrations/layouts/rental-7.svg',
+    name: '1028 Pasadena Ave',
+    location: '1028 Pasadena Avenue, Suite F 24, Los Angeles, CA',
+    rating: 5,
+    details: {
+      rooms: 7,
+      beds: 5,
+      bathrooms: 3,
+    },
+    amenities: {
+      parking: true,
+      wifi: true,
+      heater: true,
+      cleaning: true,
+      other: true,
+      otherThing: true,
+      otherCoolThing: true,
+    },
+  },
+  {
+    id: '8',
+    picture: '/img/illustrations/layouts/rental-8.svg',
+    name: '54 Church Street',
+    location: '54 Church Street, Apartment 2, New York, NY',
+    rating: 5,
+    details: {
+      rooms: 2,
+      beds: 1,
+      bathrooms: 1,
+    },
+    amenities: {
+      parking: true,
+      wifi: true,
+      heater: true,
+      cleaning: true,
+    },
+  },
+  {
+    id: '9',
+    picture: '/img/illustrations/layouts/rental-9.svg',
+    name: '112 Old City District',
+    location: '112 Old City District, Apartment 5 Suite 42, New York, NY',
+    rating: 5,
+    details: {
+      rooms: 3,
+      beds: 2,
+      bathrooms: 1,
+    },
+    amenities: {
+      parking: true,
+      wifi: true,
+      heater: true,
+      cleaning: true,
+    },
+  },]
 
   return (
-   <Fragment>
-    <WebezeContentWrapper>
-       <LeftSlot>
-       <BaseInput
-          // value={filter}
-          // onChange={(e) => setFilter(e.target.value)}
-          icon="lucide:search"
-          placeholder="Filter Blogs..."
-          classes={{
-            wrapper: 'w-full sm:w-auto',
-          }}
-        />
-       </LeftSlot>
-       <RightSlot>
-       <BaseButton className="w-full sm:w-32" onClick={()=>{}}>Manage</BaseButton>
-          <BaseButton color="primary" className="w-full sm:w-32">
-            <Icon icon="lucide:plus" className="size-4" />
-            <span>Add Blog</span>
-          </BaseButton>
-       </RightSlot>
-      <div>
-        {data?.length === 0 ? (
+    <Fragment>
+      <WebezeTabContentWrapper labels={['Published', 'Review', 'Draft']}>
+        <div>
+          <BaseInput
+            // value={filter}
+            // onChange={(e) => setFilter(e.target.value)}
+            icon="lucide:search"
+            placeholder="Filter Blogs..."
+            classes={{ wrapper: 'w-full sm:w-auto' }}
+          />
+        </div>
+        <div>
+          {data?.length === 0 ? (
+            <BasePlaceholderPage
+              title="No matching results"
+              subtitle="Looks like we couldn't find any matching results for your search terms. Try other search terms."
+            >
+              <div slot="image">
+                <img
+                  className="block dark:hidden"
+                  src="/img/illustrations/placeholders/flat/placeholder-search-2.svg"
+                  alt="Placeholder image"
+                />
+                <img
+                  className="hidden dark:block"
+                  src="/img/illustrations/placeholders/flat/placeholder-search-2-dark.svg"
+                  alt="Placeholder image"
+                />
+              </div>
+            </BasePlaceholderPage>
+          ) : (
+            <div className="space-y-4">
+              <TransitionGroup
+                enterActiveClass="transform-gpu"
+                enterFromClass="opacity-0 -translate-x-full"
+                enterToClass="opacity-100 translate-x-0"
+                leaveActiveClass="absolute transform-gpu"
+                leaveFromClass="opacity-100 translate-x-0"
+                leaveToClass="opacity-0 -translate-x-full"
+              >
+                {data?.map((item) => (
+                  <BaseCard
+                    key={item.id}
+                    rounded="lg"
+                    className="flex flex-col p-5 sm:flex-row sm:items-center my-2"
+                  >
+                    <div className="flex flex-col justify-center gap-3 text-center sm:flex-row sm:justify-start sm:text-left">
+                      <img
+                        className="bg-muted-100 dark:bg-muted-700/60 w-full rounded-lg sm:max-w-[130px]"
+                        src={item.picture}
+                        alt={item.name}
+                        height={190}
+                        width={130}
+                      />
+                      <div>
+                        <div className="flex flex-col gap-2 text-left sm:flex-row sm:items-center">
+                          <BaseHeading
+                            as="h3"
+                            size="sm"
+                            weight="medium"
+                            className="text-muted-800 dark:text-muted-100"
+                          >
+                            {item.name}
+                          </BaseHeading>
+                          <div className="flex items-center gap-2">
+                            {[...Array(5)].map((_, index) => (
+                              <Icon
+                                key={index}
+                                icon="uiw:star-on"
+                                className={`${item.rating > index ? 'text-yellow-400' : 'text-muted-400'} size-3`}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                        <BaseParagraph
+                          size="xs"
+                          lead="none"
+                          className="text-muted-400 mt-3 flex gap-1 text-left text-sm sm:mt-0 sm:items-end"
+                        >
+                          <Icon icon="lucide:map-pin" className="size-3" />
+                          <span>{item.location}</span>
+                        </BaseParagraph>
+                        <div className="text-primary-500 my-2 flex items-center gap-2">
+                          <span className="font-sans text-xs">{item.details.rooms} rooms</span>
+                          <span className="text-muted-400">&middot;</span>
+                          <span className="font-sans text-xs">{item.details.beds} beds</span>
+                          <span className="text-muted-400">&middot;</span>
+                          <span className="font-sans text-xs">{item.details.bathrooms} bathrooms</span>
+                        </div>
+                        <div className="text-muted-400 mt-auto flex items-center gap-6">
+                          {item.amenities.parking && (
+                            <div className="flex items-center gap-1">
+                              <Icon icon="ph:car-duotone" className="size-4" />
+                              <span className="font-sans text-xs">Parking</span>
+                            </div>
+                          )}
+                          {item.amenities.wifi && (
+                            <div className="flex items-center gap-1">
+                              <Icon icon="ph:broadcast-duotone" className="size-4" />
+                              <span className="font-sans text-xs">Wifi</span>
+                            </div>
+                          )}
+                          {item.amenities.heater && (
+                            <div className="flex items-center gap-1">
+                              <Icon icon="ph:thermometer-duotone" className="size-4" />
+                              <span className="font-sans text-xs">Heater</span>
+                            </div>
+                          )}
+                          {item.amenities.cleaning && (
+                            <div className="flex items-center gap-1">
+                              <Icon icon="ph:waves-duotone" className="size-4" />
+                              <span className="font-sans text-xs">Cleaning</span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="ptablet:flex-col mt-4 flex items-center justify-end gap-2 sm:ms-auto sm:mt-4">
+                      <BaseButton className="w-full sm:w-28">More Info</BaseButton>
+                      <BaseButton color="primary" className="w-full sm:w-28">
+                        <span>Book Now</span>
+                      </BaseButton>
+                    </div>
+                  </BaseCard>
+                ))}
+              </TransitionGroup>
+              <div className="mt-6">
+                <BasePagination
+                  totalItems={100}
+                  itemPerPage={10}
+                  currentPage={1}
+                  rounded="full"
+                />
+              </div>
+            </div>
+          )}
+        </div>
+        <div>
           <BasePlaceholderPage
             title="No matching results"
             subtitle="Looks like we couldn't find any matching results for your search terms. Try other search terms."
           >
-            <div className="image">
+            <div slot="image">
               <img
                 className="block dark:hidden"
-                src="/img/illustrations/placeholders/flat/placeholder-search-1.svg"
-                alt="Placeholder"
+                src="/img/illustrations/placeholders/flat/placeholder-search-2.svg"
+                alt="Placeholder image"
               />
               <img
                 className="hidden dark:block"
-                src="/img/illustrations/placeholders/flat/placeholder-search-1-dark.svg"
-                alt="Placeholder"
+                src="/img/illustrations/placeholders/flat/placeholder-search-2-dark.svg"
+                alt="Placeholder image"
               />
             </div>
           </BasePlaceholderPage>
-        ) : (
-          <div className="space-y-4">
-            <TransitionGroup>
-              {data?.map((item) => (
-                <BaseCard
-                  key={item.id}
-                  rounded="lg"
-                  className="flex flex-col p-5 sm:flex-row sm:items-center my-3"
-                >
-                  <div className="flex flex-col items-center justify-center gap-3 text-center sm:flex-row sm:justify-start sm:text-left">
-                    <BaseAvatar
-                      size="lg"
-                      src={item.medias.avatar}
-                      badgeSrc={item.medias.flag}
-                    />
-                    <div>
-                      <BaseHeading
-                        as="h3"
-                        size="sm"
-                        weight="medium"
-                        className="text-muted-800 dark:text-muted-100"
-                      >
-                        {item.name}
-                      </BaseHeading>
-                      <BaseParagraph
-                        size="xs"
-                        lead="none"
-                        className="text-muted-400 flex items-end text-sm"
-                      >
-                        <Icon icon="lucide:map-pin" className="size-4" />
-                        <span>{item.location}</span>
-                      </BaseParagraph>
-                    </div>
-                  </div>
-                  <div className="flex flex-col gap-4 pt-4 sm:ms-auto sm:flex-row sm:items-center sm:justify-end sm:pt-0">
-                    <div className="flex w-full items-center justify-center sm:w-[160px] sm:justify-end">
-                      <BaseTag
-                        size="sm"
-                        color="primary"
-                        variant="pastel"
-                        rounded="full"
-                      >
-                        {item.role}
-                      </BaseTag>
-                    </div>
-                    <div className="divide-muted-200 dark:divide-muted-700 flex items-center justify-center divide-x">
-                      {(['projects', 'replies', 'posts'] as Array<keyof typeof item.stats>).map((stat) => (
-                        <div className="flex flex-col gap-1 px-4 text-center" key={stat}>
-                          <BaseHeading
-                            as="h3"
-                            size="md"
-                            weight="semibold"
-                            className="text-muted-800 dark:text-muted-100"
-                          >
-                            <span>{item.stats[stat]}</span>
-                          </BaseHeading>
-                          <BaseParagraph
-                            lead="none"
-                            weight="semibold"
-                            className="text-muted-400 !text-[0.65rem] uppercase"
-                          >
-                            <span>{stat.charAt(0).toUpperCase() + stat.slice(1)}</span>
-                          </BaseParagraph>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="ptablet:hidden flex w-full items-center justify-center gap-1 py-3 sm:w-[160px] sm:justify-end sm:py-0">
-                      <BaseAvatarGroup size="xs" avatars={item.teams} limit={3} />
-                      <p className="text-muted-400 urbanist text-xs">In Team</p>
-                    </div>
-                    <div className="sm:ms-6">
-                      <BaseButtonAction className="w-full sm:w-auto">View</BaseButtonAction>
-                    </div>
-                  </div>
-                </BaseCard>
-              ))}
-            </TransitionGroup>
-            <div>
-              <BasePagination
-                totalItems={20}
-                itemPerPage={10}
-                currentPage={1}
-                rounded="full"
+        </div>
+        <div>
+          <BasePlaceholderPage
+            title="No matching results"
+            subtitle="Looks like we couldn't find any matching results for your search terms. Try other search terms."
+          >
+            <div slot="image">
+              <img
+                className="block dark:hidden"
+                src="/img/illustrations/placeholders/flat/placeholder-search-2.svg"
+                alt="Placeholder image"
+              />
+              <img
+                className="hidden dark:block"
+                src="/img/illustrations/placeholders/flat/placeholder-search-2-dark.svg"
+                alt="Placeholder image"
               />
             </div>
-          </div>
-        )}
-      </div>
-    </WebezeContentWrapper>
-   </Fragment>
+          </BasePlaceholderPage>
+        </div>
+      </WebezeTabContentWrapper>
+    </Fragment>
   )
 }
 
