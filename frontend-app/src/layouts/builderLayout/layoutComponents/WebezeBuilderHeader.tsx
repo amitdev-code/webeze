@@ -8,7 +8,7 @@ const WebezeBuilderHeader = () => {
 
     return (
         <Fragment>
-            <div className="relative z-[1] flex h-16 items-center gap-5 mx-8">
+            <div className="relative z-[1] flex h-16 items-center gap-1 xl:gap-3 2xl:gap-5 mx-8">
                 {/* BACK BUTTON */}
                 <button
                     type="button"

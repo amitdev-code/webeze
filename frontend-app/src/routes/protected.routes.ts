@@ -182,7 +182,7 @@ export const protectedRoutes: RouteConfig[] = [
     lazyLoaded: true,
     haveChildren: false,
     layout: BuilderLayout,
-    allowedRoles: ["USER", "ADMIN", "MANAGER"],
+    allowedRoles: [],
     children: [],
   },
   {
