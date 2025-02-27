@@ -1,9 +1,11 @@
 import React, { Fragment } from 'react'
+import BaseDialogPanel from '../../../component/base/BaseDialogPanel'
 
 const WebpageDesigner = () => {
   return (
     <Fragment>
        <div>Start</div>
+       <BaseDialogPanel />
        <div>WebpageDesigner</div>
        <div>WebpageDesigner</div>
        <div>WebpageDesigner</div>
