@@ -1,13 +1,31 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
-const BaseDialogPanel = () => {
-  const [open, setOpen] = useState(true);
+interface BaseDialogPanelProps {
+  show: boolean;
+  backdrop?: boolean;
+  title: string;
+  children: React.ReactElement;
+}
+
+const BaseDialogPanel = ({
+  backdrop = true,
+  show,
+  title,
+  children,
+}: BaseDialogPanelProps) => {
+  const [open, setOpen] = useState<boolean>(true);
+
+  useEffect(() => {
+    setOpen(show);
+  }, [show]);
 
   return (
     <Fragment>
       <Dialog open={open} onClose={setOpen} className="relative z-10">
-        <Dialog.Backdrop className="fixed inset-0 bg-gray-500/75 transition-opacity duration-500 ease-in-out data-closed:opacity-0" />
+        {backdrop && (
+          <Dialog.Backdrop className="fixed inset-0 bg-gray-500/75 transition-opacity duration-500 ease-in-out data-closed:opacity-0" />
+        )}
 
         <div className="fixed inset-0 overflow-hidden">
           <div className="absolute inset-0 overflow-hidden">
@@ -29,11 +47,11 @@ const BaseDialogPanel = () => {
                 <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
                   <div className="px-4 sm:px-6">
                     <Dialog.Title className="text-base font-semibold text-gray-900">
-                      Panel title
+                      {title}
                     </Dialog.Title>
                   </div>
                   <div className="relative mt-6 flex-1 px-4 sm:px-6">
-                    {/* Your content */}
+                    {children}
                   </div>
                 </div>
               </Dialog.Panel>
