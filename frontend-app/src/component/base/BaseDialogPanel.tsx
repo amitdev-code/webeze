@@ -61,3 +61,7 @@ const BaseDialogPanel = ({
 };
 
 export default BaseDialogPanel;
+{
+  /* <BaseDialogPanel show={true} title='Builder'>
+       </BaseDialogPanel> */
+}

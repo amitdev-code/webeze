@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import appReducer from "./features/app/appSlice";
 import userReducer from "./features/user/userSlice";
+import builderReducer from "./features/builder/builderSlice";
 
 // Load persisted state from localStorage
 const loadState = () => {
@@ -28,6 +29,7 @@ const store = configureStore({
   reducer: {
     app: appReducer,
     user: userReducer,
+    builder: builderReducer,
   },
   preloadedState: loadState(),
   middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
