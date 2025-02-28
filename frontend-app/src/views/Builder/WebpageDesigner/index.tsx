@@ -57,6 +57,10 @@ const WebpageDesigner = () => {
             !isBuilderSidebarOpen
               ? "xl:max-w-[calc(100%_-_80px)] xl:ms-[80px]"
               : "xl:px-10 xl:max-w-[calc(100%_-_400px)] xl:ms-[400px]"
+          } ${
+            !isElementDesignerSidebarOpen
+              ? ""
+              : "xl:max-w-[calc(100%_-480px)] xl:ms-[80px] xl:me-[480px]"
           }`}
         >
           <div className="mx-auto w-full max-w-7xl">
