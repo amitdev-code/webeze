@@ -1,17 +1,20 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BaseButton, BaseButtonClose } from "../../../component";
 import WebezeBuilderHeader from "../../../layouts/builderLayout/layoutComponents/WebezeBuilderHeader";
 import WebezeIconSidebar from "../../../layouts/builderLayout/layoutComponents/WebezeIconSidebar";
 import WebezeMenuSidebar from "../../../layouts/builderLayout/layoutComponents/WebezeMenuSidebar";
 import { RootState } from "../../../redux";
-import { toggleElementDesignerSidebar } from "../../../redux/features/builder/builderSlice";
+import {
+  closeBuilderSidebar,
+  closeElementDesignerSidebar,
+  toggleElementDesignerSidebar,
+} from "../../../redux/features/builder/builderSlice";
 
 const WebpageDesigner = () => {
-
   const dispatch = useDispatch();
 
-  const isOpen = useSelector(
+  const isBuilderSidebarOpen = useSelector(
     (state: RootState) => state.builder.isBuilderSidebarOpen
   );
 
@@ -19,6 +22,17 @@ const WebpageDesigner = () => {
     (state: RootState) => state.builder.isElementDesignerSidebarOpen
   );
 
+  useEffect(() => {
+    if (isElementDesignerSidebarOpen) {
+      dispatch(closeBuilderSidebar());
+    }
+  }, [isElementDesignerSidebarOpen, dispatch]);
+
+  useEffect(() => {
+    if (isBuilderSidebarOpen) {
+      dispatch(closeElementDesignerSidebar());
+    }
+  }, [isBuilderSidebarOpen, dispatch]);
 
   return (
     <Fragment>
@@ -31,14 +45,14 @@ const WebpageDesigner = () => {
           role="button"
           tabIndex={0}
           className={`${
-            isOpen && "opacity-50 dark:opacity-75"
+            isBuilderSidebarOpen && "opacity-50 dark:opacity-75"
           } bg-muted-800 dark:bg-muted-900 fixed start-0 top-0 z-[59] block size-full transition-opacity duration-300 lg:hidden ${
-            !isOpen && "opacity-0 pointer-events-none"
+            !isBuilderSidebarOpen && "opacity-0 pointer-events-none"
           }`}
         />
         <div
           className={`bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-x-hidden px-4 transition-all duration-300 ${
-            !isOpen
+            !isBuilderSidebarOpen
               ? "xl:max-w-[calc(100%_-_80px)] xl:ms-[80px]"
               : "xl:px-10 xl:max-w-[calc(100%_-_400px)] xl:ms-[400px]"
           }`}
@@ -50,7 +64,11 @@ const WebpageDesigner = () => {
             </div>
             <main className="pt-[80px] text-wrap">
               {/* MAIN WEBSITE DESIGNED HERE */}
-              <BaseButton onClick={()=>{dispatch(toggleElementDesignerSidebar())}}>
+              <BaseButton
+                onClick={() => {
+                  dispatch(toggleElementDesignerSidebar());
+                }}
+              >
                 Toggle Layout Designer
               </BaseButton>
             </main>
@@ -66,7 +84,11 @@ const WebpageDesigner = () => {
                     <div className="font-heading text-muted-700 text-lg font-light capitalize dark:text-white">
                       Element Designer
                     </div>
-                    <BaseButtonClose onClick={()=>{dispatch(toggleElementDesignerSidebar())}} />
+                    <BaseButtonClose
+                      onClick={() => {
+                        dispatch(toggleElementDesignerSidebar());
+                      }}
+                    />
                   </div>
 
                   <div className="webeze-slimscroll relative size-full overflow-y-auto">

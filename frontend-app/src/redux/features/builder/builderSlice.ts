@@ -27,6 +27,15 @@ const builderSlice = createSlice({
     openBuilderSidebar: (state) => {
       state.isBuilderSidebarOpen = true;
     },
+    closeBuilderSidebar: (state) => {
+      state.isBuilderSidebarOpen = false;
+    },
+    openElementDesignerSidebar: (state) => {
+      state.isElementDesignerSidebarOpen = true;
+    },
+    closeElementDesignerSidebar: (state) => {
+      state.isElementDesignerSidebarOpen = false;
+    },
     setSelectedBuildSidebarMenu: (state, action: PayloadAction<number>) => {
       state.selectedMenu = action.payload;
     },
@@ -37,6 +46,9 @@ export const {
   toggleBuilderSidebar,
   setSelectedBuildSidebarMenu,
   openBuilderSidebar,
+  closeBuilderSidebar,
+  openElementDesignerSidebar,
+  closeElementDesignerSidebar,
   toggleElementDesignerSidebar,
 } = builderSlice.actions;
 export default builderSlice.reducer;
