@@ -22,7 +22,7 @@ const builderSlice = createSlice({
       state.isBuilderSidebarOpen = !state.isBuilderSidebarOpen;
     },
     toggleElementDesignerSidebar: (state) => {
-      state.isBuilderSidebarOpen = !state.isBuilderSidebarOpen;
+      state.isElementDesignerSidebarOpen = !state.isElementDesignerSidebarOpen;
     },
     openBuilderSidebar: (state) => {
       state.isBuilderSidebarOpen = true;
