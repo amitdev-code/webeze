@@ -69,7 +69,7 @@ const WebezeBuilderHeader = () => {
 
         <button className="flex items-center justify-center rounded-xl bg-gray-100 p-2 dark:bg-muted-700">
           <Icon
-            icon={"bxs:package"}
+            icon={"duo-icons:box-2"}
             className="h-5 w-5 stroke-current text-gray-400"
           />
         </button>
