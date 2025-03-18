@@ -2,10 +2,10 @@ import { Module } from '@nestjs/common';
 import { CommunicationFactory } from './method/communication.factory';
 import { SMSService } from './providers/sms.service';
 import { EmailService } from './providers/email.service';
+import { MjmlService } from './providers/mjml.service';
 import { MailerModule } from '@nestjs-modules/mailer';
-import { join } from 'path';
 import * as handlebars from 'handlebars';
-import * as fs from 'fs';
+
 @Module({
   imports: [
     MailerModule.forRoot({
@@ -20,31 +20,17 @@ import * as fs from 'fs';
       defaults: {
         from: process.env.EMAIL_FROM,
       },
-      template: {
-        dir: join(__dirname, '../../../templates/email-templates'),
-        adapter: {
-          compile: (template: string, options: any) => {
-            const compiled = handlebars.compile(template, options);
-            return (context: any) => compiled(context);
-          },
-        },
-        options: {
-          strict: true,
-        },
-      },
     }),
   ],
-  providers: [EmailService, SMSService, CommunicationFactory],
-  exports: [CommunicationFactory],
+  providers: [EmailService, SMSService, MjmlService, CommunicationFactory],
+  exports: [CommunicationFactory, EmailService, SMSService, MjmlService],
 })
 export class CommunicationModule {
   constructor() {
-    // Register partials manually
-    const partialsDir = join(__dirname, '../../../templates/email-templates/partials');
-    fs.readdirSync(partialsDir).forEach((file) => {
-      const partialName = file.split('.')[0]; // Remove .hbs extension
-      const partialTemplate = fs.readFileSync(join(partialsDir, file), 'utf8');
-      handlebars.registerPartial(partialName, partialTemplate);
+    // Register any global Handlebars helpers if needed
+    handlebars.registerHelper('formatDate', (date: Date) => {
+      // Simple date formatter helper - can be extended for more complex formatting
+      return new Date(date).toLocaleDateString();
     });
   }
 }

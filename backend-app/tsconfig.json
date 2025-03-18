@@ -6,6 +6,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "target": "ES2021",
     "sourceMap": true,
     "outDir": "./dist",
@@ -38,7 +39,8 @@
       "@providers/*": ["src/providers/*"],
       "@shared/*": ["src/shared/*"],
       "@validators/*": ["src/validators/*"],
-      "@entity/*": ["src/entitys/*"]
+      "@entity/*": ["src/entitys/*"],
+      "@communication_modules/*": ["src/modules/communication/*"]
     }
   }
 }

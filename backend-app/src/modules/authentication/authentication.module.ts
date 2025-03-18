@@ -14,6 +14,7 @@ import { GoogleStrategy } from './strategies/google.strategy';
 import { LocalAuthGuard } from '@guards/local-auth.guard';
 import { GoogleAuthGuard } from '@guards/google-auth.guard';
 import { JwtAuthGuard } from '@guards/jwt-auth.guard';
+import { CommunicationModule } from '../../modules/communication/communication.module';
 
 const SERVICES = [
   AuthenticationService,
@@ -34,7 +35,12 @@ const PROVIDERS = [
   JwtAuthGuard,
 ];
 
-const IMPORT_MODULE = [UsersModule, CompanyModule, PassportModule];
+const IMPORT_MODULE = [
+  UsersModule,
+  CompanyModule,
+  PassportModule,
+  CommunicationModule,
+];
 @Module({
   controllers: [...CONSTROLLERS],
   providers: [...SERVICES, ...PROVIDERS],

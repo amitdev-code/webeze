@@ -14,6 +14,20 @@ import { VerificationType } from '@constants/verification-type';
 import { UserVerificationEntity } from '@entity/main/userVerification.entity';
 import { RoleType } from '@constants/role-type';
 
+interface SocialUserData {
+  email: string;
+  firstName: string;
+  lastName: string;
+  provider: string;
+  socialId: string;
+  photo?: string;
+}
+
+interface SocialUserUpdateData {
+  provider: string;
+  socialId: string;
+}
+
 @Injectable()
 export class UserHelperService {
   constructor(
@@ -113,6 +127,94 @@ export class UserHelperService {
     user.timezone = timezone;
     user.role = RoleType.ADMIN;
     return await queryRunner.manager.save(user);
+  }
+
+  /**
+   * Creates a new user from social login.
+   * @param {SocialUserData} data - Social user data.
+   * @returns {Promise<UsersEntity>} The created user.
+   */
+  async createUserFromSocial(data: SocialUserData): Promise<UsersEntity> {
+    // Create a random password for social users
+    const randomPassword = GeneralHelperFunctions.generateRandomString(16);
+
+    // CREATE USER ACCOUNT
+    const user = new UsersEntity();
+    user.username = `${data.firstName} ${data.lastName}`.trim();
+    user.useremail = {
+      email: data.email,
+      is_verified: true, // Social logins are considered verified
+      is_primary: true,
+      webeze_newsletter: true,
+    };
+    user.password =
+      await GeneralHelperFunctions.generateSaltedPassword(randomPassword);
+    user.social_login = {
+      active: true,
+      platform: {
+        facebook: data.provider === 'facebook',
+        google: data.provider === 'google',
+      },
+    };
+    user.trusted_ip_address = [{ ip: '0.0.0.0', trusted: true }];
+    user.timezone = 'UTC';
+    user.role = RoleType.USER;
+    user.onboard = false;
+
+    // Save the user
+    const savedUser = await this.dataSource
+      .getRepository(UsersEntity)
+      .save(user);
+
+    // Create default company for the user
+    await this.createDefaultCompanyForUser(savedUser);
+
+    return savedUser;
+  }
+
+  /**
+   * Creates a default company for a new user.
+   * @param {UsersEntity} user - The user entity.
+   * @returns {Promise<void>}
+   */
+  private async createDefaultCompanyForUser(user: UsersEntity): Promise<void> {
+    // Initialize a company for the user with default settings
+    const companyRepo = this.dataSource.getRepository('company');
+    const company = companyRepo.create({
+      name: `${user.username}'s Company`,
+      user: user,
+      is_primary: true,
+    });
+
+    await companyRepo.save(company);
+  }
+
+  /**
+   * Updates a user's social login details.
+   * @param {UsersEntity} user - The user entity.
+   * @param {SocialUserUpdateData} data - Social data to update.
+   * @returns {Promise<UsersEntity>} The updated user.
+   */
+  async updateUserSocialDetails(
+    user: UsersEntity,
+    data: SocialUserUpdateData,
+  ): Promise<UsersEntity> {
+    // Update social login details
+    user.social_login = {
+      ...user.social_login,
+      active: true,
+      platform: {
+        ...user.social_login.platform,
+        facebook:
+          data.provider === 'facebook'
+            ? true
+            : user.social_login.platform.facebook,
+        google:
+          data.provider === 'google' ? true : user.social_login.platform.google,
+      },
+    };
+
+    return await this.dataSource.getRepository(UsersEntity).save(user);
   }
 
   /**

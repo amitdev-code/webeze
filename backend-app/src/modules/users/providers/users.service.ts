@@ -4,6 +4,7 @@ import { InjectDataSource } from '@nestjs/typeorm';
 import { UsersEntity } from '@entity/main/user.entity';
 import { UserVerificationEntity } from '@entity/main/userVerification.entity';
 import { DataSource } from 'typeorm';
+import { CompanyEntity } from '@entity/shared/company.entity';
 
 @Injectable()
 export class UsersService {
@@ -56,6 +57,20 @@ export class UsersService {
       .getRepository(UsersEntity)
       .createQueryBuilder('user')
       .where('user.phone = :phone', { phone }) // Filters by the 'phone' key in the 'phone' column.
+      .getOne();
+  }
+
+  /**
+   * Gets the primary company for a user.
+   * @param {string} userId - The ID of the user.
+   * @returns {Promise<CompanyEntity | null>} The user's primary company, or null if not found.
+   */
+  async getUserPrimaryCompany(userId: string): Promise<CompanyEntity | null> {
+    return this.dataSource
+      .getRepository(CompanyEntity)
+      .createQueryBuilder('company')
+      .where('company.user_id = :userId', { userId })
+      .andWhere('company.is_primary = :isPrimary', { isPrimary: true })
       .getOne();
   }
 

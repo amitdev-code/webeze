@@ -1,0 +1,55 @@
+<mjml>
+  <mj-head>
+    <mj-title>{{title}}</mj-title>
+    <mj-preview>{{preview}}</mj-preview>
+    <mj-attributes>
+      <mj-all font-family="Arial, sans-serif" />
+      <mj-text font-size="16px" color="#333333" line-height="24px" />
+      <mj-section padding="20px" background-color="#ffffff" />
+      <mj-button background-color="#1976d2" color="#ffffff" border-radius="4px" />
+    </mj-attributes>
+    <mj-style>
+      .link { color: #1976d2; text-decoration: none; }
+      .footer-text { font-size: 13px; color: #666666; }
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#f4f4f4">
+    <!-- Header -->
+    <mj-section padding="20px 0">
+      <mj-column>
+        <mj-image width="200px" src="{{logoUrl}}" alt="Company Logo" />
+      </mj-column>
+    </mj-section>
+
+    <!-- Content -->
+    <mj-section>
+      <mj-column>
+        <mj-text font-weight="bold" font-size="24px" color="#1976d2">
+          {{header}}
+        </mj-text>
+        <mj-divider border-color="#1976d2" border-width="2px" width="40px" align="left" />
+        <mj-spacer height="20px" />
+        <mj-text>
+          {{content}}
+        </mj-text>
+        {{#if buttonUrl}}
+        <mj-button href="{{buttonUrl}}">
+          {{buttonText}}
+        </mj-button>
+        {{/if}}
+      </mj-column>
+    </mj-section>
+
+    <!-- Footer -->
+    <mj-section background-color="#f8f8f8">
+      <mj-column>
+        <mj-text css-class="footer-text" align="center">
+          &copy; {{year}} {{companyName}}. All rights reserved.
+        </mj-text>
+        <mj-text css-class="footer-text" align="center">
+          <a href="{{unsubscribeUrl}}" class="link">Unsubscribe</a> | <a href="{{privacyUrl}}" class="link">Privacy Policy</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml> 

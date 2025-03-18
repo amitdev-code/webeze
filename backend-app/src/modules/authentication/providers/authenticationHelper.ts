@@ -11,6 +11,11 @@ import { CompanyEntity } from '@entity/shared/company.entity';
 import { RegisterDto } from '@auth_modules/dto/register.dto';
 import { QueryRunner } from 'typeorm';
 import { GeneralHelperFunctions } from '@common/helper/generalHelperFunctions';
+import {
+  CommunicationFactory,
+  CommunicationType,
+} from '../../communication/method/communication.factory';
+import { EmailService } from '../../communication/providers/email.service';
 
 @Injectable()
 export class AuthenticationHelperService {
@@ -19,6 +24,7 @@ export class AuthenticationHelperService {
     private readonly userservice: UsersService,
     private readonly companyhelperservice: CompanyHelperService,
     private readonly authtokenservice: AuthenticationTokenService,
+    private readonly communicationFactory: CommunicationFactory,
   ) {}
 
   async validateUserRegistration(registerUser: RegisterDto) {
@@ -111,6 +117,29 @@ export class AuthenticationHelperService {
       verificationToken,
       OTP,
     );
+
+    // Send verification email using CommunicationFactory
+    const emailService = this.communicationFactory.getCommunicationService(
+      CommunicationType.EMAIL,
+    ) as EmailService;
+
+    await emailService.sendTemplateEmail(
+      user.useremail.email,
+      'Verify Your Account',
+      'password-reset',
+      {
+        userName: user.username || 'User',
+        resetUrl: `${process.env.FRONTEND_URL}/verify?token=${verificationToken}`,
+        expiryTime: '24',
+        supportEmail: process.env.SUPPORT_EMAIL || 'support@example.com',
+        year: new Date().getFullYear(),
+        companyName: process.env.COMPANY_NAME || 'Your Company',
+        logoUrl: process.env.LOGO_URL || 'https://example.com/logo.png',
+        privacyUrl: `${process.env.FRONTEND_URL}/privacy`,
+        helpUrl: `${process.env.FRONTEND_URL}/help`,
+      },
+    );
+
     return {
       verificationToken,
     };

@@ -3,7 +3,7 @@ import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 export const CurrentUserAgent = createParamDecorator(
   (_data: unknown, context: ExecutionContext): string => {
     const request = context.switchToHttp().getRequest();
-    const useragent = request.headers['agent-config'];
+    const useragent = request.headers['user-x-agent'];
 
     if (!useragent) {
       return null;

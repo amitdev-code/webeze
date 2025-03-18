@@ -1,0 +1,17 @@
+<mjml>
+  <mj-section background-color="#f8f8f8">
+    <mj-column>
+      <mj-text css-class="footer-text" align="center">
+        &copy; {{year}} {{companyName}}. All rights reserved.
+      </mj-text>
+      <mj-text css-class="footer-text" align="center">
+        <a href="{{privacyUrl}}" class="link">Privacy Policy</a> | <a href="{{termsUrl}}" class="link">Terms of Service</a>
+      </mj-text>
+      {{#if showUnsubscribe}}
+      <mj-text css-class="footer-text" align="center">
+        <a href="{{unsubscribeUrl}}" class="link">Unsubscribe</a>
+      </mj-text>
+      {{/if}}
+    </mj-column>
+  </mj-section>
+</mjml> 

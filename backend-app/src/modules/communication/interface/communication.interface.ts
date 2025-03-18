@@ -1,3 +1,3 @@
 export interface ICommunication {
-  send(to: string, content: string): Promise<boolean>;
+  send(to: string, subject: string, content: string): Promise<boolean>;
 }

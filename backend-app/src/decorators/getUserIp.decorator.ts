@@ -3,7 +3,7 @@ import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 export const CurrentUserIp = createParamDecorator(
   (_data: unknown, context: ExecutionContext): string => {
     const request = context.switchToHttp().getRequest();
-    const ip = request.headers.ip;
+    const ip = request.headers['user-x-ip'];
 
     if (!ip) {
       return '127.0.0.1';
