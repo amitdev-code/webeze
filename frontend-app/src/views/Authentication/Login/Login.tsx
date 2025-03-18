@@ -75,7 +75,7 @@ const Login = () => {
             </BaseParagraph>
             <div className="flex flex-wrap justify-between gap-4">
               <button
-                className="dark:bg-muted-700 text-muted-800 border-muted-300 dark:border-muted-600 nui-focus relative inline-flex grow items-center justify-center gap-2 rounded border bg-white px-6 py-4 dark:text-white"
+                className="dark:bg-muted-700 text-muted-800 border-muted-300 dark:border-muted-600 webeze-focus relative inline-flex grow items-center justify-center gap-2 rounded border bg-white px-6 py-4 dark:text-white"
               >
                 <Icon icon="logos:google-icon" className="size-5" />
                 <div>Login with Google</div>

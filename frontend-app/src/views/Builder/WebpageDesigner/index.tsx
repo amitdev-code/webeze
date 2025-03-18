@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BaseButtonClose } from "../../../component";
 import WebezeBuilderHeader from "../../../layouts/builderLayout/layoutComponents/WebezeBuilderHeader";
@@ -24,6 +24,23 @@ const WebpageDesigner = () => {
     (state: RootState) => state.builder.isElementDesignerSidebarOpen
   );
 
+
+  // GET VIEW POINT MAX WIDTH
+
+  const viewPortMaxWidth = () => {
+    switch (selectedViewDeviceSize) {
+      case "laptop":
+        return "xl";
+      case "tablet":
+        return "lg";
+      case "mobile":
+        return "sm";
+      default:
+        return "xl";
+    }
+  }
+
+
   useEffect(() => {
     if (isElementDesignerSidebarOpen) {
       dispatch(closeBuilderSidebar());
@@ -36,6 +53,133 @@ const WebpageDesigner = () => {
     }
   }, [isBuilderSidebarOpen, dispatch]);
 
+  // Define a function to compile styles into a single class string
+  const compileClassName = (style?: any) => {
+    if (!style) return "";
+    const { layout, position, spacing, size, typography, background, border } = style;
+    const classes: string[] = [];
+
+    if (layout) classes.push(layout.type);
+    if (position) classes.push(position.type);
+
+    const processStyles = (styles: any) => {
+      const breakpoints = ["default", "sm", "md", "lg", "xl", "2xl"];
+      breakpoints.forEach((bp) => {
+        if (styles[bp]) {
+          if (bp === "default") {
+            classes.push(`${styles[bp]}`);
+          } else {
+            classes.push(`${bp}:${styles[bp]}`);
+          }
+        }
+      });
+    };
+
+    if (spacing) Object.values(spacing).forEach(processStyles);
+    if (size) Object.values(size).forEach(processStyles);
+    if (typography) Object.values(typography).forEach(processStyles);
+    if (background) Object.values(background).forEach(processStyles);
+    if (border) Object.values(border).forEach(processStyles);
+
+    return classes.join(" ");
+  };
+  // Function to compile builderJSON into renderJSON
+  const compileRenderJSON = (builderJSON: any) => {
+    return {
+      ...builderJSON,
+      elements: builderJSON.elements.map((el: any) => compileElement(el)),
+    };
+  };
+
+  const compileElement = (element: any): any => {
+    return {
+      ...element,
+      className: compileClassName(element.style),
+      elements: element.elements ? element.elements.map((el: any) => compileElement(el)) : [],
+    };
+  };
+
+  // Function to render elements recursively
+  const renderElement = (element: any): JSX.Element | null => {
+    const { id, type, elements, content, href, src, inputType, placeholder, options, action, redirect, redirectURL, className } = element;
+
+    if (redirect && redirectURL) {
+      return <a key={id} href={redirectURL} className={className}>{content}</a>;
+    }
+
+    switch (type) {
+      case "div":
+      case "section":
+      case "article":
+      case "aside":
+      case "nav":
+      case "header":
+      case "footer":
+      case "main":
+        return <div key={id} className={className}>{elements?.map(renderElement)}</div>;
+      case "h1": case "h2": case "h3": case "h4": case "h5": case "h6": case "p": case "span":
+        return React.createElement(type, { key: id, className }, content);
+      case "a":
+        return <a key={id} href={href} className={className}>{content}</a>;
+      case "img":
+        return <img key={id} src={src} alt={content} className={className} />;
+      case "button":
+        return <button key={id} className={className} onClick={action}>{content}</button>;
+      case "input":
+        return <input key={id} type={inputType} placeholder={placeholder} className={className} />;
+      case "select":
+        return (
+          <select key={id} className={className}>
+            {options?.map((opt: any, idx: number) => (
+              <option key={idx} value={opt.value}>{opt.label}</option>
+            ))}
+          </select>
+        );
+      case "ul":
+      case "ol":
+        return React.createElement(type, { key: id, className }, elements?.map(renderElement));
+      case "li":
+        return <li key={id} className={className}>{content}</li>;
+      case "table":
+        return <table key={id} className={className}>{elements?.map(renderElement)}</table>;
+      case "tr":
+        return <tr key={id} className={className}>{elements?.map(renderElement)}</tr>;
+      case "th":
+      case "td":
+        return React.createElement(type, { key: id, className }, content);
+      case "video":
+      case "audio":
+        return React.createElement(type, { key: id, src, controls: true, className });
+      case "iframe":
+        return <iframe key={id} src={src} width={element.width} height={element.height} className={className}></iframe>;
+      default:
+        return null;
+    }
+  };
+
+
+  const exampleBuilderJSON = {
+    elements: [
+      {
+        id: "1",
+        type: "div",
+        style: { layout: { type: "flex" }, spacing: { padding: { lg: "4" } } },
+        elements: [
+          { id: "2", type: "h1", content: "Hello, World!", style: { typography: { fontSize: { default: "text-2xl", lg: "text-base" }, textDecorationLine: { default: "underline", lg: "no-underline" } } } },
+        ]
+      }
+    ]
+  };
+
+  const [builderJSON, setBuilderJSON] = useState(exampleBuilderJSON);
+  const [renderJSON, setRenderJSON] = useState<any>(compileRenderJSON(builderJSON));
+  const [selectedViewDeviceSize, setSelectedViewDeviceSize] = useState('desktop');
+
+  useEffect(() => {
+    setRenderJSON(compileRenderJSON(builderJSON));
+  }, [builderJSON]);
+
+
   return (
     <Fragment>
       <div className="bg-muted-100 dark:bg-muted-900 pb-20">
@@ -46,134 +190,35 @@ const WebpageDesigner = () => {
         <div
           role="button"
           tabIndex={0}
-          className={`${
-            isBuilderSidebarOpen && "opacity-50 dark:opacity-75"
-          } bg-muted-800 dark:bg-muted-900 fixed start-0 top-0 z-[59] block size-full transition-opacity duration-300 lg:hidden ${
-            !isBuilderSidebarOpen && "opacity-0 pointer-events-none"
-          }`}
+          className={`${isBuilderSidebarOpen && "opacity-50 dark:opacity-75"
+            } bg-muted-800 dark:bg-muted-900 fixed start-0 top-0 z-[59] block size-full transition-opacity duration-300 lg:hidden ${!isBuilderSidebarOpen && "opacity-0 pointer-events-none"
+            }`}
         />
         <div
-          className={`bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-x-hidden px-4 transition-all duration-300 ${
-            !isBuilderSidebarOpen
-              ? "xl:max-w-[calc(100%_-_80px)] xl:ms-[80px]"
-              : "xl:px-10 xl:max-w-[calc(100%_-_400px)] xl:ms-[400px]"
-          } ${
-            !isElementDesignerSidebarOpen
+          className={`bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-x-hidden px-4 transition-all duration-300 ${!isBuilderSidebarOpen
+            ? "xl:max-w-[calc(100%_-_80px)] xl:ms-[80px]"
+            : "xl:px-10 xl:max-w-[calc(100%_-_400px)] xl:ms-[400px]"
+            } ${!isElementDesignerSidebarOpen
               ? ""
               : "xl:max-w-[calc(100%_-480px)] xl:ms-[80px] xl:me-[480px]"
-          }`}
+            }`}
         >
-          <div className="mx-auto w-full max-w-7xl">
+          <div className="mx-auto w-full">
             {/* LAYOUT HEADER */}
             <div className="fixed z-[3] top-0 right-0 w-[calc(100%_-_80px)] dark:border-muted-700 dark:bg-muted-800">
-              <WebezeBuilderHeader />
+              <WebezeBuilderHeader setSelectedViewDeviceSize={setSelectedViewDeviceSize} selectedViewDeviceSize={selectedViewDeviceSize} />
             </div>
-            <main className="pt-[80px] text-wrap">
+            <main className={`pt-[80px]`}>
               {/* MAIN WEBSITE DESIGNED HERE */}
-              <div className="my-12 bg-white">
-                <nav className="flex items-center justify-between px-12 py-6">
-                  <img className="h-11 w-11" src="/img/logo.png" alt="" />
-                  <div className="flex gap-x-6">
-                    <button className="rounded-full bg-blue-600 py-3 px-8 text-white">
-                      Hire Us
-                    </button>
-                    <button className="p-2">
-                      <Icon
-                        icon={"uim:bars"}
-                        className="h-6 w-6 stroke-current"
-                      />
-                    </button>
-                  </div>
-                </nav>
-                <section className="py-16">
-                  <div className="px-12">
-                    <div className="group relative">
-                      <div className="pointer-events-none absolute inset-0 hidden border-2 border-blue-600 group-focus-within:block">
-                        <div className="absolute -translate-y-full pl-2">
-                          <div className="flex items-center gap-x-2 rounded-t-lg bg-blue-600 px-3 py-1 text-white">
-                            <span className="text-sm">H1 - hero title</span>
-                            <Icon
-                              icon={"mdi:pen"}
-                              className="h-4 w-4 fill-current"
-                            />
-                          </div>
-                        </div>
-                        <div className="absolute left-0 top-0 h-2 w-2 -translate-x-full -translate-y-full border-2 border-blue-600"></div>
-                        <div className="absolute right-0 top-0 h-2 w-2 translate-x-full -translate-y-full border-2 border-blue-600"></div>
-                        <div className="absolute right-0 bottom-0 h-2 w-2 translate-x-full translate-y-full border-2 border-blue-600"></div>
-                        <div className="absolute left-0 bottom-0 h-2 w-2 -translate-x-full translate-y-full border-2 border-blue-600"></div>
-                        <div className="absolute inset-x-0 top-0 flex -translate-y-1/2 items-center justify-center">
-                          <div className="h-2 w-2 border-2 border-blue-600 bg-white"></div>
-                        </div>
-                        <div className="absolute inset-x-0 bottom-0 flex translate-y-1/2 items-center justify-center">
-                          <div className="h-2 w-2 border-2 border-blue-600 bg-white"></div>
-                        </div>
-                      </div>
-                      <h1
-                        className="max-w-3xl text-5xl font-bold leading-[1.4] focus:outline-none"
-                        contentEditable
-                        onClick={() => {
-                          dispatch(toggleElementDesignerSidebar());
-                        }}
-                      >
-                        We craft digital products for business and user goals.
-                      </h1>
-                    </div>
-                    <p className="mt-4 text-lg leading-loose text-gray-400">
-                      Help find solutions with UI / UX designs that are
-                      intuitive and in accordance with client business goals. We
-                      provide a high-quality service in UI/ UX Design &
-                      Development.
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-4 px-12 pt-8">
-                    <button className="rounded-full bg-blue-600 px-8 py-5 font-semibold text-white">
-                      Let's work together
-                    </button>
-                    <button className="rounded-full border border-gray-200 px-8 py-5 font-semibold text-blue-600">
-                      Check our work
-                    </button>
-                  </div>
-                </section>
-                <section className="bg-gray-50 py-16">
-                  <div className="px-12">
-                    <span className="text-sm uppercase text-gray-400">
-                      Our Projects
-                    </span>
-                    <div className="flex items-center justify-between">
-                      <h2 className="max-w-3xl text-4xl font-bold leading-[1.4]">
-                        Our latest cool projects.
-                      </h2>
-                      <button className="rounded-full bg-white px-8 py-5 font-semibold text-blue-600">
-                        Check our work
-                      </button>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-8 px-12 pt-8">
-                    <div className="flex aspect-square w-full items-center overflow-hidden bg-gray-100">
-                      <img
-                        className="h-full w-full object-cover"
-                        src="/img/billy.png"
-                        alt=""
-                      />
-                    </div>
-                    <div className="flex aspect-square w-full items-center overflow-hidden bg-gray-100">
-                      <img
-                        className="h-full w-full object-cover"
-                        src="/img/alpha-pay.png"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </section>
+              <div className="my-12 bg-white mx-auto">
+                {renderJSON.elements.map(renderElement)}
               </div>
             </main>
             <div className="fixed right-0 bottom-0 top-[64px]">
               <div
-                className={`border-muted-200 dark:border-muted-700 dark:bg-muted-600 pointer-events-auto relative z-10 h-[calc(100vh_-_80px)] w-[400px] border-r bg-white transition-all duration-300 ${
-                  !isElementDesignerSidebarOpen &&
+                className={`border-muted-200 dark:border-muted-700 dark:bg-muted-600 pointer-events-auto relative z-10 h-[calc(100vh_-_80px)] w-[400px] border-r bg-white transition-all duration-300 ${!isElementDesignerSidebarOpen &&
                   "rtl:translate-x-[calc(100%_-_900px)] translate-x-[calc(-100%_+_900px)]"
-                }`}
+                  }`}
               >
                 <div className="flex h-full flex-col">
                   <div className="flex h-16 w-full items-center px-1 justify-between">

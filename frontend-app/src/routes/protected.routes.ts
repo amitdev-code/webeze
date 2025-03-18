@@ -4,7 +4,6 @@ import { RouteConfig } from "./types";
 // LAYOUT IMPORT
 import DashboardLayout from "../layouts/dashboardLayout/DashboardLayout";
 import OpenLayout from "../layouts/openLayout/OpenLayout";
-import BuilderLayout from "../layouts/builderLayout/BuilderLayout";
 // VIEW IMPORT
 // DASHBOARD PAGES
 const Dashboard = lazy(
@@ -42,7 +41,6 @@ const WebsiteLeads = lazy(() => import("../views/Dashboard/Users/StoreLeads"));
 const Onboarding = lazy(() => import("../views/Onboarding/OnBoarding"));
 
 // BUILDER PAGE INPORTS
-const Builder = lazy(() => import("../views/Builder/WebpageDesigner"));
 const ManageWebpage = lazy(() => import("../views/Builder/ManageWebpages"));
 const ManageWebpageMenu = lazy(() => import("../views/Builder/ManageWebsiteMenu"));
 // BUILDER CONFIGRATION PAGE IMPORT
@@ -173,16 +171,6 @@ export const protectedRoutes: RouteConfig[] = [
     haveChildren: false,
     layout: DashboardLayout,
     allowedRoles: ["USER", "ADMIN", "MANAGER"],
-    children: [],
-  },
-  {
-    path: "/builder",
-    namedPath: "Builder",
-    component: Builder,
-    lazyLoaded: true,
-    haveChildren: false,
-    layout: BuilderLayout,
-    allowedRoles: [],
     children: [],
   },
   {

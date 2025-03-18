@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
-import { BaseThemeToggle } from "../../../component";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
 
 interface props {
   setSelectedViewDeviceSize: React.Dispatch<React.SetStateAction<string>>;
@@ -10,7 +9,7 @@ interface props {
 const WebezeBuilderHeader = ({ setSelectedViewDeviceSize, selectedViewDeviceSize }: props) => {
   return (
     <Fragment>
-      <div className="relative z-[2] flex h-16 items-center gap-1 xl:gap-3 2xl:gap-5 px-2 bg-white dark:bg-muted-800">
+      <div className="relative z-[2] flex h-20 items-center gap-1 xl:gap-3 2xl:gap-5 px-2 py-3 bg-white dark:bg-muted-800">
         {/* BACK BUTTON */}
         <button
           type="button"
