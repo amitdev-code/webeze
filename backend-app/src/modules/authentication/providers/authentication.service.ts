@@ -79,25 +79,8 @@ export class AuthenticationService {
     }
   }
 
-  async login(loginDto: LoginDto, ip: string, timezone: string, agent: string) {
-    const user = await this.userservice.findOneByEmail(loginDto.email);
-    const userCompany = await this.companyservice.findOneByUserId(user.id);
-
-    // CREATE USER SESSION
-    const userSession =
-      await this.authenticationhelperservice.updateUserSession(
-        user,
-        userCompany,
-        ip,
-        timezone,
-        agent,
-      );
-
-    return {
-      user: user,
-      company: userCompany,
-      session: userSession,
-    };
+  async login(loginDto: LoginDto) {
+    return this.authenticationhelperservice.validateUserLogin(loginDto);
   }
 
   async verifyTwoFactorAuth(token: string, code: string) {
@@ -119,5 +102,25 @@ export class AuthenticationService {
       throw new InvalidVerificationCodeException();
     }
     return true;
+  }
+
+  async forgotPassword(email: string) {
+    return this.authenticationhelperservice.forgotPassword(email);
+  }
+
+  async resetPassword(token: string, newPassword: string) {
+    return this.authenticationhelperservice.resetPassword(token, newPassword);
+  }
+
+  async setup2FA(userId: string) {
+    return this.authenticationhelperservice.setup2FA(userId);
+  }
+
+  async verify2FA(userId: string, code: string) {
+    return this.authenticationhelperservice.verify2FA(userId, code);
+  }
+
+  async verifyEmail(token: string) {
+    return this.authenticationhelperservice.verifyEmail(token);
   }
 }

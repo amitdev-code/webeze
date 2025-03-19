@@ -350,4 +350,13 @@ export class UserHelperService {
       .getRepository(UserVerificationEntity)
       .save(verificationToken);
   }
+
+  async invalidateAllUserSessions(userId: string): Promise<void> {
+    await this.dataSource
+      .getRepository(UserSession)
+      .createQueryBuilder()
+      .delete()
+      .where('user_id = :userId', { userId })
+      .execute();
+  }
 }

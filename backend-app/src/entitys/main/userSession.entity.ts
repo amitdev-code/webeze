@@ -22,7 +22,7 @@ export class UserSession extends BaseEntity {
   @Column({ nullable: true })
   user_id: string;
 
-  @Column({ default: '', length: 100 })
+  @Column({ default: '', length: 100, nullable: true })
   ip: string;
 
   @Column({ type: 'jsonb' })
@@ -45,7 +45,7 @@ export class UserSession extends BaseEntity {
       source: '',
       browser: '',
     },
-    nullable: false,
+    nullable: true,
   })
   user_agent: UserAgent;
 }

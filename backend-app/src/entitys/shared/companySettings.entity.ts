@@ -1,132 +1,107 @@
-import { BaseEntity } from 'src/common/entity/baseEntity';
-import { Column, Entity, JoinColumn, OneToOne } from 'typeorm';
+import { BaseEntity } from '@common/entity/baseEntity';
+import {
+  Column,
+  Entity,
+  OneToOne,
+  JoinColumn,
+  ManyToOne,
+  OneToMany,
+} from 'typeorm';
 import { CompanyEntity } from './company.entity';
+import { SubscriptionPlanEntity } from './subscriptionPlan.entity';
+import { SubscriptionPaymentEntity } from './subscriptionPayment.entity';
 
 @Entity('company_settings')
 export class CompanySettingsEntity extends BaseEntity {
+  @Column({ type: 'varchar', length: 255 })
+  company_id: string;
+
   @Column({ type: 'bool', default: false })
   txt_record_added: boolean;
 
-  @Column({ type: 'jsonb', default: [] })
-  txt_record: [];
+  @Column({ type: 'varchar', length: 255, default: null })
+  txt_record: string;
 
-  @Column({
-    type: 'jsonb',
-    default: {
-      url: '',
-      url_temp: '',
-      root_url: '',
-      error_url: '',
-      cloudflare: '',
-    },
-  })
-  cname: {
-    url: string;
-    url_temp: string;
-    root_url: string;
-    error_url: string;
-    cloudflare: string;
-  };
+  @Column({ type: 'varchar', length: 255, default: null })
+  cname: string;
 
   @Column({ type: 'bool', default: false })
   is_admin_created: boolean;
 
-  @Column({ type: 'timestamp', nullable: true })
+  @Column({ type: 'timestamp', default: null })
   subscription_updated: Date;
 
-  @Column({
-    type: 'jsonb',
-    default: {
-      subscription_status: '',
-      plan_id: null,
-    },
-  })
-  previousPlan: {
-    subscription_status: string;
-    plan_id: number;
-  };
+  @Column({ type: 'varchar', length: 255, default: null })
+  previousPlan: string;
 
-  @Column({
-    type: 'jsonb',
-    default: {
-      stripe_customer_id: null,
-      user: null,
-      configured: false,
-      customer_card_status: null,
-      revenue_till_date: null,
-      subscription: {
-        start: null,
-        end: null,
-        billing_unit: null,
-        percent_cycle_over: 0,
-        subs_cancel_date: null,
-      },
-      plan_price: 0,
-      mrr: 0,
-    },
-  })
+  @Column({ type: 'jsonb', default: {} })
   billing: {
     stripe_customer_id: string;
-    user: number;
-    configured: boolean;
-    customer_card_status: string;
-    revenue_till_date: string;
-    subscription: {
-      start: Date;
-      end: Date;
-      billing_unit: string;
-      percent_cycle_over: number;
-      subs_cancel_date: Date;
+    stripe_subscription_id: string;
+    payment_method_id: string;
+    default_payment_method: string;
+    billing_email: string;
+    billing_name: string;
+    billing_phone: string;
+    billing_address: {
+      line1: string;
+      line2?: string;
+      city: string;
+      state: string;
+      postal_code: string;
+      country: string;
     };
-    plan_price: number;
-    mrr: number;
+    tax_id?: string;
+    invoice_prefix?: string;
   };
 
-  @Column({
-    type: 'jsonb',
-    default: {
-      smtp_default_mail: null,
-      smtp_username: null,
-      smtp_password: null,
-      smtp_domain: null,
-      smtp_port: null,
-      smtp_ssl: false,
-      is_configured: false,
-    },
-  })
+  @Column({ type: 'jsonb', default: {} })
   smtp: {
-    smtp_default_mail: string;
-    smtp_username: string;
-    smtp_password: string;
-    smtp_domain: string;
-    smtp_port: number;
-    smtp_ssl: boolean;
-    is_configured: boolean;
+    host: string;
+    port: number;
+    username: string;
+    password: string;
+    from_email: string;
+    from_name: string;
+    encryption: 'tls' | 'ssl';
   };
 
-  @Column({
-    type: 'jsonb',
-    default: {
-      account_sid: null,
-      auth_token: null,
-      phone_number: null,
-      is_configured: false,
-    },
-  })
+  @Column({ type: 'jsonb', default: {} })
   sms: {
-    account_sid: string;
-    auth_token: string;
-    phone_number: string;
-    is_configured: boolean;
+    provider: string;
+    api_key: string;
+    api_secret: string;
+    from_number: string;
   };
 
-  @Column({ type: 'bool', default: false })
-  two_fact_auth: boolean;
+  @Column({ type: 'jsonb', default: {} })
+  two_fact_auth: {
+    enabled: boolean;
+    method: 'sms' | 'email' | 'authenticator';
+    backup_codes: string[];
+  };
 
-  @Column({ type: 'varchar' })
-  company_id: string;
+  @Column({ type: 'jsonb', default: {} })
+  subscription: {
+    status: 'active' | 'past_due' | 'canceled' | 'trialing' | 'unpaid';
+    current_period_start: Date;
+    current_period_end: Date;
+    cancel_at_period_end: boolean;
+    canceled_at: Date;
+    trial_start: Date;
+    trial_end: Date;
+    quantity: number;
+    plan_id: string;
+  };
 
   @OneToOne(() => CompanyEntity, (company) => company.settings)
   @JoinColumn({ name: 'company_id' })
   company: CompanyEntity;
+
+  @ManyToOne(() => SubscriptionPlanEntity, (plan) => plan.companies)
+  @JoinColumn({ name: 'subscription.plan_id' })
+  subscription_plan: SubscriptionPlanEntity;
+
+  @OneToMany(() => SubscriptionPaymentEntity, (payment) => payment.company)
+  payments: SubscriptionPaymentEntity[];
 }

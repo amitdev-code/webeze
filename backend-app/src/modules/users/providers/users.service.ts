@@ -111,4 +111,60 @@ export class UsersService {
       relations: ['user'],
     });
   }
+
+  async findOne(id: string): Promise<UsersEntity | null> {
+    return await this.dataSource
+      .getRepository(UsersEntity)
+      .findOne({ where: { id } });
+  }
+
+  async updatePassword(userId: string, hashedPassword: string): Promise<void> {
+    await this.dataSource
+      .getRepository(UsersEntity)
+      .update(userId, { password: hashedPassword });
+  }
+
+  async update2FAConfig(
+    userId: string,
+    config: {
+      is_configured: boolean;
+      created_at: Date;
+      secret: {
+        ascii: string;
+        hex: string;
+        base32: string;
+        otpauth_url: string;
+      };
+      recovery_codes: Array<{ code: string; active: boolean }>;
+      attempts: number;
+    },
+  ): Promise<void> {
+    await this.dataSource
+      .getRepository(UsersEntity)
+      .update(userId, { two_fact_auth: config });
+  }
+
+  async increment2FAAttempts(userId: string): Promise<void> {
+    const user = await this.findOne(userId);
+    if (user) {
+      user.two_fact_auth.attempts += 1;
+      await this.dataSource.getRepository(UsersEntity).save(user);
+    }
+  }
+
+  async reset2FAAttempts(userId: string): Promise<void> {
+    const user = await this.findOne(userId);
+    if (user) {
+      user.two_fact_auth.attempts = 0;
+      await this.dataSource.getRepository(UsersEntity).save(user);
+    }
+  }
+
+  async verifyEmail(userId: string): Promise<void> {
+    const user = await this.findOne(userId);
+    if (user) {
+      user.useremail.is_verified = true;
+      await this.dataSource.getRepository(UsersEntity).save(user);
+    }
+  }
 }

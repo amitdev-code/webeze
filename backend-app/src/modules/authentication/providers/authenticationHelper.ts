@@ -16,6 +16,7 @@ import {
   CommunicationType,
 } from '../../communication/method/communication.factory';
 import { EmailService } from '../../communication/providers/email.service';
+import { MailSubjects } from '@communication_modules/helper/mail_subjects';
 
 @Injectable()
 export class AuthenticationHelperService {
@@ -125,23 +126,133 @@ export class AuthenticationHelperService {
 
     await emailService.sendTemplateEmail(
       user.useremail.email,
-      'Verify Your Account',
+      MailSubjects.VERIFICATION_CODE,
       'password-reset',
       {
         userName: user.username || 'User',
         resetUrl: `${process.env.FRONTEND_URL}/verify?token=${verificationToken}`,
         expiryTime: '24',
-        supportEmail: process.env.SUPPORT_EMAIL || 'support@example.com',
-        year: new Date().getFullYear(),
-        companyName: process.env.COMPANY_NAME || 'Your Company',
-        logoUrl: process.env.LOGO_URL || 'https://example.com/logo.png',
-        privacyUrl: `${process.env.FRONTEND_URL}/privacy`,
-        helpUrl: `${process.env.FRONTEND_URL}/help`,
       },
     );
 
     return {
       verificationToken,
     };
+  }
+
+  async forgotPassword(email: string) {
+    const user = await this.userservice.findOneByEmail(email);
+    if (!user) {
+      // Return success even if user not found to prevent email enumeration
+      return { success: true };
+    }
+
+    const resetToken = await this.authtokenservice.generatePasswordResetToken(
+      user.id,
+    );
+
+    const emailService = this.communicationFactory.getCommunicationService(
+      CommunicationType.EMAIL,
+    ) as EmailService;
+
+    await emailService.sendTemplateEmail(
+      user.useremail.email,
+      MailSubjects.RESET_PASSWORD,
+      'password-reset',
+      {
+        userName: user.username || 'User',
+        resetUrl: `${process.env.FRONTEND_URL}/reset-password?token=${resetToken}`,
+        expiryTime: '24',
+      },
+    );
+
+    return { success: true };
+  }
+
+  async resetPassword(token: string, newPassword: string) {
+    const decodedToken =
+      await this.authtokenservice.verifyPasswordResetToken(token);
+    if (!decodedToken) {
+      throw new Error('Invalid or expired reset token');
+    }
+
+    const user = await this.userservice.findOne(decodedToken.userId);
+    if (!user) {
+      throw new Error('User not found');
+    }
+
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    await this.userservice.updatePassword(user.id, hashedPassword);
+
+    // Invalidate all existing sessions
+    await this.userhelperservice.invalidateAllUserSessions(user.id);
+
+    return { success: true };
+  }
+
+  async setup2FA(userId: string) {
+    const user = await this.userservice.findOne(userId);
+    if (!user) {
+      throw new Error('User not found');
+    }
+
+    const secret = await this.authtokenservice.generate2FASecret();
+
+    // Update user's 2FA configuration
+    await this.userservice.update2FAConfig(userId, {
+      is_configured: true,
+      created_at: new Date(),
+      secret,
+      recovery_codes: await this.authtokenservice.generateRecoveryCodes(),
+      attempts: 0,
+    });
+
+    return {
+      secret: secret.base32,
+      otpauthUrl: secret.otpauth_url,
+    };
+  }
+
+  async verify2FA(userId: string, code: string) {
+    const user = await this.userservice.findOne(userId);
+    if (!user) {
+      throw new Error('User not found');
+    }
+
+    if (!user.two_fact_auth.is_configured) {
+      throw new Error('2FA is not configured for this user');
+    }
+
+    const isValid = await this.authtokenservice.verify2FACode(
+      user.two_fact_auth.secret.base32,
+      code,
+    );
+
+    if (!isValid) {
+      // Increment failed attempts
+      await this.userservice.increment2FAAttempts(userId);
+      throw new Error('Invalid 2FA code');
+    }
+
+    // Reset attempts on successful verification
+    await this.userservice.reset2FAAttempts(userId);
+
+    return { success: true };
+  }
+
+  async verifyEmail(token: string) {
+    const decodedToken = await this.authtokenservice.verifyEmailToken(token);
+    if (!decodedToken) {
+      throw new Error('Invalid or expired verification token');
+    }
+
+    const user = await this.userservice.findOne(decodedToken.userId);
+    if (!user) {
+      throw new Error('User not found');
+    }
+
+    await this.userservice.verifyEmail(user.id);
+
+    return { success: true };
   }
 }
